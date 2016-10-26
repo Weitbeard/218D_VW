@@ -1,0 +1,7 @@
+Error[1027] C:\Users\Luke\MPLABXProjects\SPI_Test.X\ES_Types.h 25 : unable to locate 'stdint.h'
+Error[1027] C:\Users\Luke\MPLABXProjects\SPI_Test.X\ES_Types.h 34 : unable to locate 'stdbool.h'
+Error[1027] C:\Users\Luke\MPLABXProjects\SPI_Test.X\ES_Port.h 27 : unable to locate 'PIC16F1518.h'
+Error[1027] C:\Users\Luke\MPLABXProjects\SPI_Test.X\ES_Port.h 28 : unable to locate 'stdint.h'
+Error[1027] C:\Users\Luke\MPLABXProjects\SPI_Test.X\EventCheckers.h 19 : unable to locate 'stdint.h'
+Error[1027] C:\Users\Luke\MPLABXProjects\SPI_Test.X\EventCheckers.h 20 : unable to locate 'stdbool.h'
+Error[1027] C:\Users\Luke\MPLABXProjects\SPI_Test.X\Button.h 15 : unable to locate 'PIC16F1518.h'
