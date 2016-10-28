@@ -1,12 +1,12 @@
 /****************************************************************************
  
-  Header file for template Flat Sate Machine 
+  Header file for the DotStar Pattern Control Service
   based on the Gen2 Events and Services Framework
 
  ****************************************************************************/
 
-#ifndef FSMTemplate_H
-#define FSMTemplate_H
+#ifndef PatternControlService_H
+#define PatternControlService_H
 
 // Event Definitions
 #include "ES_Configure.h" /* gets us event definitions */
@@ -14,17 +14,15 @@
 
 // typedefs for the states
 // State definitions for use with the query function
-typedef enum { InitPState, UnlockWaiting, _1UnlockPress, 
-               _2UnlockPresses, Locked } TemplateState_t ;
+typedef enum { Pattern_Startup, Pattern_Idle, Pattern_Running, Pattern_Paused } PatternControlState_t ;
 
 
 // Public Function Prototypes
-
-bool InitTemplateFSM ( uint8_t Priority );
-bool PostTemplateFSM( ES_Event ThisEvent );
-ES_Event RunTemplateFSM( ES_Event ThisEvent );
+bool InitPatternControlService ( uint8_t Priority );
+bool PostPatternControlService( ES_Event ThisEvent );
+ES_Event RunPatternControlService( ES_Event ThisEvent );
 TemplateState_t QueryTemplateSM ( void );
 
 
-#endif /* FSMTemplate_H */
+#endif /* PatternControlService_H */
 

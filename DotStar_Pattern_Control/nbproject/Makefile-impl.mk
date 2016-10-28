@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=SPI_Test.X
+PROJECTNAME=DotStar_Pattern_Control
 
 # Active Configuration
 DEFAULTCONF=default

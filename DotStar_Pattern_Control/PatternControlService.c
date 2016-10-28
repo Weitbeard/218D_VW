@@ -1,19 +1,20 @@
 /****************************************************************************
  Module
-   TemplateFSM.c
+   PatternControlService.c
 
  Revision
    1.0.1
 
  Description
-   This is a template file for implementing flat state machines under the
-   Gen2 Events and Services Framework.
+   ES Framework service for control of patterns displayed on a DotStar LED
+   strip.
 
  Notes
 
  History
  When           Who     What/Why
  -------------- ---     --------
+ 10/27/16 04:20 lxw      started implementation of pattern control service
  01/15/12 11:12 jec      revisions for Gen2 framework
  11/07/11 11:26 jec      made the queue static
  10/30/11 17:59 jec      fixed references to CurrentEvent in RunTemplateSM()
@@ -25,7 +26,7 @@
 */
 #include "ES_Configure.h"
 #include "ES_Framework.h"
-#include "TemplateFSM.h"
+#include "PatternControlService.h"
 
 /*----------------------------- Module Defines ----------------------------*/
 
@@ -46,7 +47,7 @@ static uint8_t MyPriority;
 /*------------------------------ Module Code ------------------------------*/
 /****************************************************************************
  Function
-     InitTemplateFSM
+     InitPatternControlService
 
  Parameters
      uint8_t : the priorty of this service
@@ -62,7 +63,7 @@ static uint8_t MyPriority;
  Author
      J. Edward Carryer, 10/23/11, 18:55
 ****************************************************************************/
-bool InitTemplateFSM ( uint8_t Priority )
+bool InitPatternControlService ( uint8_t Priority )
 {
   ES_Event ThisEvent;
 
@@ -82,7 +83,7 @@ bool InitTemplateFSM ( uint8_t Priority )
 
 /****************************************************************************
  Function
-     PostTemplateFSM
+     PostPatternControlService
 
  Parameters
      EF_Event ThisEvent , the event to post to the queue
@@ -97,14 +98,14 @@ bool InitTemplateFSM ( uint8_t Priority )
  Author
      J. Edward Carryer, 10/23/11, 19:25
 ****************************************************************************/
-bool PostTemplateFSM( ES_Event ThisEvent )
+bool PostPatternControlService( ES_Event ThisEvent )
 {
   return ES_PostToService( MyPriority, ThisEvent);
 }
 
 /****************************************************************************
  Function
-    RunTemplateFSM
+    RunPatternControlService
 
  Parameters
    ES_Event : the event to process
@@ -119,7 +120,7 @@ bool PostTemplateFSM( ES_Event ThisEvent )
  Author
    J. Edward Carryer, 01/15/12, 15:23
 ****************************************************************************/
-ES_Event RunTemplateFSM( ES_Event ThisEvent )
+ES_Event RunPatternControlService( ES_Event ThisEvent )
 {
   ES_Event ReturnEvent;
   ReturnEvent.EventType = ES_NO_EVENT; // assume no errors
@@ -177,7 +178,7 @@ ES_Event RunTemplateFSM( ES_Event ThisEvent )
  Author
      J. Edward Carryer, 10/23/11, 19:21
 ****************************************************************************/
-TemplateState_t QueryTemplateFSM ( void )
+TemplateState_t QueryPatternControlService ( void )
 {
    return(CurrentState);
 }

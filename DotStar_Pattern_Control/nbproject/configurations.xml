@@ -23,10 +23,9 @@
       <itemPath>ES_Types.h</itemPath>
       <itemPath>EventCheckers.h</itemPath>
       <itemPath>PIC_HEADER_ReadOnly.h</itemPath>
-      <itemPath>TemplateService.h</itemPath>
-      <itemPath>ToggleService.h</itemPath>
       <itemPath>SPI_Service.h</itemPath>
       <itemPath>Button.h</itemPath>
+      <itemPath>PatternControlService.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -45,11 +44,8 @@
       <itemPath>ES_ShortTimer.c</itemPath>
       <itemPath>ES_Timers.c</itemPath>
       <itemPath>EventCheckers.c</itemPath>
-      <itemPath>TemplateFSM.c</itemPath>
-      <itemPath>TemplateService.c</itemPath>
       <itemPath>main.c</itemPath>
       <itemPath>retarget.c</itemPath>
-      <itemPath>ToggleService.c</itemPath>
       <itemPath>SPI_Service.c</itemPath>
       <itemPath>Button.c</itemPath>
     </logicalFolder>

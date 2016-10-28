@@ -38,13 +38,13 @@
 // services are added in numeric sequence (1,2,3,...) with increasing 
 // priorities
 // the header file with the public function prototypes
-#define SERV_0_HEADER "ToggleService.h"
+#define SERV_0_HEADER "PatternControlService.h"
 // the name of the Init function
-#define SERV_0_INIT InitToggleService
+#define SERV_0_INIT InitPatternControlService
 // the name of the run function
-#define SERV_0_RUN RunToggleService
+#define SERV_0_RUN RunPatternControlService
 // How big should this services Queue be?
-#define SERV_0_QUEUE_SIZE 5
+#define SERV_0_QUEUE_SIZE 3
 
 /****************************************************************************/
 // The following sections are used to define the parameters for each of the
@@ -256,14 +256,10 @@ typedef enum {  ES_NO_EVENT = 0,
                 ES_SHORT_TIMEOUT, /* signals that a short timer has expired */
                 /* User-defined events start here */
                 BYTE_SENT,
-                DBButtonUp,
-                DBButtonDown,
                 SEND_TRIGGER,
-                BUF_NOT_READY,
-                //PacketReceived,
-                ES_NEW_KEY, /* signals a new key received from terminal */
-                ES_LOCK,
-                ES_UNLOCK} ES_EventTyp_t;
+                BUF_NOT_READY
+                //PacketReceived
+            } ES_EventTyp_t;
 
 /****************************************************************************/
 // These are the definitions for the Distribution lists. Each definition
@@ -271,10 +267,10 @@ typedef enum {  ES_NO_EVENT = 0,
 // services are on that distribution list.
 #define NUM_DIST_LISTS 1
 #if NUM_DIST_LISTS > 0 
-#define DIST_LIST0 PostToggleService
+#define DIST_LIST0 PostPatternControlService, PostSPI_Service
 #endif
 #if NUM_DIST_LISTS > 1 
-#define DIST_LIST1 PostTestHarnessService1, PostTestHarnessService1
+#define DIST_LIST1 PostTemplateFSM
 #endif
 #if NUM_DIST_LISTS > 2 
 #define DIST_LIST2 PostTemplateFSM
@@ -310,7 +306,7 @@ typedef enum {  ES_NO_EVENT = 0,
 // Unlike services, any combination of timers may be used and there is no
 // priority in servicing them
 #define TIMER_UNUSED ((pPostFunc)0)
-#define TIMER0_RESP_FUNC PostToggleService
+#define TIMER0_RESP_FUNC PostPatternControlService
 #define TIMER1_RESP_FUNC PostSPI_Service
 #define TIMER2_RESP_FUNC TIMER_UNUSED
 #define TIMER3_RESP_FUNC TIMER_UNUSED
@@ -334,8 +330,6 @@ typedef enum {  ES_NO_EVENT = 0,
 // the timer number matches where the timer event will be routed
 // These symbolic names should be changed to be relevant to your application 
 
-#define SERVICE0_TIMER 15
-#define TOGGLE_TIMER 0
+#define PATTERN_UPDATE_TIMER 0
 #define SPI_TEST_TIMER 1
-#define BUTTON_DEBOUNCE_TIMER 2
 #endif /* CONFIGURE_H */
