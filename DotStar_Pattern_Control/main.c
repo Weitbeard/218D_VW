@@ -5,7 +5,7 @@
 #include <time.h>
 #include <PIC18F2480.h>
 
-#include <xc.h>
+//#include <xc.h>
 #pragma config OSC = IRCIO67
 #pragma config WDT = OFF
 #pragma config PWRT = OFF

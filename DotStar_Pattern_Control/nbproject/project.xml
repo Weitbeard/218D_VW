@@ -3,8 +3,8 @@
     <type>com.microchip.mplab.nbide.embedded.makeproject</type>
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/make-project/1">
-            <name>SPI_Test</name>
-            <creation-uuid>3c68aa92-ee3c-474a-8a07-6be91dec4d4f</creation-uuid>
+            <name>DotStar_Pattern_Control</name>
+            <creation-uuid>727f2263-428b-40b1-bd92-195a74596f36</creation-uuid>
             <make-project-type>0</make-project-type>
             <c-extensions>c</c-extensions>
             <cpp-extensions/>

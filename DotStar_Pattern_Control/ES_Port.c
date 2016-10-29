@@ -23,13 +23,12 @@
 ****************************************************************************/
 #include <stdint.h>
 #include <stdbool.h>
-#include <PIC18F2480.h>
+#include <pic18f2480.h>
 #include "ES_Port.h"
 #include "ES_Types.h"
 #include "ES_Timers.h"
 #include "ES_Events.h"
-#include "ToggleService.h"
-#include "SPI_Service.h"
+#include "SPI32_HW.h"
 
 #define UART_PORT 		0
 #define UART_BAUD		115200UL
@@ -130,7 +129,7 @@ void interrupt ISR ( void )
    if (SSPIF == 1)
    {
        SSPIF = 0; // Clear flag
-       EOTResponse(); 
+       SPI32_EOTResponse(); 
    }
 // add your interrupt processing here
 	   

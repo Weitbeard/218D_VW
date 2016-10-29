@@ -24,11 +24,11 @@
 // pull in the hardware header files that we need
 
 #include <stdio.h>
-#include <PIC18F2480.h>
+#include <pic18f2480.h>
 #include <stdint.h>
-#include "bitdefs.h"       /* generic bit defs (BIT0HI, BIT0LO,...) */
+#include "BITDEFS.H"       /* generic bit defs (BIT0HI, BIT0LO,...) */
 #include "Bin_Const.h"     /* macros to specify binary constants in C */
-#include "ES_Types.h"
+//#include "ES_Types.h"
 
 // macro to control the use of C99 data types (or simulations in case you don't
 // have a C99 compiler).

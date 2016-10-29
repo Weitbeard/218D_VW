@@ -33,7 +33,7 @@
 #include "ES_Types.h"
 #include "ES_General.h"
 #include "ES_Timers.h"
-#include "bitdefs.h"
+#include "BITDEFS.H"
 
 /*----------------------------- Module Defines ----------------------------*/
 #define ISOLATE_LS_NYBBLE 0x0F

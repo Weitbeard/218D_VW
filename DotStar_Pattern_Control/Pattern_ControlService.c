@@ -1,6 +1,6 @@
 /****************************************************************************
  Module
-   PatternControlService.c
+   Pattern_ControlService.c
 
  Revision
    1.0.1
@@ -24,9 +24,19 @@
 /* include header files for this state machine as well as any machines at the
    next lower level in the hierarchy that are sub-machines to this machine
 */
+//std c libraries
+#include <stdint.h>
+#include <stdbool.h>
+
+//framework headers
 #include "ES_Configure.h"
 #include "ES_Framework.h"
-#include "PatternControlService.h"
+
+//module includes
+#include "Pattern_ControlService.h"
+#include "Pattern_DotStarLED.h"
+#include "Pattern_RGBPatterns.h"
+#include "Pattern_Defs.h"
 
 /*----------------------------- Module Defines ----------------------------*/
 
@@ -34,14 +44,36 @@
 /* prototypes for private functions for this machine.They should be functions
    relevant to the behavior of this state machine
 */
+static void ShowPattern(void);
+static void StopPattern(void);
+static void PausePattern(void);
 
 /*---------------------------- Module Variables ---------------------------*/
 // everybody needs a state variable, you may need others as well.
-// type of state variable should match htat of enum in header file
-static TemplateState_t CurrentState;
+// type of state variable should match that of enum in header file
+static PatternState_t CurrentState;
 
 // with the introduction of Gen2, we need a module level Priority var as well
-static uint8_t MyPriority;
+static uint8_t MyPriority;//module-level variables
+
+#ifdef PATTERN_TEST
+static	uint8_t	PatternConfigs[5] = {
+	OFF,
+	TEST_PATTERN,
+	FULL_BRIGHT,
+	DEFAULT_PROFILE,
+	DEFAULT_SPEED };
+#else
+static	uint8_t	PatternConfigs[5] = {
+	OFF,
+	NO_PATTERN,
+	FULL_BRIGHT,
+	DEFAULT_PROFILE,
+	DEFAULT_SPEED };
+#endif
+
+static uint8_t NumPixels;
+static uint8_t MaxBrightness = FULL_BRIGHT;
 
 
 /*------------------------------ Module Code ------------------------------*/
@@ -50,7 +82,7 @@ static uint8_t MyPriority;
      InitPatternControlService
 
  Parameters
-     uint8_t : the priorty of this service
+     uint8_t : the priority of this service
 
  Returns
      bool, false if error in initialization, true otherwise
@@ -63,14 +95,17 @@ static uint8_t MyPriority;
  Author
      J. Edward Carryer, 10/23/11, 18:55
 ****************************************************************************/
-bool InitPatternControlService ( uint8_t Priority )
+bool InitPatternControlService( uint8_t Priority )
 {
   ES_Event ThisEvent;
 
   MyPriority = Priority;
-  // put us into the Initial PseudoState
-  CurrentState = InitPState;
-  // post the initial transition event
+   //initialize DotStar LED strip
+  DotStar_Init(STRIP_LENGTH); //change length in PatternDefs.h
+  SetupPattern(PatternConfigs, STRIP_LENGTH);
+   //set initial state
+  CurrentState = Pattern_Startup;
+   //post the initial transition event
   ThisEvent.EventType = ES_INIT;
   if (ES_PostToService( MyPriority, ThisEvent) == true)
   {
@@ -124,66 +159,133 @@ ES_Event RunPatternControlService( ES_Event ThisEvent )
 {
   ES_Event ReturnEvent;
   ReturnEvent.EventType = ES_NO_EVENT; // assume no errors
-
-  switch ( CurrentState )
-  {
-    case InitPState :       // If current state is initial Psedudo State
-        if ( ThisEvent.EventType == ES_INIT )// only respond to ES_Init
-        {
-            // this is where you would put any actions associated with the
-            // transition from the initial pseudo-state into the actual
-            // initial state
-
-            // now put the machine into the actual initial state
-            CurrentState = UnlockWaiting;
-         }
-         break;
-
-    case UnlockWaiting :       // If current state is state one
-      switch ( ThisEvent.EventType )
-      {
-        case ES_LOCK : //If event is event one
-          
-            // Execute action function for state one : event one
-            CurrentState = Locked;//Decide what the next state will be
-        
-          break;
-
-        // repeat cases as required for relevant events
-        default :
-            ; 
-      }  // end switch on CurrentEvent
-      break;
-    // repeat state pattern as required for other states
-    default :
-      ;
+ 
+  switch(CurrentState){
+		case Pattern_Startup:
+             //if receiving an initial event
+            if(ThisEvent.EventType == ES_INIT){
+                 //Add any debug functions or self-checks here
+                /*												*/
+                 //change state to Pattern_Off
+                CurrentState = Pattern_Off;
+            }
+		break;
+		
+		case Pattern_Off:
+			 //if receiving a START event
+			if(ThisEvent.EventType == PATTERN_START){
+				 //begin the pattern
+				ShowPattern();
+				 //change state to Pattern_Running
+				CurrentState = Pattern_Running;
+			}
+		break;
+		
+		case Pattern_Running:
+			 //if receiving a TIMEOUT event
+			if(ThisEvent.EventType == ES_TIMEOUT){
+				 //continue the pattern
+				ShowPattern();
+			}
+			 //else if receiving an END event
+			else if(ThisEvent.EventType == PATTERN_END){
+				 //end the pattern
+				StopPattern();
+				 //change state to Pattern_Off
+				CurrentState = Pattern_Off;
+			}
+			 //else if receiving a PAUSE event
+			else if(ThisEvent.EventType == PATTERN_PAUSE){
+				 //pause the pattern
+				PausePattern();
+				 //change state to Pattern_Paused
+				CurrentState = Pattern_Paused;
+			}
+		break;
+		
+		case Pattern_Paused:
+			 //if receiving an UNPAUSE event
+			if(ThisEvent.EventType == PATTERN_UNPAUSE){
+				 //unpause the pattern
+				ShowPattern();
+				 //change state to Pattern_Running
+				CurrentState = Pattern_Running;
+			}
+			 //else if receiving an END event
+			else if(ThisEvent.EventType == PATTERN_END){
+				 //end the pattern
+				StopPattern();
+				 //change state to Pattern_Off
+				CurrentState = Pattern_Off;
+			}
+		break;
   }                                   // end switch on Current State
   return ReturnEvent;
 }
 
-/****************************************************************************
- Function
-     QueryTemplateSM
+// Return current status of the LEDs
+uint8_t * GetPatternConfigs(void){
+	return PatternConfigs;
+}
 
- Parameters
-     None
+/* NEED TO INCLUDE ERROR CHECKING FOR LENGTH BEFORE USING THIS FUNCTION
+// Set number of DotStar pixels in the strip
+void SetNumPixels(uint8_t numPixels){
+	NumPixels = numPixels;
+     //reinitialize the pattern & strip
+    //*************************TODO
+}
+*/
 
- Returns
-     TemplateState_t The current state of the Template state machine
+// Setup a new LED display pattern
+void SetPattern(uint8_t PatternID){
+	PatternConfigs[CUR_PATTERN] = PatternID;
+}
 
- Description
-     returns the current state of the Template state machine
- Notes
+// Set brightness of the LED pattern
+void SetBrightness(uint8_t brightness){
+	PatternConfigs[BRIGHTNESS] = brightness;
+}
 
- Author
-     J. Edward Carryer, 10/23/11, 19:21
-****************************************************************************/
-TemplateState_t QueryPatternControlService ( void )
-{
-   return(CurrentState);
+// Set LED color and pattern profile (based on car model)
+void SetProfile(uint8_t profileID){
+	PatternConfigs[CUR_PROFILE] = profileID;
+}
+
+// Set pattern cycle speed
+void SetPatternSpeed(uint8_t speed){
+	PatternConfigs[CYC_SPEED] = speed;
 }
 
 /***************************************************************************
  private functions
  ***************************************************************************/
 
+// Push the LED pattern to the DotStar strip
+static void ShowPattern(void){
+	 //start pattern update timer
+	ES_Timer_InitTimer(PATTERN_UPDATE_TIMER,PatternConfigs[CYC_SPEED]);
+	 //call pattern update function based on current profile and pattern ID
+	DotStar_Show(UpdatePattern());
+	 //record LED status
+	PatternConfigs[POWER_STATE] = ON;
+}
+
+// Stop the pattern and turn off the LEDs
+static void StopPattern(void){
+	PatternConfigs[POWER_STATE] = OFF;
+	 //stop the pattern update timer
+	ES_Timer_StopTimer(PATTERN_UPDATE_TIMER);
+	 //turn off LEDs
+	DotStar_Off();
+	 //reset pattern
+	ResetPattern();
+	 //record LED status
+	PatternConfigs[POWER_STATE] = OFF;
+}
+
+// Pause the pattern but leave the LEDs on
+static void PausePattern(void){
+	 //pause the pattern update timer
+	ES_Timer_StopTimer(PATTERN_UPDATE_TIMER);
+}

@@ -28,7 +28,7 @@
 #define MAX_NUM_SERVICES 16
 
 /****************************************************************************/
-// This macro determines that nuber of services that are *actually* used in
+// This macro determines that number of services that are *actually* used in
 // a particular application. It will vary in value from 1 to MAX_NUM_SERVICES
 #define NUM_SERVICES 2
 
@@ -38,7 +38,7 @@
 // services are added in numeric sequence (1,2,3,...) with increasing 
 // priorities
 // the header file with the public function prototypes
-#define SERV_0_HEADER "PatternControlService.h"
+#define SERV_0_HEADER "Pattern_ControlService.h"
 // the name of the Init function
 #define SERV_0_INIT InitPatternControlService
 // the name of the run function
@@ -54,11 +54,11 @@
 // These are the definitions for Service 1
 #if NUM_SERVICES > 1
 // the header file with the public function prototypes
-#define SERV_1_HEADER "SPI_Service.h"
+#define SERV_1_HEADER "SPI32_ControlService.h"
 // the name of the Init function
-#define SERV_1_INIT InitSPI_Service
+#define SERV_1_INIT InitSPI32ControlService
 // the name of the run function
-#define SERV_1_RUN RunSPI_Service
+#define SERV_1_RUN RunSPI32ControlService
 // How big should this services Queue be?
 #define SERV_1_QUEUE_SIZE 3
 #endif
@@ -249,25 +249,28 @@
 /****************************************************************************/
 // Name/define the events of interest
 // Universal events occupy the lowest entries, followed by user-defined events
-typedef enum {  ES_NO_EVENT = 0,
+typedef enum {  /* Framework Events */
+                ES_NO_EVENT = 0,
                 ES_ERROR,  /* used to indicate an error from the service */
                 ES_INIT,   /* used to transition from initial pseudo-state */
                 ES_TIMEOUT, /* signals that the timer has expired */
                 ES_SHORT_TIMEOUT, /* signals that a short timer has expired */
-                /* User-defined events start here */
-                BYTE_SENT,
-                SEND_TRIGGER,
-                BUF_NOT_READY
-                //PacketReceived
+                /* Pattern Control Events */
+                PATTERN_START,
+                PATTERN_END,
+                PATTERN_PAUSE,
+                PATTERN_UNPAUSE,
+                /* SPI Communication Events */
+                SPI32_TRANSMIT
             } ES_EventTyp_t;
 
 /****************************************************************************/
 // These are the definitions for the Distribution lists. Each definition
 // should be a comma separated list of post functions to indicate which
 // services are on that distribution list.
-#define NUM_DIST_LISTS 1
+#define NUM_DIST_LISTS 0
 #if NUM_DIST_LISTS > 0 
-#define DIST_LIST0 PostPatternControlService, PostSPI_Service
+#define DIST_LIST0 PostPatternControlService, PostSPI32ControlService
 #endif
 #if NUM_DIST_LISTS > 1 
 #define DIST_LIST1 PostTemplateFSM
@@ -297,7 +300,7 @@ typedef enum {  ES_NO_EVENT = 0,
 
 /****************************************************************************/
 // This is the list of event checking functions 
-#define EVENT_CHECK_LIST Check4Keystroke, CheckButtonEvents
+#define EVENT_CHECK_LIST Check4Keystroke
 
 /****************************************************************************/
 // These are the definitions for the post functions to be executed when the
@@ -307,7 +310,7 @@ typedef enum {  ES_NO_EVENT = 0,
 // priority in servicing them
 #define TIMER_UNUSED ((pPostFunc)0)
 #define TIMER0_RESP_FUNC PostPatternControlService
-#define TIMER1_RESP_FUNC PostSPI_Service
+#define TIMER1_RESP_FUNC PostSPI32ControlService
 #define TIMER2_RESP_FUNC TIMER_UNUSED
 #define TIMER3_RESP_FUNC TIMER_UNUSED
 #define TIMER4_RESP_FUNC TIMER_UNUSED
@@ -330,6 +333,6 @@ typedef enum {  ES_NO_EVENT = 0,
 // the timer number matches where the timer event will be routed
 // These symbolic names should be changed to be relevant to your application 
 
-#define PATTERN_UPDATE_TIMER 0
-#define SPI_TEST_TIMER 1
+#define PATTERN_UPDATE_TIMER    0
+#define SPI_BYTE_DELAY_TIMER    1
 #endif /* CONFIGURE_H */
