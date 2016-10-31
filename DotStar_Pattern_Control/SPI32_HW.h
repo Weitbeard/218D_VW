@@ -15,8 +15,7 @@
 #define SPI32_HW_H
 
  //the common headers for C99 types 
-#include <stdint.h>
-#include <stdbool.h>
+#include "ES_Types.h"
 
  //function prototypes
 void SPI32_Init(void);

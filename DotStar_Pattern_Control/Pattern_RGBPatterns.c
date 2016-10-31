@@ -22,8 +22,7 @@
    next lower level in the hierarchy that are sub-machines to this machine
 */
 //standard c libraries
-#include <stdint.h>
-#include <stdbool.h>
+#include "ES_Types.h"
 
 //framework headers
 #include "ES_Configure.h"

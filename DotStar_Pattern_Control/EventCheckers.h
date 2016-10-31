@@ -16,8 +16,7 @@
 #define EventCheckers_H
 
 // the common headers for C99 types 
-#include <stdint.h>
-#include <stdbool.h>
+#include "ES_Types.h"
 //#include "Button.h"
 
 // prototypes for event checkers

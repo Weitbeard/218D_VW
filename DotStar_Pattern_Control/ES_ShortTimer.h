@@ -2,7 +2,7 @@
 
 #ifndef ES_ShortTimer_H
 #define ES_ShortTimer_H
-#include <stdint.h>
+#include "ES_Types.h"
 #include "ES_Configure.h"
 
 #define SHORT_TIMER_UNUSED MAX_NUM_SERVICES

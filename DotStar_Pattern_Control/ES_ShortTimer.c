@@ -25,8 +25,7 @@
 ****************************************************************************/
 // the common headers for I/O, C99 types 
 #include <stdio.h>
-#include <stdint.h>
-#include <stdbool.h>
+#include "ES_Types.h"
 #include "BITDEFS.H"
 
 

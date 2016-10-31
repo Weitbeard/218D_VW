@@ -1,5 +1,4 @@
-#include <stdint.h>
-#include <stdbool.h>
+#include "ES_Types.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>

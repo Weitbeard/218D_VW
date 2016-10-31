@@ -21,14 +21,11 @@
  03/13/14 10:30	joa		Updated files to use with Cortex M4 processor core.
  	 	 	 	 	 	Specifically, this was tested on a TI TM4C123G mcu.
 ****************************************************************************/
-#include <stdint.h>
-#include <stdbool.h>
 #include <pic18f2480.h>
 #include "ES_Port.h"
 #include "ES_Types.h"
 #include "ES_Timers.h"
 #include "ES_Events.h"
-#include "SPI32_HW.h"
 
 #define UART_PORT 		0
 #define UART_BAUD		115200UL

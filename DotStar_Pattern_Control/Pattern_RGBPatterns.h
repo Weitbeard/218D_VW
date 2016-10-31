@@ -15,8 +15,7 @@
 #define Pattern_RGBPatterns_H
 
  //the common headers for C99 types 
-#include <stdint.h>
-#include <stdbool.h>
+#include "ES_Types.h"
 
  //function prototypes
 void SetupPattern(uint8_t *configs, uint8_t numPixels);

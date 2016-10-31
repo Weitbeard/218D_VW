@@ -17,7 +17,7 @@
 typedef enum { Pattern_Startup, Pattern_Off, Pattern_Running, Pattern_Paused } PatternState_t ;
 
 // Public Function Prototypes
-bool InitPatternControlService ( uint8_t Priority );
+bool InitPatternControlService( uint8_t Priority );
 bool PostPatternControlService( ES_Event ThisEvent );
 ES_Event RunPatternControlService( ES_Event ThisEvent );
 

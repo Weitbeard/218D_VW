@@ -7,9 +7,7 @@ Pseudo-code for the Button module (a service that implements a state machine)
 
 
 //----------------------------- Include Files -----------------------------*/
-// the common headers for C99 types 
-#include <stdint.h>
-#include <stdbool.h>
+
 //#include <PIC16F1518.h>
 #include "BITDEFS.H"
 #include "ES_Configure.h" /* gets us event definitions */

@@ -29,8 +29,6 @@
 #include "ES_Configure.h"
 #include "ES_Framework.h"
 
-#include <stdint.h>
-#include <stdbool.h>
 #include <stdio.h>
 
 /*----------------------------- Module Defines ----------------------------*/

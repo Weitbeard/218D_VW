@@ -17,7 +17,7 @@
  10/028/16 01:30 lxw     first pass
 ****************************************************************************/
 
-#include <stdint.h>
+#include "ES_Types.h"
 #include <string.h>
 #include "Pattern_DotStarLED.h"
 #include "Pattern_Defs.h"

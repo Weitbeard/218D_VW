@@ -25,8 +25,7 @@
    next lower level in the hierarchy that are sub-machines to this machine
 */
 //std c libraries
-#include <stdint.h>
-#include <stdbool.h>
+#include "ES_Types.h"
 
 //framework headers
 #include "ES_Configure.h"
@@ -38,16 +37,6 @@
 #include "SPI32_Defs.h"
 
 /*----------------------------- Module Defines ----------------------------*/
-
-// typedefs for the states
-// State definitions for use with the query function
-typedef enum { SPI32_Startup,
-               SPI32_Waiting4Send,
-               SPI32_SendingByte1,
-               SPI32_SendingByte2,
-               SPI32_SendingByte3,
-               SPI32_SendingByte4
-              } SPI32State_t;
               
 /*---------------------------- Module Functions ---------------------------*/
 /* prototypes for private functions for this machine.They should be functions
@@ -69,21 +58,6 @@ static uint32_t *FramePointer;
 static uint32_t CurrentFrame;
 
 /*------------------------------ Module Code ------------------------------*/
-
-void SPI32_TransmitFrames(uint32_t *framePointer, uint8_t numFrames){
-     //if SPI service is available
-    if(CurrentState == SPI32_Waiting4Send){
-         //reset frame index
-        FrameIndex = 0;
-         //store pointer to frames
-        FramePointer = framePointer;
-         //store number of frames to send
-        NumFrames = numFrames;
-        ES_Event transmitEvent;
-        transmitEvent.EventType = SPI32_TRANSMIT;
-        PostSPI32ControlService(transmitEvent);
-    }
-}
 
 /****************************************************************************
  Function
@@ -140,8 +114,7 @@ bool InitSPI32ControlService( uint8_t Priority )
  Author
      J. Edward Carryer, 10/23/11, 19:25
 ****************************************************************************/
-bool PostSPI32ControlService( ES_Event ThisEvent )
-{
+bool PostSPI32ControlService( ES_Event ThisEvent ){
   return ES_PostToService( MyPriority, ThisEvent);
 }
 
@@ -251,6 +224,21 @@ ES_Event RunSPI32ControlService( ES_Event ThisEvent )
 
     }                                  // end switch on Current State
     return ReturnEvent;
+}
+
+void SPI32_TransmitFrames(uint32_t *framePointer, uint8_t numFrames){
+     //if SPI service is available
+    if(CurrentState == SPI32_Waiting4Send){
+         //reset frame index
+        FrameIndex = 0;
+         //store pointer to frames
+        FramePointer = framePointer;
+         //store number of frames to send
+        NumFrames = numFrames;
+        ES_Event transmitEvent;
+        transmitEvent.EventType = SPI32_TRANSMIT;
+        PostSPI32ControlService(transmitEvent);
+    }
 }
 
 /***************************************************************************

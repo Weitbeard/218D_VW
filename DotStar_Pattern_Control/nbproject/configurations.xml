@@ -74,7 +74,7 @@
         <targetDevice>PIC18F2480</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
-        <platformTool>PICkit3PlatformTool</platformTool>
+        <platformTool>Simulator</platformTool>
         <languageToolchain>XC8</languageToolchain>
         <languageToolchainVersion>1.38</languageToolchainVersion>
         <platform>3</platform>
@@ -133,7 +133,7 @@
         <XC8-config-global>
         </XC8-config-global>
       </item>
-      <item path="ES_Types.h" ex="true" overriding="false">
+      <item path="ES_Types.h" ex="false" overriding="false">
         <HI-TECH-COMP>
         </HI-TECH-COMP>
         <HI-TECH-LINK>

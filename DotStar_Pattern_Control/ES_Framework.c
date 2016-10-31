@@ -289,8 +289,7 @@ ES_Return_t ES_Run( void ){
       if ( ES_DeQueue( EventQueues[HighestPrior].pMem, &ThisEvent ) == 0 ){
         Ready &= BitNum2ClrMask[HighestPrior]; // mark queue as now empty
       }
-      if( ServDescList[HighestPrior].RunFunc(ThisEvent).EventType != 
-                                                              ES_NO_EVENT) {
+      if( ServDescList[HighestPrior].RunFunc(ThisEvent).EventType != ES_NO_EVENT) {
               return FailedRun;
       }
     }
