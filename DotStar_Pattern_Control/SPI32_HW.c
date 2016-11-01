@@ -29,6 +29,7 @@
 #include "ES_Configure.h"
 #include "ES_Framework.h"
 
+#include "SPI32_ControlService.h"
 #include <stdio.h>
 
 /*----------------------------- Module Defines ----------------------------*/
@@ -154,5 +155,8 @@ static void HW_Init(void){
 ****************************************************************************/
 void SPI32_EOTResponse(void){
 	 //start transmission byte delay timer
-	ES_Timer_InitTimer(SPI_BYTE_DELAY_TIMER, BYTE_XFER_DELAY);
+	//ES_Timer_InitTimer(SPI_BYTE_DELAY_TIMER, BYTE_XFER_DELAY);
+    ES_Event EOTevent;
+    EOTevent.EventType = ES_TIMEOUT;
+    PostSPI32ControlService(EOTevent);
 }

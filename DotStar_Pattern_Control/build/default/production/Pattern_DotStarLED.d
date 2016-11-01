@@ -1,1 +1,0 @@
- build/default/production/Pattern_DotStarLED.d  build/default/production/Pattern_DotStarLED.p1:  Pattern_DotStarLED.c Pattern_Defs.h ES_Types.h Pattern_ControlService.h Pattern_DotStarLED.h ES_Configure.h

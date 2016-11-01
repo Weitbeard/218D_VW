@@ -4,6 +4,7 @@
   based on the Gen2 Events and Services Framework
 
  ****************************************************************************/
+
 #ifndef SPI32_ControlService_H
 #define SPI32_ControlService_H
 

@@ -246,5 +246,5 @@ void SPI32_TransmitFrames(uint32_t *framePointer, uint8_t numFrames){
  ***************************************************************************/
 
 static uint32_t GetNextFrame(void){
-	return *(FramePointer+sizeof(uint32_t)*FrameIndex);
+	return *(FramePointer+FrameIndex);//+sizeof(uint32_t)*FrameIndex);
 }

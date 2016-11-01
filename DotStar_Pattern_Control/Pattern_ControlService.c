@@ -167,6 +167,12 @@ ES_Event RunPatternControlService( ES_Event ThisEvent )
                 /*												*/
                  //change state to Pattern_Off
                 CurrentState = Pattern_Off;
+                
+                #ifdef PATTERN_TEST
+                ES_Event testEvent;
+                testEvent.EventType = PATTERN_START;
+                PostPatternControlService(testEvent);
+                #endif
             }
 		break;
 		

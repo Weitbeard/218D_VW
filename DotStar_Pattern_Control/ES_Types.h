@@ -18,6 +18,8 @@
 #ifndef ES_TYPES_H
 #define ES_TYPES_H
 
+//#include "ES_Port.h"
+
 /* Standard ANSI  99 C types for exact integer sizes*/
 #ifdef COMPILER_IS_C99
 #include <stdint.h>

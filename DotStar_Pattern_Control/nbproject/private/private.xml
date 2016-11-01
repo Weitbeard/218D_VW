@@ -2,31 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/C:/Users/Luke/Documents/Github_Repositories/218D_VW/DotStar_Pattern_Control/ES_General.h</file>
-            <file>file:/C:/Users/Luke/Documents/Github_Repositories/218D_VW/DotStar_Pattern_Control/ES_Types.h</file>
-            <file>file:/C:/Users/Luke/Documents/Github_Repositories/218D_VW/DotStar_Pattern_Control/Button.c</file>
-            <file>file:/C:/Users/Luke/Documents/Github_Repositories/218D_VW/DotStar_Pattern_Control/ES_ServiceHeaders.h</file>
-            <file>file:/C:/Users/Luke/Documents/Github_Repositories/218D_VW/DotStar_Pattern_Control/SPI32_HW.h</file>
-            <file>file:/C:/Users/Luke/Documents/Github_Repositories/218D_VW/DotStar_Pattern_Control/ES_Configure.h</file>
-            <file>file:/C:/Users/Luke/Documents/Github_Repositories/218D_VW/DotStar_Pattern_Control/SPI32_Defs.h</file>
-            <file>file:/C:/Users/Luke/Documents/Github_Repositories/218D_VW/DotStar_Pattern_Control/ES_DeferRecall.h</file>
-            <file>file:/C:/Users/Luke/Documents/Github_Repositories/218D_VW/DotStar_Pattern_Control/ES_PriorTables.h</file>
-            <file>file:/C:/Users/Luke/Documents/Github_Repositories/218D_VW/DotStar_Pattern_Control/ES_Events.h</file>
-            <file>file:/C:/Users/Luke/Documents/Github_Repositories/218D_VW/DotStar_Pattern_Control/Pattern_RGBPatterns.h</file>
-            <file>file:/C:/Users/Luke/Documents/Github_Repositories/218D_VW/DotStar_Pattern_Control/SPI32_ControlService.c</file>
-            <file>file:/C:/Users/Luke/Documents/Github_Repositories/218D_VW/DotStar_Pattern_Control/ES_Port.h</file>
-            <file>file:/C:/Users/Luke/Documents/Github_Repositories/218D_VW/DotStar_Pattern_Control/Pattern_DotStarLED.h</file>
-            <file>file:/C:/Users/Luke/Documents/Github_Repositories/218D_VW/DotStar_Pattern_Control/ES_Queue.h</file>
-            <file>file:/C:/Users/Luke/Documents/Github_Repositories/218D_VW/DotStar_Pattern_Control/ES_PostList.h</file>
-            <file>file:/C:/Users/Luke/Documents/Github_Repositories/218D_VW/DotStar_Pattern_Control/ES_Port.c</file>
-            <file>file:/C:/Users/Luke/Documents/Github_Repositories/218D_VW/DotStar_Pattern_Control/ES_CheckEvents.h</file>
-            <file>file:/C:/Users/Luke/Documents/Github_Repositories/218D_VW/DotStar_Pattern_Control/SPI32_ControlService.h</file>
-            <file>file:/C:/Users/Luke/Documents/Github_Repositories/218D_VW/DotStar_Pattern_Control/ES_Framework.c</file>
-            <file>file:/C:/Users/Luke/Documents/Github_Repositories/218D_VW/DotStar_Pattern_Control/Pattern_ControlService.h</file>
-            <file>file:/C:/Users/Luke/Documents/Github_Repositories/218D_VW/DotStar_Pattern_Control/ES_LookupTables.h</file>
-            <file>file:/C:/Users/Luke/Documents/Github_Repositories/218D_VW/DotStar_Pattern_Control/Pattern_Defs.h</file>
-            <file>file:/C:/Users/Luke/Documents/Github_Repositories/218D_VW/DotStar_Pattern_Control/ES_Framework.h</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>

@@ -18,7 +18,11 @@
 ****************************************************************************/
 
 #include "ES_Types.h"
-#include <string.h>
+#include "string.h"
+
+#include "ES_Configure.h"
+#include "ES_Framework.h"
+
 #include "Pattern_DotStarLED.h"
 #include "Pattern_Defs.h"
 #include "SPI32_ControlService.h"

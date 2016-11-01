@@ -26,6 +26,7 @@
 #include "ES_Types.h"
 #include "ES_Timers.h"
 #include "ES_Events.h"
+#include "SPI32_HW.h"
 
 #define UART_PORT 		0
 #define UART_BAUD		115200UL
@@ -69,7 +70,7 @@ static volatile uint16_t SysTickCounter = 0;
 ****************************************************************************/
 void _HW_Timer_Init(TimerRate_t Rate)
 {
-   // keep the compiler from compaining about not referenceing param
+   // keep the compiler from complaining about not referencing param
    // since in this simple test, we are not allowing a different rate
    Rate;     
    /*  Timer 1 interrupt disabled.
