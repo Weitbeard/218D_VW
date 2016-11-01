@@ -46,7 +46,7 @@ static  uint8_t  Length;
 static  uint8_t  PatternStepCounter;
 
 #ifdef PATTERN_TEST
-static  uint32_t TestColor;
+static  uint32_t TestColor = 0;
 #define NUM_COLORS  13
 static  uint32_t GenColors[NUM_COLORS]={
     RED,
@@ -105,7 +105,7 @@ uint32_t * UpdatePattern(void){
         #ifdef PATTERN_TEST
         case TEST_PATTERN:
             for(uint8_t i=0;i<Length;i++){
-                PixelPattern[i] = (0xFF000000 | (i == PatternStepCounter)*TestColor);
+                PixelPattern[i] = (0xFF000000 | (i == PatternStepCounter)*GenColors[TestColor]);
             }
             if(PatternStepCounter++%Length == 0){
                 TestColor = TestColor++%NUM_COLORS;

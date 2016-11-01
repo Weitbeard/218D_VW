@@ -65,7 +65,7 @@ uint8_t DotStar_GetLength(void){
 
 void DotStar_Show(uint32_t *pixelPointer){
      //add pixelPointer's values to PixelFrames
-    memcpy(PixelFrames+sizeof(uint32_t), pixelPointer, sizeof(uint32_t)*Length); //***** check this.... TODO
+    memcpy(PixelFrames+1, pixelPointer, sizeof(uint32_t)*Length); //***** check this.... TODO
      //start SPI transmission of PixelFrames
     SPI32_TransmitFrames(PixelFrames,Length+2);
 }

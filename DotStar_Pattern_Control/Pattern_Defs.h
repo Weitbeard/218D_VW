@@ -51,7 +51,7 @@
  //Pattern profile defines
 #define DEFAULT_PROFILE	0
  //Pattern cycle speed defines (in ms)
-#define	DEFAULT_SPEED	500
+#define	DEFAULT_SPEED	100
 #define HZ60            15
 
 #endif
