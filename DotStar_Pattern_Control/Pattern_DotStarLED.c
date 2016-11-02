@@ -29,9 +29,9 @@
 
 #define FIRST_PIXEL 1
 #define HEAD        0
-#define HEAD_FRAME  0xffffffff
+#define HEAD_FRAME  0x0
 #define TAIL        Length+1
-#define TAIL_FRAME  0x0
+#define TAIL_FRAME  0xffffffff
 #define OFF_FRAME   0xe0000000
 
 static uint8_t Length;

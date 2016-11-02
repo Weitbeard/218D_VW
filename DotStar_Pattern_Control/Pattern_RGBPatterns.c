@@ -43,7 +43,7 @@
 static	uint32_t PixelPattern[MAX_STRIP_LENGTH];
 static  uint8_t* PatternConfigs;
 static  uint8_t  Length;
-static  uint8_t  PatternStepCounter;
+static  uint8_t  PatternStepCounter = 0;
 
 #ifdef PATTERN_TEST
 static  uint32_t TestColor = 0;
@@ -105,10 +105,11 @@ uint32_t * UpdatePattern(void){
         #ifdef PATTERN_TEST
         case TEST_PATTERN:
             for(uint8_t i=0;i<Length;i++){
-                PixelPattern[i] = (0xFF000000 | (i == PatternStepCounter)*GenColors[TestColor]);
+                PixelPattern[i] = (0xFF000000 | (uint32_t)(i == PatternStepCounter ? GenColors[TestColor] : 0x0));
             }
-            if(PatternStepCounter++%Length == 0){
-                TestColor = TestColor++%NUM_COLORS;
+            PatternStepCounter = (PatternStepCounter+1)%Length;
+            if(PatternStepCounter == 0){
+                TestColor = (TestColor+1)%NUM_COLORS;
             }
         break;
         #endif

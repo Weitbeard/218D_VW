@@ -16,10 +16,11 @@
 #include "ES_Framework.h"
 #include "ES_Port.h"
 
+#define PATTERN_TEST
+
 #define clrScrn() 	printf("\x1b[2J")
 #define goHome()	printf("\x1b[1,1H")
 #define clrLine()	printf("\x1b[K")
-
 
 int main(void)
 {  
@@ -27,6 +28,7 @@ int main(void)
     IRCF0 = 1;
     IRCF1 = 1;
     IRCF2 = 1;
+    SCS1 = 1;
 //    IRCF3 = 1;
     
     // Set up random generator module

@@ -50,8 +50,8 @@
 #define	MID_BRIGHT		0x0F
  //Pattern profile defines
 #define DEFAULT_PROFILE	0
- //Pattern cycle speed defines (in ms)
-#define	DEFAULT_SPEED	100
+ //Pattern cycle speed defines
+#define	DEFAULT_SPEED	1
 #define HZ60            15
 
 #endif

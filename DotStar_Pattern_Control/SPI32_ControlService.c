@@ -160,7 +160,7 @@ ES_Event RunSPI32ControlService( ES_Event ThisEvent )
                  //get the first frame to send
                 CurrentFrame = GetNextFrame();
                  //send the first byte
-                SPI32_SendByte(CurrentFrame);
+                SPI32_SendByte(CurrentFrame>>24);
                  //change state to sending 1st byte
                 CurrentState = SPI32_SendingByte1;
             }
@@ -171,7 +171,7 @@ ES_Event RunSPI32ControlService( ES_Event ThisEvent )
              //if receiving a timeout event (EOT)
             if(ThisEvent.EventType == ES_TIMEOUT){
                  //send the next byte
-                SPI32_SendByte(CurrentFrame>>8);
+                SPI32_SendByte(CurrentFrame>>16);
                  //change state to sending 2nd byte
                 CurrentState = SPI32_SendingByte2;
             }
@@ -183,7 +183,7 @@ ES_Event RunSPI32ControlService( ES_Event ThisEvent )
              //if receiving a timeout event (EOT)
             if(ThisEvent.EventType == ES_TIMEOUT){
                  //send the next byte
-                SPI32_SendByte(CurrentFrame>>16);
+                SPI32_SendByte(CurrentFrame>>8);
                  //change state to sending 3rd byte
                 CurrentState = SPI32_SendingByte3;
             }
@@ -195,7 +195,7 @@ ES_Event RunSPI32ControlService( ES_Event ThisEvent )
              //if receiving a timeout event (EOT)
             if(ThisEvent.EventType == ES_TIMEOUT){
                  //send the next byte
-                SPI32_SendByte(CurrentFrame>>24);
+                SPI32_SendByte(CurrentFrame);
                  //change state to sending 4th byte
                 CurrentState = SPI32_SendingByte4;
             }
@@ -206,11 +206,12 @@ ES_Event RunSPI32ControlService( ES_Event ThisEvent )
              //if receiving a timeout event (EOT)
             if(ThisEvent.EventType == ES_TIMEOUT){
                  //if this is not the last frame
-                if(FrameIndex++ < NumFrames){
+                if(FrameIndex++ < NumFrames-1){
                      //get the next frame to send
+                    FramePointer++;
                     CurrentFrame = GetNextFrame();
                      //send the first byte
-                    SPI32_SendByte(CurrentFrame);
+                    SPI32_SendByte(CurrentFrame>>24);
                      //change state to sending 1st byte
                     CurrentState = SPI32_SendingByte1;
                 }
@@ -246,5 +247,5 @@ void SPI32_TransmitFrames(uint32_t *framePointer, uint8_t numFrames){
  ***************************************************************************/
 
 static uint32_t GetNextFrame(void){
-	return *(FramePointer++);//+sizeof(uint32_t)*FrameIndex);
+	return *(FramePointer);
 }

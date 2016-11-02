@@ -187,7 +187,7 @@ PATTERN_PAUSE 7
 PATTERN_UNPAUSE 8
 SPI32_TRANSMIT 9
 ]
-"37 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\main.c
+"39 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\main.c
 [e E15647 . `uc
 Success 0
 FailedPost 1
@@ -196,7 +196,7 @@ FailedPointer 3
 FailedIndex 4
 FailedInit 5
 ]
-"53
+"55
 [e E15576 . `ui
 ES_Timer_RATE_OFF 0
 ES_Timer_RATE_100uS 3999
@@ -288,7 +288,7 @@ ES_Timer_RATE_32mS -30721
 [v _ES_Timer_Tick_Resp ES_Timer_Tick_Resp `(v  1 e 1 0 ]
 "62 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\EventCheckers.c
 [v _Check4Keystroke Check4Keystroke `(uc  1 e 1 0 ]
-"24 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\main.c
+"25 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\main.c
 [v _main main `(i  1 e 2 0 ]
 "97 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\Pattern_ControlService.c
 [v _InitPatternControlService InitPatternControlService `(uc  1 e 1 0 ]
@@ -314,7 +314,7 @@ ES_Timer_RATE_32mS -30721
 [v _SetupPattern SetupPattern `(v  1 e 1 0 ]
 "76
 [v _UpdatePattern UpdatePattern `(*.39ul  1 e 2 0 ]
-"120
+"121
 [v _ResetPattern ResetPattern `(v  1 e 1 0 ]
 "80 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\SPI32_ControlService.c
 [v _InitSPI32ControlService InitSPI32ControlService `(uc  1 e 1 0 ]
@@ -325,9 +325,9 @@ ES_Timer_RATE_32mS -30721
 [s S42 ES_Event_t 3 `E1 1 EventType 1 0 `ui 1 EventParam 2 1 ]
 "138 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\SPI32_ControlService.c
 [v _RunSPI32ControlService RunSPI32ControlService `(S42  1 e 3 0 ]
-"229
+"230
 [v _SPI32_TransmitFrames SPI32_TransmitFrames `(v  1 e 1 0 ]
-"248
+"249
 [v _GetNextFrame GetNextFrame `(ul  1 s 4 GetNextFrame ]
 "64 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\SPI32_HW.c
 [v _SPI32_Init SPI32_Init `(v  1 e 1 0 ]
@@ -376,6 +376,8 @@ ES_Timer_RATE_32mS -30721
 [v _IRCF1 IRCF1 `VEb  1 e 0 @32413 ]
 "35794
 [v _IRCF2 IRCF2 `VEb  1 e 0 @32414 ]
+"37780
+[v _SCS1 SCS1 `VEb  1 e 0 @32409 ]
 "37830 C:\Program Files (x86)\Microchip\xc8\v1.38\include\pic18f2480.h
 [v _SSPIE SSPIE `VEb  1 e 0 @31979 ]
 "37832
@@ -433,6 +435,8 @@ ES_Timer_RATE_32mS -30721
 [v _PatternStepCounter PatternStepCounter `uc  1 s 1 PatternStepCounter ]
 "49
 [v _TestColor TestColor `ul  1 s 4 TestColor ]
+"51
+[v _GenColors GenColors `[13]ul  1 s 52 GenColors ]
 "50 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\SPI32_ControlService.c
 [v SPI32_ControlService@CurrentState CurrentState `E15515  1 s 1 CurrentState ]
 "53
@@ -445,12 +449,12 @@ ES_Timer_RATE_32mS -30721
 [v _FramePointer FramePointer `*.39ul  1 s 2 FramePointer ]
 "58
 [v _CurrentFrame CurrentFrame `ul  1 s 4 CurrentFrame ]
-"24 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\main.c
+"25 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\main.c
 [v _main main `(i  1 e 2 0 ]
 {
-"37
-[v main@ErrorType ErrorType `E15647  1 a 1 54 ]
-"77
+"39
+[v main@ErrorType ErrorType `E15647  1 a 1 58 ]
+"79
 } 0
 "464 C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\doprnt.c
 [v _printf printf `(i  1 e 2 0 ]
@@ -472,7 +476,7 @@ ES_Timer_RATE_32mS -30721
 [v _ES_Run ES_Run `(E15495  1 e 1 0 ]
 {
 "279
-[v ES_Run@HighestPrior HighestPrior `uc  1 a 1 53 ]
+[v ES_Run@HighestPrior HighestPrior `uc  1 a 1 57 ]
 [s S42 ES_Event_t 3 `E1 1 EventType 1 0 `ui 1 EventParam 2 1 ]
 "280
 [v ES_Run@ThisEvent ThisEvent `S42  1 s 3 ThisEvent ]
@@ -527,10 +531,10 @@ ES_Timer_RATE_32mS -30721
 [v _RunSPI32ControlService RunSPI32ControlService `(S42  1 e 3 0 ]
 {
 "140
-[v RunSPI32ControlService@ReturnEvent ReturnEvent `S42  1 a 3 44 ]
+[v RunSPI32ControlService@ReturnEvent ReturnEvent `S42  1 a 3 50 ]
 "138
 [v RunSPI32ControlService@ThisEvent ThisEvent `S42  1 p 3 40 ]
-"227
+"228
 } 0
 "84 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\SPI32_HW.c
 [v _SPI32_SendByte SPI32_SendByte `(v  1 e 1 0 ]
@@ -541,20 +545,20 @@ ES_Timer_RATE_32mS -30721
 [v SPI32_SendByte@newByte newByte `uc  1 a 1 0 ]
 "98
 } 0
-"248 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\SPI32_ControlService.c
+"249 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\SPI32_ControlService.c
 [v _GetNextFrame GetNextFrame `(ul  1 s 4 GetNextFrame ]
 {
-"250
+"251
 } 0
 "280 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\Pattern_ControlService.c
 [v _StopPattern StopPattern `(v  1 s 1 StopPattern ]
 {
 "290
 } 0
-"120 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\Pattern_RGBPatterns.c
+"121 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\Pattern_RGBPatterns.c
 [v _ResetPattern ResetPattern `(v  1 e 1 0 ]
 {
-"123
+"124
 } 0
 "73 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\Pattern_DotStarLED.c
 [v _DotStar_Off DotStar_Off `(v  1 e 1 0 ]
@@ -570,22 +574,12 @@ ES_Timer_RATE_32mS -30721
 [v _UpdatePattern UpdatePattern `(*.39ul  1 e 2 0 ]
 {
 "107
-[v UpdatePattern@i i `uc  1 a 1 20 ]
+[v UpdatePattern@i i `uc  1 a 1 21 ]
 "78
-[v UpdatePattern@patternID patternID `uc  1 a 1 19 ]
+[v UpdatePattern@patternID patternID `uc  1 a 1 20 ]
 "79
-[v UpdatePattern@brightness brightness `uc  1 a 1 18 ]
-"118
-} 0
-"15 C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\Umul32.c
-[v ___lmul __lmul `(ul  1 e 4 0 ]
-{
-"17
-[v ___lmul@product product `ul  1 a 4 8 ]
-"15
-[v ___lmul@multiplier multiplier `ul  1 p 4 0 ]
-[v ___lmul@multiplicand multiplicand `ul  1 p 4 4 ]
-"129
+[v UpdatePattern@brightness brightness `uc  1 a 1 15 ]
+"119
 } 0
 "8 C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\llmod.c
 [v ___llmod __llmod `(ul  1 e 4 0 ]
@@ -626,16 +620,16 @@ ES_Timer_RATE_32mS -30721
 [v memcpy@n n `ui  1 p 2 4 ]
 "32
 } 0
-"229 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\SPI32_ControlService.c
+"230 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\SPI32_ControlService.c
 [v _SPI32_TransmitFrames SPI32_TransmitFrames `(v  1 e 1 0 ]
 {
 [s S42 ES_Event_t 3 `E1 1 EventType 1 0 `ui 1 EventParam 2 1 ]
-"238
+"239
 [v SPI32_TransmitFrames@transmitEvent transmitEvent `S42  1 a 3 35 ]
-"229
+"230
 [v SPI32_TransmitFrames@framePointer framePointer `*.39ul  1 p 2 32 ]
 [v SPI32_TransmitFrames@numFrames numFrames `uc  1 p 1 34 ]
-"242
+"243
 } 0
 "135 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\Pattern_ControlService.c
 [v _PostPatternControlService PostPatternControlService `(uc  1 e 1 0 ]
