@@ -160,7 +160,7 @@ ES_Event RunSPI32ControlService( ES_Event ThisEvent )
                  //get the first frame to send
                 CurrentFrame = GetNextFrame();
                  //send the first byte
-                SPI32_SendByte(CurrentFrame>>24);
+                SPI32_SendFrame(CurrentFrame);
                  //change state to sending 1st byte
                 CurrentState = SPI32_SendingByte1;
             }
@@ -170,50 +170,13 @@ ES_Event RunSPI32ControlService( ES_Event ThisEvent )
 		case SPI32_SendingByte1 :
              //if receiving a timeout event (EOT)
             if(ThisEvent.EventType == ES_TIMEOUT){
-                 //send the next byte
-                SPI32_SendByte(CurrentFrame>>16);
-                 //change state to sending 2nd byte
-                CurrentState = SPI32_SendingByte2;
-            }
-            
-		break;
-		
-		 //if current state is SendByte2
-		case SPI32_SendingByte2 :
-             //if receiving a timeout event (EOT)
-            if(ThisEvent.EventType == ES_TIMEOUT){
-                 //send the next byte
-                SPI32_SendByte(CurrentFrame>>8);
-                 //change state to sending 3rd byte
-                CurrentState = SPI32_SendingByte3;
-            }
-            
-		break;
-		
-		 //if current state is SendByte3
-		case SPI32_SendingByte3 :
-             //if receiving a timeout event (EOT)
-            if(ThisEvent.EventType == ES_TIMEOUT){
-                 //send the next byte
-                SPI32_SendByte(CurrentFrame);
-                 //change state to sending 4th byte
-                CurrentState = SPI32_SendingByte4;
-            }
-		break;
-		
-		 //if current state is SendByte4
-		case SPI32_SendingByte4 :
-             //if receiving a timeout event (EOT)
-            if(ThisEvent.EventType == ES_TIMEOUT){
                  //if this is not the last frame
                 if(FrameIndex++ < NumFrames-1){
                      //get the next frame to send
                     FramePointer++;
                     CurrentFrame = GetNextFrame();
                      //send the first byte
-                    SPI32_SendByte(CurrentFrame>>24);
-                     //change state to sending 1st byte
-                    CurrentState = SPI32_SendingByte1;
+                    SPI32_SendFrame(CurrentFrame);
                 }
                  //otherwise...
                 else{
@@ -221,7 +184,53 @@ ES_Event RunSPI32ControlService( ES_Event ThisEvent )
                     CurrentState = SPI32_Waiting4Send;
                 }
             }
+            
 		break;
+//		
+//		 //if current state is SendByte2
+//		case SPI32_SendingByte2 :
+//             //if receiving a timeout event (EOT)
+//            if(ThisEvent.EventType == ES_TIMEOUT){
+//                 //send the next byte
+//                SPI32_SendByte(CurrentFrame>>8);
+//                 //change state to sending 3rd byte
+//                CurrentState = SPI32_SendingByte3;
+//            }
+//            
+//		break;
+//		
+//		 //if current state is SendByte3
+//		case SPI32_SendingByte3 :
+//             //if receiving a timeout event (EOT)
+//            if(ThisEvent.EventType == ES_TIMEOUT){
+//                 //send the next byte
+//                SPI32_SendByte(CurrentFrame);
+//                 //change state to sending 4th byte
+//                CurrentState = SPI32_SendingByte4;
+//            }
+//		break;
+//		
+//		 //if current state is SendByte4
+//		case SPI32_SendingByte4 :
+//             //if receiving a timeout event (EOT)
+//            if(ThisEvent.EventType == ES_TIMEOUT){
+//                 //if this is not the last frame
+//                if(FrameIndex++ < NumFrames-1){
+//                     //get the next frame to send
+//                    FramePointer++;
+//                    CurrentFrame = GetNextFrame();
+//                     //send the first byte
+//                    SPI32_SendByte(CurrentFrame>>24);
+//                     //change state to sending 1st byte
+//                    CurrentState = SPI32_SendingByte1;
+//                }
+//                 //otherwise...
+//                else{
+//                     //end the transmission (return to waiting state)
+//                    CurrentState = SPI32_Waiting4Send;
+//                }
+//            }
+//		break;
 
     }                                  // end switch on Current State
     return ReturnEvent;

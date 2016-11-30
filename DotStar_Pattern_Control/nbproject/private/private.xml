@@ -3,8 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Users/Luke/Documents/Github_Repositories/218D_VW/DotStar_Pattern_Control/SPI32_ControlService.c</file>
+            <file>file:/C:/Users/Luke/Documents/Github_Repositories/218D_VW/DotStar_Pattern_Control/Pattern_ControlService.c</file>
             <file>file:/C:/Users/Luke/Documents/Github_Repositories/218D_VW/DotStar_Pattern_Control/SPI32_HW.c</file>
+            <file>file:/C:/Users/Luke/Documents/Github_Repositories/218D_VW/DotStar_Pattern_Control/Pattern_RGBPatterns.c</file>
+            <file>file:/C:/Users/Luke/Documents/Github_Repositories/218D_VW/DotStar_Pattern_Control/Pattern_HSV_Convert.c</file>
             <file>file:/C:/Users/Luke/Documents/Github_Repositories/218D_VW/DotStar_Pattern_Control/main.c</file>
+            <file>file:/C:/Users/Luke/Documents/Github_Repositories/218D_VW/DotStar_Pattern_Control/Pattern_DotStarLED.c</file>
             <file>file:/C:/Users/Luke/Documents/Github_Repositories/218D_VW/DotStar_Pattern_Control/Pattern_Defs.h</file>
         </group>
     </open-files>

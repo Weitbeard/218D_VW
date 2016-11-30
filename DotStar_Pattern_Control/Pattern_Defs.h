@@ -3,29 +3,29 @@
 
  //PATTERN_TEST define for debugging
 #define PATTERN_TEST
+#define TEST_SATURATION 0x0F
+#define TEST_VALUE      0x0F
 
- //Common color defines
-#define WHITE	0xFFFFFF
-#define SILVER	0xC0C0C0
-#define GRAY	0x808080
-#define BLACK	0x000000
-#define RED     0xFF0000
-#define ORANGE  0xFFA500
-#define YELLOW	0xFFFF00
-#define OLIVE	0x808000
-#define LIME	0x00FF00
-#define GREEN	0x008000
-#define AQUA	0x00FFFF
-#define TEAL	0x008080
-#define BLUE	0x0000FF
-#define NAVY	0x000080
-#define FUSCHIA	0xFF00FF
-#define PURPLE	0x800080
-#define MAROON	0x800000
+ //Defines for using 16-bit HSV or RGB patterns
+#define HSV_PATTERNS
+//#define RGB_PATTERNS
+
+ //Memory location offset for image buffers
+#define BANK_0_GPR  0x060
+#define BANK_2_GPR  0x200
+
+ //Pattern defines
+#define SINGLE_FADE_LOOP    1
+#define DOUBLE_FADE_LOOP    2
+#define SINGLE_REBOUND      3
+#define DOUBLE_REBOUND      4
+
+ //Pattern color defines
+#define THINKING_HUE    32
 
  //General LED strip defines
-#define STRIP_LENGTH        11
-#define MAX_STRIP_LENGTH    30
+#define STRIP_LENGTH        76
+#define MAX_STRIP_LENGTH    76
 
  //LED pattern configuration array defines
 #define NUM_CONFIGS 5
@@ -48,10 +48,13 @@
  //LED brightness defines
 #define FULL_BRIGHT		0x1F
 #define	MID_BRIGHT		0x0F
+#define TEST_BRIGHT     0x1F
  //Pattern profile defines
 #define DEFAULT_PROFILE	0
  //Pattern cycle speed defines
 #define	DEFAULT_SPEED	1
 #define HZ60            15
+ //Pattern fade tail length define
+#define FADE_LENGTH     5
 
 #endif
