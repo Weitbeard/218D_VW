@@ -264,10 +264,7 @@ typedef enum {  /* Framework Events */
                 IDLE_EVENT,
                 SPEAKING_EVENT,
                 LOADING_EVENT,
-                LISTENING_IDLE_EVENT,
-                LISTENING_LEFT_EVENT,
-                LISTENING_RIGHT_EVENT,
-                LISTENING_CENTER_EVENT,
+                LISTENING_EVENT,
             } ES_EventTyp_t;
 
 /****************************************************************************/

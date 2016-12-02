@@ -157,16 +157,16 @@ ES_Event RunCan_XmitService( ES_Event ThisEvent )
               LOADING_PIN = 1;
               SPEAKING_PIN = 0;
               LISTENING_PIN = 0;
-              LastData = SPEAKING_DATA;
-              XmitData(SPEAKING_DATA);
+              LastData = LOADING_DATA;
+              XmitData(LOADING_DATA);
               break;
           case SPEAKING:
               IDLE_PIN = 0;
               LOADING_PIN = 0;
               SPEAKING_PIN = 1;
               LISTENING_PIN = 0;
-              LastData = LOADING_DATA;
-              XmitData(LOADING_DATA);
+              LastData = SPEAKING_DATA;
+              XmitData(SPEAKING_DATA);
               break;
           case LISTENING:
               IDLE_PIN = 0;

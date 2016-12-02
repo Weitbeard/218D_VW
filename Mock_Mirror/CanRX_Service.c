@@ -41,19 +41,12 @@
 #define LOADING 0x01
 #define SPEAKING 0x02
 #define LISTENING 0x03
-#define LISTENING_IDLE 0x00
-#define LISTENING_RIGHT 0x01
-#define LISTENING_LEFT 0x02
-#define LISTENING_CENTER 0x03
 
 //Pins to Toggle for Debugging
 #define IDLE_PIN LATA0
 #define LOADING_PIN LATA1
 #define SPEAKING_PIN LATA2
 #define LISTENING_PIN LATA3
-#define LISTENING_LEFT_PIN LATA4
-#define LISTENING_RIGHT_PIN LATA5
-#define LISTENING_CENTER_PIN LATB0
 
 //Identifiers
 #define SIDH 0x00
@@ -153,64 +146,25 @@ ES_Event RunCanRX_Service( ES_Event ThisEvent )
             LOADING_PIN = 0;
             SPEAKING_PIN = 0;
             LISTENING_PIN = 0;
-            LISTENING_LEFT_PIN = 0;
-            LISTENING_RIGHT_PIN = 0;
-            LISTENING_CENTER_PIN = 0;
             break;
         case LOADING_EVENT:
             IDLE_PIN = 0;
             LOADING_PIN = 1;
             SPEAKING_PIN = 0;
             LISTENING_PIN = 0;
-            LISTENING_LEFT_PIN = 0;
-            LISTENING_RIGHT_PIN = 0;
-            LISTENING_CENTER_PIN = 0;
             break;
         case SPEAKING_EVENT:
             IDLE_PIN = 0;
             LOADING_PIN = 0;
             SPEAKING_PIN = 1;
             LISTENING_PIN = 0;
-            LISTENING_LEFT_PIN = 0;
-            LISTENING_RIGHT_PIN = 0;
-            LISTENING_CENTER_PIN = 0;
             break;
-        case LISTENING_IDLE_EVENT:
+        case LISTENING_EVENT:
             IDLE_PIN = 0;
             LOADING_PIN = 0;
             SPEAKING_PIN = 0;
             LISTENING_PIN = 1;
-            LISTENING_LEFT_PIN = 0;
-            LISTENING_RIGHT_PIN = 0;
-            LISTENING_CENTER_PIN = 0;
-            break;
-        case LISTENING_LEFT_EVENT:
-            IDLE_PIN = 0;
-            LOADING_PIN = 0;
-            SPEAKING_PIN = 0;
-            LISTENING_PIN = 1;
-            LISTENING_LEFT_PIN = 1;
-            LISTENING_RIGHT_PIN = 0;
-            LISTENING_CENTER_PIN = 0;
-            break;   
-      case LISTENING_RIGHT_EVENT:
-            IDLE_PIN = 0;
-            LOADING_PIN = 0;
-            SPEAKING_PIN = 0;
-            LISTENING_PIN = 1;
-            LISTENING_LEFT_PIN = 0;
-            LISTENING_RIGHT_PIN = 1;
-            LISTENING_CENTER_PIN = 0;
-            break;
-      case LISTENING_CENTER_EVENT:
-            IDLE_PIN = 0;
-            LOADING_PIN = 0;
-            SPEAKING_PIN = 0;
-            LISTENING_PIN = 1;
-            LISTENING_LEFT_PIN = 0;
-            LISTENING_RIGHT_PIN = 0;
-            LISTENING_CENTER_PIN = 1;
-            break;
+            break; 
   }
   ReturnEvent.EventType = ES_NO_EVENT; // assume no errors
   return ReturnEvent;
@@ -323,7 +277,6 @@ static void InitPins(void)
   PORTA = 0x00; // Clear portA
   LATA = 0x00; // Clear Data Latches
   TRISA = 0x00; //set as output
-  TRISBbits.TRISB0 = 0;
 }
 
 static void ProcessReceive(void)
@@ -342,15 +295,7 @@ static void ProcessReceive(void)
                 Event2Post.EventType = LOADING_EVENT;
                 break;
             case LISTENING:
-                if (RXB0D1 == LISTENING_IDLE) { //Read Second Data Byte
-                    Event2Post.EventType = LISTENING_IDLE_EVENT;
-                } else if (RXB0D1 == LISTENING_LEFT) {
-                    Event2Post.EventType = LISTENING_LEFT_EVENT;
-                } else if (RXB0D1 == LISTENING_RIGHT) {
-                    Event2Post.EventType = LISTENING_RIGHT_EVENT;
-                } else {
-                    Event2Post.EventType = LISTENING_CENTER_EVENT;
-                }
+                Event2Post.EventType = LISTENING_EVENT;
                 break;
         }
         PostCanRX_Service(Event2Post);
