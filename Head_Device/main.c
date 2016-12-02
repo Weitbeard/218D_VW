@@ -29,8 +29,7 @@ int main(void)
     IRCF1 = 1;
     IRCF2 = 1;
     SCS1 = 1;
-    ADCON1 = 0x0F; //Set as digital
-//    IRCF3 = 1;
+    ADCON1 = 0x0D; //AN0 and AN1 on
     
     // Set up random generator module
     //time_t MyTime = time(NULL);

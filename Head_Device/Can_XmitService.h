@@ -5,10 +5,6 @@
      header file for pattern control of a RGB LED strip
  Notes
 
- History
- When           Who     What/Why
- -------------- ---     --------
- 10/28/16 02:00 lxw      first pass
 *****************************************************************************/
 
 #ifndef CAN_XMITSERVICE_H

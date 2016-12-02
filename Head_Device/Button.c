@@ -128,7 +128,7 @@ ES_Event RunButtonDebounceSM( ES_Event ThisEvent ) {
 // function GetInputLine 
 static uint8_t GetInputLine(void) {
 	// returns the state of the input line pin
-	return PORTC & 0x7F;
+	return PORTC & 0x0F;
 }
 
 static void InitButtonHW(void) {

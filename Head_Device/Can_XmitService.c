@@ -32,40 +32,39 @@
 
 //module includes
 #include "Can_XmitService.h"
+#include "AnalogService.h"
 
 /*----------------------------- Module Defines ----------------------------*/
 #define ONE_SEC 25
 #define TEN_SEC ONE_SEC*10
 #define LISTEN_TIME TEN_SEC
 
-#define IDLE 0x7E
-#define SPEAKING 0x7D
-#define LOADING 0x7B
-#define LISTENING_IDLE 0x77
-#define LISTENING_LEFT 0x6F
-#define LISTENING_RIGHT 0x5F
-#define LISTENING_CENTER 0x3F
+#define IDLE 0x0E
+#define LOADING 0x0D
+#define SPEAKING 0x0B
+#define LISTENING 0x07
 
+//Pins to Light Up Buttons
+#define IDLE_PIN LATA2
+#define LOADING_PIN LATA3
+#define SPEAKING_PIN LATA4
+#define LISTENING_PIN LATA5
+
+#define IDLE_DATA 0x00
+#define LOADING_DATA 0x01
+#define SPEAKING_DATA 0x02
+#define LISTENING_DATA 0x03
 /*---------------------------- Module Functions ---------------------------*/
 /* prototypes for private functions for this machine.They should be functions
    relevant to the behavior of this state machine
 */
 static void InitCanHardware(void);
 static void InitPins(void);
-static void XmitData(uint8_t* DataBytes, uint8_t numBytes);
+static void XmitData(uint8_t DataByte);
 
 /*---------------------------- Module Variables ---------------------------*/
 static uint8_t MyPriority;
-static bool IsListening;
-
-static uint8_t IdleData[1] = {0x00};
-static uint8_t SpeakingData[1] = {0x01};
-static uint8_t LoadingData[1] = {0x02};
-static uint8_t ListeningIdleData[2] = {0x03, 0x00};
-static uint8_t ListeningLeftData[2] = {0x03, 0x01};
-static uint8_t ListeningRightData[2] = {0x03, 0x02};
-static uint8_t ListeningCenterData[2] = {0x03, 0x03};
-
+static uint8_t LastData;
 
 
 /*------------------------------ Module Code ------------------------------*/
@@ -142,53 +141,45 @@ ES_Event RunCan_XmitService( ES_Event ThisEvent )
   if (ThisEvent.EventType == ES_INIT) {
      InitPins();
      InitCanHardware();
-  } else if (ThisEvent.EventType == ES_TIMEOUT) {
-        if (ThisEvent.EventParam == LISTENING_TIMER) {
-            XmitData(IdleData, sizeof(IdleData));
-            IsListening = false;
-        }
+     LastData = IDLE_DATA;
   } else if (ThisEvent.EventType == DBButtonDown) {
       switch(ThisEvent.EventParam){
           case IDLE:
-              IsListening = false;
-              ES_Timer_StopTimer(LISTENING_TIMER);
-              XmitData(IdleData, sizeof(IdleData));
-              break;
-          case SPEAKING:
-              IsListening = false;
-              ES_Timer_StopTimer(LISTENING_TIMER);
-              XmitData(SpeakingData, sizeof(SpeakingData));
+              IDLE_PIN = 1;
+              LOADING_PIN = 0;
+              SPEAKING_PIN = 0;
+              LISTENING_PIN = 0;
+              LastData = IDLE_DATA;
+              XmitData(IDLE_DATA);
               break;
           case LOADING:
-              IsListening = false;
-              ES_Timer_StopTimer(LISTENING_TIMER);
-              XmitData(LoadingData, sizeof(LoadingData));
+              IDLE_PIN = 0;
+              LOADING_PIN = 1;
+              SPEAKING_PIN = 0;
+              LISTENING_PIN = 0;
+              LastData = SPEAKING_DATA;
+              XmitData(SPEAKING_DATA);
               break;
-          case LISTENING_IDLE:
-              IsListening = true;
-              ES_Timer_InitTimer(LISTENING_TIMER, LISTEN_TIME);
-              XmitData(ListeningIdleData, sizeof(ListeningIdleData));
+          case SPEAKING:
+              IDLE_PIN = 0;
+              LOADING_PIN = 0;
+              SPEAKING_PIN = 1;
+              LISTENING_PIN = 0;
+              LastData = LOADING_DATA;
+              XmitData(LOADING_DATA);
               break;
-          case LISTENING_LEFT:
-              if (IsListening == true) {
-                ES_Timer_InitTimer(LISTENING_TIMER, LISTEN_TIME);
-                XmitData(ListeningLeftData, sizeof(ListeningLeftData));
-              }
-              break;   
-        case LISTENING_RIGHT:
-            if (IsListening == true) {
-                ES_Timer_InitTimer(LISTENING_TIMER, LISTEN_TIME);
-                XmitData(ListeningRightData, sizeof(ListeningRightData));
-            }
-              break;
-        case LISTENING_CENTER:
-            if (IsListening == true) {
-                ES_Timer_InitTimer(LISTENING_TIMER, LISTEN_TIME);
-                XmitData(ListeningCenterData, sizeof(ListeningCenterData));
-            }
-              break;
-      }
-  }
+          case LISTENING:
+              IDLE_PIN = 0;
+              LOADING_PIN = 0;
+              SPEAKING_PIN = 0;
+              LISTENING_PIN = 1;
+              LastData = LISTENING_DATA;
+              XmitData(LISTENING_DATA);
+              break; 
+        }
+    } else if (ThisEvent.EventType == XMIT_EVENT) {
+        XmitData(LastData);
+    }
   ReturnEvent.EventType = ES_NO_EVENT; // assume no errors
   return ReturnEvent;
 }
@@ -267,7 +258,7 @@ static void InitCanHardware(void)
     // 6. Set the ECAN module to normal mode or any
 	// other mode required by the application logic.
     ECANCON = 0x00; // Set in MODE 0 (should be default already)
-	CANCON = 0b00010000; //Return to normal request mode
+	  CANCON = 0b00010000; //Return to normal request mode
     while (CANSTATbits.OPMODE2 != 0); // wait to return to normal mode
     
     // Enable Interrupts
@@ -294,18 +285,24 @@ static void InitPins(void)
   TRISBbits.TRISB2 = 0; // Set RB2 as output
   TRISBbits.TRISB3 = 1; // Set RB3 as input
   
+  //For LED pins
+  PORTA = 0x00;
+  LATA &= 0b11111100;
+  TRISA &= 0b00000011;
+  
 }
 
 
-static void XmitData(uint8_t* DataBytes, uint8_t numBytes) {
+static void XmitData(uint8_t DataByte) {
     TXB0CONbits.TXREQ = 0;
     
     // Set Data Length and RTR pg. 291
-    TXB0DLC = numBytes;; //w RTR Cleared
-    TXB0D0 = DataBytes[0];
-    if (numBytes > 1) {
-        TXB0D1 = DataBytes[1];
-    }
+    TXB0DLC = 0x05; //w RTR Cleared (5 bytes w/ RTR cleared)
+    TXB0D0 = DataByte;
+    TXB0D1 = (GetBrightness() >> 8) & 0xFF;
+    TXB0D2 = GetBrightness() & 0xFF;
+    TXB0D3 = (GetLocation() >> 8) & 0xFF;
+    TXB0D4 = GetLocation() & 0xFF;
     // Load message identifier
     //Extended Message Identifer
     TXB0SIDH = 0x00;

@@ -27,6 +27,7 @@
 #include "ES_Timers.h"
 #include "ES_Events.h"
 #include "Can_XmitService.h"
+#include "AnalogService.h"
 
 #define UART_PORT 		0
 #define UART_BAUD		115200UL
@@ -141,6 +142,10 @@ void interrupt ISR ( void )
    if (IRXIF == 1) {
        IRXIF = 0;
        BusErrorResponse();
+   }
+   if (ADIF == 1) {
+       ADIF = 0;
+       AnalogISR();
    }
 // add your interrupt processing here
 	   

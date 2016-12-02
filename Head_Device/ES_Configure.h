@@ -30,7 +30,7 @@
 /****************************************************************************/
 // This macro determines that number of services that are *actually* used in
 // a particular application. It will vary in value from 1 to MAX_NUM_SERVICES
-#define NUM_SERVICES 2
+#define NUM_SERVICES 3
 
 /****************************************************************************/
 // These are the definitions for Service 0, the lowest priority service.
@@ -72,13 +72,13 @@
 // These are the definitions for Service 2
 #if NUM_SERVICES > 2
 // the header file with the public function prototypes
-#define SERV_3_HEADER "TestHarnessService3.h"
+#define SERV_2_HEADER "AnalogService.h"
 // the name of the Init function
-#define SERV_3_INIT InitTestHarnessService3
+#define SERV_2_INIT InitAnalogService
 // the name of the run function
-#define SERV_3_RUN RunTestHarnessService3
+#define SERV_2_RUN RunAnalogService
 // How big should this services Queue be?
-#define SERV_3_QUEUE_SIZE 3
+#define SERV_2_QUEUE_SIZE 3
 #endif
 
 /****************************************************************************/
@@ -263,6 +263,7 @@ typedef enum {  /* Framework Events */
                 ES_SHORT_TIMEOUT, /* signals that a short timer has expired */
                 DBButtonDown,
                 DBButtonUp,
+                XMIT_EVENT,
             } ES_EventTyp_t;
 
 /****************************************************************************/
@@ -310,7 +311,7 @@ typedef enum {  /* Framework Events */
 // Unlike services, any combination of timers may be used and there is no
 // priority in servicing them
 #define TIMER_UNUSED ((pPostFunc)0)
-#define TIMER0_RESP_FUNC PostCan_XmitService
+#define TIMER0_RESP_FUNC PostAnalogService
 #define TIMER1_RESP_FUNC PostButtonDebounceSM
 #define TIMER2_RESP_FUNC TIMER_UNUSED
 #define TIMER3_RESP_FUNC TIMER_UNUSED
@@ -334,6 +335,7 @@ typedef enum {  /* Framework Events */
 // the timer number matches where the timer event will be routed
 // These symbolic names should be changed to be relevant to your application 
 
-#define LISTENING_TIMER          0
+#define ANALOG_TIMER          0
 #define BUTTON_DEBOUNCE_TIMER    1
+            
 #endif /* CONFIGURE_H */

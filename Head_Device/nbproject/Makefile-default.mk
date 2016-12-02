@@ -51,17 +51,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=Button.c ES_CheckEvents.c ES_DeferRecall.c ES_Framework.c ES_LookupTables.c ES_Port.c ES_PostList.c ES_Queue.c ES_Timers.c EventCheckers.c main.c retarget.c Can_XmitService.c
+SOURCEFILES_QUOTED_IF_SPACED=Button.c ES_CheckEvents.c ES_DeferRecall.c ES_Framework.c ES_LookupTables.c ES_Port.c ES_PostList.c ES_Queue.c ES_Timers.c EventCheckers.c main.c retarget.c Can_XmitService.c Analog_Service.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/Button.p1 ${OBJECTDIR}/ES_CheckEvents.p1 ${OBJECTDIR}/ES_DeferRecall.p1 ${OBJECTDIR}/ES_Framework.p1 ${OBJECTDIR}/ES_LookupTables.p1 ${OBJECTDIR}/ES_Port.p1 ${OBJECTDIR}/ES_PostList.p1 ${OBJECTDIR}/ES_Queue.p1 ${OBJECTDIR}/ES_Timers.p1 ${OBJECTDIR}/EventCheckers.p1 ${OBJECTDIR}/main.p1 ${OBJECTDIR}/retarget.p1 ${OBJECTDIR}/Can_XmitService.p1
-POSSIBLE_DEPFILES=${OBJECTDIR}/Button.p1.d ${OBJECTDIR}/ES_CheckEvents.p1.d ${OBJECTDIR}/ES_DeferRecall.p1.d ${OBJECTDIR}/ES_Framework.p1.d ${OBJECTDIR}/ES_LookupTables.p1.d ${OBJECTDIR}/ES_Port.p1.d ${OBJECTDIR}/ES_PostList.p1.d ${OBJECTDIR}/ES_Queue.p1.d ${OBJECTDIR}/ES_Timers.p1.d ${OBJECTDIR}/EventCheckers.p1.d ${OBJECTDIR}/main.p1.d ${OBJECTDIR}/retarget.p1.d ${OBJECTDIR}/Can_XmitService.p1.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/Button.p1 ${OBJECTDIR}/ES_CheckEvents.p1 ${OBJECTDIR}/ES_DeferRecall.p1 ${OBJECTDIR}/ES_Framework.p1 ${OBJECTDIR}/ES_LookupTables.p1 ${OBJECTDIR}/ES_Port.p1 ${OBJECTDIR}/ES_PostList.p1 ${OBJECTDIR}/ES_Queue.p1 ${OBJECTDIR}/ES_Timers.p1 ${OBJECTDIR}/EventCheckers.p1 ${OBJECTDIR}/main.p1 ${OBJECTDIR}/retarget.p1 ${OBJECTDIR}/Can_XmitService.p1 ${OBJECTDIR}/Analog_Service.p1
+POSSIBLE_DEPFILES=${OBJECTDIR}/Button.p1.d ${OBJECTDIR}/ES_CheckEvents.p1.d ${OBJECTDIR}/ES_DeferRecall.p1.d ${OBJECTDIR}/ES_Framework.p1.d ${OBJECTDIR}/ES_LookupTables.p1.d ${OBJECTDIR}/ES_Port.p1.d ${OBJECTDIR}/ES_PostList.p1.d ${OBJECTDIR}/ES_Queue.p1.d ${OBJECTDIR}/ES_Timers.p1.d ${OBJECTDIR}/EventCheckers.p1.d ${OBJECTDIR}/main.p1.d ${OBJECTDIR}/retarget.p1.d ${OBJECTDIR}/Can_XmitService.p1.d ${OBJECTDIR}/Analog_Service.p1.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/Button.p1 ${OBJECTDIR}/ES_CheckEvents.p1 ${OBJECTDIR}/ES_DeferRecall.p1 ${OBJECTDIR}/ES_Framework.p1 ${OBJECTDIR}/ES_LookupTables.p1 ${OBJECTDIR}/ES_Port.p1 ${OBJECTDIR}/ES_PostList.p1 ${OBJECTDIR}/ES_Queue.p1 ${OBJECTDIR}/ES_Timers.p1 ${OBJECTDIR}/EventCheckers.p1 ${OBJECTDIR}/main.p1 ${OBJECTDIR}/retarget.p1 ${OBJECTDIR}/Can_XmitService.p1
+OBJECTFILES=${OBJECTDIR}/Button.p1 ${OBJECTDIR}/ES_CheckEvents.p1 ${OBJECTDIR}/ES_DeferRecall.p1 ${OBJECTDIR}/ES_Framework.p1 ${OBJECTDIR}/ES_LookupTables.p1 ${OBJECTDIR}/ES_Port.p1 ${OBJECTDIR}/ES_PostList.p1 ${OBJECTDIR}/ES_Queue.p1 ${OBJECTDIR}/ES_Timers.p1 ${OBJECTDIR}/EventCheckers.p1 ${OBJECTDIR}/main.p1 ${OBJECTDIR}/retarget.p1 ${OBJECTDIR}/Can_XmitService.p1 ${OBJECTDIR}/Analog_Service.p1
 
 # Source Files
-SOURCEFILES=Button.c ES_CheckEvents.c ES_DeferRecall.c ES_Framework.c ES_LookupTables.c ES_Port.c ES_PostList.c ES_Queue.c ES_Timers.c EventCheckers.c main.c retarget.c Can_XmitService.c
+SOURCEFILES=Button.c ES_CheckEvents.c ES_DeferRecall.c ES_Framework.c ES_LookupTables.c ES_Port.c ES_PostList.c ES_Queue.c ES_Timers.c EventCheckers.c main.c retarget.c Can_XmitService.c Analog_Service.c
 
 
 CFLAGS=
@@ -191,6 +191,14 @@ ${OBJECTDIR}/Can_XmitService.p1: Can_XmitService.c  nbproject/Makefile-${CND_CON
 	@-${MV} ${OBJECTDIR}/Can_XmitService.d ${OBJECTDIR}/Can_XmitService.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/Can_XmitService.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
+${OBJECTDIR}/Analog_Service.p1: Analog_Service.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/Analog_Service.p1.d 
+	@${RM} ${OBJECTDIR}/Analog_Service.p1 
+	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  -D__DEBUG=1 --debugger=none  --double=24 --float=24 --emi=wordwrite --opt=default,+asm,+asmfile,-speed,+space,-debug --addrqual=ignore --mode=free -P -N255 --warn=-3 --asmlist -DXPRJ_default=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,-plib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/Analog_Service.p1  Analog_Service.c 
+	@-${MV} ${OBJECTDIR}/Analog_Service.d ${OBJECTDIR}/Analog_Service.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/Analog_Service.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
 else
 ${OBJECTDIR}/Button.p1: Button.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
@@ -295,6 +303,14 @@ ${OBJECTDIR}/Can_XmitService.p1: Can_XmitService.c  nbproject/Makefile-${CND_CON
 	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  --double=24 --float=24 --emi=wordwrite --opt=default,+asm,+asmfile,-speed,+space,-debug --addrqual=ignore --mode=free -P -N255 --warn=-3 --asmlist -DXPRJ_default=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,-plib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/Can_XmitService.p1  Can_XmitService.c 
 	@-${MV} ${OBJECTDIR}/Can_XmitService.d ${OBJECTDIR}/Can_XmitService.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/Can_XmitService.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/Analog_Service.p1: Analog_Service.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/Analog_Service.p1.d 
+	@${RM} ${OBJECTDIR}/Analog_Service.p1 
+	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  --double=24 --float=24 --emi=wordwrite --opt=default,+asm,+asmfile,-speed,+space,-debug --addrqual=ignore --mode=free -P -N255 --warn=-3 --asmlist -DXPRJ_default=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,-plib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/Analog_Service.p1  Analog_Service.c 
+	@-${MV} ${OBJECTDIR}/Analog_Service.d ${OBJECTDIR}/Analog_Service.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/Analog_Service.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 endif
 
