@@ -141,6 +141,7 @@ ES_Event RunCan_XmitService( ES_Event ThisEvent )
   if (ThisEvent.EventType == ES_INIT) {
      InitPins();
      InitCanHardware();
+     IDLE_PIN = 1;
      LastData = IDLE_DATA;
   } else if (ThisEvent.EventType == DBButtonDown) {
       switch(ThisEvent.EventParam){
