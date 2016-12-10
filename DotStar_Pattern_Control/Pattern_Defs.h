@@ -22,6 +22,9 @@
 
  //Pattern color defines
 #define THINKING_HUE    32
+#define SPEAKING_HUE    170
+#define LISTENING_HUE    85
+#define IDLE_HUE    0
 
  //General LED strip defines
 #define STRIP_LENGTH        76

@@ -31,6 +31,7 @@
       <itemPath>SPI32_Defs.h</itemPath>
       <itemPath>SPI32_HW.h</itemPath>
       <itemPath>Pattern_HSV_Convert.h</itemPath>
+      <itemPath>CanRX_Service.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -58,6 +59,7 @@
       <itemPath>main.c</itemPath>
       <itemPath>retarget.c</itemPath>
       <itemPath>Pattern_HSV_Convert.c</itemPath>
+      <itemPath>CanRX_Service.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

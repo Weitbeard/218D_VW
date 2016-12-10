@@ -30,7 +30,7 @@
 /****************************************************************************/
 // This macro determines that number of services that are *actually* used in
 // a particular application. It will vary in value from 1 to MAX_NUM_SERVICES
-#define NUM_SERVICES 2
+#define NUM_SERVICES 3
 
 /****************************************************************************/
 // These are the definitions for Service 0, the lowest priority service.
@@ -67,11 +67,11 @@
 // These are the definitions for Service 2
 #if NUM_SERVICES > 2
 // the header file with the public function prototypes
-#define SERV_2_HEADER "Button.h"
+#define SERV_2_HEADER "CanRX_Service.h"
 // the name of the Init function
-#define SERV_2_INIT InitializeButtonDebounce
+#define SERV_2_INIT InitCanRX_Service
 // the name of the run function
-#define SERV_2_RUN RunButtonDebounceSM
+#define SERV_2_RUN RunCanRX_Service
 // How big should this services Queue be?
 #define SERV_2_QUEUE_SIZE 3
 #endif
@@ -261,7 +261,12 @@ typedef enum {  /* Framework Events */
                 PATTERN_PAUSE,
                 PATTERN_UNPAUSE,
                 /* SPI Communication Events */
-                SPI32_TRANSMIT
+                SPI32_TRANSMIT,
+                /* CAN Communication Events */
+                IDLE_MESSAGE,
+                SPEAKING_MESSAGE,
+                THINKING_MESSAGE,
+                LISTENING_MESSAGE
             } ES_EventTyp_t;
 
 /****************************************************************************/
@@ -295,7 +300,7 @@ typedef enum {  /* Framework Events */
 #endif
 
 /****************************************************************************/
-// This are the name of the Event checking funcion header file. 
+// This are the name of the Event checking function header file. 
 #define EVENT_CHECK_HEADER "EventCheckers.h"
 
 /****************************************************************************/
