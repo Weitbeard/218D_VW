@@ -5,7 +5,7 @@
 #include <PIC18F2480.h>
 
 //#include <xc.h>
-#pragma config OSC = IRCIO67
+#pragma config OSC = HS
 #pragma config WDT = OFF
 #pragma config PWRT = OFF
 #pragma config MCLRE = ON
@@ -24,11 +24,6 @@
 
 int main(void)
 {  
-	// Set the PIC clock to run at 8MhZ by setting IRCF in OSCCON to 1111 
-    IRCF0 = 1;
-    IRCF1 = 1;
-    IRCF2 = 1;
-    SCS1 = 1;
     ADCON1 = 0x0D; //AN0 and AN1 on
     
     // Set up random generator module

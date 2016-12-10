@@ -120,7 +120,7 @@ ES_Timer_ACTIVE 1
 ES_Timer_OK 0
 ES_Timer_NOT_ACTIVE 0
 ]
-"40 /Users/jeannywang/218D_VW/Mock_Mirror/main.c
+"41 /Users/jeannywang/218D_VW/Mock_Mirror/main.c
 [e E15646 . `uc
 Success 0
 FailedPost 1
@@ -129,7 +129,7 @@ FailedPointer 3
 FailedIndex 4
 FailedInit 5
 ]
-"56
+"57
 [e E15575 . `ui
 ES_Timer_RATE_OFF 0
 ES_Timer_RATE_100uS 3999
@@ -205,9 +205,9 @@ LISTENING_EVENT 8
 [v _BusErrorResponse BusErrorResponse `(v  1 e 1 0 ]
 "200
 [v _InitCanHardware InitCanHardware `(v  1 s 1 InitCanHardware ]
-"268
+"284
 [v _InitPins InitPins `(v  1 s 1 InitPins ]
-"282
+"298
 [v _ProcessReceive ProcessReceive `(v  1 s 1 ProcessReceive ]
 "46 /Users/jeannywang/218D_VW/Mock_Mirror/ES_CheckEvents.c
 [v _ES_CheckUserEvents ES_CheckUserEvents `(uc  1 e 1 0 ]
@@ -247,7 +247,7 @@ LISTENING_EVENT 8
 [v _ES_Timer_Tick_Resp ES_Timer_Tick_Resp `(v  1 e 1 0 ]
 "62 /Users/jeannywang/218D_VW/Mock_Mirror/EventCheckers.c
 [v _Check4Keystroke Check4Keystroke `(uc  1 e 1 0 ]
-"25 /Users/jeannywang/218D_VW/Mock_Mirror/main.c
+"26 /Users/jeannywang/218D_VW/Mock_Mirror/main.c
 [v _main main `(i  1 e 2 0 ]
 "16255 /Applications/microchip/xc8/v1.38/include/pic18f2480.h
 [v _RXF0SIDH RXF0SIDH `VEuc  1 e 1 @3840 ]
@@ -265,7 +265,7 @@ LISTENING_EVENT 8
 [v _RXM0EIDH RXM0EIDH `VEuc  1 e 1 @3866 ]
 "19677
 [v _RXM0EIDL RXM0EIDL `VEuc  1 e 1 @3867 ]
-[s S550 . 1 `uc 1 TXPRI0 1 0 :1:0 
+[s S546 . 1 `uc 1 TXPRI0 1 0 :1:0 
 `uc 1 TXPRI1 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
 `uc 1 TXREQ 1 0 :1:3 
@@ -275,29 +275,29 @@ LISTENING_EVENT 8
 `uc 1 TXBIF 1 0 :1:7 
 ]
 "23109
-[s S559 . 1 `uc 1 . 1 0 :7:0 
+[s S555 . 1 `uc 1 . 1 0 :7:0 
 `uc 1 TX0IF 1 0 :1:7 
 ]
-[s S562 . 1 `uc 1 . 1 0 :6:0 
+[s S558 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 TXB0ABT 1 0 :1:6 
 ]
-[s S565 . 1 `uc 1 . 1 0 :4:0 
+[s S561 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 TXB0ERR 1 0 :1:4 
 ]
-[s S568 . 1 `uc 1 . 1 0 :5:0 
+[s S564 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 TXB0LARB 1 0 :1:5 
 ]
-[s S571 . 1 `uc 1 TXB0PRI0 1 0 :1:0 
+[s S567 . 1 `uc 1 TXB0PRI0 1 0 :1:0 
 ]
-[s S573 . 1 `uc 1 . 1 0 :1:0 
+[s S569 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 TXB0PRI1 1 0 :1:1 
 ]
-[s S576 . 1 `uc 1 . 1 0 :3:0 
+[s S572 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 TXB0REQ 1 0 :1:3 
 ]
-[u S579 . 1 `S550 1 . 1 0 `S559 1 . 1 0 `S562 1 . 1 0 `S565 1 . 1 0 `S568 1 . 1 0 `S571 1 . 1 0 `S573 1 . 1 0 `S576 1 . 1 0 ]
-[v _TXB0CONbits TXB0CONbits `VES579  1 e 1 @3904 ]
-[s S618 . 1 `uc 1 FILHIT0 1 0 :1:0 
+[u S575 . 1 `S546 1 . 1 0 `S555 1 . 1 0 `S558 1 . 1 0 `S561 1 . 1 0 `S564 1 . 1 0 `S567 1 . 1 0 `S569 1 . 1 0 `S572 1 . 1 0 ]
+[v _TXB0CONbits TXB0CONbits `VES575  1 e 1 @3904 ]
+[s S614 . 1 `uc 1 FILHIT0 1 0 :1:0 
 `uc 1 JTOFF_FILHIT1 1 0 :1:1 
 `uc 1 RXB0DBEN_FILHIT2 1 0 :1:2 
 `uc 1 RXRTRRO_FILHIT3 1 0 :1:3 
@@ -307,54 +307,54 @@ LISTENING_EVENT 8
 `uc 1 RXFUL 1 0 :1:7 
 ]
 "26001
-[s S627 . 1 `uc 1 . 1 0 :1:0 
+[s S623 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 JTOFF 1 0 :1:1 
 `uc 1 RXB0DBEN 1 0 :1:2 
 `uc 1 RXRTRRO 1 0 :1:3 
 `uc 1 . 1 0 :1:4 
 `uc 1 RXM0 1 0 :1:5 
 ]
-[s S634 . 1 `uc 1 . 1 0 :1:0 
+[s S630 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 FILHIT1 1 0 :1:1 
 `uc 1 FILHIT2 1 0 :1:2 
 `uc 1 FILHIT3 1 0 :1:3 
 `uc 1 . 1 0 :1:4 
 `uc 1 RTRRO 1 0 :1:5 
 ]
-[s S641 . 1 `uc 1 . 1 0 :2:0 
+[s S637 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 RXBODBEN 1 0 :1:2 
 ]
-[s S644 . 1 `uc 1 RXB0FILHIT0 1 0 :1:0 
+[s S640 . 1 `uc 1 RXB0FILHIT0 1 0 :1:0 
 ]
-[s S646 . 1 `uc 1 . 1 0 :1:0 
+[s S642 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 RXB0FILHIT1 1 0 :1:1 
 ]
-[s S649 . 1 `uc 1 . 1 0 :2:0 
+[s S645 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 RXB0FILHIT2 1 0 :1:2 
 ]
-[s S652 . 1 `uc 1 . 1 0 :3:0 
+[s S648 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 RXB0FILHIT3 1 0 :1:3 
 ]
-[s S655 . 1 `uc 1 . 1 0 :4:0 
+[s S651 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 RXB0FILHIT4 1 0 :1:4 
 ]
-[s S658 . 1 `uc 1 . 1 0 :7:0 
+[s S654 . 1 `uc 1 . 1 0 :7:0 
 `uc 1 RXB0FUL 1 0 :1:7 
 ]
-[s S661 . 1 `uc 1 . 1 0 :5:0 
+[s S657 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 RXB0M0 1 0 :1:5 
 ]
-[s S664 . 1 `uc 1 . 1 0 :6:0 
+[s S660 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 RXB0M1 1 0 :1:6 
 ]
-[s S667 . 1 `uc 1 . 1 0 :3:0 
+[s S663 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 RXB0RTRR0 1 0 :1:3 
 ]
-[s S670 . 1 `uc 1 . 1 0 :5:0 
+[s S666 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 RXB0RTRRO 1 0 :1:5 
 ]
-[u S673 . 1 `S618 1 . 1 0 `S627 1 . 1 0 `S634 1 . 1 0 `S641 1 . 1 0 `S644 1 . 1 0 `S646 1 . 1 0 `S649 1 . 1 0 `S652 1 . 1 0 `S655 1 . 1 0 `S658 1 . 1 0 `S661 1 . 1 0 `S664 1 . 1 0 `S667 1 . 1 0 `S670 1 . 1 0 ]
-[v _RXB0CONbits RXB0CONbits `VES673  1 e 1 @3936 ]
+[u S669 . 1 `S614 1 . 1 0 `S623 1 . 1 0 `S630 1 . 1 0 `S637 1 . 1 0 `S640 1 . 1 0 `S642 1 . 1 0 `S645 1 . 1 0 `S648 1 . 1 0 `S651 1 . 1 0 `S654 1 . 1 0 `S657 1 . 1 0 `S660 1 . 1 0 `S663 1 . 1 0 `S666 1 . 1 0 ]
+[v _RXB0CONbits RXB0CONbits `VES669  1 e 1 @3936 ]
 "26140
 [v _RXB0SIDH RXB0SIDH `VEuc  1 e 1 @3937 ]
 "26272
@@ -365,7 +365,7 @@ LISTENING_EVENT 8
 [v _RXB0EIDL RXB0EIDL `VEuc  1 e 1 @3940 ]
 "26786
 [v _RXB0D0 RXB0D0 `VEuc  1 e 1 @3942 ]
-[s S749 . 1 `uc 1 EICODE0 1 0 :1:0 
+[s S745 . 1 `uc 1 EICODE0 1 0 :1:0 
 `uc 1 EICODE1_ICODE0 1 0 :1:1 
 `uc 1 EICODE2_ICODE1 1 0 :1:2 
 `uc 1 EICODE3_ICODE2 1 0 :1:3 
@@ -375,21 +375,21 @@ LISTENING_EVENT 8
 `uc 1 OPMODE2 1 0 :1:7 
 ]
 "27303
-[s S758 . 1 `uc 1 ICODE0 1 0 :1:0 
+[s S754 . 1 `uc 1 ICODE0 1 0 :1:0 
 `uc 1 ICODE1 1 0 :1:1 
 `uc 1 ICODE2 1 0 :1:2 
 `uc 1 ICODE3 1 0 :1:3 
 ]
-[s S763 . 1 `uc 1 . 1 0 :1:0 
+[s S759 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 EICODE1 1 0 :1:1 
 `uc 1 EICODE2 1 0 :1:2 
 `uc 1 EICODE3 1 0 :1:3 
 ]
-[u S768 . 1 `S749 1 . 1 0 `S758 1 . 1 0 `S763 1 . 1 0 ]
-[v _CANSTATbits CANSTATbits `VES768  1 e 1 @3950 ]
+[u S764 . 1 `S745 1 . 1 0 `S754 1 . 1 0 `S759 1 . 1 0 ]
+[v _CANSTATbits CANSTATbits `VES764  1 e 1 @3950 ]
 "27382
 [v _CANCON CANCON `VEuc  1 e 1 @3951 ]
-[s S821 . 1 `uc 1 BRP0 1 0 :1:0 
+[s S817 . 1 `uc 1 BRP0 1 0 :1:0 
 `uc 1 BRP1 1 0 :1:1 
 `uc 1 BRP2 1 0 :1:2 
 `uc 1 BRP3 1 0 :1:3 
@@ -399,9 +399,9 @@ LISTENING_EVENT 8
 `uc 1 SJW1 1 0 :1:7 
 ]
 "27502
-[u S830 . 1 `S821 1 . 1 0 ]
-[v _BRGCON1bits BRGCON1bits `VES830  1 e 1 @3952 ]
-[s S793 . 1 `uc 1 PRSEG0 1 0 :1:0 
+[u S826 . 1 `S817 1 . 1 0 ]
+[v _BRGCON1bits BRGCON1bits `VES826  1 e 1 @3952 ]
+[s S789 . 1 `uc 1 PRSEG0 1 0 :1:0 
 `uc 1 PRSEG1 1 0 :1:1 
 `uc 1 PRSEG2 1 0 :1:2 
 `uc 1 SEG1PH0 1 0 :1:3 
@@ -411,12 +411,12 @@ LISTENING_EVENT 8
 `uc 1 SEG2PHT 1 0 :1:7 
 ]
 "27567
-[s S802 . 1 `uc 1 . 1 0 :7:0 
+[s S798 . 1 `uc 1 . 1 0 :7:0 
 `uc 1 SEG2PHTS 1 0 :1:7 
 ]
-[u S805 . 1 `S793 1 . 1 0 `S802 1 . 1 0 ]
-[v _BRGCON2bits BRGCON2bits `VES805  1 e 1 @3953 ]
-[s S842 . 1 `uc 1 SEG2PH0 1 0 :1:0 
+[u S801 . 1 `S789 1 . 1 0 `S798 1 . 1 0 ]
+[v _BRGCON2bits BRGCON2bits `VES801  1 e 1 @3953 ]
+[s S838 . 1 `uc 1 SEG2PH0 1 0 :1:0 
 `uc 1 SEG2PH1 1 0 :1:1 
 `uc 1 SEG2PH2 1 0 :1:2 
 `uc 1 . 1 0 :3:3 
@@ -424,8 +424,8 @@ LISTENING_EVENT 8
 `uc 1 WAKDIS 1 0 :1:7 
 ]
 "27631
-[u S849 . 1 `S842 1 . 1 0 ]
-[v _BRGCON3bits BRGCON3bits `VES849  1 e 1 @3954 ]
+[u S845 . 1 `S838 1 . 1 0 ]
+[v _BRGCON3bits BRGCON3bits `VES845  1 e 1 @3954 ]
 "27660
 [v _CIOCON CIOCON `VEuc  1 e 1 @3955 ]
 "27929
@@ -440,7 +440,7 @@ LISTENING_EVENT 8
 [v _LATB LATB `VEuc  1 e 1 @3978 ]
 "28988
 [v _TRISA TRISA `VEuc  1 e 1 @3986 ]
-[s S878 . 1 `uc 1 TRISB0 1 0 :1:0 
+[s S874 . 1 `uc 1 TRISB0 1 0 :1:0 
 `uc 1 TRISB1 1 0 :1:1 
 `uc 1 TRISB2 1 0 :1:2 
 `uc 1 TRISB3 1 0 :1:3 
@@ -450,7 +450,7 @@ LISTENING_EVENT 8
 `uc 1 TRISB7 1 0 :1:7 
 ]
 "29241
-[s S887 . 1 `uc 1 RB0 1 0 :1:0 
+[s S883 . 1 `uc 1 RB0 1 0 :1:0 
 `uc 1 RB1 1 0 :1:1 
 `uc 1 RB2 1 0 :1:2 
 `uc 1 RB3 1 0 :1:3 
@@ -459,8 +459,8 @@ LISTENING_EVENT 8
 `uc 1 RB6 1 0 :1:6 
 `uc 1 RB7 1 0 :1:7 
 ]
-[u S896 . 1 `S878 1 . 1 0 `S887 1 . 1 0 ]
-[v _TRISBbits TRISBbits `VES896  1 e 1 @3987 ]
+[u S892 . 1 `S874 1 . 1 0 `S883 1 . 1 0 ]
+[v _TRISBbits TRISBbits `VES892  1 e 1 @3987 ]
 "29722
 [v _PIE1 PIE1 `VEuc  1 e 1 @3997 ]
 "31379
@@ -484,13 +484,7 @@ LISTENING_EVENT 8
 [v _ERRIF ERRIF `VEb  1 e 0 @32037 ]
 "35692
 [v _GIE GIE `VEb  1 e 0 @32663 ]
-"35790 /Applications/microchip/xc8/v1.38/include/PIC18F2480.h
-[v _IRCF0 IRCF0 `VEb  1 e 0 @32412 ]
-"35792
-[v _IRCF1 IRCF1 `VEb  1 e 0 @32413 ]
-"35794
-[v _IRCF2 IRCF2 `VEb  1 e 0 @32414 ]
-"35798 /Applications/microchip/xc8/v1.38/include/pic18f2480.h
+"35798
 [v _IRXIE IRXIE `VEb  1 e 0 @32031 ]
 "35800
 [v _IRXIF IRXIF `VEb  1 e 0 @32039 ]
@@ -508,9 +502,7 @@ LISTENING_EVENT 8
 [v _RXB0IE RXB0IE `VEb  1 e 0 @32024 ]
 "36344
 [v _RXB0IF RXB0IF `VEb  1 e 0 @32032 ]
-"37780 /Applications/microchip/xc8/v1.38/include/PIC18F2480.h
-[v _SCS1 SCS1 `VEb  1 e 0 @32409 ]
-"38264 /Applications/microchip/xc8/v1.38/include/pic18f2480.h
+"38264
 [v _TXB0IE TXB0IE `VEb  1 e 0 @32026 ]
 "38266
 [v _TXB0IF TXB0IF `VEb  1 e 0 @32034 ]
@@ -545,12 +537,12 @@ LISTENING_EVENT 8
 [v _Timer2PostFunc Timer2PostFunc `C[16]*.2(uc  1 s 32 Timer2PostFunc ]
 "30 /Users/jeannywang/218D_VW/Mock_Mirror/EventCheckers.h
 [v _ES_EventList ES_EventList `C[1]*.2(uc  1 s 2 ES_EventList ]
-"25 /Users/jeannywang/218D_VW/Mock_Mirror/main.c
+"26 /Users/jeannywang/218D_VW/Mock_Mirror/main.c
 [v _main main `(i  1 e 2 0 ]
 {
-"40
+"41
 [v main@ErrorType ErrorType `E15646  1 a 1 36 ]
-"80
+"81
 } 0
 "464 /Applications/microchip/xc8/v1.38/sources/common/doprnt.c
 [v _printf printf `(i  1 e 2 0 ]
@@ -619,15 +611,15 @@ LISTENING_EVENT 8
 [v RunCanRX_Service@ThisEvent ThisEvent `S41  1 p 3 0 ]
 "171
 } 0
-"268
+"284
 [v _InitPins InitPins `(v  1 s 1 InitPins ]
 {
-"280
+"296
 } 0
 "200
 [v _InitCanHardware InitCanHardware `(v  1 s 1 InitCanHardware ]
 {
-"266
+"282
 } 0
 "164 /Users/jeannywang/218D_VW/Mock_Mirror/ES_Queue.c
 [v _ES_DeQueue ES_DeQueue `(uc  1 e 1 0 ]
@@ -783,13 +775,13 @@ LISTENING_EVENT 8
 {
 "185
 } 0
-"282
+"298
 [v _ProcessReceive ProcessReceive `(v  1 s 1 ProcessReceive ]
 {
 [s S41 ES_Event_t 3 `E1 1 EventType 1 0 `ui 1 EventParam 2 1 ]
-"286
+"302
 [v ProcessReceive@Event2Post Event2Post `S41  1 a 3 32 ]
-"303
+"319
 } 0
 "115
 [v _PostCanRX_Service PostCanRX_Service `(uc  1 e 1 0 ]

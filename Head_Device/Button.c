@@ -11,7 +11,7 @@
 #include "Button.h"
 
 /*----------------------------- Module Defines ----------------------------*/
-#define DEBOUNCE_TIME 2
+#define DEBOUNCE_TIME 3
 
 /*----------------------------- Module Variables ----------------------------*/
 static ButtonState_t CurrentState;
@@ -89,7 +89,7 @@ ES_Event RunButtonDebounceSM( ES_Event ThisEvent ) {
 		// CurrentState is Debouncing
 		case Debouncing :
 			// If ThisEvent is ES_TIMEOUT
-			if (ThisEvent.EventType == ES_TIMEOUT) {
+			if (ThisEvent.EventType == ES_TIMEOUT && ThisEvent.EventParam == BUTTON_DEBOUNCE_TIMER) {
 				// Set current state to Ready2Sample
 				CurrentState = Ready2Sample;
 			}

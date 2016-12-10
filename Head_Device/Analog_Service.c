@@ -8,7 +8,7 @@
 #include "Can_XmitService.h"
 
 /*----------------------------- Module Defines ----------------------------*/
-#define ONE_SEC 25
+#define ONE_SEC 50
 #define ACQUISITION_TIME 5
 #define BRIGHTNESS_CHANNEL 0x00
 #define LOCATION_CHANNEL 0x01
