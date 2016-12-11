@@ -292,12 +292,8 @@ static void XmitData(uint8_t DataByte) {
     // Set Data Length and RTR pg. 291
     TXB0DLC = NUM_BYTES; //w RTR Cleared (5 bytes w/ RTR cleared)
     TXB0D0 = DataByte;
-    // TXB0D1 = (GetBrightness() >> 8) & 0xFF;
-    // TXB0D2 = GetBrightness() & 0xFF;
     TXB0D1 = GetBrightness();
-    // TXB0D3 = (GetLocation() >> 8) & 0xFF;
     TXB0D2 = GetLocation();
-    // TXB0D4 = GetLocation() & 0xFF;
     // Load message identifier
     //Extended Message Identifer
     TXB0SIDH = 0x00;
