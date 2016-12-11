@@ -52,6 +52,8 @@
 #define LOADING_DATA 0x01
 #define SPEAKING_DATA 0x02
 #define LISTENING_DATA 0x03
+
+#define NUM_BYTES 0x03
 /*---------------------------- Module Functions ---------------------------*/
 /* prototypes for private functions for this machine.They should be functions
    relevant to the behavior of this state machine
@@ -288,12 +290,14 @@ static void XmitData(uint8_t DataByte) {
     TXB0CONbits.TXREQ = 0;
     
     // Set Data Length and RTR pg. 291
-    TXB0DLC = 0x05; //w RTR Cleared (5 bytes w/ RTR cleared)
+    TXB0DLC = NUM_BYTES; //w RTR Cleared (5 bytes w/ RTR cleared)
     TXB0D0 = DataByte;
-    TXB0D1 = (GetBrightness() >> 8) & 0xFF;
-    TXB0D2 = GetBrightness() & 0xFF;
-    TXB0D3 = (GetLocation() >> 8) & 0xFF;
-    TXB0D4 = GetLocation() & 0xFF;
+    // TXB0D1 = (GetBrightness() >> 8) & 0xFF;
+    // TXB0D2 = GetBrightness() & 0xFF;
+    TXB0D1 = GetBrightness();
+    // TXB0D3 = (GetLocation() >> 8) & 0xFF;
+    TXB0D2 = GetLocation();
+    // TXB0D4 = GetLocation() & 0xFF;
     // Load message identifier
     //Extended Message Identifer
     TXB0SIDH = 0x00;

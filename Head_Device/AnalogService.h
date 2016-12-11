@@ -17,8 +17,8 @@
 bool InitAnalogService( uint8_t Priority );
 bool PostAnalogService( ES_Event ThisEvent );
 ES_Event RunAnalogService( ES_Event ThisEvent );
-uint16_t GetBrightness(void);
-uint16_t GetLocation(void);
+uint8_t GetBrightness(void);
+uint8_t GetLocation(void);
 void AnalogISR(void); 
 
 

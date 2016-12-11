@@ -14,8 +14,8 @@
 #define LOCATION_CHANNEL 0x01
 
 /*----------------------------- Module Variables ----------------------------*/
-static uint16_t Brightness;
-static uint16_t Location;
+static uint8_t Brightness;
+static uint8_t Location;
 static uint8_t MyPriority;
 
 /*---------------------------- Module Functions ---------------------------*/
@@ -64,12 +64,12 @@ ES_Event RunAnalogService( ES_Event ThisEvent )
     return ReturnEvent;
 }
 
-uint16_t GetBrightness(void)
+uint8_t GetBrightness(void)
 {
     return Brightness;
 }
 
-uint16_t GetLocation(void)
+uint8_t GetLocation(void)
 {
     return Location;
 }
@@ -78,11 +78,11 @@ void AnalogISR(void)
 {
     if (!ADCON0bits.DONE) { //Make sure conversion is finished
         if (ADCON0bits.CHS == BRIGHTNESS_CHANNEL) {
-            Brightness = (ADRESH<<8)|ADRESL;
+            Brightness = ((ADRESH<<8)|ADRESL) >> 2; // scale to 8-bit number
             ADCON0bits.CHS = LOCATION_CHANNEL; //sample location channel
             ADCON0bits.GO = 1;
         } else if (ADCON0bits.CHS == LOCATION_CHANNEL) {
-            Location = (ADRESH<<8)|ADRESL;
+            Location = ((ADRESH<<8)|ADRESL) >> 2;
             ADCON0bits.CHS = BRIGHTNESS_CHANNEL; //sample brightness channel
             ES_Event Event2Post;
             Event2Post.EventType = XMIT_EVENT;

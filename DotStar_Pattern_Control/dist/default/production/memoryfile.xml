@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
-  <executable name="dist/default/production\DotStar_Pattern_Control.production.hex">
+  <executable name="dist/default/production/DotStar_Pattern_Control.production.hex">
     <memory name="program">
       <units>bytes</units>
       <length>16384</length>
-      <used>9865</used>
-      <free>6519</free>
+      <used>9849</used>
+      <free>6535</free>
     </memory>
     <memory name="data">
       <units>bytes</units>

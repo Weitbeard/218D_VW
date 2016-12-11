@@ -213,27 +213,19 @@ static void InitCanHardware(void)
     while (CANSTATbits.OPMODE2 != 1);
     CIOCON = 0x20;
 	// 4. Set up the Baud Rate registers.
-    //114 kbs baud rate
+       //256 kbps
     BRGCON2bits.SEG2PHTS = 1; //freely programmable SEG2PH
-
-    BRGCON1bits.BRP0 = 0;
-    BRGCON1bits.BRP1 = 1;
-    BRGCON1bits.BRP2 = 1;
-    BRGCON1bits.BRP3 = 0;
     
-    BRGCON2bits.PRSEG0 = 0; //1 TQ
-    BRGCON2bits.PRSEG1 = 0;
-    BRGCON2bits.PRSEG2 = 0;
-    
-    BRGCON2bits.SEG1PH0 = 0; //1 TQ
-    BRGCON2bits.SEG1PH1 = 0;
-    BRGCON2bits.SEG1PH2 = 0;
-    
-    BRGCON3bits.SEG2PH0 = 1; //2 TQ
-    BRGCON3bits.SEG2PH1 = 0;
-    BRGCON3bits.SEG2PH2 = 0;
-    
-    BRGCON1bits.SJW0 = 0; //1 TQ
+    BRGCON1bits.BRP0 = 1; //BRP = 1;
+    BRGCON1bits.BRP1 = 0;
+    BRGCON2bits.PRSEG0 = 0; // 7 Tq
+    BRGCON2bits.PRSEG1 = 1;
+    BRGCON2bits.PRSEG2 = 1;
+    BRGCON2bits.SEG1PH0 = 1; // 6 Tq
+    BRGCON2bits.SEG1PH1 = 0; 
+    BRGCON2bits.SEG1PH2 = 1; 
+    BRGCON3bits.SEG2PH0 = 1; //2 Tq
+    BRGCON1bits.SJW0 = 1; //2 Tq
     
 	// 5. Set up the Filter and Mask registers.
     
