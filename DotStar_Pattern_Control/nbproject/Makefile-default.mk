@@ -51,17 +51,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=ES_CheckEvents.c ES_DeferRecall.c ES_Framework.c ES_LookupTables.c ES_Port.c ES_PostList.c ES_Queue.c ES_Timers.c EventCheckers.c Pattern_ControlService.c Pattern_DotStarLED.c Pattern_RGBPatterns.c SPI32_ControlService.c SPI32_HW.c main.c retarget.c
+SOURCEFILES_QUOTED_IF_SPACED=ES_CheckEvents.c ES_DeferRecall.c ES_Framework.c ES_LookupTables.c ES_Port.c ES_PostList.c ES_Queue.c ES_Timers.c EventCheckers.c Pattern_ControlService.c Pattern_DotStarLED.c Pattern_RGBPatterns.c SPI32_ControlService.c SPI32_HW.c main.c retarget.c Pattern_HSV_Convert.c CanRX_Service.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/ES_CheckEvents.p1 ${OBJECTDIR}/ES_DeferRecall.p1 ${OBJECTDIR}/ES_Framework.p1 ${OBJECTDIR}/ES_LookupTables.p1 ${OBJECTDIR}/ES_Port.p1 ${OBJECTDIR}/ES_PostList.p1 ${OBJECTDIR}/ES_Queue.p1 ${OBJECTDIR}/ES_Timers.p1 ${OBJECTDIR}/EventCheckers.p1 ${OBJECTDIR}/Pattern_ControlService.p1 ${OBJECTDIR}/Pattern_DotStarLED.p1 ${OBJECTDIR}/Pattern_RGBPatterns.p1 ${OBJECTDIR}/SPI32_ControlService.p1 ${OBJECTDIR}/SPI32_HW.p1 ${OBJECTDIR}/main.p1 ${OBJECTDIR}/retarget.p1
-POSSIBLE_DEPFILES=${OBJECTDIR}/ES_CheckEvents.p1.d ${OBJECTDIR}/ES_DeferRecall.p1.d ${OBJECTDIR}/ES_Framework.p1.d ${OBJECTDIR}/ES_LookupTables.p1.d ${OBJECTDIR}/ES_Port.p1.d ${OBJECTDIR}/ES_PostList.p1.d ${OBJECTDIR}/ES_Queue.p1.d ${OBJECTDIR}/ES_Timers.p1.d ${OBJECTDIR}/EventCheckers.p1.d ${OBJECTDIR}/Pattern_ControlService.p1.d ${OBJECTDIR}/Pattern_DotStarLED.p1.d ${OBJECTDIR}/Pattern_RGBPatterns.p1.d ${OBJECTDIR}/SPI32_ControlService.p1.d ${OBJECTDIR}/SPI32_HW.p1.d ${OBJECTDIR}/main.p1.d ${OBJECTDIR}/retarget.p1.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/ES_CheckEvents.p1 ${OBJECTDIR}/ES_DeferRecall.p1 ${OBJECTDIR}/ES_Framework.p1 ${OBJECTDIR}/ES_LookupTables.p1 ${OBJECTDIR}/ES_Port.p1 ${OBJECTDIR}/ES_PostList.p1 ${OBJECTDIR}/ES_Queue.p1 ${OBJECTDIR}/ES_Timers.p1 ${OBJECTDIR}/EventCheckers.p1 ${OBJECTDIR}/Pattern_ControlService.p1 ${OBJECTDIR}/Pattern_DotStarLED.p1 ${OBJECTDIR}/Pattern_RGBPatterns.p1 ${OBJECTDIR}/SPI32_ControlService.p1 ${OBJECTDIR}/SPI32_HW.p1 ${OBJECTDIR}/main.p1 ${OBJECTDIR}/retarget.p1 ${OBJECTDIR}/Pattern_HSV_Convert.p1 ${OBJECTDIR}/CanRX_Service.p1
+POSSIBLE_DEPFILES=${OBJECTDIR}/ES_CheckEvents.p1.d ${OBJECTDIR}/ES_DeferRecall.p1.d ${OBJECTDIR}/ES_Framework.p1.d ${OBJECTDIR}/ES_LookupTables.p1.d ${OBJECTDIR}/ES_Port.p1.d ${OBJECTDIR}/ES_PostList.p1.d ${OBJECTDIR}/ES_Queue.p1.d ${OBJECTDIR}/ES_Timers.p1.d ${OBJECTDIR}/EventCheckers.p1.d ${OBJECTDIR}/Pattern_ControlService.p1.d ${OBJECTDIR}/Pattern_DotStarLED.p1.d ${OBJECTDIR}/Pattern_RGBPatterns.p1.d ${OBJECTDIR}/SPI32_ControlService.p1.d ${OBJECTDIR}/SPI32_HW.p1.d ${OBJECTDIR}/main.p1.d ${OBJECTDIR}/retarget.p1.d ${OBJECTDIR}/Pattern_HSV_Convert.p1.d ${OBJECTDIR}/CanRX_Service.p1.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/ES_CheckEvents.p1 ${OBJECTDIR}/ES_DeferRecall.p1 ${OBJECTDIR}/ES_Framework.p1 ${OBJECTDIR}/ES_LookupTables.p1 ${OBJECTDIR}/ES_Port.p1 ${OBJECTDIR}/ES_PostList.p1 ${OBJECTDIR}/ES_Queue.p1 ${OBJECTDIR}/ES_Timers.p1 ${OBJECTDIR}/EventCheckers.p1 ${OBJECTDIR}/Pattern_ControlService.p1 ${OBJECTDIR}/Pattern_DotStarLED.p1 ${OBJECTDIR}/Pattern_RGBPatterns.p1 ${OBJECTDIR}/SPI32_ControlService.p1 ${OBJECTDIR}/SPI32_HW.p1 ${OBJECTDIR}/main.p1 ${OBJECTDIR}/retarget.p1
+OBJECTFILES=${OBJECTDIR}/ES_CheckEvents.p1 ${OBJECTDIR}/ES_DeferRecall.p1 ${OBJECTDIR}/ES_Framework.p1 ${OBJECTDIR}/ES_LookupTables.p1 ${OBJECTDIR}/ES_Port.p1 ${OBJECTDIR}/ES_PostList.p1 ${OBJECTDIR}/ES_Queue.p1 ${OBJECTDIR}/ES_Timers.p1 ${OBJECTDIR}/EventCheckers.p1 ${OBJECTDIR}/Pattern_ControlService.p1 ${OBJECTDIR}/Pattern_DotStarLED.p1 ${OBJECTDIR}/Pattern_RGBPatterns.p1 ${OBJECTDIR}/SPI32_ControlService.p1 ${OBJECTDIR}/SPI32_HW.p1 ${OBJECTDIR}/main.p1 ${OBJECTDIR}/retarget.p1 ${OBJECTDIR}/Pattern_HSV_Convert.p1 ${OBJECTDIR}/CanRX_Service.p1
 
 # Source Files
-SOURCEFILES=ES_CheckEvents.c ES_DeferRecall.c ES_Framework.c ES_LookupTables.c ES_Port.c ES_PostList.c ES_Queue.c ES_Timers.c EventCheckers.c Pattern_ControlService.c Pattern_DotStarLED.c Pattern_RGBPatterns.c SPI32_ControlService.c SPI32_HW.c main.c retarget.c
+SOURCEFILES=ES_CheckEvents.c ES_DeferRecall.c ES_Framework.c ES_LookupTables.c ES_Port.c ES_PostList.c ES_Queue.c ES_Timers.c EventCheckers.c Pattern_ControlService.c Pattern_DotStarLED.c Pattern_RGBPatterns.c SPI32_ControlService.c SPI32_HW.c main.c retarget.c Pattern_HSV_Convert.c CanRX_Service.c
 
 
 CFLAGS=
@@ -215,6 +215,22 @@ ${OBJECTDIR}/retarget.p1: retarget.c  nbproject/Makefile-${CND_CONF}.mk
 	@-${MV} ${OBJECTDIR}/retarget.d ${OBJECTDIR}/retarget.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/retarget.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
+${OBJECTDIR}/Pattern_HSV_Convert.p1: Pattern_HSV_Convert.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/Pattern_HSV_Convert.p1.d 
+	@${RM} ${OBJECTDIR}/Pattern_HSV_Convert.p1 
+	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  -D__DEBUG=1 --debugger=none  --double=24 --float=24 --emi=wordwrite --opt=default,+asm,+asmfile,-speed,+space,-debug --addrqual=ignore --mode=free -P -N255 --warn=-3 --asmlist -DXPRJ_default=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,-plib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/Pattern_HSV_Convert.p1  Pattern_HSV_Convert.c 
+	@-${MV} ${OBJECTDIR}/Pattern_HSV_Convert.d ${OBJECTDIR}/Pattern_HSV_Convert.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/Pattern_HSV_Convert.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/CanRX_Service.p1: CanRX_Service.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/CanRX_Service.p1.d 
+	@${RM} ${OBJECTDIR}/CanRX_Service.p1 
+	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  -D__DEBUG=1 --debugger=none  --double=24 --float=24 --emi=wordwrite --opt=default,+asm,+asmfile,-speed,+space,-debug --addrqual=ignore --mode=free -P -N255 --warn=-3 --asmlist -DXPRJ_default=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,-plib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/CanRX_Service.p1  CanRX_Service.c 
+	@-${MV} ${OBJECTDIR}/CanRX_Service.d ${OBJECTDIR}/CanRX_Service.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/CanRX_Service.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
 else
 ${OBJECTDIR}/ES_CheckEvents.p1: ES_CheckEvents.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
@@ -343,6 +359,22 @@ ${OBJECTDIR}/retarget.p1: retarget.c  nbproject/Makefile-${CND_CONF}.mk
 	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  --double=24 --float=24 --emi=wordwrite --opt=default,+asm,+asmfile,-speed,+space,-debug --addrqual=ignore --mode=free -P -N255 --warn=-3 --asmlist -DXPRJ_default=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,-plib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/retarget.p1  retarget.c 
 	@-${MV} ${OBJECTDIR}/retarget.d ${OBJECTDIR}/retarget.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/retarget.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/Pattern_HSV_Convert.p1: Pattern_HSV_Convert.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/Pattern_HSV_Convert.p1.d 
+	@${RM} ${OBJECTDIR}/Pattern_HSV_Convert.p1 
+	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  --double=24 --float=24 --emi=wordwrite --opt=default,+asm,+asmfile,-speed,+space,-debug --addrqual=ignore --mode=free -P -N255 --warn=-3 --asmlist -DXPRJ_default=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,-plib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/Pattern_HSV_Convert.p1  Pattern_HSV_Convert.c 
+	@-${MV} ${OBJECTDIR}/Pattern_HSV_Convert.d ${OBJECTDIR}/Pattern_HSV_Convert.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/Pattern_HSV_Convert.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/CanRX_Service.p1: CanRX_Service.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/CanRX_Service.p1.d 
+	@${RM} ${OBJECTDIR}/CanRX_Service.p1 
+	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  --double=24 --float=24 --emi=wordwrite --opt=default,+asm,+asmfile,-speed,+space,-debug --addrqual=ignore --mode=free -P -N255 --warn=-3 --asmlist -DXPRJ_default=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,-plib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/CanRX_Service.p1  CanRX_Service.c 
+	@-${MV} ${OBJECTDIR}/CanRX_Service.d ${OBJECTDIR}/CanRX_Service.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/CanRX_Service.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 endif
 

@@ -27,6 +27,7 @@
 #include "ES_Timers.h"
 #include "ES_Events.h"
 #include "SPI32_HW.h"
+#include "CanRX_Service.h"
 
 #define UART_PORT 		0
 #define UART_BAUD		115200UL
@@ -128,6 +129,23 @@ void interrupt ISR ( void )
    {
        SSPIF = 0; // Clear flag
        SPI32_EOTResponse(); 
+   }
+   if (TXB0IF == 1) // Transmit Buffer 0 interrupt
+   {
+       TXB0IF = 0;
+       CanXmitResponse();
+   }
+   if (RXB0IF == 1) {
+       RXB0IF = 0;
+       CanRCVResponse();
+   }
+   if (ERRIF == 1) {
+       ERRIF = 0;
+       CanErrorResponse();
+   }
+   if (IRXIF == 1) {
+       IRXIF = 0;
+       BusErrorResponse();
    }
 // add your interrupt processing here
 	   

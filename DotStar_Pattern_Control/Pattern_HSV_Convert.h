@@ -1,6 +1,6 @@
 /****************************************************************************
  Module
-     Pattern_RGBPatterns.h
+     Pattern_HSV_Convert.h
  Description
      header file for pattern control of a RGB LED strip
  Notes
@@ -11,16 +11,13 @@
  10/28/16 02:00 lxw      first pass
 *****************************************************************************/
 
-#ifndef Pattern_RGBPatterns_H
-#define Pattern_RGBPatterns_H
+#ifndef Pattern_HSV_Convert_H
+#define Pattern_HSV_Convert_H
 
  //the common headers for C99 types 
 #include "ES_Types.h"
 
  //function prototypes
-void SetupPattern(uint8_t *configs, uint8_t numPixels);
-uint16_t * PatternOff(void);
-uint16_t * UpdatePattern(void);
-void ResetPattern(void);
+void HSV_to_RGB(uint32_t *);
 
-#endif /* Pattern_RGBPatterns_H */
+#endif /* Pattern_HSV_Convert_H */

@@ -19,7 +19,7 @@
 
  //function prototypes
 void SPI32_Init(void);
-void SPI32_SendByte(uint8_t newByte);
+void SPI32_SendFrame(uint32_t newByte);
 void SPI32_EOTResponse(void);
 
 #endif /* SPI32_HW_H */

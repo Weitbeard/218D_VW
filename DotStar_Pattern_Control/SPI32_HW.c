@@ -41,6 +41,8 @@
 static void HW_Init(void);
 
 /*---------------------------- Module Variables ---------------------------*/
+static uint32_t TransmitFrame;
+static uint8_t FrameByte = 3;
 
 /*------------------------------ Module Code ------------------------------*/
 
@@ -81,7 +83,7 @@ void SPI32_Init(void){
     sending, keep trying to send again until the buffer is full
 
 ****************************************************************************/
-void SPI32_SendByte(uint8_t newByte) {
+void SPI32_SendFrame(uint32_t newFrame) {
 //    if (FirstSend == true) { //BF will be 0 at start
 //        FirstSend = false;
 //        SSPBUF = Data;
@@ -94,7 +96,16 @@ void SPI32_SendByte(uint8_t newByte) {
 //        ThisEvent.EventType = BUF_NOT_READY;
 //        PostSPI_Service(ThisEvent);
 //    }
-    SSPBUF = newByte; //Write to buffer
+    
+     //if sending first byte of new frame
+    if(FrameByte == 4){
+         //store newFrame
+        TransmitFrame = newFrame;
+    }
+     //decrement byte index
+    FrameByte--;
+     //send next byte
+    SSPBUF = (uint8_t)(newFrame>>(FrameByte*8)); //Write to buffer
 }
 
 /****************************************************************************
@@ -132,7 +143,7 @@ static void HW_Init(void){
     SSPCON1 = 0x00; //Clear SSPCON1
     SSPSTAT = 0b01000000; //XMit occurs from active to idle clk state (CKE, 6))
     SSPADD = 0xFF;
-    SSPCON1 = 0b00110010; //Set idle high (CKP, 4) and enable on (SSPEN 5), FOSC/64 speed)
+    SSPCON1 = 0b00110000; //Set idle high (CKP, 4) and enable on (SSPEN 5), FOSC/4 speed)
 	
 }
 
@@ -154,9 +165,17 @@ static void HW_Init(void){
    lxw, 02/15/16, 16:20
 ****************************************************************************/
 void SPI32_EOTResponse(void){
-	 //start transmission byte delay timer
-	//ES_Timer_InitTimer(SPI_BYTE_DELAY_TIMER, BYTE_XFER_DELAY);
-    ES_Event EOTevent;
-    EOTevent.EventType = ES_TIMEOUT;
-    PostSPI32ControlService(EOTevent);
+     //if the last byte has been sent
+    if(FrameByte == 0){
+         //reset the byte index
+        FrameByte = 4;
+         //signal the end of the frame transmission to the control service
+        ES_Event EOTevent;
+        EOTevent.EventType = ES_TIMEOUT;
+        PostSPI32ControlService(EOTevent);
+    }
+    else{
+         //otherwise, send the next byte
+        SPI32_SendFrame(TransmitFrame);
+    }
 }

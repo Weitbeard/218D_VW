@@ -59,7 +59,7 @@ static uint8_t MyPriority;//module-level variables
 static	uint8_t	PatternConfigs[5] = {
 	OFF,
 	TEST_PATTERN,
-	FULL_BRIGHT,
+	TEST_BRIGHT,
 	DEFAULT_PROFILE,
 	DEFAULT_SPEED };
 #else
@@ -100,7 +100,7 @@ bool InitPatternControlService( uint8_t Priority )
 
   MyPriority = Priority;
    //initialize DotStar LED strip
-  DotStar_Init(STRIP_LENGTH); //change length in PatternDefs.h
+  DotStar_Init(STRIP_LENGTH,PatternConfigs[BRIGHTNESS]); //change length in PatternDefs.h
   SetupPattern(PatternConfigs, STRIP_LENGTH);
    //set initial state
   CurrentState = Pattern_Startup;
@@ -165,6 +165,8 @@ ES_Event RunPatternControlService( ES_Event ThisEvent )
             if(ThisEvent.EventType == ES_INIT){
                  //Add any debug functions or self-checks here
                 /*												*/
+                 //clear the LED strip
+				StopPattern();
                  //change state to Pattern_Off
                 CurrentState = Pattern_Off;
                 
@@ -250,6 +252,7 @@ void SetPattern(uint8_t PatternID){
 // Set brightness of the LED pattern
 void SetBrightness(uint8_t brightness){
 	PatternConfigs[BRIGHTNESS] = brightness;
+    DotStar_SetBrightness(brightness);
 }
 
 // Set LED color and pattern profile (based on car model)
@@ -282,7 +285,7 @@ static void StopPattern(void){
 	 //stop the pattern update timer
 	ES_Timer_StopTimer(PATTERN_UPDATE_TIMER);
 	 //turn off LEDs
-	DotStar_Off();
+	DotStar_Show(PatternOff());
 	 //reset pattern
 	ResetPattern();
 	 //record LED status
