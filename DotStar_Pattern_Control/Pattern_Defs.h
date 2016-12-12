@@ -19,16 +19,24 @@
 #define DOUBLE_FADE_LOOP    2
 #define SINGLE_REBOUND      3
 #define DOUBLE_REBOUND      4
+#define FULL_PULSE          5
+#define TOP_PULSE           6
 
  //Pattern color defines
+#define WELCOME_HUE     135
+#define WELCOME_SAT     4
+
+#define IDLE_HUE        135
+#define IDLE_SAT        4
+
+#define LISTENING_HUE   85
 #define THINKING_HUE    32
 #define SPEAKING_HUE    170
-#define LISTENING_HUE    85
-#define IDLE_HUE    0
 
  //General LED strip defines
 #define STRIP_LENGTH        76
 #define MAX_STRIP_LENGTH    76
+#define CENTER_PIXEL        37
 
  //LED pattern configuration array defines
 #define NUM_CONFIGS 5
@@ -42,11 +50,13 @@
 #define ON	1
 #define	OFF	0
  //Pattern ID defines
+#define NUM_PATTERNS        6
 #define	NO_PATTERN          0
-#define	IDLE_PATTERN        1
-#define	THINKING_PATTERN    2
-#define	SPEAKING_PATTERN    3
-#define	LISTENING_PATTERN   4
+#define WELCOME_PATTERN     1 
+#define	IDLE_PATTERN        2
+#define	LISTENING_PATTERN   3
+#define	THINKING_PATTERN    4
+#define	SPEAKING_PATTERN    5
 #define	TEST_PATTERN        0xFF
  //LED brightness defines
 #define FULL_BRIGHT		0x1F

@@ -42,16 +42,18 @@
    relevant to the behavior of this state machine
 */
 
-static uint16_t ThinkingPattern(uint8_t pattern, uint8_t pixel,uint8_t stepCount);
-static uint16_t SpeakingPattern(uint8_t pattern, uint8_t pixel,uint8_t stepCount);
-static uint16_t ListeningPattern(uint8_t pattern, uint8_t pixel,uint8_t stepCount);
-static uint16_t IdlePattern(uint8_t pattern, uint8_t pixel,uint8_t stepCount);
+static void WelcomePattern(uint8_t pattern);
+static uint16_t ThinkingPattern(uint8_t pattern, uint8_t pixel, uint8_t stepCount);
+static uint16_t SpeakingPattern(uint8_t pattern, uint8_t pixel, uint8_t stepCount);
+static uint16_t ListeningPattern(uint8_t listLoc, uint8_t pixel, uint8_t stepCount);
+static void IdlePattern(uint8_t pattern);
 
 /*---------------------------- Module Variables ---------------------------*/
 static	uint16_t PixelPattern[MAX_STRIP_LENGTH];// @ (BANK_2_GPR);
 static  uint8_t* PatternConfigs;
 static  uint8_t  Length;
 static  uint8_t  PatternStepCounter = 0;
+static  uint32_t CycleCounter = 0;
 
 #ifdef PATTERN_TEST
 static  uint16_t TestHue = 0;
@@ -97,17 +99,17 @@ uint16_t * UpdatePattern(void){
     switch(patternID){
         
         case NO_PATTERN:
-            
+            for(uint8_t i=0;i<Length;i++){
+                PixelPattern[i] = PIXEL_OFF;
+            }
+        break;
+                
+        case WELCOME_PATTERN:
+            WelcomePattern(FULL_PULSE);
         break;
         
         case IDLE_PATTERN:
-            for(uint8_t i=0;i<Length;i++){
-                PixelPattern[i] = IdlePattern(SINGLE_FADE_LOOP,i,PatternStepCounter);
-            }
-            PatternStepCounter = (PatternStepCounter+1)%Length;
-            //for(uint8_t i=0;i<Length;i++){
-            //    PixelPattern[i] = TestHue | TEST_SATURATION | TEST_VALUE; //(uint32_t)(i == PatternStepCounter ? (GenColors[TestColor]|0x1f000000) : 0x0));
-            //}
+            IdlePattern(TOP_PULSE);
         break;
         
         case THINKING_PATTERN:
@@ -127,12 +129,12 @@ uint16_t * UpdatePattern(void){
         
         case LISTENING_PATTERN:
             for(uint8_t i=0;i<Length;i++){
-                PixelPattern[i] = ListeningPattern(SINGLE_FADE_LOOP,i,PatternStepCounter);
+                PixelPattern[i] = ListeningPattern(GetListLoc(),i,PatternStepCounter);
             }
             PatternStepCounter = (PatternStepCounter+1)%Length;
         break;
         
-        #ifdef PATTERN_TEST
+        //#ifdef PATTERN_TEST
         case TEST_PATTERN:
         {
             #ifdef RGB_PATTERNS
@@ -183,7 +185,7 @@ uint16_t * UpdatePattern(void){
             #endif
         }
         break;
-        #endif
+        //#endif
     }
     
     return PixelPattern;
@@ -192,6 +194,65 @@ uint16_t * UpdatePattern(void){
 void ResetPattern(void){
      //reset pattern step counter
     PatternStepCounter=0;
+     //reset cycle counter
+    CycleCounter = 0;
+}
+
+static void WelcomePattern(uint8_t pattern){
+    static bool rising = true;
+    uint8_t sat, val, hue;
+    
+    hue = WELCOME_HUE;
+    sat = WELCOME_SAT;
+    
+    switch(pattern){
+        default:
+             //scale value according to stepCount
+            val = (PatternStepCounter>>4);
+            for(uint8_t i=0;i<Length;i++){
+                PixelPattern[i] = ((uint16_t)hue<<8) | (sat<<4) | val;
+            }
+            if(PatternStepCounter == 255){
+                rising = false;
+                CycleCounter++;
+            }
+            else if(PatternStepCounter == 0){
+                rising = true;
+                CycleCounter++;
+            }
+            if(CycleCounter < 4){
+                PatternStepCounter = (rising ? PatternStepCounter+15 : PatternStepCounter-15);
+            }
+        break;
+    }
+}
+
+static void IdlePattern(uint8_t pattern){
+    static bool rising = true;
+    uint8_t fade_thresh = 10;
+    uint8_t sat, val, hue, x, pulseWidth;
+    
+    hue = IDLE_HUE;
+    sat = IDLE_SAT;
+    
+    switch(pattern){
+        default:
+            pulseWidth = 15;
+            for(uint8_t i=0;i<Length;i++){
+                 //scale value according to stepCount
+                x = min((Length+i-CENTER_PIXEL)%Length,(Length+CENTER_PIXEL-i)%Length);
+                val = (x < fade_thresh ? (PatternStepCounter>>4) : (x < pulseWidth ? (PatternStepCounter-PatternStepCounter*x/pulseWidth)>>4 : 0x00));
+                PixelPattern[i] = ((uint16_t)hue<<8) | (sat<<4) | val;
+            }
+            if(PatternStepCounter == 255){
+                rising = false;
+            }
+            else if(PatternStepCounter == 0){
+                rising = true;
+            }
+            PatternStepCounter = (rising ? PatternStepCounter+15 : PatternStepCounter-15);
+        break;
+    }    
 }
 
 static uint16_t ThinkingPattern(uint8_t pattern, uint8_t pixel, uint8_t stepCount){
@@ -214,20 +275,17 @@ static uint16_t ThinkingPattern(uint8_t pattern, uint8_t pixel, uint8_t stepCoun
     return pixelHSV;
 }
 
-static uint16_t ListeningPattern(uint8_t pattern, uint8_t pixel, uint8_t stepCount){
-    uint8_t head = stepCount;
+static uint16_t ListeningPattern(uint8_t listeningLoc, uint8_t pixel, uint8_t stepCount){
+    uint8_t head = listeningLoc;
     uint16_t pixelHSV;
-    uint8_t sat, val, hue, x;
+    uint8_t sat, val, hue, x, y;
     
-    switch(pattern){
-        default:
-            hue = LISTENING_HUE;
-            sat = 0x0F;
-             //scale fade according to minimum distance from head (stepCount)
-            x = min((Length+pixel-head)%Length,(Length+head-pixel)%Length);
-            val = (x < FADE_LENGTH ? 0x0F-x*0x0F/FADE_LENGTH : 0x00);
-        break;
-    }
+    hue = LISTENING_HUE;
+    sat = 0x0F;
+     //pulse around the listening point
+    y = (FADE_LENGTH-stepCount%4);
+    x = min((Length+pixel-head)%Length,(Length+head-pixel)%Length);
+    val = (x < y ? 0x0F-x*0x0F/y : 0x00);
             
     pixelHSV = ((uint16_t)hue<<8) | (sat<<4) | val;
     
@@ -250,26 +308,6 @@ static uint16_t SpeakingPattern(uint8_t pattern, uint8_t pixel, uint8_t stepCoun
     }
             
     pixelHSV = ((uint16_t)hue<<8) | (sat<<4) | val;
-    
-    return pixelHSV;
-}
-
-static uint16_t IdlePattern(uint8_t pattern, uint8_t pixel, uint8_t stepCount){
-    uint8_t head = stepCount;
-    uint16_t pixelHSV;
-    uint8_t sat, val, hue, x;
-    
-    switch(pattern){
-        default:
-            hue = IDLE_HUE;
-            sat = 0x0F;
-             //scale fade according to minimum distance from head (stepCount)
-            x = min((Length+pixel-head)%Length,(Length+head-pixel)%Length);
-            val = (x < FADE_LENGTH ? 0x0F-x*0x0F/FADE_LENGTH : 0x00);
-        break;
-    }
-            
-    pixelHSV = ((uint16_t)THINKING_HUE<<8) | (sat<<4) | val;
     
     return pixelHSV;
 }

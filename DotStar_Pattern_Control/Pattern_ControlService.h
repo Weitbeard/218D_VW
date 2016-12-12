@@ -23,10 +23,12 @@ ES_Event RunPatternControlService( ES_Event ThisEvent );
 
 uint8_t * GetPatternConfigs(void);
 //void SetNumPixels(uint8_t numPixels);  *************TODO
-void SetPattern(uint8_t PatternID);
+void SetPattern(uint8_t patternID);
 void SetBrightness(uint8_t brightness);
 void SetProfile(uint8_t profileID);
 void SetPatternSpeed(uint8_t speed);
+void SetListLoc(uint8_t newLocation);
+uint8_t GetListLoc(void);
 
 #endif /* Pattern_ControlService_H */
 

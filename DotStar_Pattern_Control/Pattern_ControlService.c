@@ -36,6 +36,7 @@
 #include "Pattern_DotStarLED.h"
 #include "Pattern_RGBPatterns.h"
 #include "Pattern_Defs.h"
+#include "CAN_RX_HW.h"
 
 /*----------------------------- Module Defines ----------------------------*/
 
@@ -73,6 +74,7 @@ static	uint8_t	PatternConfigs[5] = {
 
 static uint8_t NumPixels;
 static uint8_t MaxBrightness = FULL_BRIGHT;
+static uint8_t ListLoc;
 
 
 /*------------------------------ Module Code ------------------------------*/
@@ -102,6 +104,8 @@ bool InitPatternControlService( uint8_t Priority )
    //initialize DotStar LED strip
   DotStar_Init(STRIP_LENGTH,PatternConfigs[BRIGHTNESS]); //change length in PatternDefs.h
   SetupPattern(PatternConfigs, STRIP_LENGTH);
+   //initialize CAN
+  CAN_Init();
    //set initial state
   CurrentState = Pattern_Startup;
    //post the initial transition event
@@ -212,7 +216,7 @@ ES_Event RunPatternControlService( ES_Event ThisEvent )
 		
 		case Pattern_Paused:
 			 //if receiving an UNPAUSE event
-			if(ThisEvent.EventType == PATTERN_UNPAUSE){
+			if(ThisEvent.EventType == PATTERN_START){
 				 //unpause the pattern
 				ShowPattern();
 				 //change state to Pattern_Running
@@ -247,12 +251,15 @@ void SetNumPixels(uint8_t numPixels){
 // Setup a new LED display pattern
 void SetPattern(uint8_t PatternID){
 	PatternConfigs[CUR_PATTERN] = PatternID;
+     //reset pattern step counter
+    ResetPattern();
 }
 
 // Set brightness of the LED pattern
 void SetBrightness(uint8_t brightness){
-	PatternConfigs[BRIGHTNESS] = brightness;
-    DotStar_SetBrightness(brightness);
+    uint16_t newBrightness = brightness*MaxBrightness/255;
+	PatternConfigs[BRIGHTNESS] = newBrightness;
+    DotStar_SetBrightness(newBrightness);
 }
 
 // Set LED color and pattern profile (based on car model)
@@ -263,6 +270,16 @@ void SetProfile(uint8_t profileID){
 // Set pattern cycle speed
 void SetPatternSpeed(uint8_t speed){
 	PatternConfigs[CYC_SPEED] = speed;
+}
+
+// Set listening location
+void SetListLoc(uint8_t newLocation){
+    uint16_t LL = newLocation*STRIP_LENGTH/255;
+	ListLoc = LL;
+}
+
+uint8_t GetListLoc(void){
+	return ListLoc;
 }
 
 /***************************************************************************

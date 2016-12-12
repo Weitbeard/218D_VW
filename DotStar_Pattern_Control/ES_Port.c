@@ -27,7 +27,7 @@
 #include "ES_Timers.h"
 #include "ES_Events.h"
 #include "SPI32_HW.h"
-#include "CanRX_Service.h"
+#include "CAN_RX_HW.h"
 
 #define UART_PORT 		0
 #define UART_BAUD		115200UL
@@ -105,7 +105,7 @@ void _HW_Timer_Init(TimerRate_t Rate)
     *  Timer prescaler is 1:4
     */
    T1CON = 0b00100001;
-
+   PEIE = 1;
    EnableInterrupts;                /* make sure that interrupts are enabled*/
 }
 
@@ -133,19 +133,19 @@ void interrupt ISR ( void )
    if (TXB0IF == 1) // Transmit Buffer 0 interrupt
    {
        TXB0IF = 0;
-       CanXmitResponse();
+       CAN_XmitResponse();
    }
    if (RXB0IF == 1) {
        RXB0IF = 0;
-       CanRCVResponse();
+       CAN_RCVResponse();
    }
    if (ERRIF == 1) {
        ERRIF = 0;
-       CanErrorResponse();
+       CAN_ErrorResponse();
    }
    if (IRXIF == 1) {
        IRXIF = 0;
-       BusErrorResponse();
+       CAN_BusErrorResponse();
    }
 // add your interrupt processing here
 	   

@@ -30,7 +30,7 @@
 /****************************************************************************/
 // This macro determines that number of services that are *actually* used in
 // a particular application. It will vary in value from 1 to MAX_NUM_SERVICES
-#define NUM_SERVICES 3
+#define NUM_SERVICES 2
 
 /****************************************************************************/
 // These are the definitions for Service 0, the lowest priority service.
@@ -259,14 +259,9 @@ typedef enum {  /* Framework Events */
                 PATTERN_START,
                 PATTERN_END,
                 PATTERN_PAUSE,
-                PATTERN_UNPAUSE,
                 /* SPI Communication Events */
-                SPI32_TRANSMIT,
+                SPI32_TRANSMIT
                 /* CAN Communication Events */
-                IDLE_MESSAGE,
-                SPEAKING_MESSAGE,
-                THINKING_MESSAGE,
-                LISTENING_MESSAGE
             } ES_EventTyp_t;
 
 /****************************************************************************/
