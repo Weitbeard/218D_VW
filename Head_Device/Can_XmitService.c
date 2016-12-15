@@ -37,21 +37,21 @@
 /*----------------------------- Module Defines ----------------------------*/
 #define ONE_SEC 50
 
-#define IDLE 0x0E
-#define LOADING 0x0D
-#define SPEAKING 0x0B
-#define LISTENING 0x07
+#define START 0x0E
+#define STOP 0x0D
+#define RESET 0x0B
+#define NEXT 0x07
 
 //Pins to Light Up Buttons
-#define IDLE_PIN LATA2
-#define LOADING_PIN LATA3
-#define SPEAKING_PIN LATA4
-#define LISTENING_PIN LATA5
+#define START_PIN LATA2
+#define STOP_PIN LATA3
+#define RESET_PIN LATA4
+#define NEXT_PIN LATA5
 
-#define IDLE_DATA 0x00
-#define LOADING_DATA 0x01
-#define SPEAKING_DATA 0x02
-#define LISTENING_DATA 0x03
+#define START_DATA 0x00
+#define STOP_DATA 0x01
+#define RESET_DATA 0x02
+#define NEXT_DATA 0x03
 
 #define NUM_BYTES 0x03
 /*---------------------------- Module Functions ---------------------------*/
@@ -64,7 +64,6 @@ static void XmitData(uint8_t DataByte);
 
 /*---------------------------- Module Variables ---------------------------*/
 static uint8_t MyPriority;
-static uint8_t LastData;
 
 
 /*------------------------------ Module Code ------------------------------*/
@@ -141,45 +140,40 @@ ES_Event RunCan_XmitService( ES_Event ThisEvent )
   if (ThisEvent.EventType == ES_INIT) {
      InitPins();
      InitCanHardware();
-     IDLE_PIN = 1;
-     LastData = IDLE_DATA;
+     START_PIN = 1;
   } else if (ThisEvent.EventType == DBButtonDown) {
       switch(ThisEvent.EventParam){
-          case IDLE:
-              IDLE_PIN = 1;
-              LOADING_PIN = 0;
-              SPEAKING_PIN = 0;
-              LISTENING_PIN = 0;
-              LastData = IDLE_DATA;
-              XmitData(IDLE_DATA);
+          case START:
+              START_PIN = 1;
+              STOP_PIN = 0;
+              RESET_PIN = 0;
+              NEXT_PIN = 0;
+              XmitData(START_DATA);
               break;
-          case LOADING:
-              IDLE_PIN = 0;
-              LOADING_PIN = 1;
-              SPEAKING_PIN = 0;
-              LISTENING_PIN = 0;
-              LastData = LOADING_DATA;
-              XmitData(LOADING_DATA);
+          case STOP:
+              START_PIN = 0;
+              STOP_PIN = 1;
+              RESET_PIN = 0;
+              NEXT_PIN = 0;
+              XmitData(STOP_DATA);
               break;
-          case SPEAKING:
-              IDLE_PIN = 0;
-              LOADING_PIN = 0;
-              SPEAKING_PIN = 1;
-              LISTENING_PIN = 0;
-              LastData = SPEAKING_DATA;
-              XmitData(SPEAKING_DATA);
+          case RESET:
+              START_PIN = 0;
+              STOP_PIN = 0;
+              RESET_PIN = 1;
+              NEXT_PIN = 0;
+              XmitData(RESET_DATA);
               break;
-          case LISTENING:
-              IDLE_PIN = 0;
-              LOADING_PIN = 0;
-              SPEAKING_PIN = 0;
-              LISTENING_PIN = 1;
-              LastData = LISTENING_DATA;
-              XmitData(LISTENING_DATA);
+          case NEXT:
+              START_PIN = 0;
+              STOP_PIN = 0;
+              RESET_PIN = 0;
+              NEXT_PIN = 1;
+              XmitData(NEXT_DATA);
               break; 
         }
     } else if (ThisEvent.EventType == XMIT_EVENT) {
-        XmitData(LastData);
+        XmitData(0xFF);        
     }
   ReturnEvent.EventType = ES_NO_EVENT; // assume no errors
   return ReturnEvent;
