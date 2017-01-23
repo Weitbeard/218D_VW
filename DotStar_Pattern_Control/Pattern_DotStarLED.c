@@ -19,6 +19,7 @@
 
 #include "ES_Types.h"
 #include "string.h"
+#include "stdlib.h"
 
 #include "ES_Configure.h"
 #include "ES_Framework.h"
@@ -31,7 +32,7 @@
 #define FIRST_PIXEL 1
 #define HEAD        0
 #define HEAD_FRAME  0x0
-#define TAIL        Length+1
+#define TAIL        STRIP_LENGTH+1
 #define TAIL_FRAME  0xffffffff
 #define PIXEL_HEADER    0xe0000000
 
@@ -39,44 +40,28 @@
 #define G_MASK      0x00F0
 #define B_MASK      0x000F
 
-static uint8_t Length;
-static uint8_t Brightness;
-static uint32_t PixelFrames[MAX_STRIP_LENGTH+3];// @ (BANK_0_GPR);
+static uint8_t* Brightness;
+static uint32_t PixelFrames[STRIP_LENGTH+3];
 
+#ifdef RGB_PATTERNS
 static void Expand_RGB(uint32_t *);
+#endif
 
-void DotStar_Init(uint8_t numPixels, uint8_t brightness){
-    /*
-     insert error checking for numPixels = 0 || numPixels >= MAX_STRIP_LENGTH
-      and pre-established SPI communication ********************* TODO
-    */
-    
-	 //initialize SPI hardware registers
-	//SPI32_Init(); //****already done by SPI service... there might be a better way to do this
-     //set number of pixels
-    Length = numPixels;
-     //set strip brightness
-    Brightness = brightness;
+void DotStar_Init(uint8_t *brightnessPointer){
+     //set strip brightness pointer
+    Brightness = brightnessPointer;
      //setup PatternFrames
     PixelFrames[HEAD] = HEAD_FRAME;
     PixelFrames[TAIL] = TAIL_FRAME;
+    #if STRIP_LENGTH > 64
     PixelFrames[TAIL+1] = TAIL_FRAME;
-}
-
-uint8_t DotStar_GetLength(void){
-    return Length;
-}
-
-void DotStar_SetBrightness(uint8_t brightness){
-    if(brightness <= FULL_BRIGHT){
-        Brightness = brightness;
-    }
+    #endif
 }
 
 void DotStar_Show(uint16_t *patternPointer){
-    for(uint8_t i=1; i<=Length; i++){
+    for(uint8_t i=1; i<=STRIP_LENGTH; i++){
          //add pixelPointer's values to PixelFrames with brightness
-        PixelFrames[i] = (PIXEL_HEADER | ((uint32_t)Brightness<<24) | *(patternPointer+(i-1)));
+        PixelFrames[i] = (PIXEL_HEADER | ((uint32_t)*Brightness<<24) | *(patternPointer+(i-1)));
         
         #ifdef HSV_PATTERNS
              //convert values from HSV to RGB
@@ -90,9 +75,10 @@ void DotStar_Show(uint16_t *patternPointer){
     }
     
      //start SPI transmission of PixelFrames
-    SPI32_TransmitFrames(PixelFrames,Length+3);
+    SPI32_TransmitFrames(PixelFrames,STRIP_LENGTH+3);
 }
 
+#ifdef RGB_PATTERNS
 static void Expand_RGB(uint32_t * RGBval){
     uint16_t r, g, b;
     
@@ -105,3 +91,4 @@ static void Expand_RGB(uint32_t * RGBval){
     
     *RGBval = 0xff000000 | ((uint32_t)r>>8) | ((uint32_t)g<<4) | ((uint32_t)b<<16);
 }
+#endif

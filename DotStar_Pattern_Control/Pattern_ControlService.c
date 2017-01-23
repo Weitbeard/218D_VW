@@ -34,7 +34,7 @@
 //module includes
 #include "Pattern_ControlService.h"
 #include "Pattern_DotStarLED.h"
-#include "Pattern_RGBPatterns.h"
+#include "Pattern_PtrnGenerator.h"
 #include "Pattern_Defs.h"
 #include "CAN_RX_HW.h"
 
@@ -56,19 +56,17 @@ static PatternState_t CurrentState;
 // with the introduction of Gen2, we need a module level Priority var as well
 static uint8_t MyPriority;//module-level variables
 
-#ifdef PATTERN_TEST
-static	uint8_t	PatternConfigs[5] = {
-	OFF,
+#ifdef PATTERN_TEST_ENABLE
+static	uint8_t	PatternConfigs[4] = {
 	TEST_PATTERN,
 	TEST_BRIGHT,
-	DEFAULT_PROFILE,
+	DEFAULT_FOCUS,
 	DEFAULT_SPEED };
 #else
-static	uint8_t	PatternConfigs[5] = {
-	OFF,
+static	uint8_t	PatternConfigs[4] = {
 	NO_PATTERN,
 	FULL_BRIGHT,
-	DEFAULT_PROFILE,
+	DEFAULT_FOCUS,
 	DEFAULT_SPEED };
 #endif
 
@@ -102,8 +100,8 @@ bool InitPatternControlService( uint8_t Priority )
 
   MyPriority = Priority;
    //initialize DotStar LED strip
-  DotStar_Init(STRIP_LENGTH,PatternConfigs[BRIGHTNESS]); //change length in PatternDefs.h
-  SetupPattern(PatternConfigs, STRIP_LENGTH);
+  DotStar_Init(&PatternConfigs[BRIGHTNESS]);
+  SetupPattern(&PatternConfigs[CUR_PATTERN], &PatternConfigs[LISTEN_FOCUS]);
    //initialize CAN
   CAN_Init();
    //set initial state
@@ -174,7 +172,7 @@ ES_Event RunPatternControlService( ES_Event ThisEvent )
                  //change state to Pattern_Off
                 CurrentState = Pattern_Off;
                 
-                #ifdef PATTERN_TEST
+                #ifdef PATTERN_TEST_ENABLE
                 ES_Event testEvent;
                 testEvent.EventType = PATTERN_START;
                 PostPatternControlService(testEvent);
@@ -234,20 +232,6 @@ ES_Event RunPatternControlService( ES_Event ThisEvent )
   return ReturnEvent;
 }
 
-// Return current status of the LEDs
-uint8_t * GetPatternConfigs(void){
-	return PatternConfigs;
-}
-
-/* NEED TO INCLUDE ERROR CHECKING FOR LENGTH BEFORE USING THIS FUNCTION
-// Set number of DotStar pixels in the strip
-void SetNumPixels(uint8_t numPixels){
-	NumPixels = numPixels;
-     //reinitialize the pattern & strip
-    //*************************TODO
-}
-*/
-
 // Setup a new LED display pattern
 void SetPattern(uint8_t PatternID){
 	PatternConfigs[CUR_PATTERN] = PatternID;
@@ -259,27 +243,16 @@ void SetPattern(uint8_t PatternID){
 void SetBrightness(uint8_t brightness){
     uint16_t newBrightness = brightness*MaxBrightness/255;
 	PatternConfigs[BRIGHTNESS] = newBrightness;
-    DotStar_SetBrightness(newBrightness);
 }
 
 // Set LED color and pattern profile (based on car model)
-void SetProfile(uint8_t profileID){
-	PatternConfigs[CUR_PROFILE] = profileID;
+void SetListenFocus(uint8_t listFocus){
+	PatternConfigs[LISTEN_FOCUS] = listFocus;
 }
 
 // Set pattern cycle speed
 void SetPatternSpeed(uint8_t speed){
 	PatternConfigs[CYC_SPEED] = speed;
-}
-
-// Set listening location
-void SetListLoc(uint8_t newLocation){
-    uint16_t LL = newLocation*STRIP_LENGTH/255;
-	ListLoc = LL;
-}
-
-uint8_t GetListLoc(void){
-	return ListLoc;
 }
 
 /***************************************************************************
@@ -292,21 +265,16 @@ static void ShowPattern(void){
 	ES_Timer_InitTimer(PATTERN_UPDATE_TIMER,PatternConfigs[CYC_SPEED]);
 	 //call pattern update function based on current profile and pattern ID
 	DotStar_Show(UpdatePattern());
-	 //record LED status
-	PatternConfigs[POWER_STATE] = ON;
 }
 
 // Stop the pattern and turn off the LEDs
 static void StopPattern(void){
-	PatternConfigs[POWER_STATE] = OFF;
 	 //stop the pattern update timer
 	ES_Timer_StopTimer(PATTERN_UPDATE_TIMER);
 	 //turn off LEDs
 	DotStar_Show(PatternOff());
 	 //reset pattern
 	ResetPattern();
-	 //record LED status
-	PatternConfigs[POWER_STATE] = OFF;
 }
 
 // Pause the pattern but leave the LEDs on

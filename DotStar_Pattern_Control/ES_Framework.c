@@ -295,7 +295,7 @@ ES_Return_t ES_Run( void ){
     }
 
     // all the queues are empty, so look for new user detected events
-    ES_CheckUserEvents();
+    //ES_CheckUserEvents();
   }
   
   return Success;

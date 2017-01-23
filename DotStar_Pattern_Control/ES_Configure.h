@@ -268,7 +268,7 @@ typedef enum {  /* Framework Events */
 // These are the definitions for the Distribution lists. Each definition
 // should be a comma separated list of post functions to indicate which
 // services are on that distribution list.
-#define NUM_DIST_LISTS 1
+#define NUM_DIST_LISTS 0
 #if NUM_DIST_LISTS > 0 
 #define DIST_LIST0 PostPatternControlService, PostSPI32ControlService
 #endif
@@ -300,7 +300,7 @@ typedef enum {  /* Framework Events */
 
 /****************************************************************************/
 // This is the list of event checking functions 
-#define EVENT_CHECK_LIST Check4Keystroke
+#define EVENT_CHECK_LIST //e.g. Check4Keystroke
 
 /****************************************************************************/
 // These are the definitions for the post functions to be executed when the

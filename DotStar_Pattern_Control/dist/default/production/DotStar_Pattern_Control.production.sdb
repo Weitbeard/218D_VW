@@ -63,18 +63,6 @@ ES_Timer_RATE_10mS 6783
 ES_Timer_RATE_16mS -15361
 ES_Timer_RATE_32mS -30721
 ]
-"34 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\ES_PostList.c
-[e E15431 . `uc
-ES_NO_EVENT 0
-ES_ERROR 1
-ES_INIT 2
-ES_TIMEOUT 3
-ES_SHORT_TIMEOUT 4
-PATTERN_START 5
-PATTERN_END 6
-PATTERN_PAUSE 7
-SPI32_TRANSMIT 8
-]
 "59 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\ES_Queue.c
 [e E1 . `uc
 ES_NO_EVENT 0
@@ -127,7 +115,7 @@ Pattern_Off 1
 Pattern_Running 2
 Pattern_Paused 3
 ]
-"101
+"99
 [e E30 . `uc
 ES_NO_EVENT 0
 ES_ERROR 1
@@ -139,7 +127,7 @@ PATTERN_END 6
 PATTERN_PAUSE 7
 SPI32_TRANSMIT 8
 ]
-"292
+"265
 [e E15472 . `c
 ES_Timer_ERR -1
 ES_Timer_ACTIVE 1
@@ -167,7 +155,7 @@ PATTERN_END 6
 PATTERN_PAUSE 7
 SPI32_TRANSMIT 8
 ]
-"173 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\SPI32_HW.c
+"172 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\SPI32_HW.c
 [e E36 . `uc
 ES_NO_EVENT 0
 ES_ERROR 1
@@ -202,7 +190,7 @@ ES_Timer_RATE_10mS 6783
 ES_Timer_RATE_16mS -15361
 ES_Timer_RATE_32mS -30721
 ]
-"184 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\CAN_RX_HW.c
+"182 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\CAN_RX_HW.c
 [e E30 . `uc
 ES_NO_EVENT 0
 ES_ERROR 1
@@ -251,24 +239,22 @@ SPI32_TRANSMIT 8
 [v i2___wmul __wmul `(ui  1 e 2 0 ]
 "15 C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\Umul32.c
 [v ___lmul __lmul `(ul  1 e 4 0 ]
-"61 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\CAN_RX_HW.c
+"60 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\CAN_RX_HW.c
 [v _CAN_Init CAN_Init `(v  1 e 1 0 ]
-"66
+"65
 [v _CAN_XmitResponse CAN_XmitResponse `(v  1 e 1 0 ]
-"71
+"70
 [v _CAN_RCVResponse CAN_RCVResponse `(i  1 e 2 0 ]
-"80
+"78
 [v _CAN_ErrorResponse CAN_ErrorResponse `(v  1 e 1 0 ]
-"85
+"83
 [v _CAN_BusErrorResponse CAN_BusErrorResponse `(v  1 e 1 0 ]
-"105
+"103
 [v _InitCanHardware InitCanHardware `(v  1 s 1 InitCanHardware ]
-"165
+"163
 [v _InitPins InitPins `(v  1 s 1 InitPins ]
-"179
+"177
 [v _ProcessReceive ProcessReceive `(v  1 s 1 ProcessReceive ]
-"46 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\ES_CheckEvents.c
-[v _ES_CheckUserEvents ES_CheckUserEvents `(uc  1 e 1 0 ]
 "242 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\ES_Framework.c
 [v _ES_Initialize ES_Initialize `(E15494  1 e 1 0 ]
 "277
@@ -288,8 +274,6 @@ SPI32_TRANSMIT 8
 [v __HW_GetTickCount _HW_GetTickCount `(ui  1 e 2 0 ]
 "225
 [v __HW_Process_Pending_Ints _HW_Process_Pending_Ints `(uc  1 e 1 0 ]
-"142 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\ES_PostList.c
-[v _PostToList PostToList `(uc  1 s 1 PostToList ]
 "58 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\ES_Queue.c
 [v _ES_InitQueue ES_InitQueue `(uc  1 e 1 0 ]
 "85
@@ -307,81 +291,75 @@ SPI32_TRANSMIT 8
 [v _ES_Timer_InitTimer ES_Timer_InitTimer `(E15472  1 e 1 0 ]
 "284
 [v _ES_Timer_Tick_Resp ES_Timer_Tick_Resp `(v  1 e 1 0 ]
-"62 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\EventCheckers.c
-[v _Check4Keystroke Check4Keystroke `(uc  1 e 1 0 ]
 "25 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\main.c
 [v _main main `(i  1 e 2 0 ]
-"99 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\Pattern_ControlService.c
+"97 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\Pattern_ControlService.c
 [v _InitPatternControlService InitPatternControlService `(uc  1 e 1 0 ]
-"139
+"137
 [v _PostPatternControlService PostPatternControlService `(uc  1 e 1 0 ]
 [v i2_PostPatternControlService PostPatternControlService `(uc  1 e 1 0 ]
 "24 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\ES_Events.h
-[s S41 ES_Event_t 3 `E1 1 EventType 1 0 `ui 1 EventParam 2 1 ]
-"161 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\Pattern_ControlService.c
-[v _RunPatternControlService RunPatternControlService `(S41  1 e 3 0 ]
-"252
+[s S37 ES_Event_t 3 `E1 1 EventType 1 0 `ui 1 EventParam 2 1 ]
+"159 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\Pattern_ControlService.c
+[v _RunPatternControlService RunPatternControlService `(S37  1 e 3 0 ]
+"236
 [v _SetPattern SetPattern `(v  1 e 1 0 ]
-"259
+"243
 [v _SetBrightness SetBrightness `(v  1 e 1 0 ]
-"276
-[v _SetListLoc SetListLoc `(v  1 e 1 0 ]
-"281
-[v _GetListLoc GetListLoc `(uc  1 e 1 0 ]
-"290
+"249
+[v _SetListenFocus SetListenFocus `(v  1 e 1 0 ]
+"263
 [v _ShowPattern ShowPattern `(v  1 s 1 ShowPattern ]
-"300
+"271
 [v _StopPattern StopPattern `(v  1 s 1 StopPattern ]
-"313
+"281
 [v _PausePattern PausePattern `(v  1 s 1 PausePattern ]
-"48 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\Pattern_DotStarLED.c
+"50 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\Pattern_DotStarLED.c
 [v _DotStar_Init DotStar_Init `(v  1 e 1 0 ]
-"70
-[v _DotStar_SetBrightness DotStar_SetBrightness `(v  1 e 1 0 ]
-"76
+"61
 [v _DotStar_Show DotStar_Show `(v  1 e 1 0 ]
 "49 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\Pattern_HSV_Convert.c
 [v _HSV_to_RGB HSV_to_RGB `(v  1 e 1 0 ]
-"79 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\Pattern_RGBPatterns.c
+"29 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\Pattern_PtrnFunctions.c
+[v _HueTest HueTest `(v  1 e 1 0 ]
+"80
+[v _FullPulseHold FullPulseHold `(v  1 e 1 0 ]
+"102
+[v _CenterBreathe CenterBreathe `(v  1 e 1 0 ]
+"124
+[v _SingleFadedLoop SingleFadedLoop `(v  1 e 1 0 ]
+"150
+[v _SingleFocusPulse SingleFocusPulse `(v  1 e 1 0 ]
+"66 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\Pattern_PtrnGenerator.c
 [v _SetupPattern SetupPattern `(v  1 e 1 0 ]
-"86
-[v _PatternOff PatternOff `(*.39ui  1 e 2 0 ]
-"94
-[v _UpdatePattern UpdatePattern `(*.39ui  1 e 2 0 ]
-"194
+"72
 [v _ResetPattern ResetPattern `(v  1 e 1 0 ]
 [v i2_ResetPattern ResetPattern `(v  1 e 1 0 ]
-"201
-[v _WelcomePattern WelcomePattern `(v  1 s 1 WelcomePattern ]
-"230
-[v _IdlePattern IdlePattern `(v  1 s 1 IdlePattern ]
-"258
-[v _ThinkingPattern ThinkingPattern `(ui  1 s 2 ThinkingPattern ]
-"278
-[v _ListeningPattern ListeningPattern `(ui  1 s 2 ListeningPattern ]
-"295
-[v _SpeakingPattern SpeakingPattern `(ui  1 s 2 SpeakingPattern ]
+"79
+[v _PatternOff PatternOff `(*.39ui  1 e 2 0 ]
+"86
+[v _UpdatePattern UpdatePattern `(*.39ui  1 e 2 0 ]
 "80 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\SPI32_ControlService.c
 [v _InitSPI32ControlService InitSPI32ControlService `(uc  1 e 1 0 ]
 "117
 [v _PostSPI32ControlService PostSPI32ControlService `(uc  1 e 1 0 ]
 [v i2_PostSPI32ControlService PostSPI32ControlService `(uc  1 e 1 0 ]
 "24 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\ES_Events.h
-[s S41 ES_Event_t 3 `E1 1 EventType 1 0 `ui 1 EventParam 2 1 ]
+[s S37 ES_Event_t 3 `E1 1 EventType 1 0 `ui 1 EventParam 2 1 ]
 "138 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\SPI32_ControlService.c
-[v _RunSPI32ControlService RunSPI32ControlService `(S41  1 e 3 0 ]
+[v _RunSPI32ControlService RunSPI32ControlService `(S37  1 e 3 0 ]
 "239
 [v _SPI32_TransmitFrames SPI32_TransmitFrames `(v  1 e 1 0 ]
 "258
 [v _GetNextFrame GetNextFrame `(ul  1 s 4 GetNextFrame ]
-"66 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\SPI32_HW.c
+"65 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\SPI32_HW.c
 [v _SPI32_Init SPI32_Init `(v  1 e 1 0 ]
-"86
+"85
 [v _SPI32_SendFrame SPI32_SendFrame `(v  1 e 1 0 ]
 [v i2_SPI32_SendFrame SPI32_SendFrame `(v  1 e 1 0 ]
-"128
+"127
 [v _HW_Init HW_Init `(v  1 s 1 HW_Init ]
-"167
+"166
 [v _SPI32_EOTResponse SPI32_EOTResponse `(v  1 e 1 0 ]
 "16255 C:\Program Files (x86)\Microchip\xc8\v1.38\include\pic18f2480.h
 [v _RXF0SIDH RXF0SIDH `VEuc  1 e 1 @3840 ]
@@ -399,7 +377,7 @@ SPI32_TRANSMIT 8
 [v _RXM0EIDH RXM0EIDH `VEuc  1 e 1 @3866 ]
 "19677
 [v _RXM0EIDL RXM0EIDL `VEuc  1 e 1 @3867 ]
-[s S925 . 1 `uc 1 TXPRI0 1 0 :1:0 
+[s S723 . 1 `uc 1 TXPRI0 1 0 :1:0 
 `uc 1 TXPRI1 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
 `uc 1 TXREQ 1 0 :1:3 
@@ -409,29 +387,29 @@ SPI32_TRANSMIT 8
 `uc 1 TXBIF 1 0 :1:7 
 ]
 "23109
-[s S934 . 1 `uc 1 . 1 0 :7:0 
+[s S732 . 1 `uc 1 . 1 0 :7:0 
 `uc 1 TX0IF 1 0 :1:7 
 ]
-[s S937 . 1 `uc 1 . 1 0 :6:0 
+[s S735 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 TXB0ABT 1 0 :1:6 
 ]
-[s S940 . 1 `uc 1 . 1 0 :4:0 
+[s S738 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 TXB0ERR 1 0 :1:4 
 ]
-[s S943 . 1 `uc 1 . 1 0 :5:0 
+[s S741 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 TXB0LARB 1 0 :1:5 
 ]
-[s S946 . 1 `uc 1 TXB0PRI0 1 0 :1:0 
+[s S744 . 1 `uc 1 TXB0PRI0 1 0 :1:0 
 ]
-[s S948 . 1 `uc 1 . 1 0 :1:0 
+[s S746 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 TXB0PRI1 1 0 :1:1 
 ]
-[s S951 . 1 `uc 1 . 1 0 :3:0 
+[s S749 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 TXB0REQ 1 0 :1:3 
 ]
-[u S954 . 1 `S925 1 . 1 0 `S934 1 . 1 0 `S937 1 . 1 0 `S940 1 . 1 0 `S943 1 . 1 0 `S946 1 . 1 0 `S948 1 . 1 0 `S951 1 . 1 0 ]
-[v _TXB0CONbits TXB0CONbits `VES954  1 e 1 @3904 ]
-[s S993 . 1 `uc 1 FILHIT0 1 0 :1:0 
+[u S752 . 1 `S723 1 . 1 0 `S732 1 . 1 0 `S735 1 . 1 0 `S738 1 . 1 0 `S741 1 . 1 0 `S744 1 . 1 0 `S746 1 . 1 0 `S749 1 . 1 0 ]
+[v _TXB0CONbits TXB0CONbits `VES752  1 e 1 @3904 ]
+[s S791 . 1 `uc 1 FILHIT0 1 0 :1:0 
 `uc 1 JTOFF_FILHIT1 1 0 :1:1 
 `uc 1 RXB0DBEN_FILHIT2 1 0 :1:2 
 `uc 1 RXRTRRO_FILHIT3 1 0 :1:3 
@@ -441,54 +419,54 @@ SPI32_TRANSMIT 8
 `uc 1 RXFUL 1 0 :1:7 
 ]
 "26001
-[s S1002 . 1 `uc 1 . 1 0 :1:0 
+[s S800 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 JTOFF 1 0 :1:1 
 `uc 1 RXB0DBEN 1 0 :1:2 
 `uc 1 RXRTRRO 1 0 :1:3 
 `uc 1 . 1 0 :1:4 
 `uc 1 RXM0 1 0 :1:5 
 ]
-[s S1009 . 1 `uc 1 . 1 0 :1:0 
+[s S807 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 FILHIT1 1 0 :1:1 
 `uc 1 FILHIT2 1 0 :1:2 
 `uc 1 FILHIT3 1 0 :1:3 
 `uc 1 . 1 0 :1:4 
 `uc 1 RTRRO 1 0 :1:5 
 ]
-[s S1016 . 1 `uc 1 . 1 0 :2:0 
+[s S814 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 RXBODBEN 1 0 :1:2 
 ]
-[s S1019 . 1 `uc 1 RXB0FILHIT0 1 0 :1:0 
+[s S817 . 1 `uc 1 RXB0FILHIT0 1 0 :1:0 
 ]
-[s S1021 . 1 `uc 1 . 1 0 :1:0 
+[s S819 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 RXB0FILHIT1 1 0 :1:1 
 ]
-[s S1024 . 1 `uc 1 . 1 0 :2:0 
+[s S822 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 RXB0FILHIT2 1 0 :1:2 
 ]
-[s S1027 . 1 `uc 1 . 1 0 :3:0 
+[s S825 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 RXB0FILHIT3 1 0 :1:3 
 ]
-[s S1030 . 1 `uc 1 . 1 0 :4:0 
+[s S828 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 RXB0FILHIT4 1 0 :1:4 
 ]
-[s S1033 . 1 `uc 1 . 1 0 :7:0 
+[s S831 . 1 `uc 1 . 1 0 :7:0 
 `uc 1 RXB0FUL 1 0 :1:7 
 ]
-[s S1036 . 1 `uc 1 . 1 0 :5:0 
+[s S834 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 RXB0M0 1 0 :1:5 
 ]
-[s S1039 . 1 `uc 1 . 1 0 :6:0 
+[s S837 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 RXB0M1 1 0 :1:6 
 ]
-[s S1042 . 1 `uc 1 . 1 0 :3:0 
+[s S840 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 RXB0RTRR0 1 0 :1:3 
 ]
-[s S1045 . 1 `uc 1 . 1 0 :5:0 
+[s S843 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 RXB0RTRRO 1 0 :1:5 
 ]
-[u S1048 . 1 `S993 1 . 1 0 `S1002 1 . 1 0 `S1009 1 . 1 0 `S1016 1 . 1 0 `S1019 1 . 1 0 `S1021 1 . 1 0 `S1024 1 . 1 0 `S1027 1 . 1 0 `S1030 1 . 1 0 `S1033 1 . 1 0 `S1036 1 . 1 0 `S1039 1 . 1 0 `S1042 1 . 1 0 `S1045 1 . 1 0 ]
-[v _RXB0CONbits RXB0CONbits `VES1048  1 e 1 @3936 ]
+[u S846 . 1 `S791 1 . 1 0 `S800 1 . 1 0 `S807 1 . 1 0 `S814 1 . 1 0 `S817 1 . 1 0 `S819 1 . 1 0 `S822 1 . 1 0 `S825 1 . 1 0 `S828 1 . 1 0 `S831 1 . 1 0 `S834 1 . 1 0 `S837 1 . 1 0 `S840 1 . 1 0 `S843 1 . 1 0 ]
+[v _RXB0CONbits RXB0CONbits `VES846  1 e 1 @3936 ]
 "26140
 [v _RXB0SIDH RXB0SIDH `VEuc  1 e 1 @3937 ]
 "26272
@@ -503,7 +481,7 @@ SPI32_TRANSMIT 8
 [v _RXB0D1 RXB0D1 `VEuc  1 e 1 @3943 ]
 "26908
 [v _RXB0D2 RXB0D2 `VEuc  1 e 1 @3944 ]
-[s S1124 . 1 `uc 1 EICODE0 1 0 :1:0 
+[s S922 . 1 `uc 1 EICODE0 1 0 :1:0 
 `uc 1 EICODE1_ICODE0 1 0 :1:1 
 `uc 1 EICODE2_ICODE1 1 0 :1:2 
 `uc 1 EICODE3_ICODE2 1 0 :1:3 
@@ -513,21 +491,21 @@ SPI32_TRANSMIT 8
 `uc 1 OPMODE2 1 0 :1:7 
 ]
 "27303
-[s S1133 . 1 `uc 1 ICODE0 1 0 :1:0 
+[s S931 . 1 `uc 1 ICODE0 1 0 :1:0 
 `uc 1 ICODE1 1 0 :1:1 
 `uc 1 ICODE2 1 0 :1:2 
 `uc 1 ICODE3 1 0 :1:3 
 ]
-[s S1138 . 1 `uc 1 . 1 0 :1:0 
+[s S936 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 EICODE1 1 0 :1:1 
 `uc 1 EICODE2 1 0 :1:2 
 `uc 1 EICODE3 1 0 :1:3 
 ]
-[u S1143 . 1 `S1124 1 . 1 0 `S1133 1 . 1 0 `S1138 1 . 1 0 ]
-[v _CANSTATbits CANSTATbits `VES1143  1 e 1 @3950 ]
+[u S941 . 1 `S922 1 . 1 0 `S931 1 . 1 0 `S936 1 . 1 0 ]
+[v _CANSTATbits CANSTATbits `VES941  1 e 1 @3950 ]
 "27382
 [v _CANCON CANCON `VEuc  1 e 1 @3951 ]
-[s S1196 . 1 `uc 1 BRP0 1 0 :1:0 
+[s S994 . 1 `uc 1 BRP0 1 0 :1:0 
 `uc 1 BRP1 1 0 :1:1 
 `uc 1 BRP2 1 0 :1:2 
 `uc 1 BRP3 1 0 :1:3 
@@ -537,9 +515,9 @@ SPI32_TRANSMIT 8
 `uc 1 SJW1 1 0 :1:7 
 ]
 "27502
-[u S1205 . 1 `S1196 1 . 1 0 ]
-[v _BRGCON1bits BRGCON1bits `VES1205  1 e 1 @3952 ]
-[s S1168 . 1 `uc 1 PRSEG0 1 0 :1:0 
+[u S1003 . 1 `S994 1 . 1 0 ]
+[v _BRGCON1bits BRGCON1bits `VES1003  1 e 1 @3952 ]
+[s S966 . 1 `uc 1 PRSEG0 1 0 :1:0 
 `uc 1 PRSEG1 1 0 :1:1 
 `uc 1 PRSEG2 1 0 :1:2 
 `uc 1 SEG1PH0 1 0 :1:3 
@@ -549,12 +527,12 @@ SPI32_TRANSMIT 8
 `uc 1 SEG2PHT 1 0 :1:7 
 ]
 "27567
-[s S1177 . 1 `uc 1 . 1 0 :7:0 
+[s S975 . 1 `uc 1 . 1 0 :7:0 
 `uc 1 SEG2PHTS 1 0 :1:7 
 ]
-[u S1180 . 1 `S1168 1 . 1 0 `S1177 1 . 1 0 ]
-[v _BRGCON2bits BRGCON2bits `VES1180  1 e 1 @3953 ]
-[s S1217 . 1 `uc 1 SEG2PH0 1 0 :1:0 
+[u S978 . 1 `S966 1 . 1 0 `S975 1 . 1 0 ]
+[v _BRGCON2bits BRGCON2bits `VES978  1 e 1 @3953 ]
+[s S1015 . 1 `uc 1 SEG2PH0 1 0 :1:0 
 `uc 1 SEG2PH1 1 0 :1:1 
 `uc 1 SEG2PH2 1 0 :1:2 
 `uc 1 . 1 0 :3:3 
@@ -562,8 +540,8 @@ SPI32_TRANSMIT 8
 `uc 1 WAKDIS 1 0 :1:7 
 ]
 "27631
-[u S1224 . 1 `S1217 1 . 1 0 ]
-[v _BRGCON3bits BRGCON3bits `VES1224  1 e 1 @3954 ]
+[u S1022 . 1 `S1015 1 . 1 0 ]
+[v _BRGCON3bits BRGCON3bits `VES1022  1 e 1 @3954 ]
 "27660
 [v _CIOCON CIOCON `VEuc  1 e 1 @3955 ]
 "27929
@@ -582,7 +560,7 @@ SPI32_TRANSMIT 8
 [v _LATC LATC `VEuc  1 e 1 @3979 ]
 "28988
 [v _TRISA TRISA `VEuc  1 e 1 @3986 ]
-[s S1253 . 1 `uc 1 TRISB0 1 0 :1:0 
+[s S1051 . 1 `uc 1 TRISB0 1 0 :1:0 
 `uc 1 TRISB1 1 0 :1:1 
 `uc 1 TRISB2 1 0 :1:2 
 `uc 1 TRISB3 1 0 :1:3 
@@ -592,7 +570,7 @@ SPI32_TRANSMIT 8
 `uc 1 TRISB7 1 0 :1:7 
 ]
 "29241
-[s S1262 . 1 `uc 1 RB0 1 0 :1:0 
+[s S1060 . 1 `uc 1 RB0 1 0 :1:0 
 `uc 1 RB1 1 0 :1:1 
 `uc 1 RB2 1 0 :1:2 
 `uc 1 RB3 1 0 :1:3 
@@ -601,8 +579,8 @@ SPI32_TRANSMIT 8
 `uc 1 RB6 1 0 :1:6 
 `uc 1 RB7 1 0 :1:7 
 ]
-[u S1271 . 1 `S1253 1 . 1 0 `S1262 1 . 1 0 ]
-[v _TRISBbits TRISBbits `VES1271  1 e 1 @3987 ]
+[u S1069 . 1 `S1051 1 . 1 0 `S1060 1 . 1 0 ]
+[v _TRISBbits TRISBbits `VES1069  1 e 1 @3987 ]
 "29430
 [v _TRISC TRISC `VEuc  1 e 1 @3988 ]
 "29722
@@ -654,19 +632,19 @@ SPI32_TRANSMIT 8
 [v _TXB0IE TXB0IE `VEb  1 e 0 @32026 ]
 "38266
 [v _TXB0IF TXB0IF `VEb  1 e 0 @32034 ]
-"55 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\CAN_RX_HW.c
+"54 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\CAN_RX_HW.c
 [v _CurrentPattern CurrentPattern `uc  1 s 1 CurrentPattern ]
-[s S41 ES_Event_t 3 `E1 1 EventType 1 0 `ui 1 EventParam 2 1 ]
+[s S37 ES_Event_t 3 `E1 1 EventType 1 0 `ui 1 EventParam 2 1 ]
 "68 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\ES_Framework.c
-[s S78 . 4 `*.37(uc 1 InitFunc 2 0 `*.37(S41 1 RunFunc 2 2 ]
-[v _ServDescList ServDescList `C[2]S78  1 s 8 ServDescList ]
+[s S74 . 4 `*.37(uc 1 InitFunc 2 0 `*.37(S37 1 RunFunc 2 2 ]
+[v _ServDescList ServDescList `C[2]S74  1 s 8 ServDescList ]
 "122
-[v _Queue0 Queue0 `[4]S41  1 s 12 Queue0 ]
+[v _Queue0 Queue0 `[4]S37  1 s 12 Queue0 ]
 "124
-[v _Queue1 Queue1 `[4]S41  1 s 12 Queue1 ]
+[v _Queue1 Queue1 `[4]S37  1 s 12 Queue1 ]
 "172
-[s S109 . 3 `*.39S41 1 pMem 2 0 `uc 1 Size 1 2 ]
-[v _EventQueues EventQueues `C[2]S109  1 s 6 EventQueues ]
+[s S105 . 3 `*.39S37 1 pMem 2 0 `uc 1 Size 1 2 ]
+[v _EventQueues EventQueues `C[2]S105  1 s 6 EventQueues ]
 "224
 [v _Ready Ready `ui  1 e 2 0 ]
 "62 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\ES_LookupTables.c
@@ -677,42 +655,46 @@ SPI32_TRANSMIT 8
 [v _TickCount TickCount `VEuc  1 s 1 TickCount ]
 "51
 [v _SysTickCounter SysTickCounter `VEui  1 s 2 SysTickCounter ]
-"34 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\ES_PostList.c
-[v _DistList00 DistList00 `C[2]*.2(uc  1 s 4 DistList00 ]
 "73 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\ES_Timers.c
 [v _TMR_TimerArray TMR_TimerArray `[16]ui  1 s 32 TMR_TimerArray ]
 "91
 [v _TMR_ActiveFlags TMR_ActiveFlags `ui  1 s 2 TMR_ActiveFlags ]
 "93
 [v _Timer2PostFunc Timer2PostFunc `C[16]*.2(uc  1 s 32 Timer2PostFunc ]
-"31 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\EventCheckers.h
-[v _ES_EventList ES_EventList `C[1]*.2(uc  1 s 2 ES_EventList ]
 "54 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\Pattern_ControlService.c
 [v _CurrentState CurrentState `E15514  1 s 1 CurrentState ]
 "57
 [v _MyPriority MyPriority `uc  1 s 1 MyPriority ]
 "60
-[v _PatternConfigs PatternConfigs `[5]uc  1 s 5 PatternConfigs ]
-"76
+[v _PatternConfigs PatternConfigs `[4]uc  1 s 4 PatternConfigs ]
+"74
 [v _MaxBrightness MaxBrightness `uc  1 s 1 MaxBrightness ]
-"77
-[v _ListLoc ListLoc `uc  1 s 1 ListLoc ]
-"42 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\Pattern_DotStarLED.c
-[v _Length Length `uc  1 s 1 Length ]
-"43
-[v _Brightness Brightness `uc  1 s 1 Brightness ]
+"43 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\Pattern_DotStarLED.c
+[v _Brightness Brightness `*.39uc  1 s 2 Brightness ]
 "44
 [v _PixelFrames PixelFrames `[79]ul  1 s 316 PixelFrames ]
-"52 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\Pattern_RGBPatterns.c
+"47 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\Pattern_PtrnGenerator.c
 [v _PixelPattern PixelPattern `[76]ui  1 s 152 PixelPattern ]
-"53
-[v Pattern_RGBPatterns@PatternConfigs PatternConfigs `*.39uc  1 s 2 PatternConfigs ]
-"54
-[v Pattern_RGBPatterns@Length Length `uc  1 s 1 Length ]
-"55
+"48
+[v _PatternID PatternID `*.39uc  1 s 2 PatternID ]
+"49
+[v _ListeningFocus ListeningFocus `*.39uc  1 s 2 ListeningFocus ]
+"50
 [v _PatternStepCounter PatternStepCounter `uc  1 s 1 PatternStepCounter ]
-"56
+"51
 [v _CycleCounter CycleCounter `ul  1 s 4 CycleCounter ]
+"56
+[v _TestPattern TestPattern `*.37(v  1 s 2 TestPattern ]
+"57
+[v _WelcomePattern WelcomePattern `*.37(v  1 s 2 WelcomePattern ]
+"58
+[v _IdlePattern IdlePattern `*.37(v  1 s 2 IdlePattern ]
+"59
+[v _ThinkingPattern ThinkingPattern `*.37(v  1 s 2 ThinkingPattern ]
+"60
+[v _ListeningPattern ListeningPattern `*.37(v  1 s 2 ListeningPattern ]
+"62
+[v _SpeakingPattern SpeakingPattern `*.37(v  1 s 2 SpeakingPattern ]
 "50 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\SPI32_ControlService.c
 [v SPI32_ControlService@CurrentState CurrentState `E15514  1 s 1 CurrentState ]
 "53
@@ -725,15 +707,15 @@ SPI32_TRANSMIT 8
 [v _FramePointer FramePointer `*.39ul  1 s 2 FramePointer ]
 "58
 [v _CurrentFrame CurrentFrame `ul  1 s 4 CurrentFrame ]
-"44 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\SPI32_HW.c
+"43 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\SPI32_HW.c
 [v _TransmitFrame TransmitFrame `ul  1 s 4 TransmitFrame ]
-"45
+"44
 [v _FrameByte FrameByte `uc  1 s 1 FrameByte ]
 "25 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\main.c
 [v _main main `(i  1 e 2 0 ]
 {
 "34
-[v main@ErrorType ErrorType `E15646  1 a 1 108 ]
+[v main@ErrorType ErrorType `E15646  1 a 1 109 ]
 "74
 } 0
 "464 C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\doprnt.c
@@ -756,10 +738,10 @@ SPI32_TRANSMIT 8
 [v _ES_Run ES_Run `(E15494  1 e 1 0 ]
 {
 "279
-[v ES_Run@HighestPrior HighestPrior `uc  1 a 1 107 ]
-[s S41 ES_Event_t 3 `E1 1 EventType 1 0 `ui 1 EventParam 2 1 ]
+[v ES_Run@HighestPrior HighestPrior `uc  1 a 1 108 ]
+[s S37 ES_Event_t 3 `E1 1 EventType 1 0 `ui 1 EventParam 2 1 ]
 "280
-[v ES_Run@ThisEvent ThisEvent `S41  1 s 3 ThisEvent ]
+[v ES_Run@ThisEvent ThisEvent `S37  1 s 3 ThisEvent ]
 "302
 } 0
 "225 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\ES_Port.c
@@ -774,9 +756,9 @@ SPI32_TRANSMIT 8
 [v ES_Timer_Tick_Resp@NeedsProcessing NeedsProcessing `ui  1 s 2 NeedsProcessing ]
 "287
 [v ES_Timer_Tick_Resp@NextTimer2Process NextTimer2Process `uc  1 s 1 NextTimer2Process ]
-[s S41 ES_Event_t 3 `E1 1 EventType 1 0 `ui 1 EventParam 2 1 ]
+[s S37 ES_Event_t 3 `E1 1 EventType 1 0 `ui 1 EventParam 2 1 ]
 "288
-[v ES_Timer_Tick_Resp@NewEvent NewEvent `S41  1 s 3 NewEvent ]
+[v ES_Timer_Tick_Resp@NewEvent NewEvent `S37  1 s 3 NewEvent ]
 "312
 } 0
 "79 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\ES_LookupTables.c
@@ -793,163 +775,159 @@ SPI32_TRANSMIT 8
 "100
 } 0
 "24 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\ES_Events.h
-[s S41 ES_Event_t 3 `E1 1 EventType 1 0 `ui 1 EventParam 2 1 ]
-"161 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\Pattern_ControlService.c
-[v _RunPatternControlService RunPatternControlService `(S41  1 e 3 0 ]
+[s S37 ES_Event_t 3 `E1 1 EventType 1 0 `ui 1 EventParam 2 1 ]
+"159 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\Pattern_ControlService.c
+[v _RunPatternControlService RunPatternControlService `(S37  1 e 3 0 ]
 {
-"178
-[v RunPatternControlService@testEvent testEvent `S41  1 a 3 96 ]
-"163
-[v RunPatternControlService@ReturnEvent ReturnEvent `S41  1 a 3 93 ]
+"176
+[v RunPatternControlService@testEvent testEvent `S37  1 a 3 97 ]
 "161
-[v RunPatternControlService@ThisEvent ThisEvent `S41  1 p 3 90 ]
-"235
+[v RunPatternControlService@ReturnEvent ReturnEvent `S37  1 a 3 94 ]
+"159
+[v RunPatternControlService@ThisEvent ThisEvent `S37  1 p 3 91 ]
+"233
 } 0
 "24 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\ES_Events.h
-[s S41 ES_Event_t 3 `E1 1 EventType 1 0 `ui 1 EventParam 2 1 ]
+[s S37 ES_Event_t 3 `E1 1 EventType 1 0 `ui 1 EventParam 2 1 ]
 "138 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\SPI32_ControlService.c
-[v _RunSPI32ControlService RunSPI32ControlService `(S41  1 e 3 0 ]
+[v _RunSPI32ControlService RunSPI32ControlService `(S37  1 e 3 0 ]
 {
 "140
-[v RunSPI32ControlService@ReturnEvent ReturnEvent `S41  1 a 3 100 ]
+[v RunSPI32ControlService@ReturnEvent ReturnEvent `S37  1 a 3 101 ]
 "138
-[v RunSPI32ControlService@ThisEvent ThisEvent `S41  1 p 3 90 ]
+[v RunSPI32ControlService@ThisEvent ThisEvent `S37  1 p 3 91 ]
 "237
 } 0
-"86 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\SPI32_HW.c
+"85 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\SPI32_HW.c
 [v _SPI32_SendFrame SPI32_SendFrame `(v  1 e 1 0 ]
 {
 [v SPI32_SendFrame@newFrame newFrame `ul  1 p 4 0 ]
-"109
+"108
 } 0
 "258 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\SPI32_ControlService.c
 [v _GetNextFrame GetNextFrame `(ul  1 s 4 GetNextFrame ]
 {
 "260
 } 0
-"300 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\Pattern_ControlService.c
+"271 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\Pattern_ControlService.c
 [v _StopPattern StopPattern `(v  1 s 1 StopPattern ]
 {
-"310
+"278
 } 0
-"194 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\Pattern_RGBPatterns.c
+"72 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\Pattern_PtrnGenerator.c
 [v _ResetPattern ResetPattern `(v  1 e 1 0 ]
 {
-"199
+"77
 } 0
-"86
+"79
 [v _PatternOff PatternOff `(*.39ui  1 e 2 0 ]
 {
-"87
+"80
 [v PatternOff@i i `uc  1 a 1 2 ]
-"91
+"84
 } 0
-"290 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\Pattern_ControlService.c
+"263 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\Pattern_ControlService.c
 [v _ShowPattern ShowPattern `(v  1 s 1 ShowPattern ]
 {
-"297
+"268
 } 0
-"94 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\Pattern_RGBPatterns.c
+"86 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\Pattern_PtrnGenerator.c
 [v _UpdatePattern UpdatePattern `(*.39ui  1 e 2 0 ]
 {
-"181
-[v UpdatePattern@i_708 i `uc  1 a 1 41 ]
-"131
-[v UpdatePattern@i_706 i `uc  1 a 1 40 ]
-"123
-[v UpdatePattern@i_705 i `uc  1 a 1 39 ]
-"116
-[v UpdatePattern@i_704 i `uc  1 a 1 38 ]
+"125
+[v UpdatePattern@i_1364 i `uc  1 a 1 51 ]
+"92
+[v UpdatePattern@i i `uc  1 a 1 50 ]
+"132
+} 0
+"150 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\Pattern_PtrnFunctions.c
+[v _SingleFocusPulse SingleFocusPulse `(v  1 e 1 0 ]
+{
+"154
+[v SingleFocusPulse@i i `uc  1 a 1 32 ]
+"151
+[v SingleFocusPulse@head head `uc  1 a 1 31 ]
+[v SingleFocusPulse@x x `uc  1 a 1 30 ]
+[v SingleFocusPulse@val val `uc  1 a 1 29 ]
+"150
+[v SingleFocusPulse@ptrnPointer ptrnPointer `*.39ui  1 p 2 8 ]
+[v SingleFocusPulse@ptrnStepCounter ptrnStepCounter `*.39uc  1 p 2 10 ]
+[v SingleFocusPulse@cycleCounter cycleCounter `*.39ul  1 p 2 12 ]
+[v SingleFocusPulse@base_hue base_hue `uc  1 p 1 14 ]
+[v SingleFocusPulse@base_sat base_sat `uc  1 p 1 15 ]
+[v SingleFocusPulse@focus focus `*.39v  1 p 2 16 ]
+"161
+} 0
+"124
+[v _SingleFadedLoop SingleFadedLoop `(v  1 e 1 0 ]
+{
+"127
+[v SingleFadedLoop@i i `uc  1 a 1 35 ]
+"125
+[v SingleFadedLoop@x x `uc  1 a 1 34 ]
+[v SingleFadedLoop@val val `uc  1 a 1 33 ]
+"124
+[v SingleFadedLoop@ptrnPointer ptrnPointer `*.39ui  1 p 2 8 ]
+[v SingleFadedLoop@ptrnStepCounter ptrnStepCounter `*.39uc  1 p 2 10 ]
+[v SingleFadedLoop@cycleCounter cycleCounter `*.39ul  1 p 2 12 ]
+[v SingleFadedLoop@base_hue base_hue `uc  1 p 1 14 ]
+[v SingleFadedLoop@base_sat base_sat `uc  1 p 1 15 ]
+[v SingleFadedLoop@15720 F15720 `*.2v  1 p 2 16 ]
+"134
+} 0
+"29
+[v _HueTest HueTest `(v  1 e 1 0 ]
+{
+"32
+[v HueTest@i i `uc  1 a 1 32 ]
+"29
+[v HueTest@ptrnPointer ptrnPointer `*.39ui  1 p 2 19 ]
+[v HueTest@ptrnStepCounter ptrnStepCounter `*.39uc  1 p 2 21 ]
+[v HueTest@cycleCounter cycleCounter `*.39ul  1 p 2 23 ]
+[v HueTest@base_hue base_hue `uc  1 p 1 25 ]
+[v HueTest@base_sat base_sat `uc  1 p 1 26 ]
+[v HueTest@15689 F15689 `*.2v  1 p 2 27 ]
+"78
+} 0
+"80
+[v _FullPulseHold FullPulseHold `(v  1 e 1 0 ]
+{
+"86
+[v FullPulseHold@i i `uc  1 a 1 21 ]
+"82
+[v FullPulseHold@val val `uc  1 a 1 20 ]
+"80
+[v FullPulseHold@ptrnPointer ptrnPointer `*.39ui  1 p 2 0 ]
+[v FullPulseHold@ptrnStepCounter ptrnStepCounter `*.39uc  1 p 2 2 ]
+[v FullPulseHold@cycleCounter cycleCounter `*.39ul  1 p 2 4 ]
+[v FullPulseHold@base_hue base_hue `uc  1 p 1 6 ]
+[v FullPulseHold@base_sat base_sat `uc  1 p 1 7 ]
+[v FullPulseHold@15697 F15697 `*.2v  1 p 2 8 ]
+"81
+[v FullPulseHold@rising rising `uc  1 s 1 rising ]
+"100
+} 0
 "102
-[v UpdatePattern@i i `uc  1 a 1 37 ]
-"96
-[v UpdatePattern@patternID patternID `uc  1 a 1 36 ]
-"192
-} 0
-"201
-[v _WelcomePattern WelcomePattern `(v  1 s 1 WelcomePattern ]
+[v _CenterBreathe CenterBreathe `(v  1 e 1 0 ]
 {
-"212
-[v WelcomePattern@i i `uc  1 a 1 9 ]
-"203
-[v WelcomePattern@hue hue `uc  1 a 1 8 ]
-[v WelcomePattern@val val `uc  1 a 1 7 ]
-[v WelcomePattern@sat sat `uc  1 a 1 6 ]
-"202
-[v WelcomePattern@rising rising `uc  1 s 1 rising ]
-"228
-} 0
-"258
-[v _ThinkingPattern ThinkingPattern `(ui  1 s 2 ThinkingPattern ]
-{
-"260
-[v ThinkingPattern@pixelHSV pixelHSV `ui  1 a 2 21 ]
-"259
-[v ThinkingPattern@head head `uc  1 a 1 31 ]
-"261
-[v ThinkingPattern@x x `uc  1 a 1 30 ]
-[v ThinkingPattern@hue hue `uc  1 a 1 29 ]
-[v ThinkingPattern@val val `uc  1 a 1 28 ]
-[v ThinkingPattern@sat sat `uc  1 a 1 27 ]
-"258
-[v ThinkingPattern@pixel pixel `uc  1 p 1 8 ]
-[v ThinkingPattern@stepCount stepCount `uc  1 p 1 9 ]
-"276
-} 0
-"295
-[v _SpeakingPattern SpeakingPattern `(ui  1 s 2 SpeakingPattern ]
-{
-"297
-[v SpeakingPattern@pixelHSV pixelHSV `ui  1 a 2 21 ]
-"296
-[v SpeakingPattern@head head `uc  1 a 1 31 ]
-"298
-[v SpeakingPattern@x x `uc  1 a 1 30 ]
-[v SpeakingPattern@hue hue `uc  1 a 1 29 ]
-[v SpeakingPattern@val val `uc  1 a 1 28 ]
-[v SpeakingPattern@sat sat `uc  1 a 1 27 ]
-"295
-[v SpeakingPattern@pixel pixel `uc  1 p 1 8 ]
-[v SpeakingPattern@stepCount stepCount `uc  1 p 1 9 ]
-"313
-} 0
-"278
-[v _ListeningPattern ListeningPattern `(ui  1 s 2 ListeningPattern ]
-{
-[v ListeningPattern@listeningLoc listeningLoc `uc  1 a 1 wreg ]
-"280
-[v ListeningPattern@pixelHSV pixelHSV `ui  1 a 2 21 ]
-"279
-[v ListeningPattern@head head `uc  1 a 1 33 ]
-"281
-[v ListeningPattern@y y `uc  1 a 1 32 ]
-[v ListeningPattern@x x `uc  1 a 1 31 ]
-[v ListeningPattern@hue hue `uc  1 a 1 30 ]
-[v ListeningPattern@val val `uc  1 a 1 29 ]
-[v ListeningPattern@sat sat `uc  1 a 1 28 ]
-"278
-[v ListeningPattern@listeningLoc listeningLoc `uc  1 a 1 wreg ]
-[v ListeningPattern@pixel pixel `uc  1 p 1 8 ]
-[v ListeningPattern@stepCount stepCount `uc  1 p 1 9 ]
-[v ListeningPattern@listeningLoc listeningLoc `uc  1 a 1 23 ]
-"293
-} 0
-"230
-[v _IdlePattern IdlePattern `(v  1 s 1 IdlePattern ]
-{
-"241
-[v IdlePattern@i i `uc  1 a 1 31 ]
-"233
-[v IdlePattern@x x `uc  1 a 1 30 ]
-[v IdlePattern@pulseWidth pulseWidth `uc  1 a 1 29 ]
-[v IdlePattern@hue hue `uc  1 a 1 28 ]
-[v IdlePattern@val val `uc  1 a 1 27 ]
-[v IdlePattern@sat sat `uc  1 a 1 26 ]
-"232
-[v IdlePattern@fade_thresh fade_thresh `uc  1 a 1 25 ]
-"231
-[v IdlePattern@rising rising `uc  1 s 1 rising ]
-"256
+"108
+[v CenterBreathe@i i `uc  1 a 1 47 ]
+"105
+[v CenterBreathe@x x `uc  1 a 1 46 ]
+[v CenterBreathe@pulseWidth pulseWidth `uc  1 a 1 45 ]
+[v CenterBreathe@val val `uc  1 a 1 44 ]
+"104
+[v CenterBreathe@fade_thresh fade_thresh `uc  1 a 1 43 ]
+"102
+[v CenterBreathe@ptrnPointer ptrnPointer `*.39ui  1 p 2 8 ]
+[v CenterBreathe@ptrnStepCounter ptrnStepCounter `*.39uc  1 p 2 10 ]
+[v CenterBreathe@cycleCounter cycleCounter `*.39ul  1 p 2 12 ]
+[v CenterBreathe@base_hue base_hue `uc  1 p 1 14 ]
+[v CenterBreathe@base_sat base_sat `uc  1 p 1 15 ]
+[v CenterBreathe@15707 F15707 `*.2v  1 p 2 16 ]
+"103
+[v CenterBreathe@rising rising `uc  1 s 1 rising ]
+"122
 } 0
 "8 C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\awdiv.c
 [v ___awdiv __awdiv `(i  1 e 2 0 ]
@@ -964,11 +942,6 @@ SPI32_TRANSMIT 8
 [v ___awdiv@divisor divisor `i  1 p 2 2 ]
 "42
 } 0
-"281 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\Pattern_ControlService.c
-[v _GetListLoc GetListLoc `(uc  1 e 1 0 ]
-{
-"283
-} 0
 "229 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\ES_Timers.c
 [v _ES_Timer_InitTimer ES_Timer_InitTimer `(E15472  1 e 1 0 ]
 {
@@ -979,38 +952,38 @@ SPI32_TRANSMIT 8
 [v ES_Timer_InitTimer@Num Num `uc  1 a 1 4 ]
 "241
 } 0
-"76 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\Pattern_DotStarLED.c
+"61 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\Pattern_DotStarLED.c
 [v _DotStar_Show DotStar_Show `(v  1 e 1 0 ]
 {
-"77
-[v DotStar_Show@i i `uc  1 a 1 89 ]
-"76
+"62
+[v DotStar_Show@i i `uc  1 a 1 90 ]
+"61
 [v DotStar_Show@patternPointer patternPointer `*.39ui  1 p 2 69 ]
-"94
+"79
 } 0
 "239 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\SPI32_ControlService.c
 [v _SPI32_TransmitFrames SPI32_TransmitFrames `(v  1 e 1 0 ]
 {
-[s S41 ES_Event_t 3 `E1 1 EventType 1 0 `ui 1 EventParam 2 1 ]
+[s S37 ES_Event_t 3 `E1 1 EventType 1 0 `ui 1 EventParam 2 1 ]
 "248
-[v SPI32_TransmitFrames@transmitEvent transmitEvent `S41  1 a 3 35 ]
+[v SPI32_TransmitFrames@transmitEvent transmitEvent `S37  1 a 3 35 ]
 "239
 [v SPI32_TransmitFrames@framePointer framePointer `*.39ul  1 p 2 32 ]
 [v SPI32_TransmitFrames@numFrames numFrames `uc  1 p 1 34 ]
 "252
 } 0
-"139 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\Pattern_ControlService.c
+"137 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\Pattern_ControlService.c
 [v _PostPatternControlService PostPatternControlService `(uc  1 e 1 0 ]
 {
-[s S41 ES_Event_t 3 `E1 1 EventType 1 0 `ui 1 EventParam 2 1 ]
-[v PostPatternControlService@ThisEvent ThisEvent `S41  1 p 3 29 ]
-"142
+[s S37 ES_Event_t 3 `E1 1 EventType 1 0 `ui 1 EventParam 2 1 ]
+[v PostPatternControlService@ThisEvent ThisEvent `S37  1 p 3 29 ]
+"140
 } 0
 "117 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\SPI32_ControlService.c
 [v _PostSPI32ControlService PostSPI32ControlService `(uc  1 e 1 0 ]
 {
-[s S41 ES_Event_t 3 `E1 1 EventType 1 0 `ui 1 EventParam 2 1 ]
-[v PostSPI32ControlService@ThisEvent ThisEvent `S41  1 p 3 29 ]
+[s S37 ES_Event_t 3 `E1 1 EventType 1 0 `ui 1 EventParam 2 1 ]
+[v PostSPI32ControlService@ThisEvent ThisEvent `S37  1 p 3 29 ]
 "119
 } 0
 "49 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\Pattern_HSV_Convert.c
@@ -1044,10 +1017,10 @@ SPI32_TRANSMIT 8
 [v ___lwdiv@divisor divisor `ui  1 p 2 14 ]
 "31
 } 0
-"313 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\Pattern_ControlService.c
+"281 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\Pattern_ControlService.c
 [v _PausePattern PausePattern `(v  1 s 1 PausePattern ]
 {
-"316
+"284
 } 0
 "205 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\ES_Timers.c
 [v _ES_Timer_StopTimer ES_Timer_StopTimer `(E15472  1 e 1 0 ]
@@ -1061,17 +1034,17 @@ SPI32_TRANSMIT 8
 "164 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\ES_Queue.c
 [v _ES_DeQueue ES_DeQueue `(uc  1 e 1 0 ]
 {
-[s S369 . 3 `uc 1 QueueSize 1 0 `uc 1 CurrentIndex 1 1 `uc 1 NumEntries 1 2 ]
+[s S292 . 3 `uc 1 QueueSize 1 0 `uc 1 CurrentIndex 1 1 `uc 1 NumEntries 1 2 ]
 "167
-[v ES_DeQueue@pThisQueue pThisQueue `*.39S369  1 a 2 20 ]
+[v ES_DeQueue@pThisQueue pThisQueue `*.39S292  1 a 2 20 ]
 "168
 [v ES_DeQueue@NumLeft NumLeft `uc  1 a 1 19 ]
 "166
 [v ES_DeQueue@SaveCrit SaveCrit `uc  1 a 1 18 ]
-[s S41 ES_Event_t 3 `E1 1 EventType 1 0 `ui 1 EventParam 2 1 ]
+[s S37 ES_Event_t 3 `E1 1 EventType 1 0 `ui 1 EventParam 2 1 ]
 "164
-[v ES_DeQueue@pBlock pBlock `*.39S41  1 p 2 12 ]
-[v ES_DeQueue@pReturnEvent pReturnEvent `*.39S41  1 p 2 14 ]
+[v ES_DeQueue@pBlock pBlock `*.39S37  1 p 2 12 ]
+[v ES_DeQueue@pReturnEvent pReturnEvent `*.39S37  1 p 2 14 ]
 "189
 } 0
 "4 C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\lbmod.c
@@ -1089,18 +1062,6 @@ SPI32_TRANSMIT 8
 [v ___lbmod@dividend dividend `uc  1 a 1 1 ]
 "18
 } 0
-"46 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\ES_CheckEvents.c
-[v _ES_CheckUserEvents ES_CheckUserEvents `(uc  1 e 1 0 ]
-{
-"48
-[v ES_CheckUserEvents@i i `uc  1 a 1 0 ]
-"58
-} 0
-"62 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\EventCheckers.c
-[v _Check4Keystroke Check4Keystroke `(uc  1 e 1 0 ]
-{
-"79
-} 0
 "242 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\ES_Framework.c
 [v _ES_Initialize ES_Initialize `(E15494  1 e 1 0 ]
 {
@@ -1110,56 +1071,56 @@ SPI32_TRANSMIT 8
 [v ES_Initialize@NewRate NewRate `E15423  1 p 2 33 ]
 "257
 } 0
-"99 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\Pattern_ControlService.c
+"97 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\Pattern_ControlService.c
 [v _InitPatternControlService InitPatternControlService `(uc  1 e 1 0 ]
 {
 [v InitPatternControlService@Priority Priority `uc  1 a 1 wreg ]
-[s S41 ES_Event_t 3 `E1 1 EventType 1 0 `ui 1 EventParam 2 1 ]
-"101
-[v InitPatternControlService@ThisEvent ThisEvent `S41  1 a 3 29 ]
+[s S37 ES_Event_t 3 `E1 1 EventType 1 0 `ui 1 EventParam 2 1 ]
 "99
+[v InitPatternControlService@ThisEvent ThisEvent `S37  1 a 3 29 ]
+"97
 [v InitPatternControlService@Priority Priority `uc  1 a 1 wreg ]
-"103
+"101
 [v InitPatternControlService@Priority Priority `uc  1 a 1 32 ]
-"120
+"118
 } 0
 "80 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\SPI32_ControlService.c
 [v _InitSPI32ControlService InitSPI32ControlService `(uc  1 e 1 0 ]
 {
 [v InitSPI32ControlService@Priority Priority `uc  1 a 1 wreg ]
-[s S41 ES_Event_t 3 `E1 1 EventType 1 0 `ui 1 EventParam 2 1 ]
+[s S37 ES_Event_t 3 `E1 1 EventType 1 0 `ui 1 EventParam 2 1 ]
 "82
-[v InitSPI32ControlService@ThisEvent ThisEvent `S41  1 a 3 29 ]
+[v InitSPI32ControlService@ThisEvent ThisEvent `S37  1 a 3 29 ]
 "80
 [v InitSPI32ControlService@Priority Priority `uc  1 a 1 wreg ]
 "84
 [v InitSPI32ControlService@Priority Priority `uc  1 a 1 32 ]
 "98
 } 0
-"66 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\SPI32_HW.c
+"65 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\SPI32_HW.c
 [v _SPI32_Init SPI32_Init `(v  1 e 1 0 ]
 {
-"69
+"68
 } 0
-"128
+"127
 [v _HW_Init HW_Init `(v  1 s 1 HW_Init ]
 {
-"148
+"147
 } 0
-"79 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\Pattern_RGBPatterns.c
+"66 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\Pattern_PtrnGenerator.c
 [v _SetupPattern SetupPattern `(v  1 e 1 0 ]
 {
-[v SetupPattern@configs configs `*.39uc  1 p 2 0 ]
-[v SetupPattern@numPixels numPixels `uc  1 p 1 2 ]
-"84
+[v SetupPattern@patternIDPointer patternIDPointer `*.39uc  1 p 2 0 ]
+[v SetupPattern@listeningFocusPointer listeningFocusPointer `*.39uc  1 p 2 2 ]
+"70
 } 0
 "351 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\ES_Framework.c
 [v _ES_PostToService ES_PostToService `(uc  1 e 1 0 ]
 {
 [v ES_PostToService@WhichService WhichService `uc  1 a 1 wreg ]
 [v ES_PostToService@WhichService WhichService `uc  1 a 1 wreg ]
-[s S41 ES_Event_t 3 `E1 1 EventType 1 0 `ui 1 EventParam 2 1 ]
-[v ES_PostToService@TheEvent TheEvent `S41  1 p 3 23 ]
+[s S37 ES_Event_t 3 `E1 1 EventType 1 0 `ui 1 EventParam 2 1 ]
+[v ES_PostToService@TheEvent TheEvent `S37  1 p 3 23 ]
 "354
 [v ES_PostToService@WhichService WhichService `uc  1 a 1 28 ]
 "359
@@ -1167,15 +1128,15 @@ SPI32_TRANSMIT 8
 "85 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\ES_Queue.c
 [v _ES_EnQueueFIFO ES_EnQueueFIFO `(uc  1 e 1 0 ]
 {
-[s S369 . 3 `uc 1 QueueSize 1 0 `uc 1 CurrentIndex 1 1 `uc 1 NumEntries 1 2 ]
+[s S292 . 3 `uc 1 QueueSize 1 0 `uc 1 CurrentIndex 1 1 `uc 1 NumEntries 1 2 ]
 "88
-[v ES_EnQueueFIFO@pThisQueue pThisQueue `*.39S369  1 a 2 21 ]
+[v ES_EnQueueFIFO@pThisQueue pThisQueue `*.39S292  1 a 2 21 ]
 "87
 [v ES_EnQueueFIFO@SaveCrit SaveCrit `uc  1 a 1 20 ]
-[s S41 ES_Event_t 3 `E1 1 EventType 1 0 `ui 1 EventParam 2 1 ]
+[s S37 ES_Event_t 3 `E1 1 EventType 1 0 `ui 1 EventParam 2 1 ]
 "85
-[v ES_EnQueueFIFO@pBlock pBlock `*.39S41  1 p 2 12 ]
-[v ES_EnQueueFIFO@Event2Add Event2Add `S41  1 p 3 14 ]
+[v ES_EnQueueFIFO@pBlock pBlock `*.39S37  1 p 2 12 ]
+[v ES_EnQueueFIFO@Event2Add Event2Add `S37  1 p 3 14 ]
 "104
 } 0
 "15 C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\Umul16.c
@@ -1199,30 +1160,26 @@ SPI32_TRANSMIT 8
 [v ___awmod@divisor divisor `i  1 p 2 2 ]
 "35
 } 0
-"48 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\Pattern_DotStarLED.c
+"50 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\Pattern_DotStarLED.c
 [v _DotStar_Init DotStar_Init `(v  1 e 1 0 ]
 {
-[v DotStar_Init@numPixels numPixels `uc  1 a 1 wreg ]
-[v DotStar_Init@numPixels numPixels `uc  1 a 1 wreg ]
-[v DotStar_Init@brightness brightness `uc  1 p 1 0 ]
-"57
-[v DotStar_Init@numPixels numPixels `uc  1 a 1 3 ]
-"64
+[v DotStar_Init@brightnessPointer brightnessPointer `*.39uc  1 p 2 0 ]
+"59
 } 0
-"61 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\CAN_RX_HW.c
+"60 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\CAN_RX_HW.c
 [v _CAN_Init CAN_Init `(v  1 e 1 0 ]
 {
-"64
+"63
 } 0
-"165
+"163
 [v _InitPins InitPins `(v  1 s 1 InitPins ]
 {
-"177
+"175
 } 0
-"105
+"103
 [v _InitCanHardware InitCanHardware `(v  1 s 1 InitCanHardware ]
 {
-"163
+"161
 } 0
 "130 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\ES_Timers.c
 [v _ES_Timer_Init ES_Timer_Init `(v  1 e 1 0 ]
@@ -1239,12 +1196,12 @@ SPI32_TRANSMIT 8
 "58 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\ES_Queue.c
 [v _ES_InitQueue ES_InitQueue `(uc  1 e 1 0 ]
 {
-[s S369 . 3 `uc 1 QueueSize 1 0 `uc 1 CurrentIndex 1 1 `uc 1 NumEntries 1 2 ]
+[s S292 . 3 `uc 1 QueueSize 1 0 `uc 1 CurrentIndex 1 1 `uc 1 NumEntries 1 2 ]
 "60
-[v ES_InitQueue@pThisQueue pThisQueue `*.39S369  1 a 2 3 ]
-[s S41 ES_Event_t 3 `E1 1 EventType 1 0 `ui 1 EventParam 2 1 ]
+[v ES_InitQueue@pThisQueue pThisQueue `*.39S292  1 a 2 3 ]
+[s S37 ES_Event_t 3 `E1 1 EventType 1 0 `ui 1 EventParam 2 1 ]
 "58
-[v ES_InitQueue@pBlock pBlock `*.39S41  1 p 2 0 ]
+[v ES_InitQueue@pBlock pBlock `*.39S37  1 p 2 0 ]
 [v ES_InitQueue@BlockSize BlockSize `uc  1 p 1 2 ]
 "68
 } 0
@@ -1257,61 +1214,61 @@ SPI32_TRANSMIT 8
 [v ISR@NextTime NextTime `ui  1 s 2 NextTime ]
 "152
 } 0
-"167 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\SPI32_HW.c
+"166 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\SPI32_HW.c
 [v _SPI32_EOTResponse SPI32_EOTResponse `(v  1 e 1 0 ]
 {
-[s S41 ES_Event_t 3 `E1 1 EventType 1 0 `ui 1 EventParam 2 1 ]
-"173
-[v SPI32_EOTResponse@EOTevent EOTevent `S41  1 a 3 32 ]
-"181
+[s S37 ES_Event_t 3 `E1 1 EventType 1 0 `ui 1 EventParam 2 1 ]
+"172
+[v SPI32_EOTResponse@EOTevent EOTevent `S37  1 a 3 32 ]
+"180
 } 0
-"86
+"85
 [v i2_SPI32_SendFrame SPI32_SendFrame `(v  1 e 1 0 ]
 {
 [v i2SPI32_SendFrame@newFrame newFrame `ul  1 p 4 0 ]
-"109
+"108
 } 0
 "117 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\SPI32_ControlService.c
 [v i2_PostSPI32ControlService PostSPI32ControlService `(uc  1 e 1 0 ]
 {
-[s S41 ES_Event_t 3 `E1 1 EventType 1 0 `ui 1 EventParam 2 1 ]
-[v i2PostSPI32ControlService@ThisEvent ThisEvent `S41  1 p 3 29 ]
+[s S37 ES_Event_t 3 `E1 1 EventType 1 0 `ui 1 EventParam 2 1 ]
+[v i2PostSPI32ControlService@ThisEvent ThisEvent `S37  1 p 3 29 ]
 "119
 } 0
-"66 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\CAN_RX_HW.c
+"65 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\CAN_RX_HW.c
 [v _CAN_XmitResponse CAN_XmitResponse `(v  1 e 1 0 ]
 {
-"69
+"68
 } 0
-"71
+"70
 [v _CAN_RCVResponse CAN_RCVResponse `(i  1 e 2 0 ]
 {
-"78
+"76
 } 0
-"179
+"177
 [v _ProcessReceive ProcessReceive `(v  1 s 1 ProcessReceive ]
 {
-[s S41 ES_Event_t 3 `E1 1 EventType 1 0 `ui 1 EventParam 2 1 ]
-"184
-[v ProcessReceive@Event2Post Event2Post `S41  1 a 3 34 ]
-"181
+[s S37 ES_Event_t 3 `E1 1 EventType 1 0 `ui 1 EventParam 2 1 ]
+"182
+[v ProcessReceive@Event2Post Event2Post `S37  1 a 3 34 ]
+"179
 [v ProcessReceive@LastButton LastButton `uc  1 s 1 LastButton ]
-"217
+"215
 } 0
-"139 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\Pattern_ControlService.c
+"137 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\Pattern_ControlService.c
 [v i2_PostPatternControlService PostPatternControlService `(uc  1 e 1 0 ]
 {
-[s S41 ES_Event_t 3 `E1 1 EventType 1 0 `ui 1 EventParam 2 1 ]
-[v i2PostPatternControlService@ThisEvent ThisEvent `S41  1 p 3 29 ]
-"142
+[s S37 ES_Event_t 3 `E1 1 EventType 1 0 `ui 1 EventParam 2 1 ]
+[v i2PostPatternControlService@ThisEvent ThisEvent `S37  1 p 3 29 ]
+"140
 } 0
 "351 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\ES_Framework.c
 [v i2_ES_PostToService ES_PostToService `(uc  1 e 1 0 ]
 {
 [v i2ES_PostToService@WhichService WhichService `uc  1 a 1 wreg ]
 [v i2ES_PostToService@WhichService WhichService `uc  1 a 1 wreg ]
-[s S41 ES_Event_t 3 `E1 1 EventType 1 0 `ui 1 EventParam 2 1 ]
-[v i2ES_PostToService@TheEvent TheEvent `S41  1 p 3 23 ]
+[s S37 ES_Event_t 3 `E1 1 EventType 1 0 `ui 1 EventParam 2 1 ]
+[v i2ES_PostToService@TheEvent TheEvent `S37  1 p 3 23 ]
 "354
 [v i2ES_PostToService@WhichService WhichService `uc  1 a 1 28 ]
 "359
@@ -1319,12 +1276,12 @@ SPI32_TRANSMIT 8
 "85 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\ES_Queue.c
 [v i2_ES_EnQueueFIFO ES_EnQueueFIFO `(uc  1 e 1 0 ]
 {
-[s S369 . 3 `uc 1 QueueSize 1 0 `uc 1 CurrentIndex 1 1 `uc 1 NumEntries 1 2 ]
-[v i2ES_EnQueueFIFO@pThisQueue ES_EnQueueFIFO `*.39S369  1 a 2 21 ]
+[s S292 . 3 `uc 1 QueueSize 1 0 `uc 1 CurrentIndex 1 1 `uc 1 NumEntries 1 2 ]
+[v i2ES_EnQueueFIFO@pThisQueue ES_EnQueueFIFO `*.39S292  1 a 2 21 ]
 [v i2ES_EnQueueFIFO@SaveCrit ES_EnQueueFIFO `uc  1 a 1 20 ]
-[s S41 ES_Event_t 3 `E1 1 EventType 1 0 `ui 1 EventParam 2 1 ]
-[v i2ES_EnQueueFIFO@pBlock pBlock `*.39S41  1 p 2 12 ]
-[v i2ES_EnQueueFIFO@Event2Add Event2Add `S41  1 p 3 14 ]
+[s S37 ES_Event_t 3 `E1 1 EventType 1 0 `ui 1 EventParam 2 1 ]
+[v i2ES_EnQueueFIFO@pBlock pBlock `*.39S37  1 p 2 12 ]
+[v i2ES_EnQueueFIFO@Event2Add Event2Add `S37  1 p 3 14 ]
 "104
 } 0
 "15 C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\Umul16.c
@@ -1344,40 +1301,37 @@ SPI32_TRANSMIT 8
 [v i2___awmod@divisor divisor `i  1 p 2 2 ]
 "35
 } 0
-"252 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\Pattern_ControlService.c
+"236 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\Pattern_ControlService.c
 [v _SetPattern SetPattern `(v  1 e 1 0 ]
 {
 [v SetPattern@PatternID PatternID `uc  1 a 1 wreg ]
 [v SetPattern@PatternID PatternID `uc  1 a 1 wreg ]
 [v SetPattern@PatternID PatternID `uc  1 a 1 0 ]
-"256
+"240
 } 0
-"194 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\Pattern_RGBPatterns.c
+"72 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\Pattern_PtrnGenerator.c
 [v i2_ResetPattern ResetPattern `(v  1 e 1 0 ]
 {
-"199
+"77
 } 0
-"276 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\Pattern_ControlService.c
-[v _SetListLoc SetListLoc `(v  1 e 1 0 ]
+"249 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\Pattern_ControlService.c
+[v _SetListenFocus SetListenFocus `(v  1 e 1 0 ]
 {
-[v SetListLoc@newLocation newLocation `uc  1 a 1 wreg ]
-"277
-[v SetListLoc@LL LL `ui  1 a 2 8 ]
-"276
-[v SetListLoc@newLocation newLocation `uc  1 a 1 wreg ]
-[v SetListLoc@newLocation newLocation `uc  1 a 1 10 ]
-"279
+[v SetListenFocus@listFocus listFocus `uc  1 a 1 wreg ]
+[v SetListenFocus@listFocus listFocus `uc  1 a 1 wreg ]
+[v SetListenFocus@listFocus listFocus `uc  1 a 1 0 ]
+"251
 } 0
-"259
+"243
 [v _SetBrightness SetBrightness `(v  1 e 1 0 ]
 {
 [v SetBrightness@brightness brightness `uc  1 a 1 wreg ]
-"260
-[v SetBrightness@newBrightness newBrightness `ui  1 a 2 9 ]
-"259
+"244
+[v SetBrightness@newBrightness newBrightness `ui  1 a 2 8 ]
+"243
 [v SetBrightness@brightness brightness `uc  1 a 1 wreg ]
-[v SetBrightness@brightness brightness `uc  1 a 1 8 ]
-"263
+[v SetBrightness@brightness brightness `uc  1 a 1 10 ]
+"246
 } 0
 "8 C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\awdiv.c
 [v i2___awdiv __awdiv `(i  1 e 2 0 ]
@@ -1389,21 +1343,13 @@ SPI32_TRANSMIT 8
 [v i2___awdiv@divisor divisor `i  1 p 2 2 ]
 "42
 } 0
-"70 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\Pattern_DotStarLED.c
-[v _DotStar_SetBrightness DotStar_SetBrightness `(v  1 e 1 0 ]
-{
-[v DotStar_SetBrightness@brightness brightness `uc  1 a 1 wreg ]
-[v DotStar_SetBrightness@brightness brightness `uc  1 a 1 wreg ]
-[v DotStar_SetBrightness@brightness brightness `uc  1 a 1 0 ]
-"74
-} 0
-"80 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\CAN_RX_HW.c
+"78 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\CAN_RX_HW.c
 [v _CAN_ErrorResponse CAN_ErrorResponse `(v  1 e 1 0 ]
 {
-"83
+"81
 } 0
-"85
+"83
 [v _CAN_BusErrorResponse CAN_BusErrorResponse `(v  1 e 1 0 ]
 {
-"88
+"86
 } 0

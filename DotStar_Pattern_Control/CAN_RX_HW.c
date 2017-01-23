@@ -1,4 +1,3 @@
-
 /****************************************************************************
  Module
    CAN_RX_HW.c
@@ -73,7 +72,6 @@ void CAN_RCVResponse(void)
     if (RXB0CONbits.RXFUL == 1) {
         ProcessReceive();
         RXB0CONbits.RXFUL = 0; //clear buffer
-        
     }
 }
 
@@ -194,7 +192,7 @@ static void ProcessReceive(void)
                     #ifdef PATTERN_TEST
                         SetPattern(TEST_PATTERN);
                         Event2Post.EventType = PATTERN_START;
-                    #else 
+                    #else
                         SetPattern(NO_PATTERN);
                         Event2Post.EventType = PATTERN_END;
                     #endif
@@ -210,7 +208,7 @@ static void ProcessReceive(void)
 		 //set pattern brightness based off second byte
         SetBrightness(RXB0D1);
 		 //set analog listening location based off third byte
-        SetListLoc(RXB0D2);
+        SetListenFocus(RXB0D2);
          //post new event to Pattern Control Service
         PostPatternControlService(Event2Post);
     }

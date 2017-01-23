@@ -19,9 +19,8 @@
 #include "ES_Types.h"
 
  //function prototypes
-void DotStar_Init(uint8_t numPixels, uint8_t brightness);
+void DotStar_Init(uint8_t *brightnessPointer);
 void DotStar_Show(uint16_t *pixelPointer);
 uint8_t DotStar_GetLength(void);
-void DotStar_SetBrightness(uint8_t brightness);
 
 #endif /* Pattern_DotStarLED_H */

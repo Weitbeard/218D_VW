@@ -21,14 +21,11 @@ bool InitPatternControlService( uint8_t Priority );
 bool PostPatternControlService( ES_Event ThisEvent );
 ES_Event RunPatternControlService( ES_Event ThisEvent );
 
-uint8_t * GetPatternConfigs(void);
 //void SetNumPixels(uint8_t numPixels);  *************TODO
 void SetPattern(uint8_t patternID);
 void SetBrightness(uint8_t brightness);
-void SetProfile(uint8_t profileID);
+void SetListenFocus(uint8_t listFocus);
 void SetPatternSpeed(uint8_t speed);
-void SetListLoc(uint8_t newLocation);
-uint8_t GetListLoc(void);
 
 #endif /* Pattern_ControlService_H */
 

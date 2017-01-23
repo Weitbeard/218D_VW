@@ -5,9 +5,9 @@ Linker command line:
 -W-3 --edf=C:\Program Files (x86)\Microchip\xc8\v1.38\dat\en_msgs.txt -cs \
   -h+dist/default/production\DotStar_Pattern_Control.production.sym \
   --cmf=dist/default/production\DotStar_Pattern_Control.production.cmf -z \
-  -Q18F2480 -oC:\Users\Luke\AppData\Local\Temp\scrk.2 \
+  -Q18F2480 -oC:\Users\Luke\AppData\Local\Temp\sba4.2 \
   -Mdist/default/production/DotStar_Pattern_Control.production.map -E1 \
-  -ver=XC8 -ASTACK=0F9h-0ffh -pstack=STACK -ACODE=00h-03FFFh \
+  -ver=XC8 -ASTACK=00h-00h -pstack=STACK -ACODE=00h-03FFFh \
   -ACONST=00h-03FFFh -ASMALLCONST=0300h-03FFhx61 -AMEDIUMCONST=0300h-03FFFh \
   -ACOMRAM=01h-05Fh -AABS1=00h-02FFh -ABIGRAM=01h-02FFh \
   -ARAM=060h-0FFh,0100h-01FFhx2 -ABANK0=060h-0FFh -ABANK1=0100h-01FFh \
@@ -21,7 +21,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  C:\Users\Luke\AppData\Local\Temp\scrk.obj \
+  C:\Users\Luke\AppData\Local\Temp\sba4.obj \
   dist/default/production\DotStar_Pattern_Control.production.obj 
 
 Object code version is 3.11
@@ -34,99 +34,95 @@ Call graph: (short form)
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\Luke\AppData\Local\Temp\scrk.obj
+C:\Users\Luke\AppData\Local\Temp\sba4.obj
                 end_init                             16       16        4        4       0
                 reset_vec                             0        0        4        0       0
                 idloc                            200000   200000        8   200000       0
                 config                           300000   300000        E   300000       0
 dist/default/production\DotStar_Pattern_Control.production.obj
                 intcode                               8        8        E        4       0
-                temp                                 58       58        1        1       1
-                smallconst                          300      300       BE      180       0
-                text72                             2BA4     2BA4        2      1DF       0
-                text71                             2BA2     2BA2        2      1DF       0
-                text70                             2B4A     2B4A        E      1DF       0
-                text69                             221E     221E       84      1DF       0
-                text68                             2946     2946       2C      1DF       0
-                text67                             29E6     29E6       26      1DF       0
-                text66                             2AD2     2AD2       1A      1DF       0
-                text65                             2B64     2B64        C      1DF       0
-                text64                             250A     250A       70      1DF       0
-                text63                             29C0     29C0       26      1DF       0
-                text62                             1E40     1E40       B4      1DF       0
-                text61                             257A     257A       6A      1DF       0
-                text60                             2B18     2B18       16      1DF       0
-                text59                             1FA2     1FA2       AA      1DF       0
-                text58                             2B58     2B58        C      1DF       0
-                text57                             2B90     2B90        6      1DF       0
-                text56                             2B02     2B02       16      1DF       0
-                text55                             26DE     26DE       4E      1DF       0
-                text54                             2870     2870       3A      1DF       0
-                intcode_body                       1BEC     1BEC       CE      1DF       0
-                text52                             27FA     27FA       3C      1DF       0
-                text51                             2A2E     2A2E       1E      1DF       0
-                text50                             2B3C     2B3C        E      1DF       0
-                text49                             23A0     23A0       7C      1DF       0
-                text48                             2AB8     2AB8       1A      1DF       0
-                text47                             2B70     2B70        A      1DF       0
-                text46                             1EF4     1EF4       AE      1DF       0
-                text45                             20F0     20F0       A2      1DF       0
-                text44                             28AA     28AA       36      1DF       0
-                text43                             1B0A     1B0A       E2      1DF       0
-                text42                             2494     2494       76      1DF       0
-                text41                             2B2E     2B2E        E      1DF       0
-                text40                             2A0C     2A0C       22      1DF       0
-                text39                             2B8A     2B8A        6      1DF       0
-                text38                             2836     2836       3A      1DF       0
-                text37                             25E4     25E4       5A      1DF       0
-                text36                             1A1E     1A1E       EC      1DF       0
-                text35                             2B9A     2B9A        4      1DF       0
-                text34                             272C     272C       4A      1DF       0
-                text33                             2776     2776       44      1DF       0
-                text32                             13BA     13BA      128      1DF       0
-                text31                             2690     2690       4E      1DF       0
-                text30                             2B82     2B82        8      1DF       0
-                text29                             241C     241C       78      1DF       0
-                text28                              3BE      3BE      458      1DF       0
-                text27                             2A68     2A68       1C      1DF       0
-                text26                             2A4C     2A4C       1C      1DF       0
-                text25                             2914     2914       32      1DF       0
-                text24                             14E2     14E2      126      1DF       0
-                text23                             22A2     22A2       80      1DF       0
-                text22                             2B96     2B96        4      1DF       0
-                text21                             1D82     1D82       BE      1DF       0
-                text20                              816      816      2BE      1DF       0
-                text19                              D40      D40      236      1DF       0
-                text18                             1198     1198      222      1DF       0
-                text17                              F76      F76      222      1DF       0
-                text16                             1824     1824      106      1DF       0
-                text15                              AD4      AD4      26C      1DF       0
-                text14                             299A     299A       26      1DF       0
-                text13                             27BA     27BA       40      1DF       0
-                text12                             2A9E     2A9E       1A      1DF       0
-                text11                             2972     2972       28      1DF       0
-                text10                             2A84     2A84       1A      1DF       0
-                text9                              263E     263E       52      1DF       0
-                text8                              171E     171E      106      1DF       0
-                text7                              1CBA     1CBA       C8      1DF       0
-                text6                              204C     204C       A4      1DF       0
-                text5                              1608     1608      116      1DF       0
-                text4                              2AEC     2AEC       16      1DF       0
-                text3                              192A     192A       F4      1DF       0
-                text2                              2BA0     2BA0        2      1DF       0
-                text1                              28E0     28E0       34      1DF       0
-                text0                              2192     2192       8C      1DF       0
+                temp                                 5D       5D        1        1       1
+                smallconst                          300      300       B8      180       0
+                text68                             2B3A     2B3A        2     1572       0
+                text67                             2B38     2B38        2     1572       0
+                text66                             225C     225C       84      1DC       0
+                text65                             293E     293E       26      1DC       0
+                text64                             2B1C     2B1C        8     1572       0
+                text63                             2A66     2A66       1A      1DC       0
+                text62                             2AFE     2AFE        C     1572       0
+                text61                             24CA     24CA       70      1DC       0
+                text60                             2918     2918       26      1DC       0
+                text59                             1EA2     1EA2       B4      1DC       0
+                text58                             253A     253A       6A      1DC       0
+                text57                             2AAC     2AAC       16      1DC       0
+                text56                             1F56     1F56       AE      1DC       0
+                text55                             2AF2     2AF2        C     1572       0
+                text54                             2B30     2B30        6     1572       0
+                text53                             2A96     2A96       16      1DC       0
+                text52                             26FC     26FC       4E      1DC       0
+                text51                             2842     2842       3A      1DC       0
+                intcode_body                       1C4E     1C4E       CE      1DC       0
+                text49                             27CC     27CC       3C      1DC       0
+                text48                             29A6     29A6       1E      1DC       0
+                text47                             2AE4     2AE4        E     1572       0
+                text46                             2360     2360       7C      1DC       0
+                text45                             2A4C     2A4C       1A      1DC       0
+                text44                             2B0A     2B0A        A     1572       0
+                text43                             265C     265C       52      1DC       0
+                text42                             20A8     20A8       A2      1DC       0
+                text41                             287C     287C       36      1DC       0
+                text40                             1B6C     1B6C       E2      1DC       0
+                text39                             2454     2454       76      1DC       0
+                text38                             2AC2     2AC2       12      1DC       0
+                text37                             2964     2964       22      1DC       0
+                text36                             2B2A     2B2A        6     1572       0
+                text35                             2808     2808       3A      1DC       0
+                text34                             25A4     25A4       66      1DC       0
+                text33                             1A80     1A80       EC      1DC       0
+                text32                             274A     274A       44      1DC       0
+                text31                             1552     1552      128      1DC       0
+                text30                             26AE     26AE       4E      1DC       0
+                text29                             2B14     2B14        8     1572       0
+                text28                             23DC     23DC       78      1DC       0
+                text27                              3B8      3B8      458      1DC       0
+                text26                             29FC     29FC       1C      1DC       0
+                text25                             29E0     29E0       1C      1DC       0
+                text24                             28E6     28E6       32      1DC       0
+                text23                             1424     1424      12E      1DC       0
+                text22                             22E0     22E0       80      1DC       0
+                text21                             1DE4     1DE4       BE      1DC       0
+                text20                              810      810      368      1DC       0
+                text19                             1296     1296      18E      1DC       0
+                text18                             1892     1892       FE      1DC       0
+                text17                              B78      B78      29A      1DC       0
+                text16                             108C     108C      20A      1DC       0
+                text15                              E12      E12      27A      1DC       0
+                text14                             2986     2986       20      1DC       0
+                text13                             278E     278E       3E      1DC       0
+                text12                             2A32     2A32       1A      1DC       0
+                text11                             29C4     29C4       1C      1DC       0
+                text10                             2A18     2A18       1A      1DC       0
+                text9                              260A     260A       52      1DC       0
+                text8                              178C     178C      106      1DC       0
+                text7                              1D1C     1D1C       C8      1DC       0
+                text6                              2004     2004       A4      1DC       0
+                text5                              167A     167A      112      1DC       0
+                text4                              2A80     2A80       16      1DC       0
+                text3                              1990     1990       F0      1DC       0
+                text2                              2B36     2B36        2     1572       0
+                text1                              28B2     28B2       34      1DC       0
+                text0                              214A     214A       8C      1DC       0
                 cstackCOMRAM                          1        1       35        1       1
-                cstackBANK0                          60       60       6D       60       1
+                cstackBANK0                          60       60       6E       60       1
                 bssBIGRAM                           1C4      1C4      13C      1C4       1
                 bssBANK1                            100      100       C4      100       1
-                dataBANK0                            F1       F1        8       60       1
-                bssBANK0                             CD       CD       24       60       1
-                dataCOMRAM                           56       56        2        1       1
-                bssCOMRAM                            36       36       20        1       1
-                cinit                              2322     2322       7E      1DF       0
-                idataBANK0                         2B7A     2B7A        8      1DF       0
-                idataCOMRAM                        2B9E     2B9E        2      1DF       0
+                dataBANK0                            F0       F0        F       60       1
+                bssBANK0                             CE       CE       22       60       1
+                dataCOMRAM                           57       57        6        1       1
+                bssCOMRAM                            36       36       21        1       1
+                cinit                              21D6     21D6       86      1DC       0
+                idataBANK0                         2AD4     2AD4        F      1DC       0
+                idataCOMRAM                        2B24     2B24        6     1572       0
 
 TOTAL           Name                               Link     Load   Length     Space
         CLASS   STACK          
@@ -135,95 +131,91 @@ TOTAL           Name                               Link     Load   Length     Sp
                 end_init                             16       16        4         0
                 intcode                               8        8        E         0
                 reset_vec                             0        0        4         0
-                text72                             2BA4     2BA4        2         0
-                text71                             2BA2     2BA2        2         0
-                text70                             2B4A     2B4A        E         0
-                text69                             221E     221E       84         0
-                text68                             2946     2946       2C         0
-                text67                             29E6     29E6       26         0
-                text66                             2AD2     2AD2       1A         0
-                text65                             2B64     2B64        C         0
-                text64                             250A     250A       70         0
-                text63                             29C0     29C0       26         0
-                text62                             1E40     1E40       B4         0
-                text61                             257A     257A       6A         0
-                text60                             2B18     2B18       16         0
-                text59                             1FA2     1FA2       AA         0
-                text58                             2B58     2B58        C         0
-                text57                             2B90     2B90        6         0
-                text56                             2B02     2B02       16         0
-                text55                             26DE     26DE       4E         0
-                text54                             2870     2870       3A         0
-                intcode_body                       1BEC     1BEC       CE         0
-                text52                             27FA     27FA       3C         0
-                text51                             2A2E     2A2E       1E         0
-                text50                             2B3C     2B3C        E         0
-                text49                             23A0     23A0       7C         0
-                text48                             2AB8     2AB8       1A         0
-                text47                             2B70     2B70        A         0
-                text46                             1EF4     1EF4       AE         0
-                text45                             20F0     20F0       A2         0
-                text44                             28AA     28AA       36         0
-                text43                             1B0A     1B0A       E2         0
-                text42                             2494     2494       76         0
-                text41                             2B2E     2B2E        E         0
-                text40                             2A0C     2A0C       22         0
-                text39                             2B8A     2B8A        6         0
-                text38                             2836     2836       3A         0
-                text37                             25E4     25E4       5A         0
-                text36                             1A1E     1A1E       EC         0
-                text35                             2B9A     2B9A        4         0
-                text34                             272C     272C       4A         0
-                text33                             2776     2776       44         0
-                text32                             13BA     13BA      128         0
-                text31                             2690     2690       4E         0
-                text30                             2B82     2B82        8         0
-                text29                             241C     241C       78         0
-                text28                              3BE      3BE      458         0
-                text27                             2A68     2A68       1C         0
-                text26                             2A4C     2A4C       1C         0
-                text25                             2914     2914       32         0
-                text24                             14E2     14E2      126         0
-                text23                             22A2     22A2       80         0
-                text22                             2B96     2B96        4         0
-                text21                             1D82     1D82       BE         0
-                text20                              816      816      2BE         0
-                text19                              D40      D40      236         0
-                text18                             1198     1198      222         0
-                text17                              F76      F76      222         0
-                text16                             1824     1824      106         0
-                text15                              AD4      AD4      26C         0
-                text14                             299A     299A       26         0
-                text13                             27BA     27BA       40         0
-                text12                             2A9E     2A9E       1A         0
-                text11                             2972     2972       28         0
-                text10                             2A84     2A84       1A         0
-                text9                              263E     263E       52         0
-                text8                              171E     171E      106         0
-                text7                              1CBA     1CBA       C8         0
-                text6                              204C     204C       A4         0
-                text5                              1608     1608      116         0
-                text4                              2AEC     2AEC       16         0
-                text3                              192A     192A       F4         0
-                text2                              2BA0     2BA0        2         0
-                text1                              28E0     28E0       34         0
-                text0                              2192     2192       8C         0
-                cinit                              2322     2322       7E         0
-                idataBANK0                         2B7A     2B7A        8         0
-                idataCOMRAM                        2B9E     2B9E        2         0
+                text68                             2B3A     2B3A        2         0
+                text67                             2B38     2B38        2         0
+                text66                             225C     225C       84         0
+                text65                             293E     293E       26         0
+                text64                             2B1C     2B1C        8         0
+                text63                             2A66     2A66       1A         0
+                text62                             2AFE     2AFE        C         0
+                text61                             24CA     24CA       70         0
+                text60                             2918     2918       26         0
+                text59                             1EA2     1EA2       B4         0
+                text58                             253A     253A       6A         0
+                text57                             2AAC     2AAC       16         0
+                text56                             1F56     1F56       AE         0
+                text55                             2AF2     2AF2        C         0
+                text54                             2B30     2B30        6         0
+                text53                             2A96     2A96       16         0
+                text52                             26FC     26FC       4E         0
+                text51                             2842     2842       3A         0
+                intcode_body                       1C4E     1C4E       CE         0
+                text49                             27CC     27CC       3C         0
+                text48                             29A6     29A6       1E         0
+                text47                             2AE4     2AE4        E         0
+                text46                             2360     2360       7C         0
+                text45                             2A4C     2A4C       1A         0
+                text44                             2B0A     2B0A        A         0
+                text43                             265C     265C       52         0
+                text42                             20A8     20A8       A2         0
+                text41                             287C     287C       36         0
+                text40                             1B6C     1B6C       E2         0
+                text39                             2454     2454       76         0
+                text38                             2AC2     2AC2       12         0
+                text37                             2964     2964       22         0
+                text36                             2B2A     2B2A        6         0
+                text35                             2808     2808       3A         0
+                text34                             25A4     25A4       66         0
+                text33                             1A80     1A80       EC         0
+                text32                             274A     274A       44         0
+                text31                             1552     1552      128         0
+                text30                             26AE     26AE       4E         0
+                text29                             2B14     2B14        8         0
+                text28                             23DC     23DC       78         0
+                text27                              3B8      3B8      458         0
+                text26                             29FC     29FC       1C         0
+                text25                             29E0     29E0       1C         0
+                text24                             28E6     28E6       32         0
+                text23                             1424     1424      12E         0
+                text22                             22E0     22E0       80         0
+                text21                             1DE4     1DE4       BE         0
+                text20                              810      810      368         0
+                text19                             1296     1296      18E         0
+                text18                             1892     1892       FE         0
+                text17                              B78      B78      29A         0
+                text16                             108C     108C      20A         0
+                text15                              E12      E12      27A         0
+                text14                             2986     2986       20         0
+                text13                             278E     278E       3E         0
+                text12                             2A32     2A32       1A         0
+                text11                             29C4     29C4       1C         0
+                text10                             2A18     2A18       1A         0
+                text9                              260A     260A       52         0
+                text8                              178C     178C      106         0
+                text7                              1D1C     1D1C       C8         0
+                text6                              2004     2004       A4         0
+                text5                              167A     167A      112         0
+                text4                              2A80     2A80       16         0
+                text3                              1990     1990       F0         0
+                text2                              2B36     2B36        2         0
+                text1                              28B2     28B2       34         0
+                text0                              214A     214A       8C         0
+                cinit                              21D6     21D6       86         0
+                idataBANK0                         2AD4     2AD4        F         0
+                idataCOMRAM                        2B24     2B24        6         0
 
         CLASS   CONST          
 
         CLASS   SMALLCONST     
-                smallconst                          300      300       BE         0
+                smallconst                          300      300       B8         0
 
         CLASS   MEDIUMCONST    
 
         CLASS   COMRAM         
-                temp                                 58       58        1         1
+                temp                                 5D       5D        1         1
                 cstackCOMRAM                          1        1       35         1
-                dataCOMRAM                           56       56        2         1
-                bssCOMRAM                            36       36       20         1
+                dataCOMRAM                           57       57        6         1
+                bssCOMRAM                            36       36       21         1
 
         CLASS   ABS1           
 
@@ -233,9 +225,9 @@ TOTAL           Name                               Link     Load   Length     Sp
         CLASS   RAM            
 
         CLASS   BANK0          
-                cstackBANK0                          60       60       6D         1
-                dataBANK0                            F1       F1        8         1
-                bssBANK0                             CD       CD       24         1
+                cstackBANK0                          60       60       6E         1
+                dataBANK0                            F0       F0        F         1
+                bssBANK0                             CE       CE       22         1
 
         CLASS   BANK1          
                 bssBANK1                            100      100       C4         1
@@ -259,13 +251,14 @@ TOTAL           Name                               Link     Load   Length     Sp
 SEGMENTS        Name                           Load    Length   Top    Selector   Space  Class
 
                 reset_vec                      000000  000004  000004         0       0  CODE    
-                cstackCOMRAM                   000001  000058  000059         1       1  COMRAM  
+                cstackCOMRAM                   000001  00005D  00005E         1       1  COMRAM  
                 intcode                        000008  000012  00001A         4       0  CODE    
-                cstackBANK0                    000060  000099  0000F9        60       1  BANK0   
+                cstackBANK0                    000060  00009F  0000FF        60       1  BANK0   
                 bssBANK1                       000100  0000C4  0001C4       100       1  BANK1   
                 bssBIGRAM                      0001C4  00013C  000300       1C4       1  BIGRAM  
-                smallconst                     000300  0000BE  0003BE       180       0  SMALLCON
-                text28                         0003BE  0027E8  002BA6       1DF       0  CODE    
+                smallconst                     000300  0000B8  0003B8       180       0  SMALLCON
+                text27                         0003B8  00272B  002AE3       1DC       0  CODE    
+                text47                         002AE4  000058  002B3C      1572       0  CODE    
                 idloc                          200000  000008  200008    200000       0  IDLOC   
                 config                         300000  00000E  30000E    300000       0  CONFIG  
 
@@ -273,33 +266,34 @@ SEGMENTS        Name                           Load    Length   Top    Selector 
 UNUSED ADDRESS RANGES
 
         Name                Unused          Largest block    Delta
-        BANK0            0000F9-0000FF                7
-        BIGRAM           000059-00005F                7
-                         0000F9-0000FF                7
+        BANK0            0000FF-0000FF                1
+        BIGRAM           00005E-00005F                2
+                         0000FF-0000FF                1
         CODE             000004-000007                4
                          00001A-0002FF              2E6
-                         002BA6-003FFF             145A
-        COMRAM           000059-00005F                7
+                         002AE3-002AE3                1
+                         002B3C-003FFF             14C4
+        COMRAM           00005E-00005F                2
         CONST            000004-000007                4
                          00001A-0002FF              2E6
-                         002BA6-003FFF             145A
+                         002AE3-002AE3                1
+                         002B3C-003FFF             14C4
         EEDATA           F00000-F000FF              100
-        MEDIUMCONST      002BA6-003FFF             145A
-        RAM              0000F9-0000FF                7
+        MEDIUMCONST      002AE3-002AE3                1
+                         002B3C-003FFF             14C4
+        RAM              0000FF-0000FF                1
         SFR              000D00-000FFF              100
-        SMALLCONST       002BA6-003FFF              100
-        STACK            0000F9-0000FF                7
+        SMALLCONST       002AE3-002AE3                1
+                         002B3C-003FFF              100
+        STACK            000000-000000                1
 
                                   Symbol Table
 
 ?_GetNextFrame                        cstackBANK0  000060
-?_ListeningPattern                    cstackBANK0  000068
 ?_PatternOff                          cstackBANK0  000060
-?_RunPatternControlService            cstackBANK0  0000BA
-?_RunSPI32ControlService              cstackBANK0  0000BA
-?_SpeakingPattern                     cstackBANK0  000068
-?_ThinkingPattern                     cstackBANK0  000068
-?_UpdatePattern                       cstackBANK0  000082
+?_RunPatternControlService            cstackBANK0  0000BB
+?_RunSPI32ControlService              cstackBANK0  0000BB
+?_UpdatePattern                       cstackBANK0  000090
 ?___awdiv                             cstackBANK0  000060
 ?___awmod                             cstackBANK0  000060
 ?___lwdiv                             cstackBANK0  00006C
@@ -308,12 +302,21 @@ UNUSED ADDRESS RANGES
 ?i2___awdiv                           cstackCOMRAM 000001
 ?i2___awmod                           cstackCOMRAM 000001
 ?i2___wmul                            cstackCOMRAM 000007
-DotStar_Init@brightness               cstackBANK0  000060
-DotStar_Init@numPixels                cstackBANK0  000063
-DotStar_SetBrightness@brightness      cstackCOMRAM 000001
-DotStar_Show@i                        cstackBANK0  0000B9
+CenterBreathe@15707                   cstackBANK0  000070
+CenterBreathe@base_hue                cstackBANK0  00006E
+CenterBreathe@base_sat                cstackBANK0  00006F
+CenterBreathe@cycleCounter            cstackBANK0  00006C
+CenterBreathe@fade_thresh             cstackBANK0  00008B
+CenterBreathe@i                       cstackBANK0  00008F
+CenterBreathe@ptrnPointer             cstackBANK0  000068
+CenterBreathe@ptrnStepCounter         cstackBANK0  00006A
+CenterBreathe@pulseWidth              cstackBANK0  00008D
+CenterBreathe@rising                  dataBANK0    0000FC
+CenterBreathe@val                     cstackBANK0  00008C
+CenterBreathe@x                       cstackBANK0  00008E
+DotStar_Init@brightnessPointer        cstackBANK0  000060
+DotStar_Show@i                        cstackBANK0  0000BA
 DotStar_Show@patternPointer           cstackBANK0  0000A5
-ES_CheckUserEvents@i                  cstackBANK0  000060
 ES_DeQueue@NumLeft                    cstackBANK0  000073
 ES_DeQueue@SaveCrit                   cstackBANK0  000072
 ES_DeQueue@pBlock                     cstackBANK0  00006C
@@ -334,15 +337,24 @@ ES_Initialize@NewRate                 cstackBANK0  000081
 ES_Initialize@i                       cstackBANK0  000083
 ES_PostToService@TheEvent             cstackBANK0  000077
 ES_PostToService@WhichService         cstackBANK0  00007C
-ES_Run@HighestPrior                   cstackBANK0  0000CB
-ES_Run@ThisEvent                      bssBANK0     0000ED
+ES_Run@HighestPrior                   cstackBANK0  0000CC
+ES_Run@ThisEvent                      bssBANK0     0000EA
 ES_Timer_Init@Rate                    cstackBANK0  000062
 ES_Timer_InitTimer@NewTime            cstackBANK0  000060
 ES_Timer_InitTimer@Num                cstackBANK0  000064
 ES_Timer_StopTimer@Num                cstackBANK0  000064
-ES_Timer_Tick_Resp@NeedsProcessing    bssBANK0     0000D8
-ES_Timer_Tick_Resp@NewEvent           bssBANK0     0000D5
-ES_Timer_Tick_Resp@NextTimer2Process  bssBANK0     0000E2
+ES_Timer_Tick_Resp@NeedsProcessing    bssBANK0     0000D2
+ES_Timer_Tick_Resp@NewEvent           bssCOMRAM    00003A
+ES_Timer_Tick_Resp@NextTimer2Process  bssBANK0     0000DE
+FullPulseHold@15697                   cstackBANK0  000068
+FullPulseHold@base_hue                cstackBANK0  000066
+FullPulseHold@base_sat                cstackBANK0  000067
+FullPulseHold@cycleCounter            cstackBANK0  000064
+FullPulseHold@i                       cstackBANK0  000075
+FullPulseHold@ptrnPointer             cstackBANK0  000060
+FullPulseHold@ptrnStepCounter         cstackBANK0  000062
+FullPulseHold@rising                  dataBANK0    0000FD
+FullPulseHold@val                     cstackBANK0  000074
 HSV_to_RGB@HSV_Value                  cstackBANK0  000073
 HSV_to_RGB@b                          cstackBANK0  000097
 HSV_to_RGB@fpart                      cstackBANK0  000091
@@ -355,179 +367,159 @@ HSV_to_RGB@region                     cstackBANK0  00008F
 HSV_to_RGB@s                          cstackBANK0  00009F
 HSV_to_RGB@t                          cstackBANK0  00009B
 HSV_to_RGB@v                          cstackBANK0  0000A3
-ISR@LastTime                          bssCOMRAM    00003A
-ISR@NextTime                          bssCOMRAM    00003C
-IdlePattern@fade_thresh               cstackBANK0  000079
-IdlePattern@hue                       cstackBANK0  00007C
-IdlePattern@i                         cstackBANK0  00007F
-IdlePattern@pulseWidth                cstackBANK0  00007D
-IdlePattern@rising                    dataBANK0    0000F1
-IdlePattern@sat                       cstackBANK0  00007A
-IdlePattern@val                       cstackBANK0  00007B
-IdlePattern@x                         cstackBANK0  00007E
+HueTest@15689                         cstackBANK0  00007B
+HueTest@base_hue                      cstackBANK0  000079
+HueTest@base_sat                      cstackBANK0  00007A
+HueTest@cycleCounter                  cstackBANK0  000077
+HueTest@i                             cstackBANK0  000080
+HueTest@ptrnPointer                   cstackBANK0  000073
+HueTest@ptrnStepCounter               cstackBANK0  000075
+ISR@LastTime                          bssCOMRAM    00003D
+ISR@NextTime                          bssCOMRAM    00003F
 InitPatternControlService@Priority    cstackBANK0  000080
 InitPatternControlService@ThisEvent   cstackBANK0  00007D
 InitSPI32ControlService@Priority      cstackBANK0  000080
 InitSPI32ControlService@ThisEvent     cstackBANK0  00007D
-ListeningPattern@head                 cstackBANK0  000081
-ListeningPattern@hue                  cstackBANK0  00007E
-ListeningPattern@listeningLoc         cstackBANK0  000077
-ListeningPattern@pixel                cstackBANK0  000068
-ListeningPattern@pixelHSV             cstackBANK0  000075
-ListeningPattern@sat                  cstackBANK0  00007C
-ListeningPattern@stepCount            cstackBANK0  000069
-ListeningPattern@val                  cstackBANK0  00007D
-ListeningPattern@x                    cstackBANK0  00007F
-ListeningPattern@y                    cstackBANK0  000080
 PatternOff@i                          cstackBANK0  000062
-Pattern_RGBPatterns@Length            bssBANK0     0000E3
-Pattern_RGBPatterns@PatternConfigs    bssBANK0     0000DA
 PostPatternControlService@ThisEvent   cstackBANK0  00007D
 PostSPI32ControlService@ThisEvent     cstackBANK0  00007D
 ProcessReceive@Event2Post             cstackCOMRAM 000023
-ProcessReceive@LastButton             dataCOMRAM   000056
-RunPatternControlService@ReturnEvent  cstackBANK0  0000BD
-RunPatternControlService@ThisEvent    cstackBANK0  0000BA
-RunPatternControlService@testEvent    cstackBANK0  0000C0
-RunSPI32ControlService@ReturnEvent    cstackBANK0  0000C4
-RunSPI32ControlService@ThisEvent      cstackBANK0  0000BA
-SPI32_ControlService@CurrentState     bssBANK0     0000E4
-SPI32_ControlService@MyPriority       bssBANK0     0000E5
+ProcessReceive@LastButton             dataCOMRAM   000057
+RunPatternControlService@ReturnEvent  cstackBANK0  0000BE
+RunPatternControlService@ThisEvent    cstackBANK0  0000BB
+RunPatternControlService@testEvent    cstackBANK0  0000C1
+RunSPI32ControlService@ReturnEvent    cstackBANK0  0000C5
+RunSPI32ControlService@ThisEvent      cstackBANK0  0000BB
+SPI32_ControlService@CurrentState     bssBANK0     0000DF
+SPI32_ControlService@MyPriority       bssBANK0     0000E0
 SPI32_EOTResponse@EOTevent            cstackCOMRAM 000021
 SPI32_SendFrame@newFrame              cstackBANK0  000060
 SPI32_TransmitFrames@framePointer     cstackBANK0  000080
 SPI32_TransmitFrames@numFrames        cstackBANK0  000082
 SPI32_TransmitFrames@transmitEvent    cstackBANK0  000083
-SetBrightness@brightness              cstackCOMRAM 000009
-SetBrightness@newBrightness           cstackCOMRAM 00000A
-SetListLoc@LL                         cstackCOMRAM 000009
-SetListLoc@newLocation                cstackCOMRAM 00000B
+SetBrightness@brightness              cstackCOMRAM 00000B
+SetBrightness@newBrightness           cstackCOMRAM 000009
+SetListenFocus@listFocus              cstackCOMRAM 000001
 SetPattern@PatternID                  cstackCOMRAM 000001
-SetupPattern@configs                  cstackBANK0  000060
-SetupPattern@numPixels                cstackBANK0  000062
-SpeakingPattern@head                  cstackBANK0  00007F
-SpeakingPattern@hue                   cstackBANK0  00007D
-SpeakingPattern@pixel                 cstackBANK0  000068
-SpeakingPattern@pixelHSV              cstackBANK0  000075
-SpeakingPattern@sat                   cstackBANK0  00007B
-SpeakingPattern@stepCount             cstackBANK0  000069
-SpeakingPattern@val                   cstackBANK0  00007C
-SpeakingPattern@x                     cstackBANK0  00007E
-ThinkingPattern@head                  cstackBANK0  00007F
-ThinkingPattern@hue                   cstackBANK0  00007D
-ThinkingPattern@pixel                 cstackBANK0  000068
-ThinkingPattern@pixelHSV              cstackBANK0  000075
-ThinkingPattern@sat                   cstackBANK0  00007B
-ThinkingPattern@stepCount             cstackBANK0  000069
-ThinkingPattern@val                   cstackBANK0  00007C
-ThinkingPattern@x                     cstackBANK0  00007E
-UpdatePattern@i                       cstackBANK0  000085
-UpdatePattern@i_704                   cstackBANK0  000086
-UpdatePattern@i_705                   cstackBANK0  000087
-UpdatePattern@i_706                   cstackBANK0  000088
-UpdatePattern@i_708                   cstackBANK0  000089
-UpdatePattern@patternID               cstackBANK0  000084
-WelcomePattern@hue                    cstackBANK0  000068
-WelcomePattern@i                      cstackBANK0  000069
-WelcomePattern@rising                 dataBANK0    0000F2
-WelcomePattern@sat                    cstackBANK0  000066
-WelcomePattern@val                    cstackBANK0  000067
+SetupPattern@listeningFocusPointer    cstackBANK0  000062
+SetupPattern@patternIDPointer         cstackBANK0  000060
+SingleFadedLoop@15720                 cstackBANK0  000070
+SingleFadedLoop@base_hue              cstackBANK0  00006E
+SingleFadedLoop@base_sat              cstackBANK0  00006F
+SingleFadedLoop@cycleCounter          cstackBANK0  00006C
+SingleFadedLoop@i                     cstackBANK0  000083
+SingleFadedLoop@ptrnPointer           cstackBANK0  000068
+SingleFadedLoop@ptrnStepCounter       cstackBANK0  00006A
+SingleFadedLoop@val                   cstackBANK0  000081
+SingleFadedLoop@x                     cstackBANK0  000082
+SingleFocusPulse@base_hue             cstackBANK0  00006E
+SingleFocusPulse@base_sat             cstackBANK0  00006F
+SingleFocusPulse@cycleCounter         cstackBANK0  00006C
+SingleFocusPulse@focus                cstackBANK0  000070
+SingleFocusPulse@head                 cstackBANK0  00007F
+SingleFocusPulse@i                    cstackBANK0  000080
+SingleFocusPulse@ptrnPointer          cstackBANK0  000068
+SingleFocusPulse@ptrnStepCounter      cstackBANK0  00006A
+SingleFocusPulse@val                  cstackBANK0  00007D
+SingleFocusPulse@x                    cstackBANK0  00007E
+UpdatePattern@i                       cstackBANK0  000092
+UpdatePattern@i_1364                  cstackBANK0  000093
 _ADCON1                               (abs)        000FC1
 _BRGCON1bits                          (abs)        000F70
 _BRGCON2bits                          (abs)        000F71
 _BRGCON3bits                          (abs)        000F72
 _BitNum2SetMask                       smallconst   000301
-_Brightness                           bssBANK0     0000F0
+_Brightness                           bssBANK0     0000ED
 _CANCON                               (abs)        000F6F
 _CANSTATbits                          (abs)        000F6E
-_CAN_BusErrorResponse                 text72       002BA4
-_CAN_ErrorResponse                    text71       002BA2
-_CAN_Init                             text47       002B70
-_CAN_RCVResponse                      text58       002B58
-_CAN_XmitResponse                     text57       002B90
+_CAN_BusErrorResponse                 text68       002B3A
+_CAN_ErrorResponse                    text67       002B38
+_CAN_Init                             text44       002B0A
+_CAN_RCVResponse                      text55       002AF2
+_CAN_XmitResponse                     text54       002B30
 _CCP1CON                              (abs)        000FBD
 _CCP1IF                               (abs)        007CF2
 _CCPR1H                               (abs)        000FBF
 _CCPR1L                               (abs)        000FBE
 _CIOCON                               (abs)        000F73
-_Check4Keystroke                      text35       002B9A
-_CurrentFrame                         bssBANK0     0000CD
-_CurrentPattern                       bssCOMRAM    000047
-_CurrentState                         bssBANK0     0000E6
-_CycleCounter                         bssBANK0     0000D1
-_DistList00                           smallconst   000360
-_DotStar_Init                         text46       001EF4
-_DotStar_SetBrightness                text70       002B4A
-_DotStar_Show                         text24       0014E2
+_CenterBreathe                        text20       000810
+_CenterBreathe$1232                   cstackBANK0  00007B
+_CenterBreathe$1233                   cstackBANK0  00007D
+_CenterBreathe$1234                   cstackBANK0  00007F
+_CenterBreathe$1235                   cstackBANK0  000081
+_CenterBreathe$1236                   cstackBANK0  000083
+_CenterBreathe$1237                   cstackBANK0  000085
+_CenterBreathe$1238                   cstackBANK0  000087
+_CenterBreathe$1239                   cstackBANK0  000089
+_CurrentFrame                         bssBANK0     0000CE
+_CurrentPattern                       bssCOMRAM    000048
+_CurrentState                         bssBANK0     0000E1
+_CycleCounter                         bssBANK0     0000E6
+_DotStar_Init                         text43       00265C
+_DotStar_Show                         text23       001424
 _ECANCON                              (abs)        000F77
 _ERRIE                                (abs)        007D1D
 _ERRIF                                (abs)        007D25
-_ES_CheckUserEvents                   text34       00272C
-_ES_DeQueue                           text32       0013BA
-_ES_EnQueueFIFO                       text43       001B0A
-_ES_EventList                         smallconst   00035E
-_ES_GetMSBitSet                       text6        00204C
-_ES_InitQueue                         text52       0027FA
-_ES_Initialize                        text36       001A1E
-_ES_PostToService                     text42       002494
-_ES_Run                               text3        00192A
-_ES_Timer_Init                        text50       002B3C
-_ES_Timer_InitTimer                   text23       0022A2
-_ES_Timer_StopTimer                   text31       002690
-_ES_Timer_Tick_Resp                   text5        001608
+_ES_DeQueue                           text31       001552
+_ES_EnQueueFIFO                       text40       001B6C
+_ES_GetMSBitSet                       text6        002004
+_ES_InitQueue                         text49       0027CC
+_ES_Initialize                        text33       001A80
+_ES_PostToService                     text39       002454
+_ES_Run                               text3        001990
+_ES_Timer_Init                        text47       002AE4
+_ES_Timer_InitTimer                   text22       0022E0
+_ES_Timer_StopTimer                   text30       0026AE
+_ES_Timer_Tick_Resp                   text5        00167A
 _EventQueues                          smallconst   000358
-_FrameByte                            dataBANK0    0000F3
-_FrameIndex                           bssBANK0     0000E7
-_FramePointer                         bssBANK0     0000DC
+_FrameByte                            dataBANK0    0000FE
+_FrameIndex                           bssBANK0     0000E2
+_FramePointer                         bssBANK0     0000D4
+_FullPulseHold                        text19       001296
+_FullPulseHold$1218                   cstackBANK0  000072
 _GIE                                  (abs)        007F97
-_GetListLoc                           text22       002B96
-_GetNextFrame                         text10       002A84
-_HSV_to_RGB                           text28       0003BE
-_HSV_to_RGB$2017                      cstackBANK0  00009D
-_HW_Init                              text40       002A0C
+_GetNextFrame                         text10       002A18
+_HSV_to_RGB                           text27       0003B8
+_HSV_to_RGB$1987                      cstackBANK0  00009D
+_HW_Init                              text37       002964
+_HueTest                              text18       001892
 _INTCON                               (abs)        000FF2
 _IRXIE                                (abs)        007D1F
 _IRXIF                                (abs)        007D27
 _ISR                                  intcode      000008
-_IdlePattern                          text20       000816
-_IdlePattern$728                      cstackBANK0  000071
-_IdlePattern$729                      cstackBANK0  000073
-_IdlePattern$730                      cstackBANK0  000075
-_IdlePattern$731                      cstackBANK0  000077
-_InitCanHardware                      text49       0023A0
-_InitPatternControlService            text37       0025E4
-_InitPins                             text48       002AB8
-_InitSPI32ControlService              text38       002836
+_IdlePattern                          dataBANK0    0000F0
+_InitCanHardware                      text46       002360
+_InitPatternControlService            text34       0025A4
+_InitPins                             text45       002A4C
+_InitSPI32ControlService              text35       002808
 _LATA                                 (abs)        000F89
 _LATB                                 (abs)        000F8A
 _LATC                                 (abs)        000F8B
-_Length                               bssBANK0     0000E8
-_ListLoc                              bssCOMRAM    000048
-_ListeningPattern                     text19       000D40
-_ListeningPattern$755                 cstackBANK0  000078
-_ListeningPattern$756                 cstackBANK0  00007A
-_MaxBrightness                        dataCOMRAM   000057
-_MyPriority                           bssBANK0     0000E9
-_NumFrames                            bssBANK0     0000EA
+_ListeningFocus                       bssBANK0     0000D6
+_ListeningPattern                     dataBANK0    0000F2
+_MaxBrightness                        dataCOMRAM   000058
+_MyPriority                           bssBANK0     0000E3
+_NumFrames                            bssBANK0     0000E4
 _Nybble2MSBitNum                      smallconst   000341
 _PEIE                                 (abs)        007F96
 _PIE1                                 (abs)        000F9D
 _PORTA                                (abs)        000F80
 _PORTB                                (abs)        000F81
 _PORTC                                (abs)        000F82
-_PatternConfigs                       dataBANK0    0000F4
-_PatternOff                           text13       0027BA
-_PatternStepCounter                   bssBANK0     0000EB
-_PausePattern                         text30       002B82
+_PatternConfigs                       dataCOMRAM   000059
+_PatternID                            bssBANK0     0000D8
+_PatternOff                           text13       00278E
+_PatternStepCounter                   bssBANK0     0000EF
+_PausePattern                         text29       002B14
 _PixelFrames                          bssBIGRAM    0001C4
 _PixelPattern                         bssBANK1     000120
-_PostPatternControlService            text26       002A4C
-_PostPatternControlService$intlevel0  text26       002A52
-_PostSPI32ControlService              text27       002A68
-_PostSPI32ControlService$intlevel0    text27       002A6E
-_ProcessReceive                       text59       001FA2
-_ProcessReceive$1398                  cstackCOMRAM 000021
-_Queue0                               bssCOMRAM    00004A
+_PostPatternControlService            text25       0029E0
+_PostPatternControlService$intlevel0  text25       0029E6
+_PostSPI32ControlService              text26       0029FC
+_PostSPI32ControlService$intlevel0    text26       002A02
+_ProcessReceive                       text56       001F56
+_ProcessReceive$1196                  cstackCOMRAM 000021
+_Queue0                               bssCOMRAM    00004B
 _Queue1                               bssBANK1     0001B8
 _RXB0CONbits                          (abs)        000F60
 _RXB0D0                               (abs)        000F66
@@ -547,14 +539,14 @@ _RXM0EIDH                             (abs)        000F1A
 _RXM0EIDL                             (abs)        000F1B
 _RXM0SIDH                             (abs)        000F18
 _RXM0SIDL                             (abs)        000F19
-_Ready                                bssBANK0     0000DE
-_ResetPattern                         text12       002A9E
-_RunPatternControlService             text7        001CBA
-_RunSPI32ControlService               text8        00171E
-_SPI32_EOTResponse                    text54       002870
-_SPI32_Init                           text39       002B8A
-_SPI32_SendFrame                      text9        00263E
-_SPI32_TransmitFrames                 text25       002914
+_Ready                                bssBANK0     0000DA
+_ResetPattern                         text12       002A32
+_RunPatternControlService             text7        001D1C
+_RunSPI32ControlService               text8        00178C
+_SPI32_EOTResponse                    text51       002842
+_SPI32_Init                           text36       002B2A
+_SPI32_SendFrame                      text9        00260A
+_SPI32_TransmitFrames                 text24       0028E6
 _SSPADD                               (abs)        000FC8
 _SSPBUF                               (abs)        000FC9
 _SSPCON1                              (abs)        000FC6
@@ -562,18 +554,22 @@ _SSPIE                                (abs)        007CEB
 _SSPIF                                (abs)        007CF3
 _SSPSTAT                              (abs)        000FC7
 _ServDescList                         smallconst   000350
-_SetBrightness                        text68       002946
-_SetListLoc                           text67       0029E6
-_SetPattern                           text65       002B64
-_SetupPattern                         text41       002B2E
-_ShowPattern                          text14       00299A
-_SpeakingPattern                      text18       001198
-_SpeakingPattern$767                  cstackBANK0  000077
-_SpeakingPattern$768                  cstackBANK0  000079
-_StopPattern                          text11       002972
-_SysTickCounter                       bssCOMRAM    00003E
+_SetBrightness                        text65       00293E
+_SetListenFocus                       text64       002B1C
+_SetPattern                           text62       002AFE
+_SetupPattern                         text38       002AC2
+_ShowPattern                          text14       002986
+_SingleFadedLoop                      text17       000B78
+_SingleFadedLoop$1250                 cstackBANK0  00007D
+_SingleFadedLoop$1251                 cstackBANK0  00007F
+_SingleFocusPulse                     text16       00108C
+_SingleFocusPulse$1275                cstackBANK0  000079
+_SingleFocusPulse$1276                cstackBANK0  00007B
+_SpeakingPattern                      dataBANK0    0000F4
+_StopPattern                          text11       0029C4
+_SysTickCounter                       bssCOMRAM    000041
 _T1CON                                (abs)        000FCD
-_TMR_ActiveFlags                      bssBANK0     0000E0
+_TMR_ActiveFlags                      bssBANK0     0000DC
 _TMR_TimerArray                       bssBANK1     000100
 _TRISA                                (abs)        000F92
 _TRISBbits                            (abs)        000F93
@@ -581,15 +577,13 @@ _TRISC                                (abs)        000F94
 _TXB0CONbits                          (abs)        000F40
 _TXB0IE                               (abs)        007D1A
 _TXB0IF                               (abs)        007D22
-_ThinkingPattern                      text17       000F76
-_ThinkingPattern$742                  cstackBANK0  000077
-_ThinkingPattern$743                  cstackBANK0  000079
-_TickCount                            bssBANK0     0000EC
+_TestPattern                          dataBANK0    0000F6
+_ThinkingPattern                      dataBANK0    0000F8
+_TickCount                            bssBANK0     0000E5
 _Timer2PostFunc                       smallconst   000321
 _TransmitFrame                        bssCOMRAM    000036
-_UpdatePattern                        text15       000AD4
-_WelcomePattern                       text16       001824
-_WelcomePattern$717                   cstackBANK0  000064
+_UpdatePattern                        text15       000E12
+_WelcomePattern                       dataBANK0    0000FA
 __CFG_BOREN$OFF                       (abs)        000000
 __CFG_MCLRE$ON                        (abs)        000000
 __CFG_OSC$HS                          (abs)        000000
@@ -597,8 +591,8 @@ __CFG_PBADEN$OFF                      (abs)        000000
 __CFG_PWRT$OFF                        (abs)        000000
 __CFG_WDT$OFF                         (abs)        000000
 __HRAM                                (abs)        000000
-__HW_Process_Pending_Ints             text4        002AEC
-__HW_Timer_Init                       text51       002A2E
+__HW_Process_Pending_Ints             text4        002A80
+__HW_Timer_Init                       text48       0029A6
 __HW_Timer_Init@Rate                  cstackBANK0  000060
 __Habs1                               abs1         000000
 __Hbank0                              bank0        000000
@@ -654,13 +648,13 @@ __Hrdata                              rdata        000000
 __Hreset_vec                          reset_vec    000004
 __Hrparam                             rparam       000000
 __Hsfr                                sfr          000000
-__Hsmallconst                         smallconst   0003BE
+__Hsmallconst                         smallconst   0003B8
 __Hspace_0                            (abs)        30000E
 __Hspace_1                            (abs)        000300
 __Hspace_2                            (abs)        000000
 __Hstack                              stack        000000
 __Hstruct                             struct       000000
-__Htemp                               temp         000059
+__Htemp                               temp         00005E
 __Htext                               text         000000
 __Htext0                              text0        000000
 __Htext1                              text1        000000
@@ -708,9 +702,9 @@ __Htext47                             text47       000000
 __Htext48                             text48       000000
 __Htext49                             text49       000000
 __Htext5                              text5        000000
-__Htext50                             text50       000000
 __Htext51                             text51       000000
 __Htext52                             text52       000000
+__Htext53                             text53       000000
 __Htext54                             text54       000000
 __Htext55                             text55       000000
 __Htext56                             text56       000000
@@ -729,10 +723,6 @@ __Htext67                             text67       000000
 __Htext68                             text68       000000
 __Htext69                             text69       000000
 __Htext7                              text7        000000
-__Htext70                             text70       000000
-__Htext71                             text71       000000
-__Htext72                             text72       000000
-__Htext73                             text73       000000
 __Htext8                              text8        000000
 __Htext9                              text9        000000
 __LRAM                                (abs)        000001
@@ -796,7 +786,7 @@ __Lspace_1                            (abs)        000000
 __Lspace_2                            (abs)        000000
 __Lstack                              stack        000000
 __Lstruct                             struct       000000
-__Ltemp                               temp         000058
+__Ltemp                               temp         00005D
 __Ltext                               text         000000
 __Ltext0                              text0        000000
 __Ltext1                              text1        000000
@@ -844,9 +834,9 @@ __Ltext47                             text47       000000
 __Ltext48                             text48       000000
 __Ltext49                             text49       000000
 __Ltext5                              text5        000000
-__Ltext50                             text50       000000
 __Ltext51                             text51       000000
 __Ltext52                             text52       000000
+__Ltext53                             text53       000000
 __Ltext54                             text54       000000
 __Ltext55                             text55       000000
 __Ltext56                             text56       000000
@@ -865,35 +855,31 @@ __Ltext67                             text67       000000
 __Ltext68                             text68       000000
 __Ltext69                             text69       000000
 __Ltext7                              text7        000000
-__Ltext70                             text70       000000
-__Ltext71                             text71       000000
-__Ltext72                             text72       000000
-__Ltext73                             text73       000000
 __Ltext8                              text8        000000
 __Ltext9                              text9        000000
-__PRIMASK_temp                        bssCOMRAM    000042
+__PRIMASK_temp                        bssCOMRAM    000043
 __S0                                  (abs)        30000E
 __S1                                  (abs)        000300
 __S2                                  (abs)        000000
-___awdiv                              text21       001D82
+___awdiv                              text21       001DE4
 ___awdiv@counter                      cstackBANK0  000064
 ___awdiv@dividend                     cstackBANK0  000060
 ___awdiv@divisor                      cstackBANK0  000062
 ___awdiv@quotient                     cstackBANK0  000066
 ___awdiv@sign                         cstackBANK0  000065
-___awmod                              text45       0020F0
+___awmod                              text42       0020A8
 ___awmod@counter                      cstackBANK0  000064
 ___awmod@dividend                     cstackBANK0  000060
 ___awmod@divisor                      cstackBANK0  000062
 ___awmod@sign                         cstackBANK0  000065
 ___inthi_sp                           stack        000000
 ___intlo_sp                           stack        000000
-___lbmod                              text33       002776
+___lbmod                              text32       00274A
 ___lbmod@counter                      cstackBANK0  000062
 ___lbmod@dividend                     cstackBANK0  000061
 ___lbmod@divisor                      cstackBANK0  000060
 ___lbmod@rem                          cstackBANK0  000063
-___lwdiv                              text29       00241C
+___lwdiv                              text28       0023DC
 ___lwdiv@counter                      cstackBANK0  000072
 ___lwdiv@dividend                     cstackBANK0  00006C
 ___lwdiv@divisor                      cstackBANK0  00006E
@@ -901,193 +887,182 @@ ___lwdiv@quotient                     cstackBANK0  000070
 ___param_bank                         (abs)        000010
 ___rparam_used                        (abs)        000001
 ___sp                                 stack        000000
-___wmul                               text44       0028AA
+___wmul                               text41       00287C
 ___wmul@multiplicand                  cstackBANK0  000068
 ___wmul@multiplier                    cstackBANK0  000066
 ___wmul@product                       cstackBANK0  00006A
 __accesstop                           (abs)        000060
 __activetblptr                        (abs)        000002
 __end_of_BitNum2SetMask               smallconst   000321
-__end_of_CAN_BusErrorResponse         text72       002BA6
-__end_of_CAN_ErrorResponse            text71       002BA4
-__end_of_CAN_Init                     text47       002B7A
-__end_of_CAN_RCVResponse              text58       002B64
-__end_of_CAN_XmitResponse             text57       002B96
-__end_of_Check4Keystroke              text35       002B9E
-__end_of_DistList00                   smallconst   000364
-__end_of_DotStar_Init                 text46       001FA2
-__end_of_DotStar_SetBrightness        text70       002B58
-__end_of_DotStar_Show                 text24       001608
-__end_of_ES_CheckUserEvents           text34       002776
-__end_of_ES_DeQueue                   text32       0014E2
-__end_of_ES_EnQueueFIFO               text43       001BEC
-__end_of_ES_EventList                 smallconst   000360
-__end_of_ES_GetMSBitSet               text6        0020F0
-__end_of_ES_InitQueue                 text52       002836
-__end_of_ES_Initialize                text36       001B0A
-__end_of_ES_PostToService             text42       00250A
-__end_of_ES_Run                       text3        001A1E
-__end_of_ES_Timer_Init                text50       002B4A
-__end_of_ES_Timer_InitTimer           text23       002322
-__end_of_ES_Timer_StopTimer           text31       0026DE
-__end_of_ES_Timer_Tick_Resp           text5        00171E
+__end_of_CAN_BusErrorResponse         text68       002B3C
+__end_of_CAN_ErrorResponse            text67       002B3A
+__end_of_CAN_Init                     text44       002B14
+__end_of_CAN_RCVResponse              text55       002AFE
+__end_of_CAN_XmitResponse             text54       002B36
+__end_of_CenterBreathe                text20       000B78
+__end_of_DotStar_Init                 text43       0026AE
+__end_of_DotStar_Show                 text23       001552
+__end_of_ES_DeQueue                   text31       00167A
+__end_of_ES_EnQueueFIFO               text40       001C4E
+__end_of_ES_EventList                 smallconst   000301
+__end_of_ES_GetMSBitSet               text6        0020A8
+__end_of_ES_InitQueue                 text49       002808
+__end_of_ES_Initialize                text33       001B6C
+__end_of_ES_PostToService             text39       0024CA
+__end_of_ES_Run                       text3        001A80
+__end_of_ES_Timer_Init                text47       002AF2
+__end_of_ES_Timer_InitTimer           text22       002360
+__end_of_ES_Timer_StopTimer           text30       0026FC
+__end_of_ES_Timer_Tick_Resp           text5        00178C
 __end_of_EventQueues                  smallconst   00035E
-__end_of_GetListLoc                   text22       002B9A
-__end_of_GetNextFrame                 text10       002A9E
-__end_of_HSV_to_RGB                   text28       000816
-__end_of_HW_Init                      text40       002A2E
-__end_of_ISR                          intcode_body 001CBA
-__end_of_IdlePattern                  text20       000AD4
-__end_of_InitCanHardware              text49       00241C
-__end_of_InitPatternControlService    text37       00263E
-__end_of_InitPins                     text48       002AD2
-__end_of_InitSPI32ControlService      text38       002870
-__end_of_ListeningPattern             text19       000F76
+__end_of_FullPulseHold                text19       001424
+__end_of_GetNextFrame                 text10       002A32
+__end_of_HSV_to_RGB                   text27       000810
+__end_of_HW_Init                      text37       002986
+__end_of_HueTest                      text18       001990
+__end_of_ISR                          intcode_body 001D1C
+__end_of_InitCanHardware              text46       0023DC
+__end_of_InitPatternControlService    text34       00260A
+__end_of_InitPins                     text45       002A66
+__end_of_InitSPI32ControlService      text35       002842
 __end_of_Nybble2MSBitNum              smallconst   000350
-__end_of_PatternOff                   text13       0027FA
-__end_of_PausePattern                 text30       002B8A
-__end_of_PostPatternControlService    text26       002A68
-__end_of_PostSPI32ControlService      text27       002A84
-__end_of_ProcessReceive               text59       00204C
-__end_of_ResetPattern                 text12       002AB8
-__end_of_RunPatternControlService     text7        001D82
-__end_of_RunSPI32ControlService       text8        001824
-__end_of_SPI32_EOTResponse            text54       0028AA
-__end_of_SPI32_Init                   text39       002B90
-__end_of_SPI32_SendFrame              text9        002690
-__end_of_SPI32_TransmitFrames         text25       002946
+__end_of_PatternOff                   text13       0027CC
+__end_of_PausePattern                 text29       002B1C
+__end_of_PostPatternControlService    text25       0029FC
+__end_of_PostSPI32ControlService      text26       002A18
+__end_of_ProcessReceive               text56       002004
+__end_of_ResetPattern                 text12       002A4C
+__end_of_RunPatternControlService     text7        001DE4
+__end_of_RunSPI32ControlService       text8        001892
+__end_of_SPI32_EOTResponse            text51       00287C
+__end_of_SPI32_Init                   text36       002B30
+__end_of_SPI32_SendFrame              text9        00265C
+__end_of_SPI32_TransmitFrames         text24       002918
 __end_of_ServDescList                 smallconst   000358
-__end_of_SetBrightness                text68       002972
-__end_of_SetListLoc                   text67       002A0C
-__end_of_SetPattern                   text65       002B70
-__end_of_SetupPattern                 text41       002B3C
-__end_of_ShowPattern                  text14       0029C0
-__end_of_SpeakingPattern              text18       0013BA
-__end_of_StopPattern                  text11       00299A
-__end_of_ThinkingPattern              text17       001198
+__end_of_SetBrightness                text65       002964
+__end_of_SetListenFocus               text64       002B24
+__end_of_SetPattern                   text62       002B0A
+__end_of_SetupPattern                 text38       002AD4
+__end_of_ShowPattern                  text14       0029A6
+__end_of_SingleFadedLoop              text17       000E12
+__end_of_SingleFocusPulse             text16       001296
+__end_of_StopPattern                  text11       0029E0
 __end_of_Timer2PostFunc               smallconst   000341
-__end_of_UpdatePattern                text15       000D40
-__end_of_WelcomePattern               text16       00192A
-__end_of__HW_Process_Pending_Ints     text4        002B02
-__end_of__HW_Timer_Init               text51       002A4C
-__end_of___awdiv                      text21       001E40
-__end_of___awmod                      text45       002192
-__end_of___lbmod                      text33       0027BA
-__end_of___lwdiv                      text29       002494
-__end_of___wmul                       text44       0028E0
-__end_of__initialization              cinit        002392
-__end_of_main                         text0        00221E
-__end_of_printf                       text1        002914
-__end_of_putch                        text2        002BA2
-__end_ofi2_ES_EnQueueFIFO             text62       001EF4
-__end_ofi2_ES_PostToService           text61       0025E4
-__end_ofi2_PostPatternControlService  text60       002B2E
-__end_ofi2_PostSPI32ControlService    text56       002B18
-__end_ofi2_ResetPattern               text66       002AEC
-__end_ofi2_SPI32_SendFrame            text55       00272C
-__end_ofi2___awdiv                    text69       0022A2
-__end_ofi2___awmod                    text64       00257A
-__end_ofi2___wmul                     text63       0029E6
-__initialization                      cinit        002322
+__end_of_UpdatePattern                text15       00108C
+__end_of__HW_Process_Pending_Ints     text4        002A96
+__end_of__HW_Timer_Init               text48       0029C4
+__end_of___awdiv                      text21       001EA2
+__end_of___awmod                      text42       00214A
+__end_of___lbmod                      text32       00278E
+__end_of___lwdiv                      text28       002454
+__end_of___wmul                       text41       0028B2
+__end_of__initialization              cinit        00224E
+__end_of_main                         text0        0021D6
+__end_of_printf                       text1        0028E6
+__end_of_putch                        text2        002B38
+__end_ofi2_ES_EnQueueFIFO             text59       001F56
+__end_ofi2_ES_PostToService           text58       0025A4
+__end_ofi2_PostPatternControlService  text57       002AC2
+__end_ofi2_PostSPI32ControlService    text53       002AAC
+__end_ofi2_ResetPattern               text63       002A80
+__end_ofi2_SPI32_SendFrame            text52       00274A
+__end_ofi2___awdiv                    text66       0022E0
+__end_ofi2___awmod                    text61       00253A
+__end_ofi2___wmul                     text60       00293E
+__initialization                      cinit        0021D6
 __mediumconst                         mediumconst  000000
-__pbssBANK0                           bssBANK0     0000CD
+__pbssBANK0                           bssBANK0     0000CE
 __pbssBANK1                           bssBANK1     000100
 __pbssBIGRAM                          bssBIGRAM    0001C4
 __pbssCOMRAM                          bssCOMRAM    000036
-__pcinit                              cinit        002322
+__pcinit                              cinit        0021D6
 __pcstackBANK0                        cstackBANK0  000060
 __pcstackCOMRAM                       cstackCOMRAM 000001
-__pdataBANK0                          dataBANK0    0000F1
-__pdataCOMRAM                         dataCOMRAM   000056
-__pidataBANK0                         idataBANK0   002B7A
-__pidataCOMRAM                        idataCOMRAM  002B9E
+__pdataBANK0                          dataBANK0    0000F0
+__pdataCOMRAM                         dataCOMRAM   000057
+__pidataBANK0                         idataBANK0   002AD4
+__pidataCOMRAM                        idataCOMRAM  002B24
 __pintcode                            intcode      000008
-__pintcode_body                       intcode_body 001BEC
+__pintcode_body                       intcode_body 001C4E
 __psmallconst                         smallconst   000300
-__ptext0                              text0        002192
-__ptext1                              text1        0028E0
-__ptext10                             text10       002A84
-__ptext11                             text11       002972
-__ptext12                             text12       002A9E
-__ptext13                             text13       0027BA
-__ptext14                             text14       00299A
-__ptext15                             text15       000AD4
-__ptext16                             text16       001824
-__ptext17                             text17       000F76
-__ptext18                             text18       001198
-__ptext19                             text19       000D40
-__ptext2                              text2        002BA0
-__ptext20                             text20       000816
-__ptext21                             text21       001D82
-__ptext22                             text22       002B96
-__ptext23                             text23       0022A2
-__ptext24                             text24       0014E2
-__ptext25                             text25       002914
-__ptext26                             text26       002A4C
-__ptext27                             text27       002A68
-__ptext28                             text28       0003BE
-__ptext29                             text29       00241C
-__ptext3                              text3        00192A
-__ptext30                             text30       002B82
-__ptext31                             text31       002690
-__ptext32                             text32       0013BA
-__ptext33                             text33       002776
-__ptext34                             text34       00272C
-__ptext35                             text35       002B9A
-__ptext36                             text36       001A1E
-__ptext37                             text37       0025E4
-__ptext38                             text38       002836
-__ptext39                             text39       002B8A
-__ptext4                              text4        002AEC
-__ptext40                             text40       002A0C
-__ptext41                             text41       002B2E
-__ptext42                             text42       002494
-__ptext43                             text43       001B0A
-__ptext44                             text44       0028AA
-__ptext45                             text45       0020F0
-__ptext46                             text46       001EF4
-__ptext47                             text47       002B70
-__ptext48                             text48       002AB8
-__ptext49                             text49       0023A0
-__ptext5                              text5        001608
-__ptext50                             text50       002B3C
-__ptext51                             text51       002A2E
-__ptext52                             text52       0027FA
-__ptext54                             text54       002870
-__ptext55                             text55       0026DE
-__ptext56                             text56       002B02
-__ptext57                             text57       002B90
-__ptext58                             text58       002B58
-__ptext59                             text59       001FA2
-__ptext6                              text6        00204C
-__ptext60                             text60       002B18
-__ptext61                             text61       00257A
-__ptext62                             text62       001E40
-__ptext63                             text63       0029C0
-__ptext64                             text64       00250A
-__ptext65                             text65       002B64
-__ptext66                             text66       002AD2
-__ptext67                             text67       0029E6
-__ptext68                             text68       002946
-__ptext69                             text69       00221E
-__ptext7                              text7        001CBA
-__ptext70                             text70       002B4A
-__ptext71                             text71       002BA2
-__ptext72                             text72       002BA4
-__ptext73                             text73       000000
-__ptext8                              text8        00171E
-__ptext9                              text9        00263E
+__ptext0                              text0        00214A
+__ptext1                              text1        0028B2
+__ptext10                             text10       002A18
+__ptext11                             text11       0029C4
+__ptext12                             text12       002A32
+__ptext13                             text13       00278E
+__ptext14                             text14       002986
+__ptext15                             text15       000E12
+__ptext16                             text16       00108C
+__ptext17                             text17       000B78
+__ptext18                             text18       001892
+__ptext19                             text19       001296
+__ptext2                              text2        002B36
+__ptext20                             text20       000810
+__ptext21                             text21       001DE4
+__ptext22                             text22       0022E0
+__ptext23                             text23       001424
+__ptext24                             text24       0028E6
+__ptext25                             text25       0029E0
+__ptext26                             text26       0029FC
+__ptext27                             text27       0003B8
+__ptext28                             text28       0023DC
+__ptext29                             text29       002B14
+__ptext3                              text3        001990
+__ptext30                             text30       0026AE
+__ptext31                             text31       001552
+__ptext32                             text32       00274A
+__ptext33                             text33       001A80
+__ptext34                             text34       0025A4
+__ptext35                             text35       002808
+__ptext36                             text36       002B2A
+__ptext37                             text37       002964
+__ptext38                             text38       002AC2
+__ptext39                             text39       002454
+__ptext4                              text4        002A80
+__ptext40                             text40       001B6C
+__ptext41                             text41       00287C
+__ptext42                             text42       0020A8
+__ptext43                             text43       00265C
+__ptext44                             text44       002B0A
+__ptext45                             text45       002A4C
+__ptext46                             text46       002360
+__ptext47                             text47       002AE4
+__ptext48                             text48       0029A6
+__ptext49                             text49       0027CC
+__ptext5                              text5        00167A
+__ptext51                             text51       002842
+__ptext52                             text52       0026FC
+__ptext53                             text53       002A96
+__ptext54                             text54       002B30
+__ptext55                             text55       002AF2
+__ptext56                             text56       001F56
+__ptext57                             text57       002AAC
+__ptext58                             text58       00253A
+__ptext59                             text59       001EA2
+__ptext6                              text6        002004
+__ptext60                             text60       002918
+__ptext61                             text61       0024CA
+__ptext62                             text62       002AFE
+__ptext63                             text63       002A66
+__ptext64                             text64       002B1C
+__ptext65                             text65       00293E
+__ptext66                             text66       00225C
+__ptext67                             text67       002B38
+__ptext68                             text68       002B3A
+__ptext69                             text69       000000
+__ptext7                              text7        001D1C
+__ptext8                              text8        00178C
+__ptext9                              text9        00260A
 __ramtop                              ramtop       000300
 __size_of_CAN_BusErrorResponse        (abs)        000000
 __size_of_CAN_ErrorResponse           (abs)        000000
 __size_of_CAN_Init                    (abs)        000000
 __size_of_CAN_RCVResponse             (abs)        000000
 __size_of_CAN_XmitResponse            (abs)        000000
-__size_of_Check4Keystroke             (abs)        000000
+__size_of_CenterBreathe               (abs)        000000
 __size_of_DotStar_Init                (abs)        000000
-__size_of_DotStar_SetBrightness       (abs)        000000
 __size_of_DotStar_Show                (abs)        000000
-__size_of_ES_CheckUserEvents          (abs)        000000
 __size_of_ES_DeQueue                  (abs)        000000
 __size_of_ES_EnQueueFIFO              (abs)        000000
 __size_of_ES_GetMSBitSet              (abs)        000000
@@ -1099,17 +1074,16 @@ __size_of_ES_Timer_Init               (abs)        000000
 __size_of_ES_Timer_InitTimer          (abs)        000000
 __size_of_ES_Timer_StopTimer          (abs)        000000
 __size_of_ES_Timer_Tick_Resp          (abs)        000000
-__size_of_GetListLoc                  (abs)        000000
+__size_of_FullPulseHold               (abs)        000000
 __size_of_GetNextFrame                (abs)        000000
 __size_of_HSV_to_RGB                  (abs)        000000
 __size_of_HW_Init                     (abs)        000000
+__size_of_HueTest                     (abs)        000000
 __size_of_ISR                         (abs)        000000
-__size_of_IdlePattern                 (abs)        000000
 __size_of_InitCanHardware             (abs)        000000
 __size_of_InitPatternControlService   (abs)        000000
 __size_of_InitPins                    (abs)        000000
 __size_of_InitSPI32ControlService     (abs)        000000
-__size_of_ListeningPattern            (abs)        000000
 __size_of_PatternOff                  (abs)        000000
 __size_of_PausePattern                (abs)        000000
 __size_of_PostPatternControlService   (abs)        000000
@@ -1123,15 +1097,14 @@ __size_of_SPI32_Init                  (abs)        000000
 __size_of_SPI32_SendFrame             (abs)        000000
 __size_of_SPI32_TransmitFrames        (abs)        000000
 __size_of_SetBrightness               (abs)        000000
-__size_of_SetListLoc                  (abs)        000000
+__size_of_SetListenFocus              (abs)        000000
 __size_of_SetPattern                  (abs)        000000
 __size_of_SetupPattern                (abs)        000000
 __size_of_ShowPattern                 (abs)        000000
-__size_of_SpeakingPattern             (abs)        000000
+__size_of_SingleFadedLoop             (abs)        000000
+__size_of_SingleFocusPulse            (abs)        000000
 __size_of_StopPattern                 (abs)        000000
-__size_of_ThinkingPattern             (abs)        000000
 __size_of_UpdatePattern               (abs)        000000
-__size_of_WelcomePattern              (abs)        000000
 __size_of__HW_Process_Pending_Ints    (abs)        000000
 __size_of__HW_Timer_Init              (abs)        000000
 __size_of___awdiv                     (abs)        000000
@@ -1152,11 +1125,11 @@ __size_ofi2___awdiv                   (abs)        000000
 __size_ofi2___awmod                   (abs)        000000
 __size_ofi2___wmul                    (abs)        000000
 __smallconst                          smallconst   000300
-_main                                 text0        002192
-_printf                               text1        0028E0
-_putch                                text2        002BA0
-btemp                                 temp         000058
-end_of_initialization                 cinit        002392
+_main                                 text0        00214A
+_printf                               text1        0028B2
+_putch                                text2        002B36
+btemp                                 temp         00005D
+end_of_initialization                 cinit        00224E
 i2ES_EnQueueFIFO@Event2Add            cstackCOMRAM 00000F
 i2ES_EnQueueFIFO@SaveCrit             cstackCOMRAM 000015
 i2ES_EnQueueFIFO@pBlock               cstackCOMRAM 00000D
@@ -1166,41 +1139,41 @@ i2ES_PostToService@WhichService       cstackCOMRAM 00001D
 i2PostPatternControlService@ThisEvent cstackCOMRAM 00001E
 i2PostSPI32ControlService@ThisEvent   cstackCOMRAM 00001E
 i2SPI32_SendFrame@newFrame            cstackCOMRAM 000001
-i2_ES_EnQueueFIFO                     text62       001E40
-i2_ES_PostToService                   text61       00257A
-i2_PostPatternControlService          text60       002B18
-i2_PostSPI32ControlService            text56       002B02
-i2_ResetPattern                       text66       002AD2
-i2_SPI32_SendFrame                    text55       0026DE
-i2___awdiv                            text69       00221E
+i2_ES_EnQueueFIFO                     text59       001EA2
+i2_ES_PostToService                   text58       00253A
+i2_PostPatternControlService          text57       002AAC
+i2_PostSPI32ControlService            text53       002A96
+i2_ResetPattern                       text63       002A66
+i2_SPI32_SendFrame                    text52       0026FC
+i2___awdiv                            text66       00225C
 i2___awdiv@counter                    cstackCOMRAM 000005
 i2___awdiv@dividend                   cstackCOMRAM 000001
 i2___awdiv@divisor                    cstackCOMRAM 000003
 i2___awdiv@quotient                   cstackCOMRAM 000007
 i2___awdiv@sign                       cstackCOMRAM 000006
-i2___awmod                            text64       00250A
+i2___awmod                            text61       0024CA
 i2___awmod@counter                    cstackCOMRAM 000005
 i2___awmod@dividend                   cstackCOMRAM 000001
 i2___awmod@divisor                    cstackCOMRAM 000003
 i2___awmod@sign                       cstackCOMRAM 000006
-i2___wmul                             text63       0029C0
+i2___wmul                             text60       002918
 i2___wmul@multiplicand                cstackCOMRAM 000009
 i2___wmul@multiplier                  cstackCOMRAM 000007
 i2___wmul@product                     cstackCOMRAM 00000B
-int$flags                             temp         000058
-int_func                              intcode_body 001BEC
+int$flags                             temp         00005D
+int_func                              intcode_body 001C4E
 intlevel0                             text         000000
 intlevel1                             text         000000
 intlevel2                             text         000000
 intlevel3                             text         000000
-main@ErrorType                        cstackBANK0  0000CC
+main@ErrorType                        cstackBANK0  0000CD
 printf@ap                             cstackBANK0  000062
 printf@c                              cstackBANK0  000064
 printf@f                              cstackBANK0  000060
-stackhi                               (abs)        0000FF
-stacklo                               (abs)        0000F9
+stackhi                               (abs)        000000
+stacklo                               (abs)        000000
 start                                 init         000016
-start_initialization                  cinit        002322
+start_initialization                  cinit        0021D6
 
 
 FUNCTION INFORMATION:
@@ -1211,9 +1184,9 @@ FUNCTION INFORMATION:
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
-  ErrorType       1  108[BANK0 ] enum E15646
+  ErrorType       1  109[BANK0 ] enum E15646
  Return value:  Size  Location     Type
-                  2  674[None  ] int 
+                  2  475[None  ] int 
  Registers used:
 		wreg, fsr1l, fsr1h, fsr2l, fsr2h, status,2, status,0, pclat, tosl, tblptrl, tblptrh, tblptru, prodl, prodh, cstack
  Tracked objects:
@@ -1311,7 +1284,7 @@ Total ram usage:        0 bytes
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
-  HighestPrior    1  107[BANK0 ] unsigned char 
+  HighestPrior    1  108[BANK0 ] unsigned char 
  Return value:  Size  Location     Type
                   1    wreg      enum E15494
  Registers used:
@@ -1329,7 +1302,6 @@ Total ram usage:        5 bytes
  Hardware stack levels used:    1
  Hardware stack levels required when called:   15
  This function calls:
-		_ES_CheckUserEvents
 		_ES_DeQueue
 		_ES_GetMSBitSet
 		_RunPatternControlService
@@ -1438,16 +1410,16 @@ Total ram usage:       10 bytes
 
  *************** function _RunPatternControlService *****************
  Defined at:
-		line 161 in file "Pattern_ControlService.c"
+		line 159 in file "Pattern_ControlService.c"
  Parameters:    Size  Location     Type
-  ThisEvent       3   90[BANK0 ] struct ES_Event_t
+  ThisEvent       3   91[BANK0 ] struct ES_Event_t
  Auto vars:     Size  Location     Type
-  testEvent       3   96[BANK0 ] struct ES_Event_t
-  ReturnEvent     3   93[BANK0 ] struct ES_Event_t
+  testEvent       3   97[BANK0 ] struct ES_Event_t
+  ReturnEvent     3   94[BANK0 ] struct ES_Event_t
  Return value:  Size  Location     Type
-                  3   90[BANK0 ] struct ES_Event_t
+                  3   91[BANK0 ] struct ES_Event_t
  Registers used:
-		wreg, fsr1l, fsr1h, fsr2l, fsr2h, status,2, status,0, tblptrl, tblptrh, tblptru, prodl, prodh, cstack
+		wreg, fsr1l, fsr1h, fsr2l, fsr2h, status,2, status,0, pclat, tosl, tblptrl, tblptrh, tblptru, prodl, prodh, cstack
  Tracked objects:
 		On entry : 
 		On exit  : 
@@ -1474,11 +1446,11 @@ Total ram usage:        9 bytes
  Defined at:
 		line 138 in file "SPI32_ControlService.c"
  Parameters:    Size  Location     Type
-  ThisEvent       3   90[BANK0 ] struct ES_Event_t
+  ThisEvent       3   91[BANK0 ] struct ES_Event_t
  Auto vars:     Size  Location     Type
-  ReturnEvent     3  100[BANK0 ] struct ES_Event_t
+  ReturnEvent     3  101[BANK0 ] struct ES_Event_t
  Return value:  Size  Location     Type
-                  3   90[BANK0 ] struct ES_Event_t
+                  3   91[BANK0 ] struct ES_Event_t
  Registers used:
 		wreg, fsr2l, fsr2h, status,2, status,0, prodl, prodh, cstack
  Tracked objects:
@@ -1503,7 +1475,7 @@ Total ram usage:       13 bytes
 
  *************** function _SPI32_SendFrame *****************
  Defined at:
-		line 86 in file "SPI32_HW.c"
+		line 85 in file "SPI32_HW.c"
  Parameters:    Size  Location     Type
   newFrame        4    0[BANK0 ] unsigned long 
  Auto vars:     Size  Location     Type
@@ -1563,7 +1535,7 @@ Total ram usage:        4 bytes
 
  *************** function _StopPattern *****************
  Defined at:
-		line 300 in file "Pattern_ControlService.c"
+		line 271 in file "Pattern_ControlService.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1596,7 +1568,7 @@ Total ram usage:        0 bytes
 
  *************** function _ResetPattern *****************
  Defined at:
-		line 194 in file "Pattern_RGBPatterns.c"
+		line 72 in file "Pattern_PtrnGenerator.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1626,7 +1598,7 @@ Total ram usage:        0 bytes
 
  *************** function _PatternOff *****************
  Defined at:
-		line 86 in file "Pattern_RGBPatterns.c"
+		line 79 in file "Pattern_PtrnGenerator.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1656,7 +1628,7 @@ Total ram usage:        3 bytes
 
  *************** function _ShowPattern *****************
  Defined at:
-		line 290 in file "Pattern_ControlService.c"
+		line 263 in file "Pattern_ControlService.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1664,7 +1636,7 @@ Total ram usage:        3 bytes
  Return value:  Size  Location     Type
                   1    wreg      void 
  Registers used:
-		wreg, fsr1l, fsr1h, fsr2l, fsr2h, status,2, status,0, tblptrl, tblptrh, tblptru, prodl, prodh, cstack
+		wreg, fsr1l, fsr1h, fsr2l, fsr2h, status,2, status,0, pclat, tosl, tblptrl, tblptrh, tblptru, prodl, prodh, cstack
  Tracked objects:
 		On entry : 
 		On exit  : 
@@ -1688,18 +1660,60 @@ Total ram usage:        0 bytes
 
  *************** function _UpdatePattern *****************
  Defined at:
-		line 94 in file "Pattern_RGBPatterns.c"
+		line 86 in file "Pattern_PtrnGenerator.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
-  i               1   41[BANK0 ] unsigned char 
-  i               1   40[BANK0 ] unsigned char 
-  i               1   39[BANK0 ] unsigned char 
-  i               1   38[BANK0 ] unsigned char 
-  i               1   37[BANK0 ] unsigned char 
-  patternID       1   36[BANK0 ] unsigned char 
+  i               1   51[BANK0 ] unsigned char 
+  i               1   50[BANK0 ] unsigned char 
  Return value:  Size  Location     Type
-                  2   34[BANK0 ] PTR unsigned int 
+                  2   48[BANK0 ] PTR unsigned int 
+ Registers used:
+		wreg, fsr2l, fsr2h, status,2, status,0, pclat, tosl, prodl, prodh, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2
+      Params:         0       2       0       0
+      Locals:         0       2       0       0
+      Temps:          0       0       0       0
+      Totals:         0       4       0       0
+Total ram usage:        4 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    9
+ This function calls:
+		_CenterBreathe
+		_FullPulseHold
+		_HueTest
+		_SingleFadedLoop
+		_SingleFocusPulse
+ This function is called by:
+		_ShowPattern
+ This function uses a non-reentrant model
+
+
+ *************** function _SingleFocusPulse *****************
+ Defined at:
+		line 150 in file "Pattern_PtrnFunctions.c"
+ Parameters:    Size  Location     Type
+  ptrnPointer     2    8[BANK0 ] PTR unsigned int 
+		 -> PixelPattern(152), 
+  ptrnStepCoun    2   10[BANK0 ] PTR unsigned char 
+		 -> PatternStepCounter(1), 
+  cycleCounter    2   12[BANK0 ] PTR unsigned long 
+		 -> CycleCounter(4), 
+  base_hue        1   14[BANK0 ] unsigned char 
+  base_sat        1   15[BANK0 ] unsigned char 
+  focus           2   16[BANK0 ] PTR void 
+		 -> NULL(0), PatternConfigs(4), 
+ Auto vars:     Size  Location     Type
+  i               1   32[BANK0 ] unsigned char 
+  head            1   31[BANK0 ] unsigned char 
+  x               1   30[BANK0 ] unsigned char 
+  val             1   29[BANK0 ] unsigned char 
+ Return value:  Size  Location     Type
+                  1    wreg      void 
  Registers used:
 		wreg, fsr2l, fsr2h, status,2, status,0, prodl, prodh, cstack
  Tracked objects:
@@ -1707,39 +1721,121 @@ Total ram usage:        0 bytes
 		On exit  : 
 		Unchanged: 
  Data sizes:     COMRAM   BANK0   BANK1   BANK2
-      Params:         0       2       0       0
-      Locals:         0       6       0       0
-      Temps:          0       0       0       0
-      Totals:         0       8       0       0
-Total ram usage:        8 bytes
+      Params:         0      10       0       0
+      Locals:         0       8       0       0
+      Temps:          0       7       0       0
+      Totals:         0      25       0       0
+Total ram usage:       25 bytes
  Hardware stack levels used:    1
- Hardware stack levels required when called:    9
+ Hardware stack levels required when called:    8
  This function calls:
-		_GetListLoc
-		_IdlePattern
-		_ListeningPattern
-		_SpeakingPattern
-		_ThinkingPattern
-		_WelcomePattern
+		___awdiv
+		___awmod
+ This function is called by:
+		_UpdatePattern
+ This function uses a non-reentrant model
+
+
+ *************** function _SingleFadedLoop *****************
+ Defined at:
+		line 124 in file "Pattern_PtrnFunctions.c"
+ Parameters:    Size  Location     Type
+  ptrnPointer     2    8[BANK0 ] PTR unsigned int 
+		 -> PixelPattern(152), 
+  ptrnStepCoun    2   10[BANK0 ] PTR unsigned char 
+		 -> PatternStepCounter(1), 
+  cycleCounter    2   12[BANK0 ] PTR unsigned long 
+		 -> CycleCounter(4), 
+  base_hue        1   14[BANK0 ] unsigned char 
+  base_sat        1   15[BANK0 ] unsigned char 
+  15720           2   16[BANK0 ] PTR void 
+		 -> NULL(0), 
+ Auto vars:     Size  Location     Type
+  i               1   35[BANK0 ] unsigned char 
+  x               1   34[BANK0 ] unsigned char 
+  val             1   33[BANK0 ] unsigned char 
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		wreg, fsr2l, fsr2h, status,2, status,0, prodl, prodh, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2
+      Params:         0      10       0       0
+      Locals:         0       7       0       0
+      Temps:          0      11       0       0
+      Totals:         0      28       0       0
+Total ram usage:       28 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    8
+ This function calls:
+		___awdiv
+		___awmod
+ This function is called by:
+		_UpdatePattern
+ This function uses a non-reentrant model
+
+
+ *************** function _HueTest *****************
+ Defined at:
+		line 29 in file "Pattern_PtrnFunctions.c"
+ Parameters:    Size  Location     Type
+  ptrnPointer     2   19[BANK0 ] PTR unsigned int 
+		 -> PixelPattern(152), 
+  ptrnStepCoun    2   21[BANK0 ] PTR unsigned char 
+		 -> PatternStepCounter(1), 
+  cycleCounter    2   23[BANK0 ] PTR unsigned long 
+		 -> CycleCounter(4), 
+  base_hue        1   25[BANK0 ] unsigned char 
+  base_sat        1   26[BANK0 ] unsigned char 
+  15689           2   27[BANK0 ] PTR void 
+		 -> NULL(0), 
+ Auto vars:     Size  Location     Type
+  i               1   32[BANK0 ] unsigned char 
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		wreg, fsr2l, fsr2h, status,2, status,0, prodl, prodh, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2
+      Params:         0      10       0       0
+      Locals:         0       1       0       0
+      Temps:          0       3       0       0
+      Totals:         0      14       0       0
+Total ram usage:       14 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    8
+ This function calls:
 		___awmod
 		___lwdiv
 		___wmul
  This function is called by:
-		_ShowPattern
+		_UpdatePattern
  This function uses a non-reentrant model
 
 
- *************** function _WelcomePattern *****************
+ *************** function _FullPulseHold *****************
  Defined at:
-		line 201 in file "Pattern_RGBPatterns.c"
+		line 80 in file "Pattern_PtrnFunctions.c"
  Parameters:    Size  Location     Type
-  pattern         1    wreg     unsigned char 
+  ptrnPointer     2    0[BANK0 ] PTR unsigned int 
+		 -> PixelPattern(152), 
+  ptrnStepCoun    2    2[BANK0 ] PTR unsigned char 
+		 -> PatternStepCounter(1), 
+  cycleCounter    2    4[BANK0 ] PTR unsigned long 
+		 -> CycleCounter(4), 
+  base_hue        1    6[BANK0 ] unsigned char 
+  base_sat        1    7[BANK0 ] unsigned char 
+  15697           2    8[BANK0 ] PTR void 
+		 -> NULL(0), 
  Auto vars:     Size  Location     Type
-  pattern         1    0[COMRAM] unsigned char 
-  i               1    9[BANK0 ] unsigned char 
-  hue             1    8[BANK0 ] unsigned char 
-  val             1    7[BANK0 ] unsigned char 
-  sat             1    6[BANK0 ] unsigned char 
+  i               1   21[BANK0 ] unsigned char 
+  val             1   20[BANK0 ] unsigned char 
  Return value:  Size  Location     Type
                   1    wreg      void 
  Registers used:
@@ -1749,11 +1845,11 @@ Total ram usage:        8 bytes
 		On exit  : 
 		Unchanged: 
  Data sizes:     COMRAM   BANK0   BANK1   BANK2
-      Params:         0       0       0       0
-      Locals:         0       6       0       0
-      Temps:          0       4       0       0
-      Totals:         0      10       0       0
-Total ram usage:       10 bytes
+      Params:         0      10       0       0
+      Locals:         0       4       0       0
+      Temps:          0       8       0       0
+      Totals:         0      22       0       0
+Total ram usage:       22 bytes
  Hardware stack levels used:    1
  Hardware stack levels required when called:    7
  This function calls:
@@ -1763,138 +1859,26 @@ Total ram usage:       10 bytes
  This function uses a non-reentrant model
 
 
- *************** function _ThinkingPattern *****************
+ *************** function _CenterBreathe *****************
  Defined at:
-		line 258 in file "Pattern_RGBPatterns.c"
+		line 102 in file "Pattern_PtrnFunctions.c"
  Parameters:    Size  Location     Type
-  pattern         1    wreg     unsigned char 
-  pixel           1    8[BANK0 ] unsigned char 
-  stepCount       1    9[BANK0 ] unsigned char 
+  ptrnPointer     2    8[BANK0 ] PTR unsigned int 
+		 -> PixelPattern(152), 
+  ptrnStepCoun    2   10[BANK0 ] PTR unsigned char 
+		 -> PatternStepCounter(1), 
+  cycleCounter    2   12[BANK0 ] PTR unsigned long 
+		 -> CycleCounter(4), 
+  base_hue        1   14[BANK0 ] unsigned char 
+  base_sat        1   15[BANK0 ] unsigned char 
+  15707           2   16[BANK0 ] PTR void 
+		 -> NULL(0), 
  Auto vars:     Size  Location     Type
-  pattern         1    0[COMRAM] unsigned char 
-  pixelHSV        2   21[BANK0 ] unsigned int 
-  head            1   31[BANK0 ] unsigned char 
-  x               1   30[BANK0 ] unsigned char 
-  hue             1   29[BANK0 ] unsigned char 
-  val             1   28[BANK0 ] unsigned char 
-  sat             1   27[BANK0 ] unsigned char 
- Return value:  Size  Location     Type
-                  2    8[BANK0 ] unsigned int 
- Registers used:
-		wreg, status,2, status,0, prodl, prodh, cstack
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMRAM   BANK0   BANK1   BANK2
-      Params:         0       2       0       0
-      Locals:         0      11       0       0
-      Temps:          0      11       0       0
-      Totals:         0      24       0       0
-Total ram usage:       24 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    8
- This function calls:
-		___awdiv
-		___awmod
- This function is called by:
-		_UpdatePattern
- This function uses a non-reentrant model
-
-
- *************** function _SpeakingPattern *****************
- Defined at:
-		line 295 in file "Pattern_RGBPatterns.c"
- Parameters:    Size  Location     Type
-  pattern         1    wreg     unsigned char 
-  pixel           1    8[BANK0 ] unsigned char 
-  stepCount       1    9[BANK0 ] unsigned char 
- Auto vars:     Size  Location     Type
-  pattern         1    0[COMRAM] unsigned char 
-  pixelHSV        2   21[BANK0 ] unsigned int 
-  head            1   31[BANK0 ] unsigned char 
-  x               1   30[BANK0 ] unsigned char 
-  hue             1   29[BANK0 ] unsigned char 
-  val             1   28[BANK0 ] unsigned char 
-  sat             1   27[BANK0 ] unsigned char 
- Return value:  Size  Location     Type
-                  2    8[BANK0 ] unsigned int 
- Registers used:
-		wreg, status,2, status,0, prodl, prodh, cstack
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMRAM   BANK0   BANK1   BANK2
-      Params:         0       2       0       0
-      Locals:         0      11       0       0
-      Temps:          0      11       0       0
-      Totals:         0      24       0       0
-Total ram usage:       24 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    8
- This function calls:
-		___awdiv
-		___awmod
- This function is called by:
-		_UpdatePattern
- This function uses a non-reentrant model
-
-
- *************** function _ListeningPattern *****************
- Defined at:
-		line 278 in file "Pattern_RGBPatterns.c"
- Parameters:    Size  Location     Type
-  listeningLoc    1    wreg     unsigned char 
-  pixel           1    8[BANK0 ] unsigned char 
-  stepCount       1    9[BANK0 ] unsigned char 
- Auto vars:     Size  Location     Type
-  listeningLoc    1   23[BANK0 ] unsigned char 
-  pixelHSV        2   21[BANK0 ] unsigned int 
-  head            1   33[BANK0 ] unsigned char 
-  y               1   32[BANK0 ] unsigned char 
-  x               1   31[BANK0 ] unsigned char 
-  hue             1   30[BANK0 ] unsigned char 
-  val             1   29[BANK0 ] unsigned char 
-  sat             1   28[BANK0 ] unsigned char 
- Return value:  Size  Location     Type
-                  2    8[BANK0 ] unsigned int 
- Registers used:
-		wreg, status,2, status,0, prodl, prodh, cstack
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMRAM   BANK0   BANK1   BANK2
-      Params:         0       2       0       0
-      Locals:         0      13       0       0
-      Temps:          0      11       0       0
-      Totals:         0      26       0       0
-Total ram usage:       26 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    8
- This function calls:
-		___awdiv
-		___awmod
- This function is called by:
-		_UpdatePattern
- This function uses a non-reentrant model
-
-
- *************** function _IdlePattern *****************
- Defined at:
-		line 230 in file "Pattern_RGBPatterns.c"
- Parameters:    Size  Location     Type
-  pattern         1    wreg     unsigned char 
- Auto vars:     Size  Location     Type
-  pattern         1    0[COMRAM] unsigned char 
-  i               1   31[BANK0 ] unsigned char 
-  x               1   30[BANK0 ] unsigned char 
-  pulseWidth      1   29[BANK0 ] unsigned char 
-  hue             1   28[BANK0 ] unsigned char 
-  val             1   27[BANK0 ] unsigned char 
-  sat             1   26[BANK0 ] unsigned char 
-  fade_thresh     1   25[BANK0 ] unsigned char 
+  i               1   47[BANK0 ] unsigned char 
+  x               1   46[BANK0 ] unsigned char 
+  pulseWidth      1   45[BANK0 ] unsigned char 
+  val             1   44[BANK0 ] unsigned char 
+  fade_thresh     1   43[BANK0 ] unsigned char 
  Return value:  Size  Location     Type
                   1    wreg      void 
  Registers used:
@@ -1904,11 +1888,11 @@ Total ram usage:       26 bytes
 		On exit  : 
 		Unchanged: 
  Data sizes:     COMRAM   BANK0   BANK1   BANK2
-      Params:         0       0       0       0
-      Locals:         0      15       0       0
+      Params:         0      10       0       0
+      Locals:         0      21       0       0
       Temps:          0       9       0       0
-      Totals:         0      24       0       0
-Total ram usage:       24 bytes
+      Totals:         0      40       0       0
+Total ram usage:       40 bytes
  Hardware stack levels used:    1
  Hardware stack levels required when called:    8
  This function calls:
@@ -1948,40 +1932,10 @@ Total ram usage:        8 bytes
  This function calls:
 		Nothing
  This function is called by:
-		_IdlePattern
-		_ThinkingPattern
-		_ListeningPattern
-		_SpeakingPattern
- This function uses a non-reentrant model
-
-
- *************** function _GetListLoc *****************
- Defined at:
-		line 281 in file "Pattern_ControlService.c"
- Parameters:    Size  Location     Type
-		None
- Auto vars:     Size  Location     Type
-		None
- Return value:  Size  Location     Type
-                  1    wreg      unsigned char 
- Registers used:
-		wreg, status,2
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMRAM   BANK0   BANK1   BANK2
-      Params:         0       0       0       0
-      Locals:         0       0       0       0
-      Temps:          0       0       0       0
-      Totals:         0       0       0       0
-Total ram usage:        0 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    7
- This function calls:
-		Nothing
- This function is called by:
-		_UpdatePattern
+		_CenterBreathe
+		_SingleFadedLoop
+		_SingleFocusPulse
+		_DoubleFadedLoop
  This function uses a non-reentrant model
 
 
@@ -2018,12 +1972,12 @@ Total ram usage:        5 bytes
 
  *************** function _DotStar_Show *****************
  Defined at:
-		line 76 in file "Pattern_DotStarLED.c"
+		line 61 in file "Pattern_DotStarLED.c"
  Parameters:    Size  Location     Type
   patternPoint    2   69[BANK0 ] PTR unsigned int 
 		 -> PixelPattern(152), 
  Auto vars:     Size  Location     Type
-  i               1   89[BANK0 ] unsigned char 
+  i               1   90[BANK0 ] unsigned char 
  Return value:  Size  Location     Type
                   1    wreg      void 
  Registers used:
@@ -2035,9 +1989,9 @@ Total ram usage:        5 bytes
  Data sizes:     COMRAM   BANK0   BANK1   BANK2
       Params:         0       2       0       0
       Locals:         0       1       0       0
-      Temps:          0      18       0       0
-      Totals:         0      21       0       0
-Total ram usage:       21 bytes
+      Temps:          0      19       0       0
+      Totals:         0      22       0       0
+Total ram usage:       22 bytes
  Hardware stack levels used:    1
  Hardware stack levels required when called:   12
  This function calls:
@@ -2083,7 +2037,7 @@ Total ram usage:        6 bytes
 
  *************** function _PostPatternControlService *****************
  Defined at:
-		line 139 in file "Pattern_ControlService.c"
+		line 137 in file "Pattern_ControlService.c"
  Parameters:    Size  Location     Type
   ThisEvent       3   29[BANK0 ] struct ES_Event_t
  Auto vars:     Size  Location     Type
@@ -2109,7 +2063,6 @@ Total ram usage:        3 bytes
  This function is called by:
 		_RunPatternControlService
 		_ES_Timer_Tick_Resp
-		_PostToList
  This function uses a non-reentrant model
 
 
@@ -2141,7 +2094,6 @@ Total ram usage:        3 bytes
  This function is called by:
 		_SPI32_TransmitFrames
 		_ES_Timer_Tick_Resp
-		_PostToList
  This function uses a non-reentrant model
 
 
@@ -2215,14 +2167,14 @@ Total ram usage:        7 bytes
  This function calls:
 		Nothing
  This function is called by:
-		_UpdatePattern
 		_HSV_to_RGB
+		_HueTest
  This function uses a non-reentrant model
 
 
  *************** function _PausePattern *****************
  Defined at:
-		line 313 in file "Pattern_ControlService.c"
+		line 281 in file "Pattern_ControlService.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -2352,66 +2304,6 @@ Total ram usage:        4 bytes
  This function uses a non-reentrant model
 
 
- *************** function _ES_CheckUserEvents *****************
- Defined at:
-		line 46 in file "ES_CheckEvents.c"
- Parameters:    Size  Location     Type
-		None
- Auto vars:     Size  Location     Type
-  i               1    0[BANK0 ] unsigned char 
- Return value:  Size  Location     Type
-                  1    wreg      unsigned char 
- Registers used:
-		wreg, status,2, status,0, pclat, tosl, tblptrl, tblptrh, tblptru, prodl, prodh, cstack
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMRAM   BANK0   BANK1   BANK2
-      Params:         0       0       0       0
-      Locals:         0       1       0       0
-      Temps:          0       0       0       0
-      Totals:         0       1       0       0
-Total ram usage:        1 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    8
- This function calls:
-		_Check4Keystroke
- This function is called by:
-		_ES_Run
- This function uses a non-reentrant model
-
-
- *************** function _Check4Keystroke *****************
- Defined at:
-		line 62 in file "EventCheckers.c"
- Parameters:    Size  Location     Type
-		None
- Auto vars:     Size  Location     Type
-		None
- Return value:  Size  Location     Type
-                  1    wreg      unsigned char 
- Registers used:
-		wreg
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMRAM   BANK0   BANK1   BANK2
-      Params:         0       0       0       0
-      Locals:         0       0       0       0
-      Temps:          0       0       0       0
-      Totals:         0       0       0       0
-Total ram usage:        0 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    7
- This function calls:
-		Nothing
- This function is called by:
-		_ES_CheckUserEvents
- This function uses a non-reentrant model
-
-
  *************** function _ES_Initialize *****************
  Defined at:
 		line 242 in file "ES_Framework.c"
@@ -2447,7 +2339,7 @@ Total ram usage:        3 bytes
 
  *************** function _InitPatternControlService *****************
  Defined at:
-		line 99 in file "Pattern_ControlService.c"
+		line 97 in file "Pattern_ControlService.c"
  Parameters:    Size  Location     Type
   Priority        1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -2513,7 +2405,7 @@ Total ram usage:        4 bytes
 
  *************** function _SPI32_Init *****************
  Defined at:
-		line 66 in file "SPI32_HW.c"
+		line 65 in file "SPI32_HW.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -2543,7 +2435,7 @@ Total ram usage:        0 bytes
 
  *************** function _HW_Init *****************
  Defined at:
-		line 128 in file "SPI32_HW.c"
+		line 127 in file "SPI32_HW.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -2573,11 +2465,12 @@ Total ram usage:        0 bytes
 
  *************** function _SetupPattern *****************
  Defined at:
-		line 79 in file "Pattern_RGBPatterns.c"
+		line 66 in file "Pattern_PtrnGenerator.c"
  Parameters:    Size  Location     Type
-  configs         2    0[BANK0 ] PTR unsigned char 
-		 -> PatternConfigs(5), 
-  numPixels       1    2[BANK0 ] unsigned char 
+  patternIDPoi    2    0[BANK0 ] PTR unsigned char 
+		 -> PatternConfigs(4), 
+  listeningFoc    2    2[BANK0 ] PTR unsigned char 
+		 -> PatternConfigs(4), 
  Auto vars:     Size  Location     Type
 		None
  Return value:  Size  Location     Type
@@ -2589,11 +2482,11 @@ Total ram usage:        0 bytes
 		On exit  : 
 		Unchanged: 
  Data sizes:     COMRAM   BANK0   BANK1   BANK2
-      Params:         0       3       0       0
+      Params:         0       4       0       0
       Locals:         0       0       0       0
       Temps:          0       0       0       0
-      Totals:         0       3       0       0
-Total ram usage:        3 bytes
+      Totals:         0       4       0       0
+Total ram usage:        4 bytes
  Hardware stack levels used:    1
  Hardware stack levels required when called:    7
  This function calls:
@@ -2702,8 +2595,8 @@ Total ram usage:        6 bytes
  This function is called by:
 		_ES_EnQueueFIFO
 		_ES_DeQueue
-		_UpdatePattern
 		_HSV_to_RGB
+		_HueTest
 		i2_ES_EnQueueFIFO
 		_ES_EnQueueLIFO
  This function uses a non-reentrant model
@@ -2738,36 +2631,36 @@ Total ram usage:        6 bytes
 		Nothing
  This function is called by:
 		_ES_EnQueueFIFO
-		_UpdatePattern
-		_IdlePattern
-		_ThinkingPattern
-		_ListeningPattern
-		_SpeakingPattern
+		_HueTest
+		_CenterBreathe
+		_SingleFadedLoop
+		_SingleFocusPulse
+		_DoubleFadedLoop
  This function uses a non-reentrant model
 
 
  *************** function _DotStar_Init *****************
  Defined at:
-		line 48 in file "Pattern_DotStarLED.c"
+		line 50 in file "Pattern_DotStarLED.c"
  Parameters:    Size  Location     Type
-  numPixels       1    wreg     unsigned char 
-  brightness      1    0[BANK0 ] unsigned char 
+  brightnessPo    2    0[BANK0 ] PTR unsigned char 
+		 -> PatternConfigs(4), 
  Auto vars:     Size  Location     Type
-  numPixels       1    3[BANK0 ] unsigned char 
+		None
  Return value:  Size  Location     Type
                   1    wreg      void 
  Registers used:
-		wreg, fsr2l, fsr2h, status,2, status,0
+		wreg, status,2, status,0
  Tracked objects:
 		On entry : 
 		On exit  : 
 		Unchanged: 
  Data sizes:     COMRAM   BANK0   BANK1   BANK2
-      Params:         0       1       0       0
-      Locals:         0       1       0       0
-      Temps:          0       2       0       0
-      Totals:         0       4       0       0
-Total ram usage:        4 bytes
+      Params:         0       2       0       0
+      Locals:         0       0       0       0
+      Temps:          0       0       0       0
+      Totals:         0       2       0       0
+Total ram usage:        2 bytes
  Hardware stack levels used:    1
  Hardware stack levels required when called:    7
  This function calls:
@@ -2779,7 +2672,7 @@ Total ram usage:        4 bytes
 
  *************** function _CAN_Init *****************
  Defined at:
-		line 61 in file "CAN_RX_HW.c"
+		line 60 in file "CAN_RX_HW.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -2810,7 +2703,7 @@ Total ram usage:        0 bytes
 
  *************** function _InitPins *****************
  Defined at:
-		line 165 in file "CAN_RX_HW.c"
+		line 163 in file "CAN_RX_HW.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -2840,7 +2733,7 @@ Total ram usage:        0 bytes
 
  *************** function _InitCanHardware *****************
  Defined at:
-		line 105 in file "CAN_RX_HW.c"
+		line 103 in file "CAN_RX_HW.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -2997,7 +2890,7 @@ Total ram usage:       16 bytes
 
  *************** function _SPI32_EOTResponse *****************
  Defined at:
-		line 167 in file "SPI32_HW.c"
+		line 166 in file "SPI32_HW.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -3028,7 +2921,7 @@ Total ram usage:        3 bytes
 
  *************** function i2_SPI32_SendFrame *****************
  Defined at:
-		line 86 in file "SPI32_HW.c"
+		line 85 in file "SPI32_HW.c"
  Parameters:    Size  Location     Type
   newFrame        4    0[COMRAM] unsigned long 
  Auto vars:     Size  Location     Type
@@ -3087,7 +2980,7 @@ Total ram usage:        3 bytes
 
  *************** function _CAN_XmitResponse *****************
  Defined at:
-		line 66 in file "CAN_RX_HW.c"
+		line 65 in file "CAN_RX_HW.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -3116,13 +3009,13 @@ Total ram usage:        0 bytes
 
  *************** function _CAN_RCVResponse *****************
  Defined at:
-		line 71 in file "CAN_RX_HW.c"
+		line 70 in file "CAN_RX_HW.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
 		None
  Return value:  Size  Location     Type
-                  2  141[None  ] int 
+                  2  137[None  ] int 
  Registers used:
 		wreg, fsr1l, fsr1h, fsr2l, fsr2h, status,2, status,0, tblptrl, tblptrh, tblptru, prodl, prodh, cstack
  Tracked objects:
@@ -3146,7 +3039,7 @@ Total ram usage:        0 bytes
 
  *************** function _ProcessReceive *****************
  Defined at:
-		line 179 in file "CAN_RX_HW.c"
+		line 177 in file "CAN_RX_HW.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -3169,7 +3062,7 @@ Total ram usage:        5 bytes
  Hardware stack levels required when called:    4
  This function calls:
 		_SetBrightness
-		_SetListLoc
+		_SetListenFocus
 		_SetPattern
 		i2_PostPatternControlService
 		i2___awmod
@@ -3180,7 +3073,7 @@ Total ram usage:        5 bytes
 
  *************** function i2_PostPatternControlService *****************
  Defined at:
-		line 139 in file "Pattern_ControlService.c"
+		line 137 in file "Pattern_ControlService.c"
  Parameters:    Size  Location     Type
   ThisEvent       3   29[COMRAM] struct ES_Event_t
  Auto vars:     Size  Location     Type
@@ -3339,7 +3232,7 @@ Total ram usage:        6 bytes
 
  *************** function _SetPattern *****************
  Defined at:
-		line 252 in file "Pattern_ControlService.c"
+		line 236 in file "Pattern_ControlService.c"
  Parameters:    Size  Location     Type
   PatternID       1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -3369,7 +3262,7 @@ Total ram usage:        1 bytes
 
  *************** function i2_ResetPattern *****************
  Defined at:
-		line 194 in file "Pattern_RGBPatterns.c"
+		line 72 in file "Pattern_PtrnGenerator.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -3396,32 +3289,30 @@ Total ram usage:        0 bytes
  This function uses a non-reentrant model
 
 
- *************** function _SetListLoc *****************
+ *************** function _SetListenFocus *****************
  Defined at:
-		line 276 in file "Pattern_ControlService.c"
+		line 249 in file "Pattern_ControlService.c"
  Parameters:    Size  Location     Type
-  newLocation     1    wreg     unsigned char 
+  listFocus       1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
-  newLocation     1   10[COMRAM] unsigned char 
-  LL              2    8[COMRAM] unsigned int 
+  listFocus       1    0[COMRAM] unsigned char 
  Return value:  Size  Location     Type
                   1    wreg      void 
  Registers used:
-		wreg, status,2, status,0, prodl, prodh, cstack
+		wreg
  Tracked objects:
 		On entry : 
 		On exit  : 
 		Unchanged: 
  Data sizes:     COMRAM   BANK0   BANK1   BANK2
       Params:         0       0       0       0
-      Locals:         3       0       0       0
+      Locals:         1       0       0       0
       Temps:          0       0       0       0
-      Totals:         3       0       0       0
-Total ram usage:        3 bytes
+      Totals:         1       0       0       0
+Total ram usage:        1 bytes
  Hardware stack levels used:    1
- Hardware stack levels required when called:    1
  This function calls:
-		i2___awdiv
+		Nothing
  This function is called by:
 		_ProcessReceive
  This function uses a non-reentrant model
@@ -3429,12 +3320,12 @@ Total ram usage:        3 bytes
 
  *************** function _SetBrightness *****************
  Defined at:
-		line 259 in file "Pattern_ControlService.c"
+		line 243 in file "Pattern_ControlService.c"
  Parameters:    Size  Location     Type
   brightness      1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
-  brightness      1    8[COMRAM] unsigned char 
-  newBrightnes    2    9[COMRAM] unsigned int 
+  brightness      1   10[COMRAM] unsigned char 
+  newBrightnes    2    8[COMRAM] unsigned int 
  Return value:  Size  Location     Type
                   1    wreg      void 
  Registers used:
@@ -3452,7 +3343,6 @@ Total ram usage:        3 bytes
  Hardware stack levels used:    1
  Hardware stack levels required when called:    1
  This function calls:
-		_DotStar_SetBrightness
 		i2___awdiv
  This function is called by:
 		_ProcessReceive
@@ -3488,42 +3378,12 @@ Total ram usage:        8 bytes
 		Nothing
  This function is called by:
 		_SetBrightness
-		_SetListLoc
- This function uses a non-reentrant model
-
-
- *************** function _DotStar_SetBrightness *****************
- Defined at:
-		line 70 in file "Pattern_DotStarLED.c"
- Parameters:    Size  Location     Type
-  brightness      1    wreg     unsigned char 
- Auto vars:     Size  Location     Type
-  brightness      1    0[COMRAM] unsigned char 
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		wreg, status,2, status,0
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMRAM   BANK0   BANK1   BANK2
-      Params:         0       0       0       0
-      Locals:         1       0       0       0
-      Temps:          0       0       0       0
-      Totals:         1       0       0       0
-Total ram usage:        1 bytes
- Hardware stack levels used:    1
- This function calls:
-		Nothing
- This function is called by:
-		_SetBrightness
  This function uses a non-reentrant model
 
 
  *************** function _CAN_ErrorResponse *****************
  Defined at:
-		line 80 in file "CAN_RX_HW.c"
+		line 78 in file "CAN_RX_HW.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -3552,7 +3412,7 @@ Total ram usage:        0 bytes
 
  *************** function _CAN_BusErrorResponse *****************
  Defined at:
-		line 85 in file "CAN_RX_HW.c"
+		line 83 in file "CAN_RX_HW.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -3584,175 +3444,166 @@ MODULE INFORMATION
 
 Module		Function		Class		Link	Load	Size
 ES_Queue.c
-		_ES_EnQueueFIFO		CODE           	1B0A	0000	227
-		_ES_DeQueue    		CODE           	13BA	0000	297
-		_ES_InitQueue  		CODE           	27FA	0000	61
+		_ES_EnQueueFIFO		CODE           	1B6C	0000	227
+		_ES_DeQueue    		CODE           	1552	0000	297
+		_ES_InitQueue  		CODE           	27CC	0000	61
 
 ES_Queue.c estimated size: 585
 
 C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\awmod.c
-		___awmod       		CODE           	20F0	0000	163
+		___awmod       		CODE           	20A8	0000	163
 
 C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\awmod.c estimated size: 163
 
 C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\putch.c
-		_putch         		CODE           	2BA0	0000	3
+		_putch         		CODE           	2B36	0000	3
 
 C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\putch.c estimated size: 3
 
-ES_CheckEvents.c
-		_ES_CheckUserEvents		CODE           	272C	0000	75
-
-ES_CheckEvents.c estimated size: 75
-
 Pattern_HSV_Convert.c
-		_HSV_to_RGB    		CODE           	03BE	0000	1113
+		_HSV_to_RGB    		CODE           	03B8	0000	1113
 
 Pattern_HSV_Convert.c estimated size: 1113
 
 Pattern_DotStarLED.c
-		_DotStar_Init  		CODE           	1EF4	0000	175
-		_DotStar_Show  		CODE           	14E2	0000	295
-		_DotStar_SetBrightness		CODE           	2B4A	0000	15
+		_DotStar_Init  		CODE           	265C	0000	83
+		_DotStar_Show  		CODE           	1424	0000	303
 
-Pattern_DotStarLED.c estimated size: 485
+Pattern_DotStarLED.c estimated size: 386
 
-Pattern_RGBPatterns.c
-		_ResetPattern  		CODE           	2A9E	0000	27
-		_PatternOff    		CODE           	27BA	0000	65
-		_IdlePattern   		CODE           	0816	0000	703
-		_ListeningPattern		CODE           	0D40	0000	567
-		_WelcomePattern		CODE           	1824	0000	263
-		_SetupPattern  		CODE           	2B2E	0000	15
-		_SpeakingPattern		CODE           	1198	0000	547
-		_UpdatePattern 		CODE           	0AD4	0000	621
-		_ThinkingPattern		CODE           	0F76	0000	547
+Pattern_PtrnGenerator.c
+		_ResetPattern  		CODE           	2A32	0000	27
+		_PatternOff    		CODE           	278E	0000	63
+		_SetupPattern  		CODE           	2AC2	0000	19
+		_UpdatePattern 		CODE           	0E12	0000	635
 
-Pattern_RGBPatterns.c estimated size: 3355
+Pattern_PtrnGenerator.c estimated size: 744
 
 C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\Umul16.c
-		___wmul        		CODE           	28AA	0000	55
+		___wmul        		CODE           	287C	0000	55
 
 C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\Umul16.c estimated size: 55
 
 ES_LookupTables.c
-		_ES_GetMSBitSet		CODE           	204C	0000	165
+		_ES_GetMSBitSet		CODE           	2004	0000	165
 
 ES_LookupTables.c estimated size: 165
 
 CAN_RX_HW.c
-		_InitPins      		CODE           	2AB8	0000	27
-		_CAN_Init      		CODE           	2B70	0000	11
-		_CAN_ErrorResponse		CODE           	2BA2	0000	3
-		_CAN_RCVResponse		CODE           	2B58	0000	13
-		_CAN_XmitResponse		CODE           	2B90	0000	7
-		_CAN_BusErrorResponse		CODE           	2BA4	0000	3
-		_InitCanHardware		CODE           	23A0	0000	125
-		_ProcessReceive		CODE           	1FA2	0000	171
+		_InitPins      		CODE           	2A4C	0000	27
+		_CAN_Init      		CODE           	2B0A	0000	11
+		_CAN_ErrorResponse		CODE           	2B38	0000	3
+		_CAN_RCVResponse		CODE           	2AF2	0000	13
+		_CAN_XmitResponse		CODE           	2B30	0000	7
+		_CAN_BusErrorResponse		CODE           	2B3A	0000	3
+		_InitCanHardware		CODE           	2360	0000	125
+		_ProcessReceive		CODE           	1F56	0000	175
 
-CAN_RX_HW.c estimated size: 360
+CAN_RX_HW.c estimated size: 364
 
 SPI32_ControlService.c
-		_PostSPI32ControlService		CODE           	2A68	0000	29
-		_GetNextFrame  		CODE           	2A84	0000	27
-		_InitSPI32ControlService		CODE           	2836	0000	59
-		_RunSPI32ControlService		CODE           	171E	0000	263
-		_SPI32_TransmitFrames		CODE           	2914	0000	51
+		_PostSPI32ControlService		CODE           	29FC	0000	29
+		_GetNextFrame  		CODE           	2A18	0000	27
+		_InitSPI32ControlService		CODE           	2808	0000	59
+		_RunSPI32ControlService		CODE           	178C	0000	263
+		_SPI32_TransmitFrames		CODE           	28E6	0000	51
 
 SPI32_ControlService.c estimated size: 429
 
-EventCheckers.c
-		_Check4Keystroke		CODE           	2B9A	0000	5
-
-EventCheckers.c estimated size: 5
-
 ES_Framework.c
-		_ES_PostToService		CODE           	2494	0000	119
-		_ES_Run        		CODE           	192A	0000	245
-		_ES_Initialize 		CODE           	1A1E	0000	237
+		_ES_PostToService		CODE           	2454	0000	119
+		_ES_Run        		CODE           	1990	0000	241
+		_ES_Initialize 		CODE           	1A80	0000	237
 
-ES_Framework.c estimated size: 601
+ES_Framework.c estimated size: 597
 
 C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\lwdiv.c
-		___lwdiv       		CODE           	241C	0000	121
+		___lwdiv       		CODE           	23DC	0000	121
 
 C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\lwdiv.c estimated size: 121
 
 C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\awdiv.c
-		___awdiv       		CODE           	1D82	0000	191
+		___awdiv       		CODE           	1DE4	0000	191
 
 C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\awdiv.c estimated size: 191
 
 C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\lbmod.c
-		___lbmod       		CODE           	2776	0000	69
+		___lbmod       		CODE           	274A	0000	69
 
 C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\lbmod.c estimated size: 69
 
 SPI32_HW.c
-		_SPI32_SendFrame		CODE           	263E	0000	83
-		_SPI32_EOTResponse		CODE           	2870	0000	59
-		_SPI32_Init    		CODE           	2B8A	0000	7
-		_HW_Init       		CODE           	2A0C	0000	35
+		_SPI32_SendFrame		CODE           	260A	0000	83
+		_SPI32_EOTResponse		CODE           	2842	0000	59
+		_SPI32_Init    		CODE           	2B2A	0000	7
+		_HW_Init       		CODE           	2964	0000	35
 
 SPI32_HW.c estimated size: 184
 
 shared
 		_BitNum2SetMask		SMALLCONST     	0301	0000	33
-		_DistList00    		SMALLCONST     	0360	0000	5
-		i2___awdiv     		CODE           	221E	0000	133
-		i2_ES_EnQueueFIFO		CODE           	1E40	0000	181
-		_ES_EventList  		SMALLCONST     	035E	0000	3
-		i2___wmul      		CODE           	29C0	0000	39
-		i2_ES_PostToService		CODE           	257A	0000	107
+		i2___awdiv     		CODE           	225C	0000	133
+		i2_ES_EnQueueFIFO		CODE           	1EA2	0000	181
+		_ES_EventList  		SMALLCONST     	0000	0000	0
+		i2___wmul      		CODE           	2918	0000	39
+		i2_ES_PostToService		CODE           	253A	0000	107
 		_Nybble2MSBitNum		SMALLCONST     	0341	0000	16
 		_EventQueues   		SMALLCONST     	0358	0000	7
-		__initialization		CODE           	2322	0000	113
-		i2_ResetPattern		CODE           	2AD2	0000	27
-		i2___awmod     		CODE           	250A	0000	113
+		__initialization		CODE           	21D6	0000	121
+		i2_ResetPattern		CODE           	2A66	0000	27
+		i2___awmod     		CODE           	24CA	0000	113
 		_Timer2PostFunc		SMALLCONST     	0321	0000	33
-		i2_PostPatternControlService		CODE           	2B18	0000	23
+		i2_PostPatternControlService		CODE           	2AAC	0000	23
 		_ServDescList  		SMALLCONST     	0350	0000	9
-		i2_SPI32_SendFrame		CODE           	26DE	0000	79
-		i2_PostSPI32ControlService		CODE           	2B02	0000	23
+		i2_SPI32_SendFrame		CODE           	26FC	0000	79
+		i2_PostSPI32ControlService		CODE           	2A96	0000	23
 
 shared estimated size: 944
 
 Pattern_ControlService.c
-		_InitPatternControlService		CODE           	25E4	0000	91
-		_SetListLoc    		CODE           	29E6	0000	39
-		_ShowPattern   		CODE           	299A	0000	39
-		_RunPatternControlService		CODE           	1CBA	0000	201
-		_SetPattern    		CODE           	2B64	0000	13
-		_SetBrightness 		CODE           	2946	0000	45
-		_PostPatternControlService		CODE           	2A4C	0000	29
-		_PausePattern  		CODE           	2B82	0000	9
-		_StopPattern   		CODE           	2972	0000	41
-		_GetListLoc    		CODE           	2B96	0000	5
+		_InitPatternControlService		CODE           	25A4	0000	103
+		_ShowPattern   		CODE           	2986	0000	33
+		_RunPatternControlService		CODE           	1D1C	0000	201
+		_SetListenFocus		CODE           	2B1C	0000	9
+		_SetPattern    		CODE           	2AFE	0000	13
+		_SetBrightness 		CODE           	293E	0000	39
+		_PostPatternControlService		CODE           	29E0	0000	29
+		_PausePattern  		CODE           	2B14	0000	9
+		_StopPattern   		CODE           	29C4	0000	29
 
-Pattern_ControlService.c estimated size: 512
+Pattern_ControlService.c estimated size: 465
 
 ES_Port.c
 		_ISR           		CODE           	0008	0000	221
-		__HW_Process_Pending_Ints		CODE           	2AEC	0000	23
-		__HW_Timer_Init		CODE           	2A2E	0000	31
+		__HW_Process_Pending_Ints		CODE           	2A80	0000	23
+		__HW_Timer_Init		CODE           	29A6	0000	31
 
 ES_Port.c estimated size: 275
 
 C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\doprnt.c
-		_printf        		CODE           	28E0	0000	53
+		_printf        		CODE           	28B2	0000	53
 
 C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\doprnt.c estimated size: 53
 
 ES_Timers.c
-		_ES_Timer_Init 		CODE           	2B3C	0000	15
-		_ES_Timer_InitTimer		CODE           	22A2	0000	129
-		_ES_Timer_StopTimer		CODE           	2690	0000	79
-		_ES_Timer_Tick_Resp		CODE           	1608	0000	279
+		_ES_Timer_Init 		CODE           	2AE4	0000	15
+		_ES_Timer_InitTimer		CODE           	22E0	0000	129
+		_ES_Timer_StopTimer		CODE           	26AE	0000	79
+		_ES_Timer_Tick_Resp		CODE           	167A	0000	275
 
-ES_Timers.c estimated size: 502
+ES_Timers.c estimated size: 498
+
+Pattern_PtrnFunctions.c
+		_SingleFocusPulse		CODE           	108C	0000	523
+		_HueTest       		CODE           	1892	0000	255
+		_FullPulseHold 		CODE           	1296	0000	399
+		_CenterBreathe 		CODE           	0810	0000	873
+		_SingleFadedLoop		CODE           	0B78	0000	667
+
+Pattern_PtrnFunctions.c estimated size: 2717
 
 main.c
-		_main          		CODE           	2192	0000	141
+		_main          		CODE           	214A	0000	141
 
 main.c estimated size: 141
 
