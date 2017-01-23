@@ -111,10 +111,10 @@ void CenterBreathe(uint16_t * ptrnPointer, uint8_t * ptrnStepCounter, uint32_t *
         val = (x < fade_thresh ? (*ptrnStepCounter>>4) : (x < pulseWidth ? (*ptrnStepCounter-*ptrnStepCounter*x/pulseWidth)>>4 : 0x00));
         ptrnPointer[i] = ((uint16_t)base_hue<<8) | (base_sat<<4) | val;
     }
-    if(*ptrnStepCounter == 255){
+    if(*ptrnStepCounter >= 241){
         rising = false;
     }
-    else if(*ptrnStepCounter == 60){
+    else if(*ptrnStepCounter <= 60){
         rising = true;
     }
     *ptrnStepCounter = (rising ? *ptrnStepCounter+15 : *ptrnStepCounter-15);
@@ -185,7 +185,7 @@ void BrokenPinwheel(uint16_t * ptrnPointer, uint8_t * ptrnStepCounter, uint32_t 
         ptrnPointer[i+STRIP_LENGTH*3/4] = ((uint16_t)base_hue<<8) | (base_sat<<4) | val;
         ptrnPointer[i+STRIP_LENGTH*7/8] = ((uint16_t)base_hue<<8) | (base_sat<<4) | val;
     }
-    *ptrnStepCounter = (*ptrnStepCounter+1)%(STRIP_LENGTH/3);
+    *ptrnStepCounter = (*ptrnStepCounter+1)%(STRIP_LENGTH/4);
 }
 
 void MirroredQuadrants(uint16_t * ptrnPointer, uint8_t * ptrnStepCounter, uint32_t * cycleCounter, uint8_t base_hue, uint8_t base_sat, void*){
@@ -200,7 +200,7 @@ void MirroredQuadrants(uint16_t * ptrnPointer, uint8_t * ptrnStepCounter, uint32
         ptrnPointer[i+STRIP_LENGTH/2] = ((uint16_t)base_hue<<8) | (base_sat<<4) | val;
         ptrnPointer[STRIP_LENGTH-1-i] = ((uint16_t)base_hue<<8) | (base_sat<<4) | val;
     }
-    *ptrnStepCounter = (*ptrnStepCounter+1)%(STRIP_LENGTH/3);
+    *ptrnStepCounter = (*ptrnStepCounter+1)%(STRIP_LENGTH/2);
 }
 
  /*		Active Patterns (active position control)		*/
@@ -216,4 +216,26 @@ void SingleFocusPulse(uint16_t * ptrnPointer, uint8_t * ptrnStepCounter, uint32_
         ptrnPointer[i] = ((uint16_t)base_hue<<8) | (base_sat<<4) | val;
     }
     *ptrnStepCounter = (*ptrnStepCounter+1)%STRIP_LENGTH;
+}
+
+void SingleFocusBreathe(uint16_t * ptrnPointer, uint8_t * ptrnStepCounter, uint32_t * cycleCounter, uint8_t base_hue, uint8_t base_sat, void * focus){
+    static bool rising = true;
+    uint8_t fade_thresh = 8;
+    uint8_t val, x, pulseWidth;
+    uint8_t head = *(uint8_t*)focus;
+    
+    pulseWidth = 8;
+    for(uint8_t i=0;i<STRIP_LENGTH;i++){
+         //scale value according to stepCount
+        x = min((STRIP_LENGTH+i-head)%STRIP_LENGTH,(STRIP_LENGTH+head-i)%STRIP_LENGTH);
+        val = (x < fade_thresh ? (*ptrnStepCounter>>4) : (x < pulseWidth ? (*ptrnStepCounter-*ptrnStepCounter*x/pulseWidth)>>4 : 0x00));
+        ptrnPointer[i] = ((uint16_t)base_hue<<8) | (base_sat<<4) | val;
+    }
+    if(*ptrnStepCounter >= 216){
+        rising = false;
+    }
+    else if(*ptrnStepCounter <= 80){
+        rising = true;
+    }
+    *ptrnStepCounter = (rising ? *ptrnStepCounter+40 : *ptrnStepCounter-40);
 }

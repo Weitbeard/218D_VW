@@ -334,8 +334,8 @@ SPI32_TRANSMIT 8
 [v _BrokenPinwheel BrokenPinwheel `(v  1 e 1 0 ]
 "191
 [v _MirroredQuadrants MirroredQuadrants `(v  1 e 1 0 ]
-"207
-[v _SingleFocusPulse SingleFocusPulse `(v  1 e 1 0 ]
+"221
+[v _SingleFocusBreathe SingleFocusBreathe `(v  1 e 1 0 ]
 "71 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\Pattern_PtrnGenerator.c
 [v _SetupPattern SetupPattern `(v  1 e 1 0 ]
 "77
@@ -827,29 +827,34 @@ SPI32_TRANSMIT 8
 [v _UpdatePattern UpdatePattern `(*.39ui  1 e 2 0 ]
 {
 "152
-[v UpdatePattern@i_1348 i `uc  1 a 1 53 ]
+[v UpdatePattern@i_1366 i `uc  1 a 1 53 ]
 "97
 [v UpdatePattern@i i `uc  1 a 1 52 ]
 "159
 } 0
-"207 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\Pattern_PtrnFunctions.c
-[v _SingleFocusPulse SingleFocusPulse `(v  1 e 1 0 ]
+"221 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\Pattern_PtrnFunctions.c
+[v _SingleFocusBreathe SingleFocusBreathe `(v  1 e 1 0 ]
 {
-"211
-[v SingleFocusPulse@i i `uc  1 a 1 37 ]
-"208
-[v SingleFocusPulse@head head `uc  1 a 1 36 ]
-[v SingleFocusPulse@y y `uc  1 a 1 35 ]
-[v SingleFocusPulse@x x `uc  1 a 1 34 ]
-[v SingleFocusPulse@val val `uc  1 a 1 33 ]
-"207
-[v SingleFocusPulse@ptrnPointer ptrnPointer `*.39ui  1 p 2 8 ]
-[v SingleFocusPulse@ptrnStepCounter ptrnStepCounter `*.39uc  1 p 2 10 ]
-[v SingleFocusPulse@cycleCounter cycleCounter `*.39ul  1 p 2 12 ]
-[v SingleFocusPulse@base_hue base_hue `uc  1 p 1 14 ]
-[v SingleFocusPulse@base_sat base_sat `uc  1 p 1 15 ]
-[v SingleFocusPulse@focus focus `*.39v  1 p 2 16 ]
-"219
+"228
+[v SingleFocusBreathe@i i `uc  1 a 1 42 ]
+"225
+[v SingleFocusBreathe@head head `uc  1 a 1 41 ]
+"224
+[v SingleFocusBreathe@x x `uc  1 a 1 40 ]
+[v SingleFocusBreathe@pulseWidth pulseWidth `uc  1 a 1 39 ]
+[v SingleFocusBreathe@val val `uc  1 a 1 38 ]
+"223
+[v SingleFocusBreathe@fade_thresh fade_thresh `uc  1 a 1 37 ]
+"221
+[v SingleFocusBreathe@ptrnPointer ptrnPointer `*.39ui  1 p 2 8 ]
+[v SingleFocusBreathe@ptrnStepCounter ptrnStepCounter `*.39uc  1 p 2 10 ]
+[v SingleFocusBreathe@cycleCounter cycleCounter `*.39ul  1 p 2 12 ]
+[v SingleFocusBreathe@base_hue base_hue `uc  1 p 1 14 ]
+[v SingleFocusBreathe@base_sat base_sat `uc  1 p 1 15 ]
+[v SingleFocusBreathe@focus focus `*.39v  1 p 2 16 ]
+"222
+[v SingleFocusBreathe@rising rising `uc  1 s 1 rising ]
+"241
 } 0
 "124
 [v _SingleFadedLoop SingleFadedLoop `(v  1 e 1 0 ]
@@ -865,7 +870,7 @@ SPI32_TRANSMIT 8
 [v SingleFadedLoop@cycleCounter cycleCounter `*.39ul  1 p 2 12 ]
 [v SingleFadedLoop@base_hue base_hue `uc  1 p 1 14 ]
 [v SingleFadedLoop@base_sat base_sat `uc  1 p 1 15 ]
-[v SingleFadedLoop@15734 F15734 `*.2v  1 p 2 16 ]
+[v SingleFadedLoop@15741 F15741 `*.2v  1 p 2 16 ]
 "134
 } 0
 "191
@@ -882,7 +887,7 @@ SPI32_TRANSMIT 8
 [v MirroredQuadrants@cycleCounter cycleCounter `*.39ul  1 p 2 12 ]
 [v MirroredQuadrants@base_hue base_hue `uc  1 p 1 14 ]
 [v MirroredQuadrants@base_sat base_sat `uc  1 p 1 15 ]
-[v MirroredQuadrants@15787 F15787 `*.2v  1 p 2 16 ]
+[v MirroredQuadrants@15794 F15794 `*.2v  1 p 2 16 ]
 "204
 } 0
 "29
@@ -896,7 +901,7 @@ SPI32_TRANSMIT 8
 [v HueTest@cycleCounter cycleCounter `*.39ul  1 p 2 23 ]
 [v HueTest@base_hue base_hue `uc  1 p 1 25 ]
 [v HueTest@base_sat base_sat `uc  1 p 1 26 ]
-[v HueTest@15703 F15703 `*.2v  1 p 2 27 ]
+[v HueTest@15710 F15710 `*.2v  1 p 2 27 ]
 "78
 } 0
 "80
@@ -912,7 +917,7 @@ SPI32_TRANSMIT 8
 [v FullPulseHold@cycleCounter cycleCounter `*.39ul  1 p 2 4 ]
 [v FullPulseHold@base_hue base_hue `uc  1 p 1 6 ]
 [v FullPulseHold@base_sat base_sat `uc  1 p 1 7 ]
-[v FullPulseHold@15711 F15711 `*.2v  1 p 2 8 ]
+[v FullPulseHold@15718 F15718 `*.2v  1 p 2 8 ]
 "81
 [v FullPulseHold@rising rising `uc  1 s 1 rising ]
 "100
@@ -933,7 +938,7 @@ SPI32_TRANSMIT 8
 [v DoubleFadedLoop@cycleCounter cycleCounter `*.39ul  1 p 2 12 ]
 [v DoubleFadedLoop@base_hue base_hue `uc  1 p 1 14 ]
 [v DoubleFadedLoop@base_sat base_sat `uc  1 p 1 15 ]
-[v DoubleFadedLoop@15744 F15744 `*.2v  1 p 2 16 ]
+[v DoubleFadedLoop@15751 F15751 `*.2v  1 p 2 16 ]
 "154
 } 0
 "102
@@ -953,7 +958,7 @@ SPI32_TRANSMIT 8
 [v CenterBreathe@cycleCounter cycleCounter `*.39ul  1 p 2 12 ]
 [v CenterBreathe@base_hue base_hue `uc  1 p 1 14 ]
 [v CenterBreathe@base_sat base_sat `uc  1 p 1 15 ]
-[v CenterBreathe@15721 F15721 `*.2v  1 p 2 16 ]
+[v CenterBreathe@15728 F15728 `*.2v  1 p 2 16 ]
 "103
 [v CenterBreathe@rising rising `uc  1 s 1 rising ]
 "122
@@ -975,7 +980,7 @@ SPI32_TRANSMIT 8
 [v BrokenPinwheel@cycleCounter cycleCounter `*.39ul  1 p 2 12 ]
 [v BrokenPinwheel@base_hue base_hue `uc  1 p 1 14 ]
 [v BrokenPinwheel@base_sat base_sat `uc  1 p 1 15 ]
-[v BrokenPinwheel@15769 F15769 `*.2v  1 p 2 16 ]
+[v BrokenPinwheel@15776 F15776 `*.2v  1 p 2 16 ]
 "189
 } 0
 "8 C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\awdiv.c

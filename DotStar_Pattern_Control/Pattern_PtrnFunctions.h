@@ -29,5 +29,6 @@ void BrokenPinwheel(uint16_t *, uint8_t *, uint32_t *, uint8_t, uint8_t, void *)
 void MirroredQuadrants(uint16_t *, uint8_t *, uint32_t *, uint8_t, uint8_t, void *);
 	//Active Patterns
 void SingleFocusPulse(uint16_t *, uint8_t *, uint32_t *, uint8_t, uint8_t, void *);
+void SingleFocusBreathe(uint16_t *, uint8_t *, uint32_t *, uint8_t, uint8_t, void *);
 
 #endif /* Pattern_PtrnFunctions_H */

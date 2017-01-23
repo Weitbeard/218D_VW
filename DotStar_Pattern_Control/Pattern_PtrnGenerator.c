@@ -113,11 +113,11 @@ uint16_t * UpdatePattern(void){
         break;
         
         case SPEAKING_PATTERN:
-            SingleFocusPulse(PixelPattern, &PatternStepCounter, &CycleCounter, SPEAKING_HUE, SPEAKING_SAT, ListeningFocus);  
+            SingleFocusBreathe(PixelPattern, &PatternStepCounter, &CycleCounter, SPEAKING_HUE, SPEAKING_SAT, ListeningFocus);  
         break;
         
         case LISTENING_PATTERN:
-            SingleFocusPulse(PixelPattern, &PatternStepCounter, &CycleCounter, LISTENING_HUE, LISTENING_SAT, ListeningFocus);
+            SingleFocusBreathe(PixelPattern, &PatternStepCounter, &CycleCounter, LISTENING_HUE, LISTENING_SAT, ListeningFocus);
         break;
         
          /********************** ADD NEW CUSTOM STATES & PATTERNS HERE *************************/
