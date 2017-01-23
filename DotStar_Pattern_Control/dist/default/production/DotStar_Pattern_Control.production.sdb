@@ -239,21 +239,21 @@ SPI32_TRANSMIT 8
 [v i2___wmul __wmul `(ui  1 e 2 0 ]
 "15 C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\Umul32.c
 [v ___lmul __lmul `(ul  1 e 4 0 ]
-"60 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\CAN_RX_HW.c
+"59 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\CAN_RX_HW.c
 [v _CAN_Init CAN_Init `(v  1 e 1 0 ]
-"65
+"64
 [v _CAN_XmitResponse CAN_XmitResponse `(v  1 e 1 0 ]
-"70
+"69
 [v _CAN_RCVResponse CAN_RCVResponse `(i  1 e 2 0 ]
-"78
+"77
 [v _CAN_ErrorResponse CAN_ErrorResponse `(v  1 e 1 0 ]
-"83
+"82
 [v _CAN_BusErrorResponse CAN_BusErrorResponse `(v  1 e 1 0 ]
-"103
+"102
 [v _InitCanHardware InitCanHardware `(v  1 s 1 InitCanHardware ]
-"163
+"162
 [v _InitPins InitPins `(v  1 s 1 InitPins ]
-"177
+"176
 [v _ProcessReceive ProcessReceive `(v  1 s 1 ProcessReceive ]
 "242 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\ES_Framework.c
 [v _ES_Initialize ES_Initialize `(E15494  1 e 1 0 ]
@@ -328,16 +328,22 @@ SPI32_TRANSMIT 8
 [v _CenterBreathe CenterBreathe `(v  1 e 1 0 ]
 "124
 [v _SingleFadedLoop SingleFadedLoop `(v  1 e 1 0 ]
-"150
+"136
+[v _DoubleFadedLoop DoubleFadedLoop `(v  1 e 1 0 ]
+"171
+[v _BrokenPinwheel BrokenPinwheel `(v  1 e 1 0 ]
+"191
+[v _MirroredQuadrants MirroredQuadrants `(v  1 e 1 0 ]
+"207
 [v _SingleFocusPulse SingleFocusPulse `(v  1 e 1 0 ]
-"66 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\Pattern_PtrnGenerator.c
+"71 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\Pattern_PtrnGenerator.c
 [v _SetupPattern SetupPattern `(v  1 e 1 0 ]
-"72
+"77
 [v _ResetPattern ResetPattern `(v  1 e 1 0 ]
 [v i2_ResetPattern ResetPattern `(v  1 e 1 0 ]
-"79
+"84
 [v _PatternOff PatternOff `(*.39ui  1 e 2 0 ]
-"86
+"91
 [v _UpdatePattern UpdatePattern `(*.39ui  1 e 2 0 ]
 "80 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\SPI32_ControlService.c
 [v _InitSPI32ControlService InitSPI32ControlService `(uc  1 e 1 0 ]
@@ -632,8 +638,6 @@ SPI32_TRANSMIT 8
 [v _TXB0IE TXB0IE `VEb  1 e 0 @32026 ]
 "38266
 [v _TXB0IF TXB0IF `VEb  1 e 0 @32034 ]
-"54 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\CAN_RX_HW.c
-[v _CurrentPattern CurrentPattern `uc  1 s 1 CurrentPattern ]
 [s S37 ES_Event_t 3 `E1 1 EventType 1 0 `ui 1 EventParam 2 1 ]
 "68 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\ES_Framework.c
 [s S74 . 4 `*.37(uc 1 InitFunc 2 0 `*.37(S37 1 RunFunc 2 2 ]
@@ -683,18 +687,6 @@ SPI32_TRANSMIT 8
 [v _PatternStepCounter PatternStepCounter `uc  1 s 1 PatternStepCounter ]
 "51
 [v _CycleCounter CycleCounter `ul  1 s 4 CycleCounter ]
-"56
-[v _TestPattern TestPattern `*.37(v  1 s 2 TestPattern ]
-"57
-[v _WelcomePattern WelcomePattern `*.37(v  1 s 2 WelcomePattern ]
-"58
-[v _IdlePattern IdlePattern `*.37(v  1 s 2 IdlePattern ]
-"59
-[v _ThinkingPattern ThinkingPattern `*.37(v  1 s 2 ThinkingPattern ]
-"60
-[v _ListeningPattern ListeningPattern `*.37(v  1 s 2 ListeningPattern ]
-"62
-[v _SpeakingPattern SpeakingPattern `*.37(v  1 s 2 SpeakingPattern ]
 "50 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\SPI32_ControlService.c
 [v SPI32_ControlService@CurrentState CurrentState `E15514  1 s 1 CurrentState ]
 "53
@@ -814,49 +806,50 @@ SPI32_TRANSMIT 8
 {
 "278
 } 0
-"72 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\Pattern_PtrnGenerator.c
+"77 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\Pattern_PtrnGenerator.c
 [v _ResetPattern ResetPattern `(v  1 e 1 0 ]
 {
-"77
+"82
 } 0
-"79
+"84
 [v _PatternOff PatternOff `(*.39ui  1 e 2 0 ]
 {
-"80
+"85
 [v PatternOff@i i `uc  1 a 1 2 ]
-"84
+"89
 } 0
 "263 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\Pattern_ControlService.c
 [v _ShowPattern ShowPattern `(v  1 s 1 ShowPattern ]
 {
 "268
 } 0
-"86 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\Pattern_PtrnGenerator.c
+"91 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\Pattern_PtrnGenerator.c
 [v _UpdatePattern UpdatePattern `(*.39ui  1 e 2 0 ]
 {
-"125
-[v UpdatePattern@i_1364 i `uc  1 a 1 51 ]
-"92
-[v UpdatePattern@i i `uc  1 a 1 50 ]
-"132
+"152
+[v UpdatePattern@i_1348 i `uc  1 a 1 53 ]
+"97
+[v UpdatePattern@i i `uc  1 a 1 52 ]
+"159
 } 0
-"150 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\Pattern_PtrnFunctions.c
+"207 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\Pattern_PtrnFunctions.c
 [v _SingleFocusPulse SingleFocusPulse `(v  1 e 1 0 ]
 {
-"154
-[v SingleFocusPulse@i i `uc  1 a 1 32 ]
-"151
-[v SingleFocusPulse@head head `uc  1 a 1 31 ]
-[v SingleFocusPulse@x x `uc  1 a 1 30 ]
-[v SingleFocusPulse@val val `uc  1 a 1 29 ]
-"150
+"211
+[v SingleFocusPulse@i i `uc  1 a 1 37 ]
+"208
+[v SingleFocusPulse@head head `uc  1 a 1 36 ]
+[v SingleFocusPulse@y y `uc  1 a 1 35 ]
+[v SingleFocusPulse@x x `uc  1 a 1 34 ]
+[v SingleFocusPulse@val val `uc  1 a 1 33 ]
+"207
 [v SingleFocusPulse@ptrnPointer ptrnPointer `*.39ui  1 p 2 8 ]
 [v SingleFocusPulse@ptrnStepCounter ptrnStepCounter `*.39uc  1 p 2 10 ]
 [v SingleFocusPulse@cycleCounter cycleCounter `*.39ul  1 p 2 12 ]
 [v SingleFocusPulse@base_hue base_hue `uc  1 p 1 14 ]
 [v SingleFocusPulse@base_sat base_sat `uc  1 p 1 15 ]
 [v SingleFocusPulse@focus focus `*.39v  1 p 2 16 ]
-"161
+"219
 } 0
 "124
 [v _SingleFadedLoop SingleFadedLoop `(v  1 e 1 0 ]
@@ -872,8 +865,25 @@ SPI32_TRANSMIT 8
 [v SingleFadedLoop@cycleCounter cycleCounter `*.39ul  1 p 2 12 ]
 [v SingleFadedLoop@base_hue base_hue `uc  1 p 1 14 ]
 [v SingleFadedLoop@base_sat base_sat `uc  1 p 1 15 ]
-[v SingleFadedLoop@15720 F15720 `*.2v  1 p 2 16 ]
+[v SingleFadedLoop@15734 F15734 `*.2v  1 p 2 16 ]
 "134
+} 0
+"191
+[v _MirroredQuadrants MirroredQuadrants `(v  1 e 1 0 ]
+{
+"194
+[v MirroredQuadrants@i i `uc  1 a 1 35 ]
+"192
+[v MirroredQuadrants@val val `uc  1 a 1 34 ]
+[v MirroredQuadrants@x x `uc  1 a 1 33 ]
+"191
+[v MirroredQuadrants@ptrnPointer ptrnPointer `*.39ui  1 p 2 8 ]
+[v MirroredQuadrants@ptrnStepCounter ptrnStepCounter `*.39uc  1 p 2 10 ]
+[v MirroredQuadrants@cycleCounter cycleCounter `*.39ul  1 p 2 12 ]
+[v MirroredQuadrants@base_hue base_hue `uc  1 p 1 14 ]
+[v MirroredQuadrants@base_sat base_sat `uc  1 p 1 15 ]
+[v MirroredQuadrants@15787 F15787 `*.2v  1 p 2 16 ]
+"204
 } 0
 "29
 [v _HueTest HueTest `(v  1 e 1 0 ]
@@ -886,7 +896,7 @@ SPI32_TRANSMIT 8
 [v HueTest@cycleCounter cycleCounter `*.39ul  1 p 2 23 ]
 [v HueTest@base_hue base_hue `uc  1 p 1 25 ]
 [v HueTest@base_sat base_sat `uc  1 p 1 26 ]
-[v HueTest@15689 F15689 `*.2v  1 p 2 27 ]
+[v HueTest@15703 F15703 `*.2v  1 p 2 27 ]
 "78
 } 0
 "80
@@ -902,10 +912,29 @@ SPI32_TRANSMIT 8
 [v FullPulseHold@cycleCounter cycleCounter `*.39ul  1 p 2 4 ]
 [v FullPulseHold@base_hue base_hue `uc  1 p 1 6 ]
 [v FullPulseHold@base_sat base_sat `uc  1 p 1 7 ]
-[v FullPulseHold@15697 F15697 `*.2v  1 p 2 8 ]
+[v FullPulseHold@15711 F15711 `*.2v  1 p 2 8 ]
 "81
 [v FullPulseHold@rising rising `uc  1 s 1 rising ]
 "100
+} 0
+"136
+[v _DoubleFadedLoop DoubleFadedLoop `(v  1 e 1 0 ]
+{
+"146
+[v DoubleFadedLoop@i_1264 i `uc  1 a 1 36 ]
+"139
+[v DoubleFadedLoop@i i `uc  1 a 1 35 ]
+"137
+[v DoubleFadedLoop@x x `uc  1 a 1 34 ]
+[v DoubleFadedLoop@val val `uc  1 a 1 33 ]
+"136
+[v DoubleFadedLoop@ptrnPointer ptrnPointer `*.39ui  1 p 2 8 ]
+[v DoubleFadedLoop@ptrnStepCounter ptrnStepCounter `*.39uc  1 p 2 10 ]
+[v DoubleFadedLoop@cycleCounter cycleCounter `*.39ul  1 p 2 12 ]
+[v DoubleFadedLoop@base_hue base_hue `uc  1 p 1 14 ]
+[v DoubleFadedLoop@base_sat base_sat `uc  1 p 1 15 ]
+[v DoubleFadedLoop@15744 F15744 `*.2v  1 p 2 16 ]
+"154
 } 0
 "102
 [v _CenterBreathe CenterBreathe `(v  1 e 1 0 ]
@@ -924,10 +953,30 @@ SPI32_TRANSMIT 8
 [v CenterBreathe@cycleCounter cycleCounter `*.39ul  1 p 2 12 ]
 [v CenterBreathe@base_hue base_hue `uc  1 p 1 14 ]
 [v CenterBreathe@base_sat base_sat `uc  1 p 1 15 ]
-[v CenterBreathe@15707 F15707 `*.2v  1 p 2 16 ]
+[v CenterBreathe@15721 F15721 `*.2v  1 p 2 16 ]
 "103
 [v CenterBreathe@rising rising `uc  1 s 1 rising ]
 "122
+} 0
+"171
+[v _BrokenPinwheel BrokenPinwheel `(v  1 e 1 0 ]
+{
+"175
+[v BrokenPinwheel@i i `uc  1 a 1 36 ]
+"172
+[v BrokenPinwheel@val val `uc  1 a 1 35 ]
+"173
+[v BrokenPinwheel@fade fade `uc  1 a 1 34 ]
+"172
+[v BrokenPinwheel@x x `uc  1 a 1 33 ]
+"171
+[v BrokenPinwheel@ptrnPointer ptrnPointer `*.39ui  1 p 2 8 ]
+[v BrokenPinwheel@ptrnStepCounter ptrnStepCounter `*.39uc  1 p 2 10 ]
+[v BrokenPinwheel@cycleCounter cycleCounter `*.39ul  1 p 2 12 ]
+[v BrokenPinwheel@base_hue base_hue `uc  1 p 1 14 ]
+[v BrokenPinwheel@base_sat base_sat `uc  1 p 1 15 ]
+[v BrokenPinwheel@15769 F15769 `*.2v  1 p 2 16 ]
+"189
 } 0
 "8 C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\awdiv.c
 [v ___awdiv __awdiv `(i  1 e 2 0 ]
@@ -1107,12 +1156,12 @@ SPI32_TRANSMIT 8
 {
 "147
 } 0
-"66 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\Pattern_PtrnGenerator.c
+"71 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\Pattern_PtrnGenerator.c
 [v _SetupPattern SetupPattern `(v  1 e 1 0 ]
 {
 [v SetupPattern@patternIDPointer patternIDPointer `*.39uc  1 p 2 0 ]
 [v SetupPattern@listeningFocusPointer listeningFocusPointer `*.39uc  1 p 2 2 ]
-"70
+"75
 } 0
 "351 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\ES_Framework.c
 [v _ES_PostToService ES_PostToService `(uc  1 e 1 0 ]
@@ -1166,20 +1215,20 @@ SPI32_TRANSMIT 8
 [v DotStar_Init@brightnessPointer brightnessPointer `*.39uc  1 p 2 0 ]
 "59
 } 0
-"60 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\CAN_RX_HW.c
+"59 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\CAN_RX_HW.c
 [v _CAN_Init CAN_Init `(v  1 e 1 0 ]
 {
-"63
+"62
 } 0
-"163
+"162
 [v _InitPins InitPins `(v  1 s 1 InitPins ]
 {
-"175
+"174
 } 0
-"103
+"102
 [v _InitCanHardware InitCanHardware `(v  1 s 1 InitCanHardware ]
 {
-"161
+"160
 } 0
 "130 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\ES_Timers.c
 [v _ES_Timer_Init ES_Timer_Init `(v  1 e 1 0 ]
@@ -1235,25 +1284,27 @@ SPI32_TRANSMIT 8
 [v i2PostSPI32ControlService@ThisEvent ThisEvent `S37  1 p 3 29 ]
 "119
 } 0
-"65 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\CAN_RX_HW.c
+"64 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\CAN_RX_HW.c
 [v _CAN_XmitResponse CAN_XmitResponse `(v  1 e 1 0 ]
 {
-"68
+"67
 } 0
-"70
+"69
 [v _CAN_RCVResponse CAN_RCVResponse `(i  1 e 2 0 ]
 {
-"76
+"75
 } 0
-"177
+"176
 [v _ProcessReceive ProcessReceive `(v  1 s 1 ProcessReceive ]
 {
 [s S37 ES_Event_t 3 `E1 1 EventType 1 0 `ui 1 EventParam 2 1 ]
 "182
 [v ProcessReceive@Event2Post Event2Post `S37  1 a 3 34 ]
+"178
+[v ProcessReceive@CurrentPattern CurrentPattern `uc  1 s 1 CurrentPattern ]
 "179
 [v ProcessReceive@LastButton LastButton `uc  1 s 1 LastButton ]
-"215
+"216
 } 0
 "137 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\Pattern_ControlService.c
 [v i2_PostPatternControlService PostPatternControlService `(uc  1 e 1 0 ]
@@ -1309,17 +1360,17 @@ SPI32_TRANSMIT 8
 [v SetPattern@PatternID PatternID `uc  1 a 1 0 ]
 "240
 } 0
-"72 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\Pattern_PtrnGenerator.c
+"77 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\Pattern_PtrnGenerator.c
 [v i2_ResetPattern ResetPattern `(v  1 e 1 0 ]
 {
-"77
+"82
 } 0
 "249 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\Pattern_ControlService.c
 [v _SetListenFocus SetListenFocus `(v  1 e 1 0 ]
 {
 [v SetListenFocus@listFocus listFocus `uc  1 a 1 wreg ]
 [v SetListenFocus@listFocus listFocus `uc  1 a 1 wreg ]
-[v SetListenFocus@listFocus listFocus `uc  1 a 1 0 ]
+[v SetListenFocus@listFocus listFocus `uc  1 a 1 8 ]
 "251
 } 0
 "243
@@ -1343,13 +1394,13 @@ SPI32_TRANSMIT 8
 [v i2___awdiv@divisor divisor `i  1 p 2 2 ]
 "42
 } 0
-"78 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\CAN_RX_HW.c
+"77 C:\Users\Luke\Documents\Github_Repositories\218D_VW\DotStar_Pattern_Control\CAN_RX_HW.c
 [v _CAN_ErrorResponse CAN_ErrorResponse `(v  1 e 1 0 ]
 {
-"81
+"80
 } 0
-"83
+"82
 [v _CAN_BusErrorResponse CAN_BusErrorResponse `(v  1 e 1 0 ]
 {
-"86
+"85
 } 0

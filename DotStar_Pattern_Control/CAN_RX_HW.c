@@ -51,7 +51,6 @@ static void ProcessReceive(void);
 /*---------------------------- Module Variables ---------------------------*/
 static uint8_t MyPriority;
 
-static uint8_t CurrentPattern = 0;
 static uint8_t ListLoc = 0;
 static uint8_t Brightness = 0;
 
@@ -176,6 +175,7 @@ static void InitPins(void)
 
 static void ProcessReceive(void)
 {
+    static uint8_t CurrentPattern = NO_PATTERN;
     static uint8_t LastButton = NO_NEW_INPUT;
     // Check if Identifiers match
     if (RXB0SIDH == SIDH && RXB0SIDL == SIDL && RXB0EIDH == EIDH && RXB0EIDL == EIDL)  {
@@ -189,13 +189,14 @@ static void ProcessReceive(void)
                     Event2Post.EventType = (LastButton == STOP_MESSAGE ? PATTERN_END : PATTERN_PAUSE);
                     break;
                 case RESET_MESSAGE:
-                    #ifdef PATTERN_TEST
+                    #ifdef PATTERN_TEST_ENABLE
                         SetPattern(TEST_PATTERN);
                         Event2Post.EventType = PATTERN_START;
                     #else
                         SetPattern(NO_PATTERN);
                         Event2Post.EventType = PATTERN_END;
                     #endif
+                        CurrentPattern = NO_PATTERN;
                     break;
                 case NEXT_PATTERN_MESSAGE:
                     SetPattern(CurrentPattern);

@@ -247,7 +247,7 @@ void SetBrightness(uint8_t brightness){
 
 // Set LED color and pattern profile (based on car model)
 void SetListenFocus(uint8_t listFocus){
-	PatternConfigs[LISTEN_FOCUS] = listFocus;
+	PatternConfigs[LISTEN_FOCUS] = listFocus*STRIP_LENGTH/255;
 }
 
 // Set pattern cycle speed

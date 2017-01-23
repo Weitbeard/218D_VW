@@ -24,8 +24,10 @@ void FullPulseHold(uint16_t *, uint8_t *, uint32_t *, uint8_t, uint8_t, void *);
 void CenterBreathe(uint16_t *, uint8_t *, uint32_t *, uint8_t, uint8_t, void *);
 void SingleFadedLoop(uint16_t *, uint8_t *, uint32_t *, uint8_t, uint8_t, void *);
 void DoubleFadedLoop(uint16_t *, uint8_t *, uint32_t *, uint8_t, uint8_t, void *);
+void DoubleBrokenLoop(uint16_t *, uint8_t *, uint32_t *, uint8_t, uint8_t, void *);
+void BrokenPinwheel(uint16_t *, uint8_t *, uint32_t *, uint8_t, uint8_t, void *);
+void MirroredQuadrants(uint16_t *, uint8_t *, uint32_t *, uint8_t, uint8_t, void *);
 	//Active Patterns
 void SingleFocusPulse(uint16_t *, uint8_t *, uint32_t *, uint8_t, uint8_t, void *);
-void DoubleFocusPulse(uint16_t *, uint8_t *, uint32_t *, uint8_t, uint8_t, void *);
 
 #endif /* Pattern_PtrnFunctions_H */
