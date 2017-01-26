@@ -16,17 +16,15 @@
 // State definitions for use with the query function
 typedef enum { SPI32_Startup,
                SPI32_Waiting4Send,
-               SPI32_SendingByte1,
-               SPI32_SendingByte2,
-               SPI32_SendingByte3,
-               SPI32_SendingByte4
+               SPI32_Transmitting
               } SPI32State_t ;
               
-// Public Function Prototypes
+// Service function prototypes
 bool InitSPI32ControlService( uint8_t Priority );
 bool PostSPI32ControlService( ES_Event ThisEvent );
 ES_Event RunSPI32ControlService( ES_Event ThisEvent );
 
+// Other public functions
 void SPI32_TransmitFrames(uint32_t *framePointer, uint8_t numFrames);
 
 #endif /* SPI32_ControlService_H */

@@ -70,9 +70,10 @@ static	uint8_t	PatternConfigs[4] = {
 	DEFAULT_SPEED };
 #endif
 
-static uint8_t NumPixels;
-static uint8_t MaxBrightness = FULL_BRIGHT;
-static uint8_t ListLoc;
+static uint8_t MaxBrightness = FULL_BRIGHT; //maximum allowed LED brightness
+                                 /*could be interesting to implement a function to
+                                  * adjust this value based on external environment
+                                  * (i.e. daytime -> brighter) */
 
 
 /*------------------------------ Module Code ------------------------------*/
@@ -92,6 +93,7 @@ static uint8_t ListLoc;
  Notes
 
  Author
+    lxw - revised for pattern control service
      J. Edward Carryer, 10/23/11, 18:55
 ****************************************************************************/
 bool InitPatternControlService( uint8_t Priority )
@@ -132,7 +134,8 @@ bool InitPatternControlService( uint8_t Priority )
  Notes
 
  Author
-     J. Edward Carryer, 10/23/11, 19:25
+    lxw - revised for pattern control service
+    J. Edward Carryer, 10/23/11, 19:25
 ****************************************************************************/
 bool PostPatternControlService( ES_Event ThisEvent )
 {
@@ -154,13 +157,15 @@ bool PostPatternControlService( ES_Event ThisEvent )
  Notes
    uses nested switch/case to implement the machine.
  Author
-   J. Edward Carryer, 01/15/12, 15:23
+    lxw - revised for pattern control service
+    J. Edward Carryer, 01/15/12, 15:23
 ****************************************************************************/
 ES_Event RunPatternControlService( ES_Event ThisEvent )
 {
   ES_Event ReturnEvent;
   ReturnEvent.EventType = ES_NO_EVENT; // assume no errors
- 
+   
+   //based upon the current state...
   switch(CurrentState){
 		case Pattern_Startup:
              //if receiving an initial event
@@ -232,7 +237,7 @@ ES_Event RunPatternControlService( ES_Event ThisEvent )
   return ReturnEvent;
 }
 
-// Setup a new LED display pattern
+// Set a new LED display pattern
 void SetPattern(uint8_t PatternID){
 	PatternConfigs[CUR_PATTERN] = PatternID;
      //reset pattern step counter

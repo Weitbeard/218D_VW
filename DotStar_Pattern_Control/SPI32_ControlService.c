@@ -52,10 +52,10 @@ static SPI32State_t CurrentState;
 // with the introduction of Gen2, we need a module level Priority var as well
 static uint8_t MyPriority;//module-level variables
 
-static uint8_t  FrameIndex;
-static uint8_t  NumFrames;
-static uint32_t *FramePointer;
-static uint32_t CurrentFrame;
+static uint8_t  FrameIndex;     //Index of frame currently being transmitted
+static uint8_t  NumFrames;      //Number of frames to be transmitted
+static uint32_t *FramePointer;  //Pointer into array holding message frames
+static uint32_t CurrentFrame;   //Encoded 32-bit message frame
 
 /*------------------------------ Module Code ------------------------------*/
 
@@ -75,7 +75,8 @@ static uint32_t CurrentFrame;
  Notes
 
  Author
-     J. Edward Carryer, 10/23/11, 18:55
+    lxw - revised for SPI32 service
+    J. Edward Carryer, 10/23/11, 18:55
 ****************************************************************************/
 bool InitSPI32ControlService( uint8_t Priority )
 {
@@ -112,7 +113,8 @@ bool InitSPI32ControlService( uint8_t Priority )
  Notes
 
  Author
-     J. Edward Carryer, 10/23/11, 19:25
+    lxw - revised for SPI32 service
+    J. Edward Carryer, 10/23/11, 19:25
 ****************************************************************************/
 bool PostSPI32ControlService( ES_Event ThisEvent ){
   return ES_PostToService( MyPriority, ThisEvent);
@@ -133,6 +135,7 @@ bool PostSPI32ControlService( ES_Event ThisEvent ){
  Notes
    uses nested switch/case to implement the machine.
  Author
+   lxw - revised for SPI32 service
    J. Edward Carryer, 01/15/12, 15:23
 ****************************************************************************/
 ES_Event RunSPI32ControlService( ES_Event ThisEvent )
@@ -162,12 +165,12 @@ ES_Event RunSPI32ControlService( ES_Event ThisEvent )
                  //send the first byte
                 SPI32_SendFrame(CurrentFrame);
                  //change state to sending 1st byte
-                CurrentState = SPI32_SendingByte1;
+                CurrentState = SPI32_Transmitting;
             }
 		break;
 		
 		 //if current state is SendByte1
-		case SPI32_SendingByte1 :
+		case SPI32_Transmitting :
              //if receiving a timeout event (EOT)
             if(ThisEvent.EventType == ES_TIMEOUT){
                  //if this is not the last frame
@@ -186,56 +189,30 @@ ES_Event RunSPI32ControlService( ES_Event ThisEvent )
             }
             
 		break;
-//		
-//		 //if current state is SendByte2
-//		case SPI32_SendingByte2 :
-//             //if receiving a timeout event (EOT)
-//            if(ThisEvent.EventType == ES_TIMEOUT){
-//                 //send the next byte
-//                SPI32_SendByte(CurrentFrame>>8);
-//                 //change state to sending 3rd byte
-//                CurrentState = SPI32_SendingByte3;
-//            }
-//            
-//		break;
-//		
-//		 //if current state is SendByte3
-//		case SPI32_SendingByte3 :
-//             //if receiving a timeout event (EOT)
-//            if(ThisEvent.EventType == ES_TIMEOUT){
-//                 //send the next byte
-//                SPI32_SendByte(CurrentFrame);
-//                 //change state to sending 4th byte
-//                CurrentState = SPI32_SendingByte4;
-//            }
-//		break;
-//		
-//		 //if current state is SendByte4
-//		case SPI32_SendingByte4 :
-//             //if receiving a timeout event (EOT)
-//            if(ThisEvent.EventType == ES_TIMEOUT){
-//                 //if this is not the last frame
-//                if(FrameIndex++ < NumFrames-1){
-//                     //get the next frame to send
-//                    FramePointer++;
-//                    CurrentFrame = GetNextFrame();
-//                     //send the first byte
-//                    SPI32_SendByte(CurrentFrame>>24);
-//                     //change state to sending 1st byte
-//                    CurrentState = SPI32_SendingByte1;
-//                }
-//                 //otherwise...
-//                else{
-//                     //end the transmission (return to waiting state)
-//                    CurrentState = SPI32_Waiting4Send;
-//                }
-//            }
-//		break;
-
     }                                  // end switch on Current State
     return ReturnEvent;
 }
 
+/****************************************************************************
+ Function
+    SPI32_TransmitFrames
+
+ Parameters
+   uint32_t *: pointer to head of the array containing the frames to be sent
+   uint8_t   :  number of frames to be sent
+
+ Returns
+   void
+
+ Description
+   Configures and initializes transmission of a number of 32-bit messages (frames)
+ 
+ Notes
+ 
+ Author
+   lxw - revised for SPI32 service
+   J. Edward Carryer, 01/15/12, 15:23
+****************************************************************************/
 void SPI32_TransmitFrames(uint32_t *framePointer, uint8_t numFrames){
      //if SPI service is available
     if(CurrentState == SPI32_Waiting4Send){
@@ -245,6 +222,7 @@ void SPI32_TransmitFrames(uint32_t *framePointer, uint8_t numFrames){
         FramePointer = framePointer;
          //store number of frames to send
         NumFrames = numFrames;
+         //post event to service to trigger beginning of transmission
         ES_Event transmitEvent;
         transmitEvent.EventType = SPI32_TRANSMIT;
         PostSPI32ControlService(transmitEvent);
@@ -255,6 +233,7 @@ void SPI32_TransmitFrames(uint32_t *framePointer, uint8_t numFrames){
  private functions
  ***************************************************************************/
 
+ //returns the message frame @ current FramePointer memory location
 static uint32_t GetNextFrame(void){
 	return *(FramePointer);
 }

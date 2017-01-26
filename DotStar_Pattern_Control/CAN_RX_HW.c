@@ -56,16 +56,19 @@ static uint8_t Brightness = 0;
 
 /*------------------------------ Module Code ------------------------------*/
 
+ //initialize CAN hardware
 void CAN_Init(void){
     InitPins();
 	InitCanHardware();
 }
 
+ //CAN_Xmit interrupt response
 void CAN_XmitResponse(void) 
 {
     TXB0CONbits.TXREQ = 0;
 }
 
+ //CAN_RCV interrupt response
 void CAN_RCVResponse(void)
 {
     if (RXB0CONbits.RXFUL == 1) {
@@ -74,27 +77,17 @@ void CAN_RCVResponse(void)
     }
 }
 
+ //CAN_Error interrupt response
 void CAN_ErrorResponse(void) 
 {
     // For debugging
 }
 
+ //CAN_BusError interrupt response
 void CAN_BusErrorResponse(void)
 {
 //    For debugging
 }
-
-//uint8_t CAN_GetCurrentPattern(void){
-//    return CurrentPattern;
-//}
-//
-//uint8_t CAN_GetListLoc(void){
-//    return ListLoc;
-//}
-//
-//uint8_t CAN_GetBrightness(void){
-//    return Brightness;
-//}
 
 /***************************************************************************
  private functions

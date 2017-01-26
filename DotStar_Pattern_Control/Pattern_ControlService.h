@@ -16,12 +16,12 @@
 // State definitions for use with the query function
 typedef enum { Pattern_Startup, Pattern_Off, Pattern_Running, Pattern_Paused } PatternState_t ;
 
-// Public Function Prototypes
+// Service function prototypes
 bool InitPatternControlService( uint8_t Priority );
 bool PostPatternControlService( ES_Event ThisEvent );
 ES_Event RunPatternControlService( ES_Event ThisEvent );
 
-//void SetNumPixels(uint8_t numPixels);  *************TODO
+// Pattern configuration setters
 void SetPattern(uint8_t patternID);
 void SetBrightness(uint8_t brightness);
 void SetListenFocus(uint8_t listFocus);

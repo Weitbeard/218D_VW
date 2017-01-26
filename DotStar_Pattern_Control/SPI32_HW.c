@@ -13,7 +13,8 @@
  History
  When           Who     What/Why
  -------------- ---     --------
- 10/28/16 17:40 lxw		 revised for 218d & PIC18F2480
+ 10/28/16 17:40 lxw		 revised for use in service
+ --/--/-- --:-- jw       test SPI code for PIC18F2480
  02/01/16 17:00 lxw		 revised for lab 8 & team project
  11/10/15 20:50 lxw		 completed placeholder service template
 ****************************************************************************/
@@ -81,20 +82,11 @@ void SPI32_Init(void){
     Writes to the SSBUF register to transmit data. If the buffer is not done
     sending, keep trying to send again until the buffer is full
 
+ Author
+    lxw, 02/11/16, 00:05
+    jw   --/--/--, --:--
 ****************************************************************************/
 void SPI32_SendFrame(uint32_t newFrame) {
-//    if (FirstSend == true) { //BF will be 0 at start
-//        FirstSend = false;
-//        SSPBUF = Data;
-//    } else if (SSPSTATbits.BF != 0) { //If all bits have been sent
-//        uint8_t dummy = SSPBUF;//read from buffer and discard data (resets BF))
-//        SSPBUF = Data; //Set Buffer to Data
-//    } else { // try sending again
-////        ES_Timer_InitTimer(SPI_TEST_TIMER, ONE_SEC);
-//        ES_Event ThisEvent;
-//        ThisEvent.EventType = BUF_NOT_READY;
-//        PostSPI_Service(ThisEvent);
-//    }
     
      //if sending first byte of new frame
     if(FrameByte == 4){
@@ -123,6 +115,7 @@ void SPI32_SendFrame(uint32_t newFrame) {
    
  Author
    lxw, 02/15/16, 02:45
+   jw   --/--/--, --:--
 ****************************************************************************/
 static void HW_Init(void){
 
@@ -162,6 +155,7 @@ static void HW_Init(void){
    
  Author
    lxw, 02/15/16, 16:20
+   jw   --/--/--, --:--
 ****************************************************************************/
 void SPI32_EOTResponse(void){
      //if the last byte has been sent

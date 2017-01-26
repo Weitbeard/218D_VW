@@ -2,7 +2,7 @@
  Module
      Pattern_HSV_Convert.h
  Description
-     header file for pattern control of a RGB LED strip
+     header file for 16-bit HSV -> 24-bit RGB color conversion
  Notes
 
  History

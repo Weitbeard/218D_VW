@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=C:\Program Files (x86)\Microchip\xc8\v1.38\dat\en_msgs.txt -cs \
   -h+dist/default/production\DotStar_Pattern_Control.production.sym \
   --cmf=dist/default/production\DotStar_Pattern_Control.production.cmf -z \
-  -Q18F2480 -oC:\Users\Luke\AppData\Local\Temp\sa68.2 \
+  -Q18F2480 -oC:\Users\Luke\AppData\Local\Temp\scgk.2 \
   -Mdist/default/production/DotStar_Pattern_Control.production.map -E1 \
   -ver=XC8 -ASTACK=0FBh-0ffh -pstack=STACK -ACODE=00h-03FFFh \
   -ACONST=00h-03FFFh -ASMALLCONST=0300h-03FFhx61 -AMEDIUMCONST=0300h-03FFFh \
@@ -21,7 +21,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  C:\Users\Luke\AppData\Local\Temp\sa68.obj \
+  C:\Users\Luke\AppData\Local\Temp\scgk.obj \
   dist/default/production\DotStar_Pattern_Control.production.obj 
 
 Object code version is 3.11
@@ -34,14 +34,14 @@ Call graph: (short form)
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\Luke\AppData\Local\Temp\sa68.obj
+C:\Users\Luke\AppData\Local\Temp\scgk.obj
                 end_init                             16       16        4        4       0
                 reset_vec                             0        0        4        0       0
                 idloc                            200000   200000        8   200000       0
                 config                           300000   300000        E   300000       0
 dist/default/production\DotStar_Pattern_Control.production.obj
                 intcode                               8        8        E        4       0
-                temp                                 56       56        1        1       1
+                temp                                 54       54        1        1       1
                 smallconst                          300      300       B8      180       0
                 text71                             3CD6     3CD6        2      1DC       0
                 text70                             3CD4     3CD4        2      1DC       0
@@ -121,8 +121,8 @@ dist/default/production\DotStar_Pattern_Control.production.obj
                 bssBANK1                            100      100       C4      100       1
                 dataBANK0                            F3       F3        8       60       1
                 bssBANK0                             CE       CE       25       60       1
-                dataCOMRAM                           54       54        2        1       1
-                bssCOMRAM                            36       36       1E        1       1
+                dataCOMRAM                           52       52        2        1       1
+                bssCOMRAM                            36       36       1C        1       1
                 cinit                              3472     3472       7E      1DC       0
                 idataBANK0                         3CB4     3CB4        8      1DC       0
                 idataCOMRAM                        3CD0     3CD0        2      1DC       0
@@ -218,10 +218,10 @@ TOTAL           Name                               Link     Load   Length     Sp
         CLASS   MEDIUMCONST    
 
         CLASS   COMRAM         
-                temp                                 56       56        1         1
+                temp                                 54       54        1         1
                 cstackCOMRAM                          1        1       35         1
-                dataCOMRAM                           54       54        2         1
-                bssCOMRAM                            36       36       1E         1
+                dataCOMRAM                           52       52        2         1
+                bssCOMRAM                            36       36       1C         1
 
         CLASS   ABS1           
 
@@ -257,7 +257,7 @@ TOTAL           Name                               Link     Load   Length     Sp
 SEGMENTS        Name                           Load    Length   Top    Selector   Space  Class
 
                 reset_vec                      000000  000004  000004         0       0  CODE    
-                cstackCOMRAM                   000001  000056  000057         1       1  COMRAM  
+                cstackCOMRAM                   000001  000054  000055         1       1  COMRAM  
                 intcode                        000008  000012  00001A         4       0  CODE    
                 cstackBANK0                    000060  00009B  0000FB        60       1  BANK0   
                 bssBANK1                       000100  0000C4  0001C4       100       1  BANK1   
@@ -272,12 +272,12 @@ UNUSED ADDRESS RANGES
 
         Name                Unused          Largest block    Delta
         BANK0            0000FB-0000FF                5
-        BIGRAM           000057-00005F                9
+        BIGRAM           000055-00005F                B
                          0000FB-0000FF                5
         CODE             000004-000007                4
                          00001A-0002FF              2E6
                          003CD8-003FFF              328
-        COMRAM           000057-00005F                9
+        COMRAM           000055-00005F                B
         CONST            000004-000007                4
                          00001A-0002FF              2E6
                          003CD8-003FFF              328
@@ -333,7 +333,7 @@ DoubleFadedLoop@base_hue              cstackBANK0  00006E
 DoubleFadedLoop@base_sat              cstackBANK0  00006F
 DoubleFadedLoop@cycleCounter          cstackBANK0  00006C
 DoubleFadedLoop@i                     cstackBANK0  000083
-DoubleFadedLoop@i_1264                cstackBANK0  000084
+DoubleFadedLoop@i_1259                cstackBANK0  000084
 DoubleFadedLoop@ptrnPointer           cstackBANK0  000068
 DoubleFadedLoop@ptrnStepCounter       cstackBANK0  00006A
 DoubleFadedLoop@val                   cstackBANK0  000081
@@ -413,9 +413,9 @@ MirroredQuadrants@x                   cstackBANK0  000081
 PatternOff@i                          cstackBANK0  000062
 PostPatternControlService@ThisEvent   cstackBANK0  00007D
 PostSPI32ControlService@ThisEvent     cstackBANK0  00007D
-ProcessReceive@CurrentPattern         bssCOMRAM    000045
+ProcessReceive@CurrentPattern         bssCOMRAM    000044
 ProcessReceive@Event2Post             cstackCOMRAM 000023
-ProcessReceive@LastButton             dataCOMRAM   000054
+ProcessReceive@LastButton             dataCOMRAM   000052
 RunPatternControlService@ReturnEvent  cstackBANK0  0000BE
 RunPatternControlService@ThisEvent    cstackBANK0  0000BB
 RunPatternControlService@testEvent    cstackBANK0  0000C1
@@ -457,7 +457,7 @@ SingleFocusBreathe@rising             dataBANK0    0000F5
 SingleFocusBreathe@val                cstackBANK0  000086
 SingleFocusBreathe@x                  cstackBANK0  000088
 UpdatePattern@i                       cstackBANK0  000094
-UpdatePattern@i_1366                  cstackBANK0  000095
+UpdatePattern@i_1361                  cstackBANK0  000095
 _ADCON1                               (abs)        000FC1
 _BRGCON1bits                          (abs)        000F70
 _BRGCON2bits                          (abs)        000F71
@@ -465,8 +465,8 @@ _BRGCON3bits                          (abs)        000F72
 _BitNum2SetMask                       smallconst   000301
 _Brightness                           bssBANK0     0000F0
 _BrokenPinwheel                       text23       0003B8
-_BrokenPinwheel$1290                  cstackBANK0  00007D
-_BrokenPinwheel$1291                  cstackBANK0  00007F
+_BrokenPinwheel$1285                  cstackBANK0  00007D
+_BrokenPinwheel$1286                  cstackBANK0  00007F
 _CANCON                               (abs)        000F6F
 _CANSTATbits                          (abs)        000F6E
 _CAN_BusErrorResponse                 text71       003CD6
@@ -480,24 +480,24 @@ _CCPR1H                               (abs)        000FBF
 _CCPR1L                               (abs)        000FBE
 _CIOCON                               (abs)        000F73
 _CenterBreathe                        text22       0017AC
-_CenterBreathe$1232                   cstackBANK0  00007B
-_CenterBreathe$1233                   cstackBANK0  00007D
-_CenterBreathe$1234                   cstackBANK0  00007F
-_CenterBreathe$1235                   cstackBANK0  000081
-_CenterBreathe$1236                   cstackBANK0  000083
-_CenterBreathe$1237                   cstackBANK0  000085
-_CenterBreathe$1238                   cstackBANK0  000087
-_CenterBreathe$1239                   cstackBANK0  000089
+_CenterBreathe$1227                   cstackBANK0  00007B
+_CenterBreathe$1228                   cstackBANK0  00007D
+_CenterBreathe$1229                   cstackBANK0  00007F
+_CenterBreathe$1230                   cstackBANK0  000081
+_CenterBreathe$1231                   cstackBANK0  000083
+_CenterBreathe$1232                   cstackBANK0  000085
+_CenterBreathe$1233                   cstackBANK0  000087
+_CenterBreathe$1234                   cstackBANK0  000089
 _CurrentFrame                         bssBANK0     0000CE
 _CurrentState                         bssBANK0     0000E4
 _CycleCounter                         bssBANK0     0000E9
 _DotStar_Init                         text46       0037EC
 _DotStar_Show                         text26       0025B4
 _DoubleFadedLoop                      text21       0009BE
-_DoubleFadedLoop$1262                 cstackBANK0  000079
-_DoubleFadedLoop$1263                 cstackBANK0  00007B
-_DoubleFadedLoop$1265                 cstackBANK0  00007D
-_DoubleFadedLoop$1266                 cstackBANK0  00007F
+_DoubleFadedLoop$1257                 cstackBANK0  000079
+_DoubleFadedLoop$1258                 cstackBANK0  00007B
+_DoubleFadedLoop$1260                 cstackBANK0  00007D
+_DoubleFadedLoop$1261                 cstackBANK0  00007F
 _ECANCON                              (abs)        000F77
 _ERRIE                                (abs)        007D1D
 _ERRIF                                (abs)        007D25
@@ -517,11 +517,11 @@ _FrameByte                            dataBANK0    0000F6
 _FrameIndex                           bssBANK0     0000E5
 _FramePointer                         bssBANK0     0000D7
 _FullPulseHold                        text20       002426
-_FullPulseHold$1218                   cstackBANK0  000072
+_FullPulseHold$1213                   cstackBANK0  000072
 _GIE                                  (abs)        007F97
 _GetNextFrame                         text10       003BC8
 _HSV_to_RGB                           text30       000F28
-_HSV_to_RGB$1990                      cstackBANK0  00009D
+_HSV_to_RGB$1985                      cstackBANK0  00009D
 _HW_Init                              text40       003AF4
 _HueTest                              text19       002A26
 _INTCON                               (abs)        000FF2
@@ -536,10 +536,10 @@ _LATA                                 (abs)        000F89
 _LATB                                 (abs)        000F8A
 _LATC                                 (abs)        000F8B
 _ListeningFocus                       bssBANK0     0000D9
-_MaxBrightness                        dataCOMRAM   000055
+_MaxBrightness                        dataCOMRAM   000053
 _MirroredQuadrants                    text18       001380
-_MirroredQuadrants$1302               cstackBANK0  00007D
-_MirroredQuadrants$1303               cstackBANK0  00007F
+_MirroredQuadrants$1297               cstackBANK0  00007D
+_MirroredQuadrants$1298               cstackBANK0  00007F
 _MyPriority                           bssBANK0     0000E6
 _NumFrames                            bssBANK0     0000E7
 _Nybble2MSBitNum                      smallconst   000341
@@ -560,8 +560,8 @@ _PostPatternControlService$intlevel0  text28       003B96
 _PostSPI32ControlService              text29       003BAC
 _PostSPI32ControlService$intlevel0    text29       003BB2
 _ProcessReceive                       text59       0030EA
-_ProcessReceive$1196                  cstackCOMRAM 000021
-_Queue0                               bssCOMRAM    000048
+_ProcessReceive$1191                  cstackCOMRAM 000021
+_Queue0                               bssCOMRAM    000046
 _Queue1                               bssBANK1     0001B8
 _RXB0CONbits                          (abs)        000F60
 _RXB0D0                               (abs)        000F66
@@ -602,13 +602,13 @@ _SetPattern                           text65       003C9E
 _SetupPattern                         text41       003C72
 _ShowPattern                          text14       003B16
 _SingleFadedLoop                      text17       00218C
-_SingleFadedLoop$1250                 cstackBANK0  00007D
-_SingleFadedLoop$1251                 cstackBANK0  00007F
+_SingleFadedLoop$1245                 cstackBANK0  00007D
+_SingleFadedLoop$1246                 cstackBANK0  00007F
 _SingleFocusBreathe                   text16       001AFA
-_SingleFocusBreathe$1332              cstackBANK0  00007D
-_SingleFocusBreathe$1333              cstackBANK0  00007F
-_SingleFocusBreathe$1334              cstackBANK0  000081
-_SingleFocusBreathe$1335              cstackBANK0  000083
+_SingleFocusBreathe$1327              cstackBANK0  00007D
+_SingleFocusBreathe$1328              cstackBANK0  00007F
+_SingleFocusBreathe$1329              cstackBANK0  000081
+_SingleFocusBreathe$1330              cstackBANK0  000083
 _StopPattern                          text11       003B74
 _SysTickCounter                       bssCOMRAM    00003E
 _T1CON                                (abs)        000FCD
@@ -624,8 +624,8 @@ _TickCount                            bssBANK0     0000E8
 _Timer2PostFunc                       smallconst   000321
 _TransmitFrame                        bssCOMRAM    000036
 _UpdatePattern                        text15       001E46
-_UpdatePattern$1991                   cstackBANK0  000092
-_UpdatePattern$1992                   cstackBANK0  000093
+_UpdatePattern$1986                   cstackBANK0  000092
+_UpdatePattern$1987                   cstackBANK0  000093
 __CFG_BOREN$OFF                       (abs)        000000
 __CFG_MCLRE$ON                        (abs)        000000
 __CFG_OSC$HS                          (abs)        000000
@@ -696,7 +696,7 @@ __Hspace_1                            (abs)        000300
 __Hspace_2                            (abs)        000000
 __Hstack                              stack        000000
 __Hstruct                             struct       000000
-__Htemp                               temp         000057
+__Htemp                               temp         000055
 __Htext                               text         000000
 __Htext0                              text0        000000
 __Htext1                              text1        000000
@@ -831,7 +831,7 @@ __Lspace_1                            (abs)        000000
 __Lspace_2                            (abs)        000000
 __Lstack                              stack        000000
 __Lstruct                             struct       000000
-__Ltemp                               temp         000056
+__Ltemp                               temp         000054
 __Ltext                               text         000000
 __Ltext0                              text0        000000
 __Ltext1                              text1        000000
@@ -1030,7 +1030,7 @@ __pcinit                              cinit        003472
 __pcstackBANK0                        cstackBANK0  000060
 __pcstackCOMRAM                       cstackCOMRAM 000001
 __pdataBANK0                          dataBANK0    0000F3
-__pdataCOMRAM                         dataCOMRAM   000054
+__pdataCOMRAM                         dataCOMRAM   000052
 __pidataBANK0                         idataBANK0   003CB4
 __pidataCOMRAM                        idataCOMRAM  003CD0
 __pintcode                            intcode      000008
@@ -1185,7 +1185,7 @@ __smallconst                          smallconst   000300
 _main                                 text0        0032E2
 _printf                               text1        003A42
 _putch                                text2        003CD2
-btemp                                 temp         000056
+btemp                                 temp         000054
 end_of_initialization                 cinit        0034E2
 i2ES_EnQueueFIFO@Event2Add            cstackCOMRAM 00000F
 i2ES_EnQueueFIFO@SaveCrit             cstackCOMRAM 000015
@@ -1217,7 +1217,7 @@ i2___wmul                             text63       003AA8
 i2___wmul@multiplicand                cstackCOMRAM 000009
 i2___wmul@multiplier                  cstackCOMRAM 000007
 i2___wmul@product                     cstackCOMRAM 00000B
-int$flags                             temp         000056
+int$flags                             temp         000054
 int_func                              intcode_body 002DE2
 intlevel0                             text         000000
 intlevel1                             text         000000
@@ -1243,7 +1243,7 @@ FUNCTION INFORMATION:
  Auto vars:     Size  Location     Type
   ErrorType       1  109[BANK0 ] enum E15646
  Return value:  Size  Location     Type
-                  2  475[None  ] int 
+                  2  471[None  ] int 
  Registers used:
 		wreg, fsr1l, fsr1h, fsr2l, fsr2h, status,2, status,0, pclat, tosl, tblptrl, tblptrh, tblptru, prodl, prodh, cstack
  Tracked objects:
@@ -1467,7 +1467,7 @@ Total ram usage:       10 bytes
 
  *************** function _RunPatternControlService *****************
  Defined at:
-		line 159 in file "Pattern_ControlService.c"
+		line 163 in file "Pattern_ControlService.c"
  Parameters:    Size  Location     Type
   ThisEvent       3   91[BANK0 ] struct ES_Event_t
  Auto vars:     Size  Location     Type
@@ -1501,7 +1501,7 @@ Total ram usage:        9 bytes
 
  *************** function _RunSPI32ControlService *****************
  Defined at:
-		line 138 in file "SPI32_ControlService.c"
+		line 141 in file "SPI32_ControlService.c"
  Parameters:    Size  Location     Type
   ThisEvent       3   91[BANK0 ] struct ES_Event_t
  Auto vars:     Size  Location     Type
@@ -1532,7 +1532,7 @@ Total ram usage:       13 bytes
 
  *************** function _SPI32_SendFrame *****************
  Defined at:
-		line 85 in file "SPI32_HW.c"
+		line 89 in file "SPI32_HW.c"
  Parameters:    Size  Location     Type
   newFrame        4    0[BANK0 ] unsigned long 
  Auto vars:     Size  Location     Type
@@ -1562,7 +1562,7 @@ Total ram usage:        8 bytes
 
  *************** function _GetNextFrame *****************
  Defined at:
-		line 258 in file "SPI32_ControlService.c"
+		line 237 in file "SPI32_ControlService.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1592,7 +1592,7 @@ Total ram usage:        4 bytes
 
  *************** function _StopPattern *****************
  Defined at:
-		line 271 in file "Pattern_ControlService.c"
+		line 276 in file "Pattern_ControlService.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1625,7 +1625,7 @@ Total ram usage:        0 bytes
 
  *************** function _ResetPattern *****************
  Defined at:
-		line 77 in file "Pattern_PtrnGenerator.c"
+		line 113 in file "Pattern_PtrnGenerator.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1655,7 +1655,7 @@ Total ram usage:        0 bytes
 
  *************** function _PatternOff *****************
  Defined at:
-		line 84 in file "Pattern_PtrnGenerator.c"
+		line 138 in file "Pattern_PtrnGenerator.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1685,7 +1685,7 @@ Total ram usage:        3 bytes
 
  *************** function _ShowPattern *****************
  Defined at:
-		line 263 in file "Pattern_ControlService.c"
+		line 268 in file "Pattern_ControlService.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1717,7 +1717,7 @@ Total ram usage:        0 bytes
 
  *************** function _UpdatePattern *****************
  Defined at:
-		line 91 in file "Pattern_PtrnGenerator.c"
+		line 163 in file "Pattern_PtrnGenerator.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1756,7 +1756,7 @@ Total ram usage:        6 bytes
 
  *************** function _SingleFocusBreathe *****************
  Defined at:
-		line 221 in file "Pattern_PtrnFunctions.c"
+		line 253 in file "Pattern_PtrnFunctions.c"
  Parameters:    Size  Location     Type
   ptrnPointer     2    8[BANK0 ] PTR unsigned int 
 		 -> PixelPattern(152), 
@@ -1801,7 +1801,7 @@ Total ram usage:       35 bytes
 
  *************** function _SingleFadedLoop *****************
  Defined at:
-		line 124 in file "Pattern_PtrnFunctions.c"
+		line 156 in file "Pattern_PtrnFunctions.c"
  Parameters:    Size  Location     Type
   ptrnPointer     2    8[BANK0 ] PTR unsigned int 
 		 -> PixelPattern(152), 
@@ -1843,7 +1843,7 @@ Total ram usage:       28 bytes
 
  *************** function _MirroredQuadrants *****************
  Defined at:
-		line 191 in file "Pattern_PtrnFunctions.c"
+		line 223 in file "Pattern_PtrnFunctions.c"
  Parameters:    Size  Location     Type
   ptrnPointer     2    8[BANK0 ] PTR unsigned int 
 		 -> PixelPattern(152), 
@@ -1885,7 +1885,7 @@ Total ram usage:       28 bytes
 
  *************** function _HueTest *****************
  Defined at:
-		line 29 in file "Pattern_PtrnFunctions.c"
+		line 53 in file "Pattern_PtrnFunctions.c"
  Parameters:    Size  Location     Type
   ptrnPointer     2   19[BANK0 ] PTR unsigned int 
 		 -> PixelPattern(152), 
@@ -1926,7 +1926,7 @@ Total ram usage:       14 bytes
 
  *************** function _FullPulseHold *****************
  Defined at:
-		line 80 in file "Pattern_PtrnFunctions.c"
+		line 108 in file "Pattern_PtrnFunctions.c"
  Parameters:    Size  Location     Type
   ptrnPointer     2    0[BANK0 ] PTR unsigned int 
 		 -> PixelPattern(152), 
@@ -1966,7 +1966,7 @@ Total ram usage:       22 bytes
 
  *************** function _DoubleFadedLoop *****************
  Defined at:
-		line 136 in file "Pattern_PtrnFunctions.c"
+		line 171 in file "Pattern_PtrnFunctions.c"
  Parameters:    Size  Location     Type
   ptrnPointer     2    8[BANK0 ] PTR unsigned int 
 		 -> PixelPattern(152), 
@@ -2009,7 +2009,7 @@ Total ram usage:       29 bytes
 
  *************** function _CenterBreathe *****************
  Defined at:
-		line 102 in file "Pattern_PtrnFunctions.c"
+		line 134 in file "Pattern_PtrnFunctions.c"
  Parameters:    Size  Location     Type
   ptrnPointer     2    8[BANK0 ] PTR unsigned int 
 		 -> PixelPattern(152), 
@@ -2053,7 +2053,7 @@ Total ram usage:       40 bytes
 
  *************** function _BrokenPinwheel *****************
  Defined at:
-		line 171 in file "Pattern_PtrnFunctions.c"
+		line 203 in file "Pattern_PtrnFunctions.c"
  Parameters:    Size  Location     Type
   ptrnPointer     2    8[BANK0 ] PTR unsigned int 
 		 -> PixelPattern(152), 
@@ -2168,7 +2168,7 @@ Total ram usage:        5 bytes
 
  *************** function _DotStar_Show *****************
  Defined at:
-		line 61 in file "Pattern_DotStarLED.c"
+		line 99 in file "Pattern_DotStarLED.c"
  Parameters:    Size  Location     Type
   patternPoint    2   69[BANK0 ] PTR unsigned int 
 		 -> PixelPattern(152), 
@@ -2201,7 +2201,7 @@ Total ram usage:       22 bytes
 
  *************** function _SPI32_TransmitFrames *****************
  Defined at:
-		line 239 in file "SPI32_ControlService.c"
+		line 216 in file "SPI32_ControlService.c"
  Parameters:    Size  Location     Type
   framePointer    2   32[BANK0 ] PTR unsigned long 
 		 -> PixelFrames(316), 
@@ -2233,7 +2233,7 @@ Total ram usage:        6 bytes
 
  *************** function _PostPatternControlService *****************
  Defined at:
-		line 137 in file "Pattern_ControlService.c"
+		line 140 in file "Pattern_ControlService.c"
  Parameters:    Size  Location     Type
   ThisEvent       3   29[BANK0 ] struct ES_Event_t
  Auto vars:     Size  Location     Type
@@ -2264,7 +2264,7 @@ Total ram usage:        3 bytes
 
  *************** function _PostSPI32ControlService *****************
  Defined at:
-		line 117 in file "SPI32_ControlService.c"
+		line 119 in file "SPI32_ControlService.c"
  Parameters:    Size  Location     Type
   ThisEvent       3   29[BANK0 ] struct ES_Event_t
  Auto vars:     Size  Location     Type
@@ -2295,7 +2295,7 @@ Total ram usage:        3 bytes
 
  *************** function _HSV_to_RGB *****************
  Defined at:
-		line 49 in file "Pattern_HSV_Convert.c"
+		line 67 in file "Pattern_HSV_Convert.c"
  Parameters:    Size  Location     Type
   HSV_Value       2   19[BANK0 ] PTR unsigned long 
 		 -> PixelFrames(316), 
@@ -2370,7 +2370,7 @@ Total ram usage:        7 bytes
 
  *************** function _PausePattern *****************
  Defined at:
-		line 281 in file "Pattern_ControlService.c"
+		line 286 in file "Pattern_ControlService.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -2535,7 +2535,7 @@ Total ram usage:        3 bytes
 
  *************** function _InitPatternControlService *****************
  Defined at:
-		line 97 in file "Pattern_ControlService.c"
+		line 99 in file "Pattern_ControlService.c"
  Parameters:    Size  Location     Type
   Priority        1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -2569,7 +2569,7 @@ Total ram usage:        4 bytes
 
  *************** function _InitSPI32ControlService *****************
  Defined at:
-		line 80 in file "SPI32_ControlService.c"
+		line 81 in file "SPI32_ControlService.c"
  Parameters:    Size  Location     Type
   Priority        1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -2601,7 +2601,7 @@ Total ram usage:        4 bytes
 
  *************** function _SPI32_Init *****************
  Defined at:
-		line 65 in file "SPI32_HW.c"
+		line 66 in file "SPI32_HW.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -2631,7 +2631,7 @@ Total ram usage:        0 bytes
 
  *************** function _HW_Init *****************
  Defined at:
-		line 127 in file "SPI32_HW.c"
+		line 120 in file "SPI32_HW.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -2661,7 +2661,7 @@ Total ram usage:        0 bytes
 
  *************** function _SetupPattern *****************
  Defined at:
-		line 71 in file "Pattern_PtrnGenerator.c"
+		line 89 in file "Pattern_PtrnGenerator.c"
  Parameters:    Size  Location     Type
   patternIDPoi    2    0[BANK0 ] PTR unsigned char 
 		 -> PatternConfigs(4), 
@@ -2841,7 +2841,7 @@ Total ram usage:        6 bytes
 
  *************** function _DotStar_Init *****************
  Defined at:
-		line 50 in file "Pattern_DotStarLED.c"
+		line 70 in file "Pattern_DotStarLED.c"
  Parameters:    Size  Location     Type
   brightnessPo    2    0[BANK0 ] PTR unsigned char 
 		 -> PatternConfigs(4), 
@@ -2872,7 +2872,7 @@ Total ram usage:        2 bytes
 
  *************** function _CAN_Init *****************
  Defined at:
-		line 59 in file "CAN_RX_HW.c"
+		line 60 in file "CAN_RX_HW.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -2903,7 +2903,7 @@ Total ram usage:        0 bytes
 
  *************** function _InitPins *****************
  Defined at:
-		line 162 in file "CAN_RX_HW.c"
+		line 155 in file "CAN_RX_HW.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -2933,7 +2933,7 @@ Total ram usage:        0 bytes
 
  *************** function _InitCanHardware *****************
  Defined at:
-		line 102 in file "CAN_RX_HW.c"
+		line 95 in file "CAN_RX_HW.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -3090,7 +3090,7 @@ Total ram usage:       16 bytes
 
  *************** function _SPI32_EOTResponse *****************
  Defined at:
-		line 166 in file "SPI32_HW.c"
+		line 160 in file "SPI32_HW.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -3121,7 +3121,7 @@ Total ram usage:        3 bytes
 
  *************** function i2_SPI32_SendFrame *****************
  Defined at:
-		line 85 in file "SPI32_HW.c"
+		line 89 in file "SPI32_HW.c"
  Parameters:    Size  Location     Type
   newFrame        4    0[COMRAM] unsigned long 
  Auto vars:     Size  Location     Type
@@ -3150,7 +3150,7 @@ Total ram usage:        8 bytes
 
  *************** function i2_PostSPI32ControlService *****************
  Defined at:
-		line 117 in file "SPI32_ControlService.c"
+		line 119 in file "SPI32_ControlService.c"
  Parameters:    Size  Location     Type
   ThisEvent       3   29[COMRAM] struct ES_Event_t
  Auto vars:     Size  Location     Type
@@ -3180,7 +3180,7 @@ Total ram usage:        3 bytes
 
  *************** function _CAN_XmitResponse *****************
  Defined at:
-		line 64 in file "CAN_RX_HW.c"
+		line 66 in file "CAN_RX_HW.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -3209,7 +3209,7 @@ Total ram usage:        0 bytes
 
  *************** function _CAN_RCVResponse *****************
  Defined at:
-		line 69 in file "CAN_RX_HW.c"
+		line 72 in file "CAN_RX_HW.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -3239,7 +3239,7 @@ Total ram usage:        0 bytes
 
  *************** function _ProcessReceive *****************
  Defined at:
-		line 176 in file "CAN_RX_HW.c"
+		line 169 in file "CAN_RX_HW.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -3273,7 +3273,7 @@ Total ram usage:        5 bytes
 
  *************** function i2_PostPatternControlService *****************
  Defined at:
-		line 137 in file "Pattern_ControlService.c"
+		line 140 in file "Pattern_ControlService.c"
  Parameters:    Size  Location     Type
   ThisEvent       3   29[COMRAM] struct ES_Event_t
  Auto vars:     Size  Location     Type
@@ -3432,7 +3432,7 @@ Total ram usage:        6 bytes
 
  *************** function _SetPattern *****************
  Defined at:
-		line 236 in file "Pattern_ControlService.c"
+		line 241 in file "Pattern_ControlService.c"
  Parameters:    Size  Location     Type
   PatternID       1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -3462,7 +3462,7 @@ Total ram usage:        1 bytes
 
  *************** function i2_ResetPattern *****************
  Defined at:
-		line 77 in file "Pattern_PtrnGenerator.c"
+		line 113 in file "Pattern_PtrnGenerator.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -3491,7 +3491,7 @@ Total ram usage:        0 bytes
 
  *************** function _SetListenFocus *****************
  Defined at:
-		line 249 in file "Pattern_ControlService.c"
+		line 254 in file "Pattern_ControlService.c"
  Parameters:    Size  Location     Type
   listFocus       1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -3521,7 +3521,7 @@ Total ram usage:        1 bytes
 
  *************** function _SetBrightness *****************
  Defined at:
-		line 243 in file "Pattern_ControlService.c"
+		line 248 in file "Pattern_ControlService.c"
  Parameters:    Size  Location     Type
   brightness      1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -3585,7 +3585,7 @@ Total ram usage:        8 bytes
 
  *************** function _CAN_ErrorResponse *****************
  Defined at:
-		line 77 in file "CAN_RX_HW.c"
+		line 81 in file "CAN_RX_HW.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -3614,7 +3614,7 @@ Total ram usage:        0 bytes
 
  *************** function _CAN_BusErrorResponse *****************
  Defined at:
-		line 82 in file "CAN_RX_HW.c"
+		line 87 in file "CAN_RX_HW.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type

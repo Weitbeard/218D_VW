@@ -2,7 +2,7 @@
  Module
      SPI32_HW.h
  Description
-     header file for pattern control of a RGB LED strip
+     header file for hardware interface for 32-bit SPI communication
  Notes
 
  History

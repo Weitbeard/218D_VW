@@ -46,6 +46,24 @@
 
 /*------------------------------ Module Code ------------------------------*/
 
+/****************************************************************************
+ Function
+    UpdatePattern
+
+ Parameters
+    void
+
+ Returns
+    uint32_t *: pointer to HSV value (stored in a 32-bit array)
+
+ Description
+    converts 16-bit HSV value to 24-bit *BGR* based on integer arithmetic
+
+ Notes
+   
+ Author
+    lxw, 11/14/16, 02:00
+****************************************************************************/
 void HSV_to_RGB(uint32_t * HSV_Value){
     uint16_t r, g, b, h, s, v, region, fpart, p, q, t;    
     
@@ -55,23 +73,24 @@ void HSV_to_RGB(uint32_t * HSV_Value){
     v = *HSV_Value & VAL_MASK;
     v += v << 4;                    //scale to 8-bit value
     
+     //if color is in grayscale (0 saturation))
     if(s == 0) {
-        /* color is grayscale */
         r = g = b = v;
     }
     
+     //otherwise...
     else{
-        /* make hue 0-5 */
+         //scale hue to one of 6 color cone regions (0-5))
         region = h / 43;
-        /* find remainder part, make it from 0-255 */
+         //determine the 8-bit remainder (0-255)
         fpart = (h - (region * 43)) * 6;
 
-        /* calculate temp vars, doing integer multiplication */ //************TODO********** convert to 4-bit saturation and value
+         //calculate temp vars with integer multiplication
         p = (v * (255 - s)) >> 8;
         q = (v * (255 - ((s * fpart) >> 8))) >> 8;
         t = (v * (255 - ((s * (255 - fpart)) >> 8))) >> 8;
 
-        /* assign temp vars based on color cone region */
+         //assign temp vars based on color cone region
         switch(region) {
             case 0:
                 r = v; g = t; b = p; break;
@@ -88,7 +107,7 @@ void HSV_to_RGB(uint32_t * HSV_Value){
         }
     }
     
-    //preserve brightness value and set new RGB value (in order B - G - R)
+     //preserve LED brightness value (leading 8 bits) and set new RGB value (in order B - G - R)
     *HSV_Value = (*HSV_Value & 0xFF000000) | ((uint32_t)b << 16) | ((uint32_t)g << 8) | ((uint32_t)r);
     
     return;

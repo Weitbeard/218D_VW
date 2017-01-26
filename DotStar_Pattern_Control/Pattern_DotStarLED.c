@@ -29,24 +29,44 @@
 #include "Pattern_Defs.h"
 #include "SPI32_ControlService.h"
 
+ //DotStar LED-specific defines
 #define FIRST_PIXEL 1
 #define HEAD        0
 #define HEAD_FRAME  0x0
 #define TAIL        STRIP_LENGTH+1
 #define TAIL_FRAME  0xffffffff
 #define PIXEL_HEADER    0xe0000000
-
 #define R_MASK      0x0F00
 #define G_MASK      0x00F0
 #define B_MASK      0x000F
 
-static uint8_t* Brightness;
-static uint32_t PixelFrames[STRIP_LENGTH+3];
+ //module variables
+static uint8_t* Brightness;     //pointer to LED brightness configuration
+static uint32_t PixelFrames[STRIP_LENGTH+3]; //external RGB image buffer
 
 #ifdef RGB_PATTERNS
 static void Expand_RGB(uint32_t *);
 #endif
 
+
+/****************************************************************************
+ Function
+    DotStar_Init
+
+ Parameters
+    uint8_t *: pointer to LED brightness configuration  value
+
+ Returns
+    void
+
+ Description
+    stores LED brightness configuration & sets mandatory image frame values
+
+ Notes
+   
+ Author
+    lxw, 11/14/16, 02:00
+****************************************************************************/
 void DotStar_Init(uint8_t *brightnessPointer){
      //set strip brightness pointer
     Brightness = brightnessPointer;
@@ -58,6 +78,24 @@ void DotStar_Init(uint8_t *brightnessPointer){
     #endif
 }
 
+/****************************************************************************
+ Function
+    DotStar_Show
+
+ Parameters
+    uint16_t *: 16-bit HSV image buffer
+
+ Returns
+    void
+
+ Description
+    displays the provided HSV image buffer at the LED strip
+
+ Notes
+   
+ Author
+    lxw, 11/14/16, 02:00
+****************************************************************************/
 void DotStar_Show(uint16_t *patternPointer){
     for(uint8_t i=1; i<=STRIP_LENGTH; i++){
          //add pixelPointer's values to PixelFrames with brightness
@@ -79,6 +117,7 @@ void DotStar_Show(uint16_t *patternPointer){
 }
 
 #ifdef RGB_PATTERNS
+ //expand 16-bit RGB to 24-bit RGB
 static void Expand_RGB(uint32_t * RGBval){
     uint16_t r, g, b;
     

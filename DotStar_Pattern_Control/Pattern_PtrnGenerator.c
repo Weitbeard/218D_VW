@@ -14,7 +14,7 @@
  History
  When            Who     What/Why
  --------------- ---     --------
- 10/028/16 02:00 lxw     first pass
+ 10/28/16 02:00 lxw     first pass
 ****************************************************************************/
 
 /*----------------------------- Include Files -----------------------------*/
@@ -51,7 +51,7 @@ static  uint8_t  PatternStepCounter = 0;
 static  uint32_t CycleCounter = 0;
 
 /*****  Scrapped example for better modularity with function pointers: ********/
-/*             (removed to save data space on uC)                             */
+/*        (commented out/removed to save data space on uC)                    */
 /*
  //typedef for pattern generation function pointers
 typedef void(*ptrnFunc)(uint16_t*, uint8_t*, uint32_t*, uint8_t, uint8_t, void*);
@@ -68,12 +68,48 @@ static ptrnFunc CustomPattern = DoubleFadedLoop;
 
 /*------------------------------ Module Code ------------------------------*/
 
+/****************************************************************************
+ Function
+    SetupPattern
+
+ Parameters
+    uint8_t *: pointer to pattern ID configuration
+    uint8_t *: pointer to analog value for the listening focus position
+
+ Returns
+    void
+
+ Description
+    stores required configurations for later use
+ Notes
+   
+ Author
+    lxw, 10/28/16, 02:00
+****************************************************************************/
 void SetupPattern(uint8_t *patternIDPointer, uint8_t *listeningFocusPointer){
      //store pattern ID and listening focus pointers
     PatternID = patternIDPointer;
     ListeningFocus = listeningFocusPointer;
 }
 
+/****************************************************************************
+ Function
+    SetupPattern
+
+ Parameters
+    void
+ 
+ Returns
+    void
+
+ Description
+    resets variables used to calculate repeating (or step-based) patterns
+ 
+ Notes
+   
+ Author
+    lxw, 10/28/16, 02:00
+****************************************************************************/
 void ResetPattern(void){
      //reset pattern step counter
     PatternStepCounter = 0;
@@ -81,6 +117,24 @@ void ResetPattern(void){
     CycleCounter = 0;
 }
 
+/****************************************************************************
+ Function
+    PatternOff
+
+ Parameters
+    void
+
+ Returns
+    uint16_t *: pointer to populated image array (buffer)
+
+ Description
+    turns pixels off by populating image buffer with 0 values
+
+ Notes
+   
+ Author
+    lxw, 10/28/16, 02:00
+****************************************************************************/
 uint16_t * PatternOff(void){
     for(uint8_t i=0;i<STRIP_LENGTH;i++){
         PixelPattern[i] = PIXEL_OFF;
@@ -88,35 +142,57 @@ uint16_t * PatternOff(void){
     return PixelPattern;
 }
 
+/****************************************************************************
+ Function
+    UpdatePattern
+
+ Parameters
+    void
+
+ Returns
+    uint16_t *: pointer to populated image array (buffer)
+
+ Description
+    populates the image buffer with a new image based on the configured pattern ID
+
+ Notes
+   
+ Author
+    lxw, 10/28/16, 02:00
+****************************************************************************/
 uint16_t * UpdatePattern(void){    
      //based on the current pattern ID...
     switch(*PatternID){
         
         case NO_PATTERN:
-             //create pattern with all pixels OFF
+             //populate pattern array with image of all pixels OFF
             for(uint8_t i=0;i<STRIP_LENGTH;i++){
                 PixelPattern[i] = PIXEL_OFF;
             }
         break;
                 
         case WELCOME_PATTERN:
-             //call linked pattern (configured in Pattern_Defs.h)
+             //populate pattern array with image for when in the Welcome State
             FullPulseHold(PixelPattern, &PatternStepCounter, &CycleCounter, WELCOME_HUE, WELCOME_SAT, 0);
         break;
         
         case IDLE_PATTERN:
+             //populate pattern array with image for when in the Idle State
             CenterBreathe(PixelPattern, &PatternStepCounter, &CycleCounter, IDLE_HUE, IDLE_SAT, 0);
         break;
         
         case THINKING_PATTERN:
+             //populate pattern array with image for when in the Thinking State
             SingleFadedLoop(PixelPattern, &PatternStepCounter, &CycleCounter, THINKING_HUE, THINKING_SAT, 0);
         break;
         
         case SPEAKING_PATTERN:
+             //populate pattern array with image for when in the Speaking State
             SingleFocusBreathe(PixelPattern, &PatternStepCounter, &CycleCounter, SPEAKING_HUE, SPEAKING_SAT, ListeningFocus);  
         break;
         
         case LISTENING_PATTERN:
+             //populate pattern array with image for when in the Listening State
             SingleFocusBreathe(PixelPattern, &PatternStepCounter, &CycleCounter, LISTENING_HUE, LISTENING_SAT, ListeningFocus);
         break;
         
